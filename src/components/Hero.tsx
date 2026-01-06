@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-camera.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
