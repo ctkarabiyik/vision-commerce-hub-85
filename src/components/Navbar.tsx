@@ -171,36 +171,41 @@ const Navbar = () => {
         onMouseEnter={() => setDesktopDropdownOpen(true)}
         onMouseLeave={() => setDesktopDropdownOpen(false)}
       >
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex gap-6">
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-12 gap-8">
             {/* Categories Section */}
-            <div className="w-48 flex-shrink-0">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Categories</h3>
-              <div className="flex flex-col gap-1">
+            <div className="col-span-4">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Categories</h3>
+              <div className="flex flex-col gap-2">
                 {categories.map((category, index) => (
                   <a 
                     key={index}
                     href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="flex items-center gap-2 p-1.5 rounded hover:bg-secondary transition-colors group"
+                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-secondary transition-colors group"
                   >
-                    <category.icon className="w-4 h-4 text-primary" />
-                    <span className="text-sm text-foreground group-hover:text-primary transition-colors">{category.title}</span>
+                    <div className="w-8 h-8 rounded bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <category.icon className="w-4 h-4 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{category.title}</div>
+                      <div className="text-xs text-muted-foreground">{category.count} Products</div>
+                    </div>
                   </a>
                 ))}
               </div>
             </div>
 
             {/* Featured Products Section */}
-            <div className="flex-1 border-l border-border pl-6 overflow-hidden">
+            <div className="col-span-8 border-l border-border pl-8">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Products</h3>
-              <div className="flex gap-4 overflow-x-auto pb-2">
+              <div className="grid grid-cols-4 gap-3">
                 {featuredProducts.map((product, index) => (
                   <a 
                     key={index}
                     href="#products"
-                    className="group flex-shrink-0"
+                    className="group"
                   >
-                    <div className="w-24 h-24 bg-secondary rounded-md overflow-hidden mb-1.5">
+                    <div className="aspect-square bg-secondary rounded-md overflow-hidden mb-1.5 max-w-[120px]">
                       <img 
                         src={product.image} 
                         alt={product.name}
@@ -208,7 +213,8 @@ const Navbar = () => {
                       />
                     </div>
                     <div className="text-[10px] text-primary font-semibold">{product.brand}</div>
-                    <div className="text-xs font-medium text-foreground group-hover:text-primary transition-colors truncate w-24">{product.name}</div>
+                    <div className="text-xs font-medium text-foreground group-hover:text-primary transition-colors truncate max-w-[120px]">{product.name}</div>
+                    <div className="text-[10px] text-muted-foreground">{product.resolution}</div>
                   </a>
                 ))}
               </div>
