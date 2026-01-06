@@ -174,22 +174,21 @@ const Navbar = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-12 gap-8">
             {/* Categories Section */}
-            <div className="col-span-7">
+            <div className="col-span-4">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Categories</h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="flex flex-col gap-2">
                 {categories.map((category, index) => (
                   <a 
                     key={index}
                     href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="flex items-start gap-3 p-3 rounded-lg hover:bg-secondary transition-colors group"
+                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-secondary transition-colors group"
                   >
-                    <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                      <category.icon className="w-5 h-5 text-primary" />
+                    <div className="w-8 h-8 rounded bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <category.icon className="w-4 h-4 text-primary" />
                     </div>
                     <div className="flex-1">
                       <div className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{category.title}</div>
-                      <div className="text-xs text-muted-foreground">{category.description}</div>
-                      <div className="text-xs font-semibold text-primary mt-1">{category.count} Products</div>
+                      <div className="text-xs text-muted-foreground">{category.count} Products</div>
                     </div>
                   </a>
                 ))}
@@ -197,7 +196,7 @@ const Navbar = () => {
             </div>
 
             {/* Featured Products Section */}
-            <div className="col-span-5 border-l border-border pl-8">
+            <div className="col-span-8 border-l border-border pl-8">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Featured Products</h3>
               <div className="grid grid-cols-2 gap-4">
                 {featuredProducts.map((product, index) => (
