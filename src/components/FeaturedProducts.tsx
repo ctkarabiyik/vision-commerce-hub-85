@@ -1,43 +1,43 @@
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import cameraProduct1 from "@/assets/camera-product-1.jpg";
+import cameraProduct2 from "@/assets/camera-product-2.jpg";
+import cameraProduct3 from "@/assets/camera-product-3.jpg";
+import cameraProduct4 from "@/assets/camera-product-4.jpg";
 
 const products = [
   {
     name: "ACE-2040 Pro Series",
     brand: "BASLER",
-    image: "https://images.unsplash.com/photo-1606986628253-e24a7e9b7d2e?w=400&h=400&fit=crop",
+    image: cameraProduct1,
     resolution: "4.2 MP",
     fps: "120",
     interface: "GigE",
-    price: "$849",
   },
   {
     name: "DART-X Industrial",
     brand: "COGNEX",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=400&fit=crop",
+    image: cameraProduct2,
     resolution: "12 MP",
     fps: "60",
     interface: "USB 3.0",
-    price: "$1,249",
   },
   {
     name: "APEX Vision Core",
     brand: "FLIR",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=400&fit=crop",
+    image: cameraProduct3,
     resolution: "5.1 MP",
     fps: "90",
     interface: "CoaXPress",
-    price: "$1,599",
   },
   {
     name: "MV-8000 Ultra",
     brand: "HIKROBOT",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=400&fit=crop",
+    image: cameraProduct4,
     resolution: "8.9 MP",
     fps: "75",
     interface: "10GigE",
-    price: "$2,199",
   },
 ];
 

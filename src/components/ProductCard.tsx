@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Eye } from "lucide-react";
+import { Eye } from "lucide-react";
 
 interface ProductCardProps {
   name: string;
@@ -8,14 +8,13 @@ interface ProductCardProps {
   resolution: string;
   fps: string;
   interface: string;
-  price: string;
 }
 
-const ProductCard = ({ name, brand, image, resolution, fps, interface: interfaceType, price }: ProductCardProps) => {
+const ProductCard = ({ name, brand, image, resolution, fps, interface: interfaceType }: ProductCardProps) => {
   return (
     <div className="group bg-card rounded-sm border border-border hover:border-primary/50 transition-all duration-300 hover-lift overflow-hidden">
       {/* Image */}
-      <div className="relative aspect-square bg-secondary overflow-hidden">
+      <div className="relative aspect-square bg-white overflow-hidden">
         <img
           src={image}
           alt={name}
@@ -29,9 +28,6 @@ const ProductCard = ({ name, brand, image, resolution, fps, interface: interface
         <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/60 transition-colors duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
           <Button variant="default" size="icon" className="rounded-full">
             <Eye className="w-4 h-4" />
-          </Button>
-          <Button variant="default" size="icon" className="rounded-full">
-            <ShoppingCart className="w-4 h-4" />
           </Button>
         </div>
       </div>
@@ -56,16 +52,10 @@ const ProductCard = ({ name, brand, image, resolution, fps, interface: interface
           </div>
         </div>
 
-        {/* Price & CTA */}
-        <div className="flex items-center justify-between">
-          <div>
-            <div className="text-xs text-muted-foreground">Starting from</div>
-            <div className="text-xl font-bold text-primary">{price}</div>
-          </div>
-          <Button variant="default" size="sm">
-            View Details
-          </Button>
-        </div>
+        {/* CTA */}
+        <Button variant="default" size="sm" className="w-full">
+          View Details
+        </Button>
       </div>
     </div>
   );

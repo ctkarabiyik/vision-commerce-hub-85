@@ -1,9 +1,55 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Camera, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Box } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+const categories = [
+  {
+    icon: Camera,
+    title: "Area Scan Cameras",
+    description: "High-resolution sensors for quality inspection and measurement",
+    count: 156,
+  },
+  {
+    icon: Scan,
+    title: "Line Scan Cameras",
+    description: "Continuous imaging for web inspection and sorting",
+    count: 84,
+  },
+  {
+    icon: CircuitBoard,
+    title: "Smart Cameras",
+    description: "Built-in processing for edge AI applications",
+    count: 62,
+  },
+  {
+    icon: Microscope,
+    title: "3D Cameras",
+    description: "Depth sensing and volumetric measurement",
+    count: 45,
+  },
+  {
+    icon: Settings,
+    title: "Embedded Vision",
+    description: "Compact modules for OEM integration",
+    count: 98,
+  },
+  {
+    icon: Box,
+    title: "Accessories",
+    description: "Lenses, cables, lighting, and enclosures",
+    count: 320,
+  },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [mobileCategories, setMobileCategories] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -22,13 +68,34 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            <a href="#products" className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group">
+            <a href="#products" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               Products
-              <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
             </a>
-            <a href="#categories" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              Categories
-            </a>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">
+                Categories
+                <ChevronDown className="w-4 h-4 group-data-[state=open]:rotate-180 transition-transform" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-80 bg-card border border-border shadow-lg z-50">
+                {categories.map((category, index) => (
+                  <DropdownMenuItem key={index} className="p-3 cursor-pointer focus:bg-secondary">
+                    <a 
+                      href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="flex items-start gap-3 w-full"
+                    >
+                      <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <category.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-semibold text-foreground text-sm">{category.title}</div>
+                        <div className="text-xs text-muted-foreground">{category.description}</div>
+                        <div className="text-xs font-semibold text-primary mt-1">{category.count} Products</div>
+                      </div>
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               About Us
             </a>
@@ -39,10 +106,6 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-              <Phone className="w-4 h-4" />
-              <span>1-800-VISION</span>
-            </a>
             <Button variant="default">Get Quote</Button>
           </div>
 
@@ -62,9 +125,27 @@ const Navbar = () => {
               <a href="#products" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 Products
               </a>
-              <a href="#categories" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <button 
+                onClick={() => setMobileCategories(!mobileCategories)}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left"
+              >
                 Categories
-              </a>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileCategories ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileCategories && (
+                <div className="pl-4 flex flex-col gap-2">
+                  {categories.map((category, index) => (
+                    <a 
+                      key={index}
+                      href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                    >
+                      <category.icon className="w-4 h-4" />
+                      {category.title}
+                    </a>
+                  ))}
+                </div>
+              )}
               <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 About Us
               </a>
