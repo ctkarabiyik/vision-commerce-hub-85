@@ -12,7 +12,7 @@ const Hero = () => {
           alt="Industrial Camera"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/95 via-accent/80 to-transparent" />
+        <div className="absolute inset-0 bg-accent/70" />
       </div>
 
       {/* Content */}
@@ -81,7 +81,7 @@ const Hero = () => {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-10" />
+      
     </section>
   );
 };
