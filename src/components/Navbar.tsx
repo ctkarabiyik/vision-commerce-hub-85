@@ -12,36 +12,42 @@ const categories = [
     title: "Area Scan Cameras",
     description: "High-resolution sensors for quality inspection and measurement",
     count: 156,
+    href: "/area-scan-cameras",
   },
   {
     icon: Scan,
     title: "Line Scan Cameras",
     description: "Continuous imaging for web inspection and sorting",
     count: 84,
+    href: "#line-scan-cameras",
   },
   {
     icon: CircuitBoard,
     title: "Smart Cameras",
     description: "Built-in processing for edge AI applications",
     count: 62,
+    href: "#smart-cameras",
   },
   {
     icon: Microscope,
     title: "3D Cameras",
     description: "Depth sensing and volumetric measurement",
     count: 45,
+    href: "#3d-cameras",
   },
   {
     icon: Settings,
     title: "Embedded Vision",
     description: "Compact modules for OEM integration",
     count: 98,
+    href: "#embedded-vision",
   },
   {
     icon: Box,
     title: "Accessories",
     description: "Lenses, cables, lighting, and enclosures",
     count: 320,
+    href: "#accessories",
   },
 ];
 
@@ -142,7 +148,7 @@ const Navbar = () => {
                   {categories.map((category, index) => (
                     <a 
                       key={index}
-                      href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                      href={category.href}
                       className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1"
                     >
                       <category.icon className="w-4 h-4" />
@@ -180,7 +186,7 @@ const Navbar = () => {
                 {categories.map((category, index) => (
                   <a 
                     key={index}
-                    href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                    href={category.href}
                     className="flex items-center gap-3 p-2 rounded-lg hover:bg-secondary transition-colors group"
                   >
                     <div className="w-8 h-8 rounded bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
