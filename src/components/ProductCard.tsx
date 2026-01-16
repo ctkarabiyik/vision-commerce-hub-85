@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
 
@@ -8,9 +9,12 @@ interface ProductCardProps {
   resolution: string;
   fps: string;
   interface: string;
+  slug?: string;
 }
 
-const ProductCard = ({ name, brand, image, resolution, fps, interface: interfaceType }: ProductCardProps) => {
+const ProductCard = ({ name, brand, image, resolution, fps, interface: interfaceType, slug }: ProductCardProps) => {
+  const productSlug = slug || name.toLowerCase().replace(/\s+/g, '-');
+  
   return (
     <div className="group bg-card rounded-sm border border-border hover:border-primary/50 transition-all duration-300 hover-lift overflow-hidden">
       {/* Image */}
@@ -26,9 +30,11 @@ const ProductCard = ({ name, brand, image, resolution, fps, interface: interface
           </span>
         </div>
         <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/60 transition-colors duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
-          <Button variant="default" size="icon" className="rounded-full">
-            <Eye className="w-4 h-4" />
-          </Button>
+          <Link to={`/product/${productSlug}`}>
+            <Button variant="default" size="icon" className="rounded-full">
+              <Eye className="w-4 h-4" />
+            </Button>
+          </Link>
         </div>
       </div>
 
@@ -53,9 +59,11 @@ const ProductCard = ({ name, brand, image, resolution, fps, interface: interface
         </div>
 
         {/* CTA */}
-        <Button variant="default" size="sm" className="w-full">
-          View Details
-        </Button>
+        <Link to={`/product/${productSlug}`}>
+          <Button variant="default" size="sm" className="w-full">
+            View Details
+          </Button>
+        </Link>
       </div>
     </div>
   );
