@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Box } from "lucide-react";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
@@ -57,24 +58,28 @@ const featuredProducts = [
     brand: "BASLER",
     image: cameraProduct1,
     resolution: "4.2 MP",
+    slug: "ace-2040-pro-series",
   },
   {
     name: "DART-X Industrial",
     brand: "COGNEX",
     image: cameraProduct2,
     resolution: "12 MP",
+    slug: "dart-x-industrial",
   },
   {
     name: "APEX Vision Core",
     brand: "FLIR",
     image: cameraProduct3,
     resolution: "5.1 MP",
+    slug: "apex-vision-core",
   },
   {
     name: "MV-8000 Ultra",
     brand: "HIKROBOT",
     image: cameraProduct4,
     resolution: "8.9 MP",
+    slug: "mv-8000-ultra",
   },
 ];
 
@@ -88,7 +93,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-primary rounded-sm flex items-center justify-center">
               <Camera className="w-6 h-6 text-primary-foreground" />
             </div>
@@ -96,7 +101,7 @@ const Navbar = () => {
               <span className="text-lg font-bold tracking-tight text-foreground">VISIONTECH</span>
               <span className="text-[10px] uppercase tracking-widest text-muted-foreground -mt-1">Industrial Cameras</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
@@ -206,9 +211,9 @@ const Navbar = () => {
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Products</h3>
               <div className="grid grid-cols-4 gap-3">
                 {featuredProducts.map((product, index) => (
-                  <a 
+                  <Link 
                     key={index}
-                    href="#products"
+                    to={`/product/${product.slug}`}
                     className="group"
                   >
                     <div className="aspect-square bg-secondary rounded-md overflow-hidden mb-1.5 max-w-[120px]">
@@ -221,7 +226,7 @@ const Navbar = () => {
                     <div className="text-[10px] text-primary font-semibold">{product.brand}</div>
                     <div className="text-xs font-medium text-foreground group-hover:text-primary transition-colors truncate max-w-[120px]">{product.name}</div>
                     <div className="text-[10px] text-muted-foreground">{product.resolution}</div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

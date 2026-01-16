@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -14,6 +15,7 @@ const products = [
     resolution: "4.2 MP",
     fps: "120",
     interface: "GigE",
+    slug: "ace-2040-pro-series",
   },
   {
     name: "DART-X Industrial",
@@ -22,6 +24,7 @@ const products = [
     resolution: "12 MP",
     fps: "60",
     interface: "USB 3.0",
+    slug: "dart-x-industrial",
   },
   {
     name: "APEX Vision Core",
@@ -30,6 +33,7 @@ const products = [
     resolution: "5.1 MP",
     fps: "90",
     interface: "CoaXPress",
+    slug: "apex-vision-core",
   },
   {
     name: "MV-8000 Ultra",
@@ -38,6 +42,7 @@ const products = [
     resolution: "8.9 MP",
     fps: "75",
     interface: "10GigE",
+    slug: "mv-8000-ultra",
   },
 ];
 
@@ -56,10 +61,12 @@ const FeaturedProducts = () => {
               Industrial-Grade Cameras
             </h2>
           </div>
-          <Button variant="outline" className="mt-4 md:mt-0 group">
-            View All Products
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <Link to="/area-scan-cameras">
+            <Button variant="outline" className="mt-4 md:mt-0 group">
+              View All Products
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </div>
 
         {/* Products Grid */}
