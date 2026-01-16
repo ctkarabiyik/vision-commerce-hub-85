@@ -183,9 +183,9 @@ const Navbar = () => {
         onMouseLeave={() => setDesktopDropdownOpen(false)}
       >
         <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-12 gap-8">
+          <div className="grid grid-cols-12 gap-6">
             {/* Categories Section */}
-            <div className="col-span-4">
+            <div className="col-span-3">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Categories</h3>
               <div className="flex flex-col gap-2">
                 {categories.map((category, index) => (
@@ -207,25 +207,25 @@ const Navbar = () => {
             </div>
 
             {/* Featured Products Section */}
-            <div className="col-span-8 border-l border-border pl-8">
+            <div className="col-span-9 border-l border-border pl-6">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Products</h3>
-              <div className="grid grid-cols-4 gap-3">
+              <div className="grid grid-cols-4 gap-4">
                 {featuredProducts.map((product, index) => (
                   <Link 
                     key={index}
                     to={`/product/${product.slug}`}
                     className="group"
                   >
-                    <div className="aspect-square bg-secondary rounded-md overflow-hidden mb-1.5 max-w-[120px]">
+                    <div className="aspect-square bg-secondary rounded-md overflow-hidden mb-2">
                       <img 
                         src={product.image} 
                         alt={product.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <div className="text-[10px] text-primary font-semibold">{product.brand}</div>
-                    <div className="text-xs font-medium text-foreground group-hover:text-primary transition-colors truncate max-w-[120px]">{product.name}</div>
-                    <div className="text-[10px] text-muted-foreground">{product.resolution}</div>
+                    <div className="text-xs text-primary font-semibold">{product.brand}</div>
+                    <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{product.name}</div>
+                    <div className="text-xs text-muted-foreground">{product.resolution}</div>
                   </Link>
                 ))}
               </div>
