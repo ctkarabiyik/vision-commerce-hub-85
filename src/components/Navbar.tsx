@@ -180,7 +180,7 @@ const Navbar = () => {
 
       {/* Full-width Mega Menu */}
       <div 
-        className={`absolute left-0 right-0 top-full bg-background/95 backdrop-blur-sm border-b border-border shadow-lg transition-all duration-200 z-50 ${
+        className={`absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg transition-all duration-200 z-50 ${
           desktopDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
         onMouseEnter={() => setDesktopDropdownOpen(true)}
