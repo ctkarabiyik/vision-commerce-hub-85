@@ -125,7 +125,9 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button variant="default">Get Quote</Button>
+            <Link to="/get-quote">
+              <Button variant="default">Get Quote</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -168,7 +170,9 @@ const Navbar = () => {
               <a href="#support" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 Support
               </a>
-              <Button variant="default" className="w-full mt-4">Get Quote</Button>
+              <Link to="/get-quote">
+                <Button variant="default" className="w-full mt-4">Get Quote</Button>
+              </Link>
             </div>
           </div>
         )}
