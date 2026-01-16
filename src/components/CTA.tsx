@@ -16,9 +16,9 @@ const CTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link to="/get-quote">
+            <Link to="/contact-us">
               <Button variant="heroOutline" className="group">
-                Get a Quote
+                Contact Us
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>

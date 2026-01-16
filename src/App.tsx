@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AreaScanCameras from "./pages/AreaScanCameras";
 import ProductDetail from "./pages/ProductDetail";
-import GetQuote from "./pages/GetQuote";
+import ContactUs from "./pages/ContactUs";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/area-scan-cameras" element={<AreaScanCameras />} />
           <Route path="/product/:slug" element={<ProductDetail />} />
-          <Route path="/get-quote" element={<GetQuote />} />
+          <Route path="/contact-us" element={<ContactUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
