@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ChevronRight, Mail, Phone, MapPin, Clock } from "lucide-react";
 
-const GetQuote = () => {
+const ContactUs = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -19,12 +19,12 @@ const GetQuote = () => {
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
             <Link to="/" className="hover:text-primary transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-foreground font-medium">Get Quote</span>
+            <span className="text-foreground font-medium">Contact Us</span>
           </nav>
 
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Request a Quote
+              Contact Us
             </h1>
             <p className="text-lg text-muted-foreground">
               Get in touch with our team for pricing, technical specifications, or custom solutions. 
@@ -184,4 +184,4 @@ const GetQuote = () => {
   );
 };
 
-export default GetQuote;
+export default ContactUs;
