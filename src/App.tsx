@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 import AreaScanCameras from "./pages/AreaScanCameras";
 import ProductDetail from "./pages/ProductDetail";
 import ContactUs from "./pages/ContactUs";
+import SoftwareDownloads from "./pages/SoftwareDownloads";
+import KnowledgeBase from "./pages/KnowledgeBase";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/area-scan-cameras" element={<AreaScanCameras />} />
           <Route path="/product/:slug" element={<ProductDetail />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/software-downloads" element={<SoftwareDownloads />} />
+          <Route path="/knowledge-base" element={<KnowledgeBase />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

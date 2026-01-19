@@ -122,12 +122,19 @@ const featuredProducts = [
   },
 ];
 
+const supportLinks = [
+  { title: "Software Downloads", description: "Drivers, SDKs, and utilities", href: "/software-downloads" },
+  { title: "Knowledge Base", description: "Tutorials and documentation", href: "/knowledge-base" },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileCategories, setMobileCategories] = useState(false);
   const [mobileSolutions, setMobileSolutions] = useState(false);
+  const [mobileSupport, setMobileSupport] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
+  const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-colors duration-200 ${
@@ -171,9 +178,16 @@ const Navbar = () => {
             <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               About Us
             </a>
-            <a href="#support" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              Support
-            </a>
+            <div 
+              className="relative"
+              onMouseEnter={() => setSupportDropdownOpen(true)}
+              onMouseLeave={() => setSupportDropdownOpen(false)}
+            >
+              <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">
+                Support
+                <ChevronDown className={`w-4 h-4 transition-transform ${supportDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
           </div>
 
           {/* Desktop CTA */}
@@ -241,9 +255,26 @@ const Navbar = () => {
               <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 About Us
               </a>
-              <a href="#support" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <button 
+                onClick={() => setMobileSupport(!mobileSupport)}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left"
+              >
                 Support
-              </a>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileSupport ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileSupport && (
+                <div className="pl-4 flex flex-col gap-2">
+                  {supportLinks.map((link, index) => (
+                    <Link 
+                      key={index}
+                      to={link.href}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
               <Link to="/contact-us">
                 <Button variant="default" className="w-full mt-4">Contact Us</Button>
               </Link>
@@ -350,6 +381,36 @@ const Navbar = () => {
                 </div>
               </a>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Support Dropdown Menu */}
+      <div 
+        className={`absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg transition-all duration-200 z-50 ${
+          supportDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+        onMouseEnter={() => setSupportDropdownOpen(true)}
+        onMouseLeave={() => setSupportDropdownOpen(false)}
+      >
+        <div className="container mx-auto px-4 py-6">
+          <div className="max-w-md">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Support Resources</h3>
+            <div className="flex flex-col gap-2">
+              {supportLinks.map((link, index) => (
+                <Link 
+                  key={index}
+                  to={link.href}
+                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary transition-colors group"
+                >
+                  <div className="flex-1">
+                    <div className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{link.title}</div>
+                    <div className="text-xs text-muted-foreground">{link.description}</div>
+                  </div>
+                  <ChevronDown className="w-4 h-4 rotate-[-90deg] text-muted-foreground group-hover:text-primary transition-colors" />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
