@@ -206,17 +206,19 @@ const ManufacturingSolutions = () => {
       {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="bg-primary rounded-2xl p-8 lg:p-12 text-center">
-            <Settings className="w-12 h-12 text-primary-foreground mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-primary-foreground mb-4">
+          <div className="bg-card border border-border rounded-2xl p-8 lg:p-12 text-center">
+            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
+              <Settings className="w-6 h-6 text-primary" />
+            </div>
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               Need Help Choosing the Right Solution?
             </h2>
-            <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
               Our application engineers can help you select the optimal camera system for your 
               specific manufacturing requirements. Get a free consultation today.
             </p>
             <Link to="/contact-us">
-              <Button variant="secondary" size="lg" className="group">
+              <Button size="lg" className="group">
                 Schedule a Consultation
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
