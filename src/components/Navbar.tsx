@@ -235,6 +235,15 @@ const Navbar = () => {
                   </Link>
                 ))}
               </div>
+              <div className="mt-6 pt-4 border-t border-border">
+                <Link 
+                  to="/products"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
+                >
+                  View All Products
+                  <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
