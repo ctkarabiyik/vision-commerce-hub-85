@@ -101,26 +101,6 @@ const SoftwareDownloads = () => {
         </div>
       </section>
 
-      {/* System Requirements */}
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-foreground mb-8 text-center">System Requirements</h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-card border border-border rounded-xl p-6 text-center">
-              <h3 className="font-semibold text-foreground mb-2">Windows</h3>
-              <p className="text-sm text-muted-foreground">Windows 10/11 (64-bit)</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-6 text-center">
-              <h3 className="font-semibold text-foreground mb-2">Linux</h3>
-              <p className="text-sm text-muted-foreground">Ubuntu 20.04+ / CentOS 8+</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-6 text-center">
-              <h3 className="font-semibold text-foreground mb-2">macOS</h3>
-              <p className="text-sm text-muted-foreground">macOS 12 Monterey+</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>
