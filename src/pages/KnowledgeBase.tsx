@@ -199,14 +199,17 @@ const KnowledgeBase = () => {
       {/* Need Help CTA */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="bg-primary rounded-2xl p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+          <div className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+              <HelpCircle className="w-7 h-7 text-primary" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
               Can't find what you're looking for?
             </h2>
-            <p className="text-primary-foreground/80 mb-6 max-w-xl mx-auto">
+            <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
               Our technical support team is here to help. Contact us for personalized assistance.
             </p>
-            <Button variant="secondary" size="lg">
+            <Button size="lg">
               Contact Support
             </Button>
           </div>
