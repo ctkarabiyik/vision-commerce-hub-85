@@ -1,40 +1,46 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Box, Factory, Car, Pill, Cpu, Package } from "lucide-react";
+import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Box } from "lucide-react";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import cameraProduct2 from "@/assets/camera-product-2.jpg";
 import cameraProduct3 from "@/assets/camera-product-3.jpg";
 import cameraProduct4 from "@/assets/camera-product-4.jpg";
+import solutionManufacturing from "@/assets/solution-manufacturing.jpg";
+import solutionAutomotive from "@/assets/solution-automotive.jpg";
+import solutionPharmaceutical from "@/assets/solution-pharmaceutical.jpg";
+import solutionLogistics from "@/assets/solution-logistics.jpg";
+import solutionElectronics from "@/assets/solution-electronics.jpg";
+import solutionResearch from "@/assets/solution-research.jpg";
 
-const industries = [
+const solutions = [
   {
-    icon: Factory,
+    image: solutionManufacturing,
     title: "Manufacturing & Quality Control",
     description: "Automated defect detection and measurement",
   },
   {
-    icon: Car,
+    image: solutionAutomotive,
     title: "Automotive Industry",
     description: "Vision-guided robotics and inspection",
   },
   {
-    icon: Pill,
+    image: solutionPharmaceutical,
     title: "Pharmaceutical & Medical",
     description: "Label verification and contamination detection",
   },
   {
-    icon: Package,
+    image: solutionLogistics,
     title: "Logistics & Packaging",
     description: "Barcode reading and sorting automation",
   },
   {
-    icon: Cpu,
+    image: solutionElectronics,
     title: "Electronics & Semiconductor",
     description: "PCB inspection and chip alignment",
   },
   {
-    icon: Microscope,
+    image: solutionResearch,
     title: "Research & Laboratory",
     description: "High-resolution scientific imaging",
   },
@@ -119,9 +125,9 @@ const featuredProducts = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileCategories, setMobileCategories] = useState(false);
-  const [mobileIndustries, setMobileIndustries] = useState(false);
+  const [mobileSolutions, setMobileSolutions] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
-  const [industriesDropdownOpen, setIndustriesDropdownOpen] = useState(false);
+  const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-colors duration-200 ${
@@ -154,12 +160,12 @@ const Navbar = () => {
             </div>
             <div 
               className="relative"
-              onMouseEnter={() => setIndustriesDropdownOpen(true)}
-              onMouseLeave={() => setIndustriesDropdownOpen(false)}
+              onMouseEnter={() => setSolutionsDropdownOpen(true)}
+              onMouseLeave={() => setSolutionsDropdownOpen(false)}
             >
               <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">
-                Industries
-                <ChevronDown className={`w-4 h-4 transition-transform ${industriesDropdownOpen ? 'rotate-180' : ''}`} />
+                Solutions
+                <ChevronDown className={`w-4 h-4 transition-transform ${solutionsDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
             </div>
             <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
@@ -212,22 +218,22 @@ const Navbar = () => {
                 </div>
               )}
               <button 
-                onClick={() => setMobileIndustries(!mobileIndustries)}
+                onClick={() => setMobileSolutions(!mobileSolutions)}
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left"
               >
-                Industries
-                <ChevronDown className={`w-4 h-4 transition-transform ${mobileIndustries ? 'rotate-180' : ''}`} />
+                Solutions
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileSolutions ? 'rotate-180' : ''}`} />
               </button>
-              {mobileIndustries && (
+              {mobileSolutions && (
                 <div className="pl-4 flex flex-col gap-2">
-                  {industries.map((industry, index) => (
+                  {solutions.map((solution, index) => (
                     <a 
                       key={index}
                       href="#"
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                      className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors py-1"
                     >
-                      <industry.icon className="w-4 h-4" />
-                      {industry.title}
+                      <img src={solution.image} alt={solution.title} className="w-8 h-8 rounded object-cover" />
+                      {solution.title}
                     </a>
                   ))}
                 </div>
@@ -315,28 +321,32 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Industries Dropdown Menu */}
+      {/* Solutions Dropdown Menu */}
       <div 
         className={`absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg transition-all duration-200 z-50 ${
-          industriesDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          solutionsDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
-        onMouseEnter={() => setIndustriesDropdownOpen(true)}
-        onMouseLeave={() => setIndustriesDropdownOpen(false)}
+        onMouseEnter={() => setSolutionsDropdownOpen(true)}
+        onMouseLeave={() => setSolutionsDropdownOpen(false)}
       >
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-3 gap-6">
-            {industries.map((industry, index) => (
+            {solutions.map((solution, index) => (
               <a 
                 key={index}
                 href="#"
-                className="flex items-center gap-4 p-4 rounded-lg hover:bg-secondary transition-colors group"
+                className="group rounded-lg overflow-hidden hover:bg-secondary transition-colors"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <industry.icon className="w-6 h-6 text-primary" />
+                <div className="aspect-video bg-secondary overflow-hidden">
+                  <img 
+                    src={solution.image} 
+                    alt={solution.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <div className="flex-1">
-                  <div className="font-semibold text-foreground group-hover:text-primary transition-colors">{industry.title}</div>
-                  <div className="text-sm text-muted-foreground">{industry.description}</div>
+                <div className="p-4">
+                  <div className="font-semibold text-foreground group-hover:text-primary transition-colors">{solution.title}</div>
+                  <div className="text-sm text-muted-foreground">{solution.description}</div>
                 </div>
               </a>
             ))}
