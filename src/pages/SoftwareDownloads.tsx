@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Download, Code, Wrench, Monitor, Cpu, Settings } from "lucide-react";
-
+import { Download, Code, Wrench, Monitor, Cpu, Settings, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 const softwareCategories = [
   {
     title: "Camera Software Suites",
@@ -38,8 +38,15 @@ const SoftwareDownloads = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary">
+      <section className="pt-24 lg:pt-32 pb-12 bg-secondary">
         <div className="container mx-auto px-4">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <ChevronRight className="w-4 h-4" />
+            <span className="text-foreground font-medium">Software Downloads</span>
+          </nav>
+          
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Software Downloads
