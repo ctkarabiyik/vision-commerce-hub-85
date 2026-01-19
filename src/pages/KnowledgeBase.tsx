@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, BookOpen, FileText, Video, HelpCircle, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
@@ -93,8 +94,15 @@ const KnowledgeBase = () => {
       <Navbar />
       
       {/* Hero Section with Search */}
-      <section className="pt-32 pb-16 bg-secondary">
+      <section className="pt-24 lg:pt-32 pb-12 bg-secondary">
         <div className="container mx-auto px-4">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <ChevronRight className="w-4 h-4" />
+            <span className="text-foreground font-medium">Knowledge Base</span>
+          </nav>
+          
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Knowledge Base
