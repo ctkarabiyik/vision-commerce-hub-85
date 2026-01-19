@@ -97,36 +97,44 @@ const categories = [
   },
 ];
 
-const featuredProducts = [
-  {
-    name: "ACE-2040 Pro Series",
-    brand: "BASLER",
-    image: cameraProduct1,
-    resolution: "4.2 MP",
-    slug: "ace-2040-pro-series",
-  },
-  {
-    name: "DART-X Industrial",
-    brand: "COGNEX",
-    image: cameraProduct2,
-    resolution: "12 MP",
-    slug: "dart-x-industrial",
-  },
-  {
-    name: "APEX Vision Core",
-    brand: "FLIR",
-    image: cameraProduct3,
-    resolution: "5.1 MP",
-    slug: "apex-vision-core",
-  },
-  {
-    name: "MV-8000 Ultra",
-    brand: "HIKROBOT",
-    image: cameraProduct4,
-    resolution: "8.9 MP",
-    slug: "mv-8000-ultra",
-  },
-];
+const productsByCategory: Record<string, Array<{ name: string; brand: string; image: string; resolution: string; slug: string }>> = {
+  "Area Scan Cameras": [
+    { name: "ACE-2040 Pro Series", brand: "BASLER", image: cameraProduct1, resolution: "4.2 MP", slug: "ace-2040-pro-series" },
+    { name: "DART-X Industrial", brand: "COGNEX", image: cameraProduct2, resolution: "12 MP", slug: "dart-x-industrial" },
+    { name: "APEX Vision Core", brand: "FLIR", image: cameraProduct3, resolution: "5.1 MP", slug: "apex-vision-core" },
+    { name: "MV-8000 Ultra", brand: "HIKROBOT", image: cameraProduct4, resolution: "8.9 MP", slug: "mv-8000-ultra" },
+  ],
+  "Line Scan Cameras": [
+    { name: "LineScan Pro 8K", brand: "BASLER", image: cameraProduct2, resolution: "8K", slug: "linescan-pro-8k" },
+    { name: "SpeedLine X200", brand: "COGNEX", image: cameraProduct3, resolution: "4K", slug: "speedline-x200" },
+    { name: "WebScan Elite", brand: "FLIR", image: cameraProduct1, resolution: "16K", slug: "webscan-elite" },
+    { name: "RapidScan LS", brand: "HIKROBOT", image: cameraProduct4, resolution: "12K", slug: "rapidscan-ls" },
+  ],
+  "Smart Cameras": [
+    { name: "VisionAI 5000", brand: "COGNEX", image: cameraProduct3, resolution: "5 MP", slug: "visionai-5000" },
+    { name: "EdgeSense Pro", brand: "BASLER", image: cameraProduct1, resolution: "2 MP", slug: "edgesense-pro" },
+    { name: "SmartEye X1", brand: "HIKROBOT", image: cameraProduct4, resolution: "3 MP", slug: "smarteye-x1" },
+    { name: "AI-Cam Ultra", brand: "FLIR", image: cameraProduct2, resolution: "4 MP", slug: "ai-cam-ultra" },
+  ],
+  "3D Cameras": [
+    { name: "DepthSense 3D", brand: "FLIR", image: cameraProduct4, resolution: "1.3 MP", slug: "depthsense-3d" },
+    { name: "VoluScan Pro", brand: "BASLER", image: cameraProduct2, resolution: "2.1 MP", slug: "voluscan-pro" },
+    { name: "3D-Vision Elite", brand: "COGNEX", image: cameraProduct1, resolution: "0.9 MP", slug: "3d-vision-elite" },
+    { name: "TriScan 360", brand: "HIKROBOT", image: cameraProduct3, resolution: "1.6 MP", slug: "triscan-360" },
+  ],
+  "Embedded Vision": [
+    { name: "MicroVision OEM", brand: "BASLER", image: cameraProduct1, resolution: "2 MP", slug: "microvision-oem" },
+    { name: "CompactCore X", brand: "FLIR", image: cameraProduct3, resolution: "5 MP", slug: "compactcore-x" },
+    { name: "EmbedSense Mini", brand: "COGNEX", image: cameraProduct2, resolution: "1.6 MP", slug: "embedsense-mini" },
+    { name: "NanoVision Pro", brand: "HIKROBOT", image: cameraProduct4, resolution: "3.2 MP", slug: "nanovision-pro" },
+  ],
+  "Accessories": [
+    { name: "ProLens 25mm F1.4", brand: "BASLER", image: cameraProduct2, resolution: "C-Mount", slug: "prolens-25mm" },
+    { name: "LED Ring Light", brand: "FLIR", image: cameraProduct4, resolution: "24V DC", slug: "led-ring-light" },
+    { name: "GigE Cable 10m", brand: "COGNEX", image: cameraProduct1, resolution: "Cat6A", slug: "gige-cable-10m" },
+    { name: "IP67 Enclosure", brand: "HIKROBOT", image: cameraProduct3, resolution: "Aluminum", slug: "ip67-enclosure" },
+  ],
+};
 
 const supportLinks = [
   { title: "Software Downloads", description: "Drivers, SDKs, and utilities", href: "/software-downloads" },
@@ -141,6 +149,9 @@ const Navbar = () => {
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
+  const [hoveredCategory, setHoveredCategory] = useState<string>("Area Scan Cameras");
+
+  const currentProducts = productsByCategory[hoveredCategory] || productsByCategory["Area Scan Cameras"];
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-colors duration-200 ${
@@ -307,13 +318,20 @@ const Navbar = () => {
                   <a 
                     key={index}
                     href={category.href}
-                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-secondary transition-colors group"
+                    className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
+                      hoveredCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'
+                    }`}
+                    onMouseEnter={() => setHoveredCategory(category.title)}
                   >
-                    <div className="w-8 h-8 rounded bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
+                      hoveredCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'
+                    }`}>
                       <category.icon className="w-4 h-4 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <div className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{category.title}</div>
+                      <div className={`font-semibold text-sm transition-colors ${
+                        hoveredCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
+                      }`}>{category.title}</div>
                       <div className="text-xs text-muted-foreground">{category.count} Products</div>
                     </div>
                   </a>
@@ -325,7 +343,7 @@ const Navbar = () => {
             <div className="col-span-9 border-l border-border pl-6 flex flex-col justify-center">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Products</h3>
               <div className="grid grid-cols-4 gap-4">
-                {featuredProducts.map((product, index) => (
+                {currentProducts.map((product, index) => (
                   <Link 
                     key={index}
                     to={`/product/${product.slug}`}
