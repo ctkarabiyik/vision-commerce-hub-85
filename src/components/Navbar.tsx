@@ -18,31 +18,37 @@ const solutions = [
     image: solutionManufacturing,
     title: "Manufacturing & Quality Control",
     description: "Automated defect detection and measurement",
+    href: "/solutions/manufacturing",
   },
   {
     image: solutionAutomotive,
     title: "Automotive Industry",
     description: "Vision-guided robotics and inspection",
+    href: "#",
   },
   {
     image: solutionPharmaceutical,
     title: "Pharmaceutical & Medical",
     description: "Label verification and contamination detection",
+    href: "#",
   },
   {
     image: solutionLogistics,
     title: "Logistics & Packaging",
     description: "Barcode reading and sorting automation",
+    href: "#",
   },
   {
     image: solutionElectronics,
     title: "Electronics & Semiconductor",
     description: "PCB inspection and chip alignment",
+    href: "#",
   },
   {
     image: solutionResearch,
     title: "Research & Laboratory",
     description: "High-resolution scientific imaging",
+    href: "#",
   },
 ];
 
@@ -363,9 +369,8 @@ const Navbar = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-3 gap-6">
             {solutions.map((solution, index) => (
-              <a 
+              <div 
                 key={index}
-                href="#"
                 className="group rounded-lg overflow-hidden hover:bg-secondary transition-colors"
               >
                 <div className="aspect-[16/7] bg-secondary overflow-hidden">
@@ -377,9 +382,16 @@ const Navbar = () => {
                 </div>
                 <div className="p-4">
                   <div className="font-semibold text-foreground group-hover:text-primary transition-colors">{solution.title}</div>
-                  <div className="text-sm text-muted-foreground">{solution.description}</div>
+                  <div className="text-sm text-muted-foreground mb-3">{solution.description}</div>
+                  <Link 
+                    to={solution.href}
+                    className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                  >
+                    Read More
+                    <ChevronDown className="w-3 h-3 rotate-[-90deg]" />
+                  </Link>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
