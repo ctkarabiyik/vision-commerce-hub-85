@@ -124,9 +124,11 @@ const FeaturedProducts = () => {
           <div className="border border-border rounded-xl p-6">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-bold text-foreground">Software Downloads</h3>
-              <Button variant="link" className="px-0 text-sm">
-                View all →
-              </Button>
+              <Link to="/software-downloads">
+                <Button variant="link" className="px-0 text-sm">
+                  View all →
+                </Button>
+              </Link>
             </div>
             <div className="space-y-3">
               {softwareDownloads.map((item, index) => (
@@ -159,9 +161,11 @@ const FeaturedProducts = () => {
           <div className="border border-border rounded-xl p-6">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-bold text-foreground">Knowledge Base</h3>
-              <Button variant="link" className="px-0 text-sm">
-                Browse all →
-              </Button>
+              <Link to="/knowledge-base">
+                <Button variant="link" className="px-0 text-sm">
+                  Browse all →
+                </Button>
+              </Link>
             </div>
             <div className="space-y-3">
               {knowledgeArticles.map((article, index) => (
