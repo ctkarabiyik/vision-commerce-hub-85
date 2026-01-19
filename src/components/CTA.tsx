@@ -15,17 +15,13 @@ const CTA = () => {
             Get a custom quote within 24 hours.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex justify-center mb-12">
             <Link to="/contact-us">
               <Button variant="heroOutline" className="group">
                 Contact Us
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <Button variant="heroOutline">
-              <Phone className="w-5 h-5" />
-              Call Us Now
-            </Button>
           </div>
 
           {/* Contact Info */}
