@@ -106,12 +106,12 @@ const ProductDetail = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="gap-2">
-                  <ShoppingCart className="w-5 h-5" />
+                  <ShoppingCart className="w-5 h-5 flex-shrink-0" />
                   Request Quote
                 </Button>
-                <Button variant="outline" size="lg" className="gap-2">
-                  <Download className="w-5 h-5" />
-                  Download Datasheet
+                <Button variant="outline" size="lg" className="gap-2 whitespace-nowrap">
+                  <Download className="w-5 h-5 flex-shrink-0" />
+                  <span className="truncate">Download Datasheet</span>
                 </Button>
               </div>
             </div>
