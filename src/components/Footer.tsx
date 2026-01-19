@@ -1,10 +1,11 @@
-import { Camera, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+import { Camera, Facebook, Twitter, Linkedin, Youtube, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
     <footer className="bg-accent text-accent-foreground">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
             <a href="/" className="flex items-center gap-2 mb-6">
@@ -33,6 +34,12 @@ const Footer = () => {
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
+            <Button asChild className="mt-6 gap-2">
+              <a href="https://www.alarge.co.uk" target="_blank" rel="noopener noreferrer">
+                Visit Alarge Website
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </Button>
           </div>
 
           {/* Products */}
@@ -48,17 +55,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
-            <h4 className="font-semibold text-lg mb-6">Company</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Careers</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Partners</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">News & Events</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Contact</a></li>
-            </ul>
-          </div>
 
           {/* Support */}
           <div>
