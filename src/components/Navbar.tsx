@@ -1,11 +1,44 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Box } from "lucide-react";
+import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Box, Factory, Car, Pill, Cpu, Package } from "lucide-react";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import cameraProduct2 from "@/assets/camera-product-2.jpg";
 import cameraProduct3 from "@/assets/camera-product-3.jpg";
 import cameraProduct4 from "@/assets/camera-product-4.jpg";
+
+const industries = [
+  {
+    icon: Factory,
+    title: "Manufacturing & Quality Control",
+    description: "Automated defect detection and measurement",
+  },
+  {
+    icon: Car,
+    title: "Automotive Industry",
+    description: "Vision-guided robotics and inspection",
+  },
+  {
+    icon: Pill,
+    title: "Pharmaceutical & Medical",
+    description: "Label verification and contamination detection",
+  },
+  {
+    icon: Package,
+    title: "Logistics & Packaging",
+    description: "Barcode reading and sorting automation",
+  },
+  {
+    icon: Cpu,
+    title: "Electronics & Semiconductor",
+    description: "PCB inspection and chip alignment",
+  },
+  {
+    icon: Microscope,
+    title: "Research & Laboratory",
+    description: "High-resolution scientific imaging",
+  },
+];
 
 const categories = [
   {
@@ -86,7 +119,9 @@ const featuredProducts = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileCategories, setMobileCategories] = useState(false);
+  const [mobileIndustries, setMobileIndustries] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
+  const [industriesDropdownOpen, setIndustriesDropdownOpen] = useState(false);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-colors duration-200 ${
@@ -115,6 +150,16 @@ const Navbar = () => {
               <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">
                 Products
                 <ChevronDown className={`w-4 h-4 transition-transform ${desktopDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+            <div 
+              className="relative"
+              onMouseEnter={() => setIndustriesDropdownOpen(true)}
+              onMouseLeave={() => setIndustriesDropdownOpen(false)}
+            >
+              <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">
+                Industries
+                <ChevronDown className={`w-4 h-4 transition-transform ${industriesDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
             </div>
             <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
@@ -166,6 +211,27 @@ const Navbar = () => {
                   ))}
                 </div>
               )}
+              <button 
+                onClick={() => setMobileIndustries(!mobileIndustries)}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left"
+              >
+                Industries
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileIndustries ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileIndustries && (
+                <div className="pl-4 flex flex-col gap-2">
+                  {industries.map((industry, index) => (
+                    <a 
+                      key={index}
+                      href="#"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                    >
+                      <industry.icon className="w-4 h-4" />
+                      {industry.title}
+                    </a>
+                  ))}
+                </div>
+              )}
               <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 About Us
               </a>
@@ -180,7 +246,7 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Full-width Mega Menu */}
+      {/* Full-width Products Mega Menu */}
       <div 
         className={`absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg transition-all duration-200 z-50 ${
           desktopDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
@@ -245,6 +311,35 @@ const Navbar = () => {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Industries Dropdown Menu */}
+      <div 
+        className={`absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg transition-all duration-200 z-50 ${
+          industriesDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+        onMouseEnter={() => setIndustriesDropdownOpen(true)}
+        onMouseLeave={() => setIndustriesDropdownOpen(false)}
+      >
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-3 gap-6">
+            {industries.map((industry, index) => (
+              <a 
+                key={index}
+                href="#"
+                className="flex items-center gap-4 p-4 rounded-lg hover:bg-secondary transition-colors group"
+              >
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                  <industry.icon className="w-6 h-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <div className="font-semibold text-foreground group-hover:text-primary transition-colors">{industry.title}</div>
+                  <div className="text-sm text-muted-foreground">{industry.description}</div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>
