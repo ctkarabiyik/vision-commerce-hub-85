@@ -406,23 +406,21 @@ const Navbar = () => {
         onMouseLeave={() => setSupportDropdownOpen(false)}
       >
         <div className="container mx-auto px-4 py-6">
-          <div className="max-w-md">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Support Resources</h3>
-            <div className="flex flex-col gap-2">
-              {supportLinks.map((link, index) => (
-                <Link 
-                  key={index}
-                  to={link.href}
-                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary transition-colors group"
-                >
-                  <div className="flex-1">
-                    <div className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{link.title}</div>
-                    <div className="text-xs text-muted-foreground">{link.description}</div>
-                  </div>
-                  <ChevronDown className="w-4 h-4 rotate-[-90deg] text-muted-foreground group-hover:text-primary transition-colors" />
-                </Link>
-              ))}
-            </div>
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Support Resources</h3>
+          <div className="flex flex-row gap-4">
+            {supportLinks.map((link, index) => (
+              <Link 
+                key={index}
+                to={link.href}
+                className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary transition-colors group flex-1"
+              >
+                <div className="flex-1">
+                  <div className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{link.title}</div>
+                  <div className="text-xs text-muted-foreground">{link.description}</div>
+                </div>
+                <ChevronDown className="w-4 h-4 rotate-[-90deg] text-muted-foreground group-hover:text-primary transition-colors" />
+              </Link>
+            ))}
           </div>
         </div>
       </div>
