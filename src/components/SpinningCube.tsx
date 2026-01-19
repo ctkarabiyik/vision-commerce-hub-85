@@ -44,10 +44,10 @@ const SpinningCube = () => {
 
   return (
     <div className="w-full h-full flex flex-col">
-      <div className="flex-1">
+      <div className="flex-1 min-h-0 relative">
         <Canvas
           camera={{ position: [4, 3, 5], fov: 50 }}
-          className="w-full h-full"
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
         >
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 5]} intensity={1} />
