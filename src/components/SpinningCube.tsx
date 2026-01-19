@@ -23,7 +23,7 @@ const Cube = ({ manualRotation, isAutoRotating }: CubeProps) => {
         }
         meshRef.current.rotation.y = autoRotationRef.current;
       } else {
-        meshRef.current.rotation.y = (manualRotation / 100) * Math.PI * 2;
+        meshRef.current.rotation.y = (manualRotation / 360) * Math.PI * 2;
         autoRotationRef.current = meshRef.current.rotation.y;
       }
     }
@@ -66,7 +66,7 @@ const SpinningCube = () => {
           <Slider
             value={[rotation]}
             onValueChange={handleSliderChange}
-            max={100}
+            max={360}
             step={1}
             className="flex-1"
           />
