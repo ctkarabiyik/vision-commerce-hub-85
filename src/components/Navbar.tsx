@@ -337,7 +337,7 @@ const Navbar = () => {
                 href="#"
                 className="group rounded-lg overflow-hidden hover:bg-secondary transition-colors"
               >
-                <div className="aspect-video bg-secondary overflow-hidden">
+                <div className="aspect-[16/7] bg-secondary overflow-hidden">
                   <img 
                     src={solution.image} 
                     alt={solution.title}
