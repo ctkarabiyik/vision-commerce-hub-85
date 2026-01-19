@@ -132,8 +132,8 @@ const KnowledgeBase = () => {
                 href="#"
                 className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors group"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <category.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                  <category.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
                   {category.title}
