@@ -17,6 +17,10 @@ const Cube = ({ manualRotation, isAutoRotating }: CubeProps) => {
     if (meshRef.current) {
       if (isAutoRotating) {
         autoRotationRef.current += delta * 0.5;
+        // Limit to one full rotation (2π radians)
+        if (autoRotationRef.current > Math.PI * 2) {
+          autoRotationRef.current = 0;
+        }
         meshRef.current.rotation.y = autoRotationRef.current;
       } else {
         meshRef.current.rotation.y = (manualRotation / 100) * Math.PI * 2;
