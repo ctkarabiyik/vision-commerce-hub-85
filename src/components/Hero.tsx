@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cpu, Eye, Zap } from "lucide-react";
+import { Download, Cpu, Eye, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-camera.jpg";
 
 const Hero = () => {
@@ -39,11 +39,8 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Button variant="hero" className="group">
-              Browse Cameras
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="heroOutline">
-              Request Demo
+              <Download className="w-5 h-5" />
+              Download Our Catalog
             </Button>
           </div>
 
