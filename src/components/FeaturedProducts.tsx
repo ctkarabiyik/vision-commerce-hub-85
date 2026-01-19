@@ -121,7 +121,7 @@ const FeaturedProducts = () => {
         {/* Resources Section */}
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Software Downloads */}
-          <div className="bg-secondary rounded-xl p-6">
+          <div className="border border-border rounded-xl p-6">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-bold text-foreground">Software Downloads</h3>
               <Button variant="link" className="px-0 text-sm">
@@ -156,7 +156,7 @@ const FeaturedProducts = () => {
           </div>
 
           {/* Knowledge Articles */}
-          <div className="bg-secondary rounded-xl p-6">
+          <div className="border border-border rounded-xl p-6">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-bold text-foreground">Knowledge Base</h3>
               <Button variant="link" className="px-0 text-sm">
