@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SpinningCube from "@/components/SpinningCube";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Check, Download, ShoppingCart } from "lucide-react";
+import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, BookOpen, Wrench } from "lucide-react";
 
 const productData = {
   "ace-2040-pro-series": {
@@ -172,6 +172,83 @@ const ProductDetail = () => {
                     ))}
                   </tbody>
                 </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Software & Documentation Section */}
+      <section className="py-16 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-bold text-foreground mb-2">Downloads & Resources</h2>
+            <p className="text-muted-foreground">Software, drivers, and documentation for {product.name}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Software Downloads */}
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                <Code className="w-5 h-5 text-primary" />
+                Software & Drivers
+              </h3>
+              <div className="space-y-3">
+                {[
+                  { title: "Pylon Camera Software Suite", version: "v7.4.0", size: "245 MB", icon: Code },
+                  { title: "GigE Vision Driver", version: "v2.1.3", size: "12 MB", icon: Wrench },
+                  { title: "SDK & API Libraries", version: "v3.2.1", size: "89 MB", icon: Code },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-card border border-border rounded-lg p-4 flex items-center gap-4 hover:border-primary/50 transition-colors group"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <item.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-foreground text-sm">{item.title}</h4>
+                      <p className="text-xs text-muted-foreground">{item.version} • {item.size}</p>
+                    </div>
+                    <Button size="sm" variant="outline" className="gap-1 flex-shrink-0">
+                      <Download className="w-4 h-4" />
+                      <span className="hidden sm:inline">Download</span>
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Technical Documentation */}
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                <FileText className="w-5 h-5 text-primary" />
+                Technical Documentation
+              </h3>
+              <div className="space-y-3">
+                {[
+                  { title: "Product Datasheet", type: "PDF", size: "2.4 MB", icon: FileText },
+                  { title: "User Manual", type: "PDF", size: "8.1 MB", icon: BookOpen },
+                  { title: "Integration Guide", type: "PDF", size: "4.2 MB", icon: FileText },
+                  { title: "CAD/3D Models", type: "ZIP", size: "15 MB", icon: Wrench },
+                ].map((doc, index) => (
+                  <div
+                    key={index}
+                    className="bg-card border border-border rounded-lg p-4 flex items-center gap-4 hover:border-primary/50 transition-colors group"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-accent/50 flex items-center justify-center flex-shrink-0 group-hover:bg-accent transition-colors">
+                      <doc.icon className="w-5 h-5 text-foreground" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-foreground text-sm">{doc.title}</h4>
+                      <p className="text-xs text-muted-foreground">{doc.type} • {doc.size}</p>
+                    </div>
+                    <Button size="sm" variant="outline" className="gap-1 flex-shrink-0">
+                      <Download className="w-4 h-4" />
+                      <span className="hidden sm:inline">Download</span>
+                    </Button>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
