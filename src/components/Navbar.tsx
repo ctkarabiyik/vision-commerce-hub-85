@@ -189,7 +189,7 @@ const Navbar = () => {
         onMouseLeave={() => setDesktopDropdownOpen(false)}
       >
         <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-12 gap-6">
+          <div className="grid grid-cols-12 gap-6 items-center">
             {/* Categories Section */}
             <div className="col-span-3">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Categories</h3>
@@ -213,7 +213,7 @@ const Navbar = () => {
             </div>
 
             {/* Featured Products Section */}
-            <div className="col-span-9 border-l border-border pl-6">
+            <div className="col-span-9 border-l border-border pl-6 flex flex-col justify-center">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Products</h3>
               <div className="grid grid-cols-4 gap-4">
                 {featuredProducts.map((product, index) => (
