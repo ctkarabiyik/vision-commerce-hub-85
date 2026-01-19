@@ -93,7 +93,7 @@ const ManufacturingSolutions = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact-us">
                   <Button size="lg" className="group w-full sm:w-auto">
-                    Request a Consultation
+                    Contact Us
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
@@ -111,17 +111,6 @@ const ManufacturingSolutions = () => {
                   alt="Manufacturing quality control" 
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-card p-4 rounded-lg shadow-lg border border-border">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Gauge className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-foreground">99.9%</div>
-                    <div className="text-sm text-muted-foreground">Detection Accuracy</div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -215,11 +204,11 @@ const ManufacturingSolutions = () => {
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
               Our application engineers can help you select the optimal camera system for your 
-              specific manufacturing requirements. Get a free consultation today.
+              specific manufacturing requirements. Get in touch today.
             </p>
             <Link to="/contact-us">
               <Button size="lg" className="group">
-                Schedule a Consultation
+                Contact Us
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
