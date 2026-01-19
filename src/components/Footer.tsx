@@ -6,6 +6,31 @@ const Footer = () => {
     <footer className="bg-accent text-accent-foreground">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 max-w-5xl mx-auto">
+          {/* Products */}
+          <div>
+            <h4 className="font-semibold text-lg mb-6">Products</h4>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Area Scan Cameras</a></li>
+              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Line Scan Cameras</a></li>
+              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Smart Cameras</a></li>
+              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">3D Cameras</a></li>
+              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Embedded Vision</a></li>
+              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Accessories</a></li>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h4 className="font-semibold text-lg mb-6">Support</h4>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Technical Support</a></li>
+              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Documentation</a></li>
+              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Software Downloads</a></li>
+              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">RMA & Returns</a></li>
+              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">FAQs</a></li>
+            </ul>
+          </div>
+
           {/* Brand */}
           <div>
             <a href="/" className="flex items-center gap-2 mb-6">
@@ -40,32 +65,6 @@ const Footer = () => {
                 <ExternalLink className="w-4 h-4" />
               </a>
             </Button>
-          </div>
-
-          {/* Products */}
-          <div>
-            <h4 className="font-semibold text-lg mb-6">Products</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Area Scan Cameras</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Line Scan Cameras</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Smart Cameras</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">3D Cameras</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Embedded Vision</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Accessories</a></li>
-            </ul>
-          </div>
-
-
-          {/* Support */}
-          <div>
-            <h4 className="font-semibold text-lg mb-6">Support</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Technical Support</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Software Downloads</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">RMA & Returns</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">FAQs</a></li>
-            </ul>
           </div>
         </div>
       </div>
