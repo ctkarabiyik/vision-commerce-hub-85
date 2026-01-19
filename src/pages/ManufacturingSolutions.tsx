@@ -90,19 +90,12 @@ const ManufacturingSolutions = () => {
                 enable automated defect detection, precise measurement, and real-time quality assurance 
                 to maximize efficiency and minimize waste.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact-us">
-                  <Button size="lg" className="group w-full sm:w-auto">
-                    Contact Us
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link to="/products">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    Browse Products
-                  </Button>
-                </Link>
-              </div>
+              <Link to="/products">
+                <Button size="lg" className="group">
+                  Browse Products
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
             <div className="relative">
               <div className="aspect-[4/3] rounded-xl overflow-hidden">
@@ -204,11 +197,11 @@ const ManufacturingSolutions = () => {
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
               Our application engineers can help you select the optimal camera system for your 
-              specific manufacturing requirements. Get in touch today.
+              specific manufacturing requirements. Get a free consultation today.
             </p>
             <Link to="/contact-us">
               <Button size="lg" className="group">
-                Contact Us
+                Request a Consultation
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
