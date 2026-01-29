@@ -430,7 +430,7 @@ const Navbar = () => {
                 <div className="mt-4">
                   <Link 
                     to="/products?type=cameras"
-                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-primary text-primary-foreground text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors"
+                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-background text-primary border-2 border-primary text-sm font-semibold rounded-xl hover:bg-primary hover:text-primary-foreground transition-colors"
                   >
                     View All Cameras
                   </Link>
@@ -494,7 +494,7 @@ const Navbar = () => {
                 <div className="mt-4">
                   <Link 
                     to="/products?type=lenses"
-                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-primary text-primary-foreground text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors"
+                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-background text-primary border-2 border-primary text-sm font-semibold rounded-xl hover:bg-primary hover:text-primary-foreground transition-colors"
                   >
                     View All Lenses
                   </Link>
