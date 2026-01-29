@@ -4,17 +4,21 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Grid3X3, LayoutList, Aperture, Focus, Scan } from "lucide-react";
+import { ChevronRight, Grid3X3, LayoutList, Aperture, Focus, Scan, Circle, ZoomIn, Settings, Microscope } from "lucide-react";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import cameraProduct2 from "@/assets/camera-product-2.jpg";
 import cameraProduct3 from "@/assets/camera-product-3.jpg";
 import cameraProduct4 from "@/assets/camera-product-4.jpg";
 
 const lensCategories = [
-  { id: "all", title: "All Lenses", icon: Aperture, count: 224 },
+  { id: "all", title: "All Lenses", icon: Aperture, count: 367 },
   { id: "fa-lenses", title: "FA Lenses", icon: Aperture, count: 120 },
   { id: "telecentric", title: "Telecentric Lenses", icon: Focus, count: 48 },
+  { id: "vr", title: "VR Lenses", icon: Circle, count: 42 },
+  { id: "macro", title: "Macro Lenses", icon: ZoomIn, count: 35 },
+  { id: "scheimpflug", title: "Scheimpflug Lenses", icon: Settings, count: 28 },
   { id: "line-scan", title: "Line Scan Lenses", icon: Scan, count: 56 },
+  { id: "large-format", title: "Large Format Lenses", icon: Microscope, count: 38 },
 ];
 
 const products = [
@@ -125,6 +129,114 @@ const products = [
     fps: "-",
     interface: "Fixed",
     category: "line-scan",
+  },
+  {
+    name: "WideVR 180",
+    brand: "BASLER",
+    image: cameraProduct3,
+    resolution: "180° FOV",
+    fps: "-",
+    interface: "Fixed",
+    category: "vr",
+  },
+  {
+    name: "PanoView Ultra",
+    brand: "COGNEX",
+    image: cameraProduct2,
+    resolution: "220° FOV",
+    fps: "-",
+    interface: "Fixed",
+    category: "vr",
+  },
+  {
+    name: "ImmerseLens 360",
+    brand: "FLIR",
+    image: cameraProduct4,
+    resolution: "360° FOV",
+    fps: "-",
+    interface: "Fixed",
+    category: "vr",
+  },
+  {
+    name: "MacroVision 5x",
+    brand: "BASLER",
+    image: cameraProduct1,
+    resolution: "5x Mag",
+    fps: "-",
+    interface: "Fixed",
+    category: "macro",
+  },
+  {
+    name: "CloseUp Pro 3x",
+    brand: "COGNEX",
+    image: cameraProduct3,
+    resolution: "3x Mag",
+    fps: "-",
+    interface: "Fixed",
+    category: "macro",
+  },
+  {
+    name: "MicroInspect 10x",
+    brand: "FLIR",
+    image: cameraProduct4,
+    resolution: "10x Mag",
+    fps: "-",
+    interface: "Fixed",
+    category: "macro",
+  },
+  {
+    name: "TiltShift Pro",
+    brand: "BASLER",
+    image: cameraProduct2,
+    resolution: "±8° Tilt",
+    fps: "-",
+    interface: "Adjustable",
+    category: "scheimpflug",
+  },
+  {
+    name: "ScheimView 45",
+    brand: "COGNEX",
+    image: cameraProduct1,
+    resolution: "±12° Tilt",
+    fps: "-",
+    interface: "Adjustable",
+    category: "scheimpflug",
+  },
+  {
+    name: "FocusPlane X",
+    brand: "FLIR",
+    image: cameraProduct3,
+    resolution: "±10° Tilt",
+    fps: "-",
+    interface: "Adjustable",
+    category: "scheimpflug",
+  },
+  {
+    name: "LargeView 120mm",
+    brand: "BASLER",
+    image: cameraProduct1,
+    resolution: "APS-H",
+    fps: "-",
+    interface: "Fixed",
+    category: "large-format",
+  },
+  {
+    name: "BigSensor Pro",
+    brand: "COGNEX",
+    image: cameraProduct4,
+    resolution: "Full Frame",
+    fps: "-",
+    interface: "Fixed",
+    category: "large-format",
+  },
+  {
+    name: "MegaFormat 80mm",
+    brand: "FLIR",
+    image: cameraProduct2,
+    resolution: "Medium Format",
+    fps: "-",
+    interface: "Fixed",
+    category: "large-format",
   },
 ];
 
