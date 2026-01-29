@@ -170,7 +170,7 @@ const Products = () => {
               <div className="bg-card border border-border rounded-lg p-5 sticky top-24">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                    Camera Categories
+                    Filters
                   </h3>
                   <div className="flex items-center border border-border rounded-md">
                     <button className="p-1.5 hover:bg-secondary transition-colors border-r border-border bg-secondary">
