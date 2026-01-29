@@ -1,5 +1,6 @@
-import { Camera, Facebook, Twitter, Linkedin, Youtube, ExternalLink } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Youtube, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import alargeLogo from "@/assets/alarge-logo-footer.svg";
 
 const Footer = () => {
   return (
@@ -33,14 +34,8 @@ const Footer = () => {
 
           {/* Brand */}
           <div>
-            <a href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-sm flex items-center justify-center">
-                <Camera className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold tracking-tight">VISIONTECH</span>
-                <span className="text-[10px] uppercase tracking-widest text-accent-foreground/60 -mt-1">Industrial Cameras</span>
-              </div>
+            <a href="/" className="flex items-center mb-6">
+              <img src={alargeLogo} alt="Alarge Logo" className="h-12" />
             </a>
             <p className="text-sm text-accent-foreground/70 mb-6">
               Your trusted partner for industrial machine vision cameras and components since 2008.
