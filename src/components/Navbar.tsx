@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Box } from "lucide-react";
+import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle } from "lucide-react";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import cameraProduct2 from "@/assets/camera-product-2.jpg";
 import cameraProduct3 from "@/assets/camera-product-3.jpg";
@@ -52,25 +52,25 @@ const solutions = [
   },
 ];
 
-const categories = [
+const cameraCategories = [
   {
     icon: Camera,
     title: "Area Scan Cameras",
-    description: "High-resolution sensors for quality inspection and measurement",
+    description: "High-resolution sensors for quality inspection",
     count: 156,
     href: "/area-scan-cameras",
   },
   {
     icon: Scan,
     title: "Line Scan Cameras",
-    description: "Continuous imaging for web inspection and sorting",
+    description: "Continuous imaging for web inspection",
     count: 84,
     href: "#line-scan-cameras",
   },
   {
     icon: CircuitBoard,
     title: "Smart Cameras",
-    description: "Built-in processing for edge AI applications",
+    description: "Built-in processing for edge AI",
     count: 62,
     href: "#smart-cameras",
   },
@@ -88,12 +88,36 @@ const categories = [
     count: 98,
     href: "#embedded-vision",
   },
+];
+
+const lensCategories = [
   {
-    icon: Box,
-    title: "Accessories",
-    description: "Lenses, cables, lighting, and enclosures",
-    count: 320,
-    href: "#accessories",
+    icon: Aperture,
+    title: "Fixed Focal Lenses",
+    description: "Prime lenses for precision imaging",
+    count: 120,
+    href: "#fixed-focal-lenses",
+  },
+  {
+    icon: ZoomIn,
+    title: "Zoom Lenses",
+    description: "Variable focal length for flexibility",
+    count: 65,
+    href: "#zoom-lenses",
+  },
+  {
+    icon: Focus,
+    title: "Telecentric Lenses",
+    description: "Distortion-free measurement optics",
+    count: 48,
+    href: "#telecentric-lenses",
+  },
+  {
+    icon: Circle,
+    title: "Macro Lenses",
+    description: "Close-up imaging and inspection",
+    count: 35,
+    href: "#macro-lenses",
   },
 ];
 
@@ -128,11 +152,29 @@ const productsByCategory: Record<string, Array<{ name: string; brand: string; im
     { name: "EmbedSense Mini", brand: "COGNEX", image: cameraProduct2, resolution: "1.6 MP", slug: "embedsense-mini" },
     { name: "NanoVision Pro", brand: "HIKROBOT", image: cameraProduct4, resolution: "3.2 MP", slug: "nanovision-pro" },
   ],
-  "Accessories": [
+  "Fixed Focal Lenses": [
     { name: "ProLens 25mm F1.4", brand: "BASLER", image: cameraProduct2, resolution: "C-Mount", slug: "prolens-25mm" },
-    { name: "LED Ring Light", brand: "FLIR", image: cameraProduct4, resolution: "24V DC", slug: "led-ring-light" },
-    { name: "GigE Cable 10m", brand: "COGNEX", image: cameraProduct1, resolution: "Cat6A", slug: "gige-cable-10m" },
-    { name: "IP67 Enclosure", brand: "HIKROBOT", image: cameraProduct3, resolution: "Aluminum", slug: "ip67-enclosure" },
+    { name: "OptiPrime 35mm", brand: "COGNEX", image: cameraProduct1, resolution: "F-Mount", slug: "optiprime-35mm" },
+    { name: "VisionFix 50mm", brand: "FLIR", image: cameraProduct3, resolution: "M42", slug: "visionfix-50mm" },
+    { name: "InduLens 16mm", brand: "HIKROBOT", image: cameraProduct4, resolution: "CS-Mount", slug: "indulens-16mm" },
+  ],
+  "Zoom Lenses": [
+    { name: "FlexZoom 12-36mm", brand: "BASLER", image: cameraProduct3, resolution: "3x Zoom", slug: "flexzoom-12-36" },
+    { name: "VarioView 8-48mm", brand: "COGNEX", image: cameraProduct2, resolution: "6x Zoom", slug: "varioview-8-48" },
+    { name: "AdaptLens 10-100mm", brand: "FLIR", image: cameraProduct4, resolution: "10x Zoom", slug: "adaptlens-10-100" },
+    { name: "DynaZoom 18-55mm", brand: "HIKROBOT", image: cameraProduct1, resolution: "3x Zoom", slug: "dynazoom-18-55" },
+  ],
+  "Telecentric Lenses": [
+    { name: "TelePrecision 0.5x", brand: "BASLER", image: cameraProduct4, resolution: "0.5x Mag", slug: "teleprecision-05x" },
+    { name: "MeasureOptic 1x", brand: "COGNEX", image: cameraProduct1, resolution: "1x Mag", slug: "measureoptic-1x" },
+    { name: "AccuView 2x", brand: "FLIR", image: cameraProduct2, resolution: "2x Mag", slug: "accuview-2x" },
+    { name: "BiTelecentric 1.5x", brand: "HIKROBOT", image: cameraProduct3, resolution: "1.5x Mag", slug: "bitelecentric-15x" },
+  ],
+  "Macro Lenses": [
+    { name: "MacroVision 5x", brand: "BASLER", image: cameraProduct1, resolution: "5x Mag", slug: "macrovision-5x" },
+    { name: "CloseUp Pro 3x", brand: "COGNEX", image: cameraProduct3, resolution: "3x Mag", slug: "closeup-pro-3x" },
+    { name: "MicroInspect 10x", brand: "FLIR", image: cameraProduct4, resolution: "10x Mag", slug: "microinspect-10x" },
+    { name: "DetailLens 7x", brand: "HIKROBOT", image: cameraProduct2, resolution: "7x Mag", slug: "detaillens-7x" },
   ],
 };
 
@@ -236,7 +278,19 @@ const Navbar = () => {
               </button>
               {mobileCategories && (
                 <div className="pl-4 flex flex-col gap-2">
-                  {categories.map((category, index) => (
+                  <div className="text-xs font-semibold uppercase text-muted-foreground mt-2">Cameras</div>
+                  {cameraCategories.map((category, index) => (
+                    <a 
+                      key={index}
+                      href={category.href}
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                    >
+                      <category.icon className="w-4 h-4" />
+                      {category.title}
+                    </a>
+                  ))}
+                  <div className="text-xs font-semibold uppercase text-muted-foreground mt-3">Lenses</div>
+                  {lensCategories.map((category, index) => (
                     <a 
                       key={index}
                       href={category.href}
@@ -310,37 +364,71 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-12 gap-6 items-center">
-            {/* Categories Section */}
-            <div className="col-span-3">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Categories</h3>
-              <div className="flex flex-col gap-2">
-                {categories.map((category, index) => (
-                  <a 
-                    key={index}
-                    href={category.href}
-                    className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
-                      hoveredCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'
-                    }`}
-                    onMouseEnter={() => setHoveredCategory(category.title)}
-                  >
-                    <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
-                      hoveredCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'
-                    }`}>
-                      <category.icon className="w-4 h-4 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <div className={`font-semibold text-sm transition-colors ${
-                        hoveredCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
-                      }`}>{category.title}</div>
-                      <div className="text-xs text-muted-foreground">{category.count} Products</div>
-                    </div>
-                  </a>
-                ))}
+            {/* Categories Section - Two columns */}
+            <div className="col-span-4">
+              <div className="grid grid-cols-2 gap-6">
+                {/* Cameras Column */}
+                <div>
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Cameras</h3>
+                  <div className="flex flex-col gap-1">
+                    {cameraCategories.map((category, index) => (
+                      <a 
+                        key={index}
+                        href={category.href}
+                        className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
+                          hoveredCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'
+                        }`}
+                        onMouseEnter={() => setHoveredCategory(category.title)}
+                      >
+                        <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
+                          hoveredCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'
+                        }`}>
+                          <category.icon className="w-4 h-4 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <div className={`font-semibold text-sm transition-colors ${
+                            hoveredCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
+                          }`}>{category.title}</div>
+                          <div className="text-xs text-muted-foreground">{category.count} Products</div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Lenses Column */}
+                <div>
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Lenses</h3>
+                  <div className="flex flex-col gap-1">
+                    {lensCategories.map((category, index) => (
+                      <a 
+                        key={index}
+                        href={category.href}
+                        className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
+                          hoveredCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'
+                        }`}
+                        onMouseEnter={() => setHoveredCategory(category.title)}
+                      >
+                        <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
+                          hoveredCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'
+                        }`}>
+                          <category.icon className="w-4 h-4 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <div className={`font-semibold text-sm transition-colors ${
+                            hoveredCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
+                          }`}>{category.title}</div>
+                          <div className="text-xs text-muted-foreground">{category.count} Products</div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Featured Products Section */}
-            <div className="col-span-9 border-l border-border pl-6 flex flex-col justify-center">
+            <div className="col-span-8 border-l border-border pl-6 flex flex-col justify-center">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Products</h3>
               <div className="grid grid-cols-4 gap-4">
                 {currentProducts.map((product, index) => (
