@@ -165,59 +165,76 @@ const Products = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           {/* Toolbar */}
-          <div className="mb-8">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
-              <p className="text-muted-foreground">
-                Showing <span className="font-semibold text-foreground">{filteredProducts.length}</span> products
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="flex items-center border border-border rounded-md">
-                  <button className="p-2 hover:bg-secondary transition-colors border-r border-border bg-secondary">
-                    <Grid3X3 className="w-4 h-4" />
-                  </button>
-                  <button className="p-2 hover:bg-secondary transition-colors">
-                    <LayoutList className="w-4 h-4" />
-                  </button>
-                </div>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+            <p className="text-muted-foreground">
+              Showing <span className="font-semibold text-foreground">{filteredProducts.length}</span> products
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="flex items-center border border-border rounded-md">
+                <button className="p-2 hover:bg-secondary transition-colors border-r border-border bg-secondary">
+                  <Grid3X3 className="w-4 h-4" />
+                </button>
+                <button className="p-2 hover:bg-secondary transition-colors">
+                  <LayoutList className="w-4 h-4" />
+                </button>
               </div>
             </div>
-            
-            {/* Category Filters */}
-            <div className="flex flex-wrap gap-2">
-              {cameraCategories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors text-sm font-medium ${
-                    selectedCategory === category.id 
-                      ? 'bg-primary text-primary-foreground' 
-                      : 'bg-secondary text-foreground hover:bg-secondary/80'
-                  }`}
-                >
-                  <category.icon className="w-4 h-4" />
-                  {category.title}
-                  <span className={`text-xs ${
-                    selectedCategory === category.id ? 'text-primary-foreground/80' : 'text-muted-foreground'
-                  }`}>
-                    ({category.count})
-                  </span>
-                </button>
-              ))}
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Filters Sidebar */}
+            <aside className="lg:w-64 flex-shrink-0">
+              <div className="bg-card border border-border rounded-lg p-5 sticky top-24">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+                  Camera Categories
+                </h3>
+                <div className="flex flex-col gap-1">
+                  {cameraCategories.map((category) => (
+                    <button
+                      key={category.id}
+                      onClick={() => setSelectedCategory(category.id)}
+                      className={`flex items-center gap-3 p-3 rounded-lg transition-colors text-left w-full ${
+                        selectedCategory === category.id 
+                          ? 'bg-primary/10 border border-primary' 
+                          : 'hover:bg-secondary border border-transparent'
+                      }`}
+                    >
+                      <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
+                        selectedCategory === category.id ? 'bg-primary/20' : 'bg-secondary'
+                      }`}>
+                        <category.icon className={`w-4 h-4 ${
+                          selectedCategory === category.id ? 'text-primary' : 'text-muted-foreground'
+                        }`} />
+                      </div>
+                      <div className="flex-1">
+                        <div className={`font-medium text-sm transition-colors ${
+                          selectedCategory === category.id ? 'text-primary' : 'text-foreground'
+                        }`}>
+                          {category.title}
+                        </div>
+                        <div className="text-xs text-muted-foreground">{category.count} Products</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </aside>
+
+            {/* Products Grid */}
+            <div className="flex-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                {filteredProducts.map((product, index) => (
+                  <ProductCard key={index} {...product} />
+                ))}
+              </div>
+
+              {/* Load More */}
+              <div className="text-center mt-12">
+                <Button variant="outline" size="lg">
+                  Load More Products
+                </Button>
+              </div>
             </div>
-          </div>
-
-          {/* Product Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProducts.map((product, index) => (
-              <ProductCard key={index} {...product} />
-            ))}
-          </div>
-
-          {/* Load More */}
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg">
-              Load More Products
-            </Button>
           </div>
         </div>
       </section>
