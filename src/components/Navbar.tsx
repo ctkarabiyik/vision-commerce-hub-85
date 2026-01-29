@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle } from "lucide-react";
 import alargeLogo from "@/assets/alarge-logo.svg";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
@@ -496,30 +497,32 @@ const Navbar = () => {
             <div className="grid grid-cols-12 gap-6 items-center">
               <div className="col-span-3">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Lens Types</h3>
-                <div className="flex flex-col gap-1">
-                  {lensCategories.map((category, index) => (
-                    <a 
-                      key={index}
-                      href={category.href}
-                      className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
-                        hoveredLensCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'
-                      }`}
-                      onMouseEnter={() => setHoveredLensCategory(category.title)}
-                    >
-                      <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
-                        hoveredLensCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'
-                      }`}>
-                        <category.icon className="w-4 h-4 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <div className={`font-semibold text-sm transition-colors ${
-                          hoveredLensCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
-                        }`}>{category.title}</div>
-                        <div className="text-xs text-muted-foreground">{category.count} Products</div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
+                <ScrollArea className="h-[240px]">
+                  <div className="flex flex-col gap-1 pr-3">
+                    {lensCategories.map((category, index) => (
+                      <a 
+                        key={index}
+                        href={category.href}
+                        className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
+                          hoveredLensCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'
+                        }`}
+                        onMouseEnter={() => setHoveredLensCategory(category.title)}
+                      >
+                        <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
+                          hoveredLensCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'
+                        }`}>
+                          <category.icon className="w-4 h-4 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <div className={`font-semibold text-sm transition-colors ${
+                            hoveredLensCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
+                          }`}>{category.title}</div>
+                          <div className="text-xs text-muted-foreground">{category.count} Products</div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </ScrollArea>
               </div>
               <div className="col-span-9 border-l border-border pl-6 flex flex-col justify-center">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Lenses</h3>
