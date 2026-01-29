@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Products from "./pages/Products";
+import Lenses from "./pages/Lenses";
 import AreaScanCameras from "./pages/AreaScanCameras";
 import ProductDetail from "./pages/ProductDetail";
 import ContactUs from "./pages/ContactUs";
@@ -24,6 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/lenses" element={<Lenses />} />
           <Route path="/area-scan-cameras" element={<AreaScanCameras />} />
           <Route path="/product/:slug" element={<ProductDetail />} />
           <Route path="/contact-us" element={<ContactUs />} />

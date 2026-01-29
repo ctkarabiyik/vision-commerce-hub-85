@@ -429,7 +429,7 @@ const Navbar = () => {
                 </div>
                 <div className="mt-6">
                   <Link 
-                    to="/products?type=cameras"
+                    to="/products"
                     className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-background text-primary border-2 border-primary text-sm font-semibold rounded-xl hover:bg-primary hover:text-primary-foreground transition-colors"
                   >
                     View All Cameras
@@ -493,7 +493,7 @@ const Navbar = () => {
                 </div>
                 <div className="mt-6">
                   <Link 
-                    to="/products?type=lenses"
+                    to="/lenses"
                     className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-background text-primary border-2 border-primary text-sm font-semibold rounded-xl hover:bg-primary hover:text-primary-foreground transition-colors"
                   >
                     View All Lenses
