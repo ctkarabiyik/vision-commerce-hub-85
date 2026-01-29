@@ -427,13 +427,12 @@ const Navbar = () => {
                     </a>
                   ))}
                 </div>
-                <div className="mt-4 pt-4 border-t border-border">
+                <div className="mt-4">
                   <Link 
                     to="/products?type=cameras"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
+                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-primary text-primary-foreground text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors"
                   >
                     View All Cameras
-                    <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
                   </Link>
                 </div>
               </div>
@@ -492,13 +491,12 @@ const Navbar = () => {
                     </a>
                   ))}
                 </div>
-                <div className="mt-4 pt-4 border-t border-border">
+                <div className="mt-4">
                   <Link 
                     to="/products?type=lenses"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
+                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-primary text-primary-foreground text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors"
                   >
                     View All Lenses
-                    <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
                   </Link>
                 </div>
               </div>
