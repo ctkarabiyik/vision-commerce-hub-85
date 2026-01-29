@@ -455,6 +455,15 @@ const Navbar = () => {
                     </a>
                   ))}
                 </div>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <Link 
+                    to="/products?type=cameras"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
+                  >
+                    View All Cameras
+                    <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
+                  </Link>
+                </div>
               </div>
               <div className="col-span-9 border-l border-border pl-6 flex flex-col justify-center">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Cameras</h3>
@@ -477,15 +486,6 @@ const Navbar = () => {
                       <div className="text-xs text-muted-foreground">{product.resolution}</div>
                     </Link>
                   ))}
-                </div>
-                <div className="mt-6 pt-4 border-t border-border">
-                  <Link 
-                    to="/products"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
-                  >
-                    View All Cameras
-                    <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
-                  </Link>
                 </div>
               </div>
             </div>
@@ -520,6 +520,15 @@ const Navbar = () => {
                     </a>
                   ))}
                 </div>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <Link 
+                    to="/products?type=lenses"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
+                  >
+                    View All Lenses
+                    <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
+                  </Link>
+                </div>
               </div>
               <div className="col-span-9 border-l border-border pl-6 flex flex-col justify-center">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Lenses</h3>
@@ -542,15 +551,6 @@ const Navbar = () => {
                       <div className="text-xs text-muted-foreground">{product.resolution}</div>
                     </Link>
                   ))}
-                </div>
-                <div className="mt-6 pt-4 border-t border-border">
-                  <Link 
-                    to="/products"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
-                  >
-                    View All Lenses
-                    <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
-                  </Link>
                 </div>
               </div>
             </div>
