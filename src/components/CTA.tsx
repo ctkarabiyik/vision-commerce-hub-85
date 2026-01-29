@@ -30,9 +30,9 @@ const CTA = () => {
               <Phone className="w-5 h-5" />
               <span>1-800-VISION</span>
             </a>
-            <a href="mailto:sales@visiontech.com" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+            <a href="mailto:sales@alargecamera.com" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               <Mail className="w-5 h-5" />
-              <span>sales@visiontech.com</span>
+              <span>sales@alargecamera.com</span>
             </a>
           </div>
         </div>
