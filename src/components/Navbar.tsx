@@ -94,17 +94,10 @@ const cameraCategories = [
 const lensCategories = [
   {
     icon: Aperture,
-    title: "Fixed Focal Lenses",
-    description: "Prime lenses for precision imaging",
+    title: "FA Lenses",
+    description: "Factory automation imaging lenses",
     count: 120,
-    href: "#fixed-focal-lenses",
-  },
-  {
-    icon: ZoomIn,
-    title: "Zoom Lenses",
-    description: "Variable focal length for flexibility",
-    count: 65,
-    href: "#zoom-lenses",
+    href: "#fa-lenses",
   },
   {
     icon: Focus,
@@ -115,10 +108,38 @@ const lensCategories = [
   },
   {
     icon: Circle,
+    title: "VR Lenses",
+    description: "Virtual reality and wide-angle optics",
+    count: 42,
+    href: "#vr-lenses",
+  },
+  {
+    icon: ZoomIn,
     title: "Macro Lenses",
     description: "Close-up imaging and inspection",
     count: 35,
     href: "#macro-lenses",
+  },
+  {
+    icon: Settings,
+    title: "Scheimpflug Lenses",
+    description: "Tilt-shift focus plane control",
+    count: 28,
+    href: "#scheimpflug-lenses",
+  },
+  {
+    icon: Scan,
+    title: "Line Scan Lenses",
+    description: "Optimized for line scan cameras",
+    count: 56,
+    href: "#line-scan-lenses",
+  },
+  {
+    icon: Microscope,
+    title: "Large Format Lenses",
+    description: "High-resolution large sensor coverage",
+    count: 38,
+    href: "#large-format-lenses",
   },
 ];
 
@@ -153,17 +174,11 @@ const productsByCategory: Record<string, Array<{ name: string; brand: string; im
     { name: "EmbedSense Mini", brand: "COGNEX", image: cameraProduct2, resolution: "1.6 MP", slug: "embedsense-mini" },
     { name: "NanoVision Pro", brand: "HIKROBOT", image: cameraProduct4, resolution: "3.2 MP", slug: "nanovision-pro" },
   ],
-  "Fixed Focal Lenses": [
+  "FA Lenses": [
     { name: "ProLens 25mm F1.4", brand: "BASLER", image: cameraProduct2, resolution: "C-Mount", slug: "prolens-25mm" },
     { name: "OptiPrime 35mm", brand: "COGNEX", image: cameraProduct1, resolution: "F-Mount", slug: "optiprime-35mm" },
     { name: "VisionFix 50mm", brand: "FLIR", image: cameraProduct3, resolution: "M42", slug: "visionfix-50mm" },
     { name: "InduLens 16mm", brand: "HIKROBOT", image: cameraProduct4, resolution: "CS-Mount", slug: "indulens-16mm" },
-  ],
-  "Zoom Lenses": [
-    { name: "FlexZoom 12-36mm", brand: "BASLER", image: cameraProduct3, resolution: "3x Zoom", slug: "flexzoom-12-36" },
-    { name: "VarioView 8-48mm", brand: "COGNEX", image: cameraProduct2, resolution: "6x Zoom", slug: "varioview-8-48" },
-    { name: "AdaptLens 10-100mm", brand: "FLIR", image: cameraProduct4, resolution: "10x Zoom", slug: "adaptlens-10-100" },
-    { name: "DynaZoom 18-55mm", brand: "HIKROBOT", image: cameraProduct1, resolution: "3x Zoom", slug: "dynazoom-18-55" },
   ],
   "Telecentric Lenses": [
     { name: "TelePrecision 0.5x", brand: "BASLER", image: cameraProduct4, resolution: "0.5x Mag", slug: "teleprecision-05x" },
@@ -171,11 +186,35 @@ const productsByCategory: Record<string, Array<{ name: string; brand: string; im
     { name: "AccuView 2x", brand: "FLIR", image: cameraProduct2, resolution: "2x Mag", slug: "accuview-2x" },
     { name: "BiTelecentric 1.5x", brand: "HIKROBOT", image: cameraProduct3, resolution: "1.5x Mag", slug: "bitelecentric-15x" },
   ],
+  "VR Lenses": [
+    { name: "WideVR 180", brand: "BASLER", image: cameraProduct3, resolution: "180° FOV", slug: "widevr-180" },
+    { name: "PanoView Ultra", brand: "COGNEX", image: cameraProduct2, resolution: "220° FOV", slug: "panoview-ultra" },
+    { name: "ImmerseLens 360", brand: "FLIR", image: cameraProduct4, resolution: "360° FOV", slug: "immerselens-360" },
+    { name: "VR-Optic Pro", brand: "HIKROBOT", image: cameraProduct1, resolution: "200° FOV", slug: "vr-optic-pro" },
+  ],
   "Macro Lenses": [
     { name: "MacroVision 5x", brand: "BASLER", image: cameraProduct1, resolution: "5x Mag", slug: "macrovision-5x" },
     { name: "CloseUp Pro 3x", brand: "COGNEX", image: cameraProduct3, resolution: "3x Mag", slug: "closeup-pro-3x" },
     { name: "MicroInspect 10x", brand: "FLIR", image: cameraProduct4, resolution: "10x Mag", slug: "microinspect-10x" },
     { name: "DetailLens 7x", brand: "HIKROBOT", image: cameraProduct2, resolution: "7x Mag", slug: "detaillens-7x" },
+  ],
+  "Scheimpflug Lenses": [
+    { name: "TiltShift Pro", brand: "BASLER", image: cameraProduct2, resolution: "±8° Tilt", slug: "tiltshift-pro" },
+    { name: "ScheimView 45", brand: "COGNEX", image: cameraProduct1, resolution: "±12° Tilt", slug: "scheimview-45" },
+    { name: "FocusPlane X", brand: "FLIR", image: cameraProduct3, resolution: "±10° Tilt", slug: "focusplane-x" },
+    { name: "AngleFocus Elite", brand: "HIKROBOT", image: cameraProduct4, resolution: "±15° Tilt", slug: "anglefocus-elite" },
+  ],
+  "Line Scan Lenses": [
+    { name: "LineScan Optic 35", brand: "BASLER", image: cameraProduct4, resolution: "8K Ready", slug: "linescan-optic-35" },
+    { name: "WebView LS Pro", brand: "COGNEX", image: cameraProduct2, resolution: "16K Ready", slug: "webview-ls-pro" },
+    { name: "ScanLine Ultra", brand: "FLIR", image: cameraProduct1, resolution: "12K Ready", slug: "scanline-ultra" },
+    { name: "LinearOptic 50", brand: "HIKROBOT", image: cameraProduct3, resolution: "8K Ready", slug: "linearoptic-50" },
+  ],
+  "Large Format Lenses": [
+    { name: "LargeView 120mm", brand: "BASLER", image: cameraProduct1, resolution: "APS-H", slug: "largeview-120mm" },
+    { name: "BigSensor Pro", brand: "COGNEX", image: cameraProduct4, resolution: "Full Frame", slug: "bigsensor-pro" },
+    { name: "MegaFormat 80mm", brand: "FLIR", image: cameraProduct2, resolution: "Medium Format", slug: "megaformat-80mm" },
+    { name: "LF-Vision Elite", brand: "HIKROBOT", image: cameraProduct3, resolution: "APS-C", slug: "lf-vision-elite" },
   ],
 };
 
@@ -196,10 +235,10 @@ const Navbar = () => {
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
   const [activeProductTab, setActiveProductTab] = useState<"cameras" | "lenses">("cameras");
   const [hoveredCameraCategory, setHoveredCameraCategory] = useState<string>("Area Scan Cameras");
-  const [hoveredLensCategory, setHoveredLensCategory] = useState<string>("Fixed Focal Lenses");
+  const [hoveredLensCategory, setHoveredLensCategory] = useState<string>("FA Lenses");
 
   const currentCameraProducts = productsByCategory[hoveredCameraCategory] || productsByCategory["Area Scan Cameras"];
-  const currentLensProducts = productsByCategory[hoveredLensCategory] || productsByCategory["Fixed Focal Lenses"];
+  const currentLensProducts = productsByCategory[hoveredLensCategory] || productsByCategory["FA Lenses"];
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-colors duration-200 ${
