@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle } from "lucide-react";
+import alargeLogo from "@/assets/alarge-logo.svg";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import cameraProduct2 from "@/assets/camera-product-2.jpg";
 import cameraProduct3 from "@/assets/camera-product-3.jpg";
@@ -207,14 +208,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-sm flex items-center justify-center">
-              <Camera className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold tracking-tight text-foreground">VISIONTECH</span>
-              <span className="text-[10px] uppercase tracking-widest text-muted-foreground -mt-1">Industrial Cameras</span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img src={alargeLogo} alt="Alarge Logo" className="h-10" />
           </Link>
 
           {/* Desktop Navigation */}
