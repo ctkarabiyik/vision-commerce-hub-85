@@ -164,30 +164,23 @@ const Products = () => {
       {/* Products Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          {/* Toolbar */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
-            <p className="text-muted-foreground">
-              Showing <span className="font-semibold text-foreground">{filteredProducts.length}</span> products
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="flex items-center border border-border rounded-md">
-                <button className="p-2 hover:bg-secondary transition-colors border-r border-border bg-secondary">
-                  <Grid3X3 className="w-4 h-4" />
-                </button>
-                <button className="p-2 hover:bg-secondary transition-colors">
-                  <LayoutList className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          </div>
-
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Filters Sidebar */}
             <aside className="lg:w-64 flex-shrink-0">
               <div className="bg-card border border-border rounded-lg p-5 sticky top-24">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-                  Camera Categories
-                </h3>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                    Camera Categories
+                  </h3>
+                  <div className="flex items-center border border-border rounded-md">
+                    <button className="p-1.5 hover:bg-secondary transition-colors border-r border-border bg-secondary">
+                      <Grid3X3 className="w-3.5 h-3.5" />
+                    </button>
+                    <button className="p-1.5 hover:bg-secondary transition-colors">
+                      <LayoutList className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
                 <div className="flex flex-col gap-1">
                   {cameraCategories.map((category) => (
                     <button
