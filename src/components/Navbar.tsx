@@ -93,27 +93,6 @@ const lensCategories = [
     href: "#telecentric-lenses",
   },
   {
-    icon: Circle,
-    title: "VR Lenses",
-    description: "Virtual reality and wide-angle optics",
-    count: 42,
-    href: "#vr-lenses",
-  },
-  {
-    icon: ZoomIn,
-    title: "Macro Lenses",
-    description: "Close-up imaging and inspection",
-    count: 35,
-    href: "#macro-lenses",
-  },
-  {
-    icon: Settings,
-    title: "Scheimpflug Lenses",
-    description: "Tilt-shift focus plane control",
-    count: 28,
-    href: "#scheimpflug-lenses",
-  },
-  {
     icon: Scan,
     title: "Line Scan Lenses",
     description: "Optimized for line scan cameras",
@@ -121,11 +100,11 @@ const lensCategories = [
     href: "#line-scan-lenses",
   },
   {
-    icon: Microscope,
-    title: "Large Format Lenses",
-    description: "High-resolution large sensor coverage",
-    count: 38,
-    href: "#large-format-lenses",
+    icon: ZoomIn,
+    title: "Macro Lenses",
+    description: "Close-up imaging and inspection",
+    count: 35,
+    href: "#macro-lenses",
   },
 ];
 
