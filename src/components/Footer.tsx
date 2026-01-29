@@ -69,7 +69,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-accent-foreground/60">
-              © 2024 VisionTech. All rights reserved.
+              © 2024 Alarge Camera. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-sm text-accent-foreground/60 hover:text-primary transition-colors">Privacy Policy</a>

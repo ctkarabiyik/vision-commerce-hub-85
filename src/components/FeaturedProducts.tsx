@@ -48,7 +48,7 @@ const products = [
 
 const softwareDownloads = [
   {
-    title: "VisionTech SDK",
+    title: "Alarge Camera SDK",
     description: "Complete software development kit for camera integration",
     version: "v3.2.1",
     icon: Code,

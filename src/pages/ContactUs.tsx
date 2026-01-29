@@ -122,8 +122,8 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-foreground mb-1">Email</div>
-                      <a href="mailto:sales@visiontech.com" className="text-muted-foreground hover:text-primary transition-colors">
-                        sales@visiontech.com
+                      <a href="mailto:sales@alargecamera.com" className="text-muted-foreground hover:text-primary transition-colors">
+                        sales@alargecamera.com
                       </a>
                     </div>
                   </div>
