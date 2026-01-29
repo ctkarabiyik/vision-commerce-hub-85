@@ -99,13 +99,6 @@ const lensCategories = [
     count: 56,
     href: "#line-scan-lenses",
   },
-  {
-    icon: ZoomIn,
-    title: "Macro Lenses",
-    description: "Close-up imaging and inspection",
-    count: 35,
-    href: "#macro-lenses",
-  },
 ];
 
 const productsByCategory: Record<string, Array<{ name: string; brand: string; image: string; resolution: string; slug: string }>> = {
