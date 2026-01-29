@@ -185,19 +185,23 @@ const supportLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [mobileCategories, setMobileCategories] = useState(false);
+  const [mobileCameras, setMobileCameras] = useState(false);
+  const [mobileLenses, setMobileLenses] = useState(false);
   const [mobileSolutions, setMobileSolutions] = useState(false);
   const [mobileSupport, setMobileSupport] = useState(false);
-  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
+  const [camerasDropdownOpen, setCamerasDropdownOpen] = useState(false);
+  const [lensesDropdownOpen, setLensesDropdownOpen] = useState(false);
   const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
-  const [hoveredCategory, setHoveredCategory] = useState<string>("Area Scan Cameras");
+  const [hoveredCameraCategory, setHoveredCameraCategory] = useState<string>("Area Scan Cameras");
+  const [hoveredLensCategory, setHoveredLensCategory] = useState<string>("Fixed Focal Lenses");
 
-  const currentProducts = productsByCategory[hoveredCategory] || productsByCategory["Area Scan Cameras"];
+  const currentCameraProducts = productsByCategory[hoveredCameraCategory] || productsByCategory["Area Scan Cameras"];
+  const currentLensProducts = productsByCategory[hoveredLensCategory] || productsByCategory["Fixed Focal Lenses"];
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-colors duration-200 ${
-      desktopDropdownOpen || solutionsDropdownOpen || supportDropdownOpen ? 'bg-background' : 'bg-background/95 backdrop-blur-sm'
+      camerasDropdownOpen || lensesDropdownOpen || solutionsDropdownOpen || supportDropdownOpen ? 'bg-background' : 'bg-background/95 backdrop-blur-sm'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -216,15 +220,25 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-8">
             <div 
               className="relative"
-              onMouseEnter={() => setDesktopDropdownOpen(true)}
-              onMouseLeave={() => setDesktopDropdownOpen(false)}
+              onMouseEnter={() => setCamerasDropdownOpen(true)}
+              onMouseLeave={() => setCamerasDropdownOpen(false)}
             >
               <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">
-                Products
-                <ChevronDown className={`w-4 h-4 transition-transform ${desktopDropdownOpen ? 'rotate-180' : ''}`} />
+                Cameras
+                <ChevronDown className={`w-4 h-4 transition-transform ${camerasDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
             </div>
             <div 
+              className="relative"
+              onMouseEnter={() => setLensesDropdownOpen(true)}
+              onMouseLeave={() => setLensesDropdownOpen(false)}
+            >
+              <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">
+                Lenses
+                <ChevronDown className={`w-4 h-4 transition-transform ${lensesDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+            <div
               className="relative"
               onMouseEnter={() => setSolutionsDropdownOpen(true)}
               onMouseLeave={() => setSolutionsDropdownOpen(false)}
@@ -270,15 +284,14 @@ const Navbar = () => {
           <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               <button 
-                onClick={() => setMobileCategories(!mobileCategories)}
+                onClick={() => setMobileCameras(!mobileCameras)}
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left"
               >
-                Products
-                <ChevronDown className={`w-4 h-4 transition-transform ${mobileCategories ? 'rotate-180' : ''}`} />
+                Cameras
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileCameras ? 'rotate-180' : ''}`} />
               </button>
-              {mobileCategories && (
+              {mobileCameras && (
                 <div className="pl-4 flex flex-col gap-2">
-                  <div className="text-xs font-semibold uppercase text-muted-foreground mt-2">Cameras</div>
                   {cameraCategories.map((category, index) => (
                     <a 
                       key={index}
@@ -289,7 +302,17 @@ const Navbar = () => {
                       {category.title}
                     </a>
                   ))}
-                  <div className="text-xs font-semibold uppercase text-muted-foreground mt-3">Lenses</div>
+                </div>
+              )}
+              <button 
+                onClick={() => setMobileLenses(!mobileLenses)}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left"
+              >
+                Lenses
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileLenses ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileLenses && (
+                <div className="pl-4 flex flex-col gap-2">
                   {lensCategories.map((category, index) => (
                     <a 
                       key={index}
@@ -354,84 +377,50 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Full-width Products Mega Menu */}
+      {/* Cameras Mega Menu */}
       <div 
         className={`absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg transition-all duration-200 z-50 ${
-          desktopDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          camerasDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
-        onMouseEnter={() => setDesktopDropdownOpen(true)}
-        onMouseLeave={() => setDesktopDropdownOpen(false)}
+        onMouseEnter={() => setCamerasDropdownOpen(true)}
+        onMouseLeave={() => setCamerasDropdownOpen(false)}
       >
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-12 gap-6 items-center">
-            {/* Categories Section - Two columns */}
-            <div className="col-span-4">
-              <div className="grid grid-cols-2 gap-6">
-                {/* Cameras Column */}
-                <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Cameras</h3>
-                  <div className="flex flex-col gap-1">
-                    {cameraCategories.map((category, index) => (
-                      <a 
-                        key={index}
-                        href={category.href}
-                        className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
-                          hoveredCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'
-                        }`}
-                        onMouseEnter={() => setHoveredCategory(category.title)}
-                      >
-                        <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
-                          hoveredCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'
-                        }`}>
-                          <category.icon className="w-4 h-4 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <div className={`font-semibold text-sm transition-colors ${
-                            hoveredCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
-                          }`}>{category.title}</div>
-                          <div className="text-xs text-muted-foreground">{category.count} Products</div>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Lenses Column */}
-                <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Lenses</h3>
-                  <div className="flex flex-col gap-1">
-                    {lensCategories.map((category, index) => (
-                      <a 
-                        key={index}
-                        href={category.href}
-                        className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
-                          hoveredCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'
-                        }`}
-                        onMouseEnter={() => setHoveredCategory(category.title)}
-                      >
-                        <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
-                          hoveredCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'
-                        }`}>
-                          <category.icon className="w-4 h-4 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <div className={`font-semibold text-sm transition-colors ${
-                            hoveredCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
-                          }`}>{category.title}</div>
-                          <div className="text-xs text-muted-foreground">{category.count} Products</div>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </div>
+            {/* Camera Categories */}
+            <div className="col-span-3">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Camera Types</h3>
+              <div className="flex flex-col gap-1">
+                {cameraCategories.map((category, index) => (
+                  <a 
+                    key={index}
+                    href={category.href}
+                    className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
+                      hoveredCameraCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'
+                    }`}
+                    onMouseEnter={() => setHoveredCameraCategory(category.title)}
+                  >
+                    <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
+                      hoveredCameraCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'
+                    }`}>
+                      <category.icon className="w-4 h-4 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className={`font-semibold text-sm transition-colors ${
+                        hoveredCameraCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
+                      }`}>{category.title}</div>
+                      <div className="text-xs text-muted-foreground">{category.count} Products</div>
+                    </div>
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* Featured Products Section */}
-            <div className="col-span-8 border-l border-border pl-6 flex flex-col justify-center">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Products</h3>
+            {/* Featured Camera Products */}
+            <div className="col-span-9 border-l border-border pl-6 flex flex-col justify-center">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Cameras</h3>
               <div className="grid grid-cols-4 gap-4">
-                {currentProducts.map((product, index) => (
+                {currentCameraProducts.map((product, index) => (
                   <Link 
                     key={index}
                     to={`/product/${product.slug}`}
@@ -455,7 +444,83 @@ const Navbar = () => {
                   to="/products"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
                 >
-                  View All Products
+                  View All Cameras
+                  <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Lenses Mega Menu */}
+      <div 
+        className={`absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg transition-all duration-200 z-50 ${
+          lensesDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+        onMouseEnter={() => setLensesDropdownOpen(true)}
+        onMouseLeave={() => setLensesDropdownOpen(false)}
+      >
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-12 gap-6 items-center">
+            {/* Lens Categories */}
+            <div className="col-span-3">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Lens Types</h3>
+              <div className="flex flex-col gap-1">
+                {lensCategories.map((category, index) => (
+                  <a 
+                    key={index}
+                    href={category.href}
+                    className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
+                      hoveredLensCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'
+                    }`}
+                    onMouseEnter={() => setHoveredLensCategory(category.title)}
+                  >
+                    <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
+                      hoveredLensCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'
+                    }`}>
+                      <category.icon className="w-4 h-4 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className={`font-semibold text-sm transition-colors ${
+                        hoveredLensCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
+                      }`}>{category.title}</div>
+                      <div className="text-xs text-muted-foreground">{category.count} Products</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Featured Lens Products */}
+            <div className="col-span-9 border-l border-border pl-6 flex flex-col justify-center">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Lenses</h3>
+              <div className="grid grid-cols-4 gap-4">
+                {currentLensProducts.map((product, index) => (
+                  <Link 
+                    key={index}
+                    to={`/product/${product.slug}`}
+                    className="group"
+                  >
+                    <div className="aspect-square bg-secondary rounded-md overflow-hidden mb-2">
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="text-xs text-primary font-semibold">{product.brand}</div>
+                    <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{product.name}</div>
+                    <div className="text-xs text-muted-foreground">{product.resolution}</div>
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-6 pt-4 border-t border-border">
+                <Link 
+                  to="/products"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
+                >
+                  View All Lenses
                   <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
                 </Link>
               </div>
