@@ -55,13 +55,6 @@ const solutions = [
 
 const cameraCategories = [
   {
-    icon: Camera,
-    title: "Area Scan Cameras",
-    description: "High-resolution sensors for quality inspection",
-    count: 156,
-    href: "/area-scan-cameras",
-  },
-  {
     icon: Scan,
     title: "Line Scan Cameras",
     description: "Continuous imaging for web inspection",
@@ -69,25 +62,18 @@ const cameraCategories = [
     href: "#line-scan-cameras",
   },
   {
-    icon: CircuitBoard,
-    title: "Smart Cameras",
-    description: "Built-in processing for edge AI",
-    count: 62,
-    href: "#smart-cameras",
-  },
-  {
-    icon: Microscope,
-    title: "3D Cameras",
-    description: "Depth sensing and volumetric measurement",
-    count: 45,
-    href: "#3d-cameras",
+    icon: Camera,
+    title: "Frame Scan Cameras",
+    description: "High-resolution sensors for quality inspection",
+    count: 156,
+    href: "#frame-scan-cameras",
   },
   {
     icon: Settings,
-    title: "Embedded Vision",
-    description: "Compact modules for OEM integration",
-    count: 98,
-    href: "#embedded-vision",
+    title: "Other",
+    description: "Specialty cameras and accessories",
+    count: 45,
+    href: "#other-cameras",
   },
 ];
 
@@ -144,35 +130,23 @@ const lensCategories = [
 ];
 
 const productsByCategory: Record<string, Array<{ name: string; brand: string; image: string; resolution: string; slug: string }>> = {
-  "Area Scan Cameras": [
-    { name: "ACE-2040 Pro Series", brand: "BASLER", image: cameraProduct1, resolution: "4.2 MP", slug: "ace-2040-pro-series" },
-    { name: "DART-X Industrial", brand: "COGNEX", image: cameraProduct2, resolution: "12 MP", slug: "dart-x-industrial" },
-    { name: "APEX Vision Core", brand: "FLIR", image: cameraProduct3, resolution: "5.1 MP", slug: "apex-vision-core" },
-    { name: "MV-8000 Ultra", brand: "HIKROBOT", image: cameraProduct4, resolution: "8.9 MP", slug: "mv-8000-ultra" },
-  ],
   "Line Scan Cameras": [
     { name: "LineScan Pro 8K", brand: "BASLER", image: cameraProduct2, resolution: "8K", slug: "linescan-pro-8k" },
     { name: "SpeedLine X200", brand: "COGNEX", image: cameraProduct3, resolution: "4K", slug: "speedline-x200" },
     { name: "WebScan Elite", brand: "FLIR", image: cameraProduct1, resolution: "16K", slug: "webscan-elite" },
     { name: "RapidScan LS", brand: "HIKROBOT", image: cameraProduct4, resolution: "12K", slug: "rapidscan-ls" },
   ],
-  "Smart Cameras": [
+  "Frame Scan Cameras": [
+    { name: "ACE-2040 Pro Series", brand: "BASLER", image: cameraProduct1, resolution: "4.2 MP", slug: "ace-2040-pro-series" },
+    { name: "DART-X Industrial", brand: "COGNEX", image: cameraProduct2, resolution: "12 MP", slug: "dart-x-industrial" },
+    { name: "APEX Vision Core", brand: "FLIR", image: cameraProduct3, resolution: "5.1 MP", slug: "apex-vision-core" },
+    { name: "MV-8000 Ultra", brand: "HIKROBOT", image: cameraProduct4, resolution: "8.9 MP", slug: "mv-8000-ultra" },
+  ],
+  "Other": [
     { name: "VisionAI 5000", brand: "COGNEX", image: cameraProduct3, resolution: "5 MP", slug: "visionai-5000" },
-    { name: "EdgeSense Pro", brand: "BASLER", image: cameraProduct1, resolution: "2 MP", slug: "edgesense-pro" },
-    { name: "SmartEye X1", brand: "HIKROBOT", image: cameraProduct4, resolution: "3 MP", slug: "smarteye-x1" },
-    { name: "AI-Cam Ultra", brand: "FLIR", image: cameraProduct2, resolution: "4 MP", slug: "ai-cam-ultra" },
-  ],
-  "3D Cameras": [
     { name: "DepthSense 3D", brand: "FLIR", image: cameraProduct4, resolution: "1.3 MP", slug: "depthsense-3d" },
-    { name: "VoluScan Pro", brand: "BASLER", image: cameraProduct2, resolution: "2.1 MP", slug: "voluscan-pro" },
-    { name: "3D-Vision Elite", brand: "COGNEX", image: cameraProduct1, resolution: "0.9 MP", slug: "3d-vision-elite" },
-    { name: "TriScan 360", brand: "HIKROBOT", image: cameraProduct3, resolution: "1.6 MP", slug: "triscan-360" },
-  ],
-  "Embedded Vision": [
     { name: "MicroVision OEM", brand: "BASLER", image: cameraProduct1, resolution: "2 MP", slug: "microvision-oem" },
     { name: "CompactCore X", brand: "FLIR", image: cameraProduct3, resolution: "5 MP", slug: "compactcore-x" },
-    { name: "EmbedSense Mini", brand: "COGNEX", image: cameraProduct2, resolution: "1.6 MP", slug: "embedsense-mini" },
-    { name: "NanoVision Pro", brand: "HIKROBOT", image: cameraProduct4, resolution: "3.2 MP", slug: "nanovision-pro" },
   ],
   "FA Lenses": [
     { name: "ProLens 25mm F1.4", brand: "BASLER", image: cameraProduct2, resolution: "C-Mount", slug: "prolens-25mm" },
@@ -234,10 +208,10 @@ const Navbar = () => {
   const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
   const [activeProductTab, setActiveProductTab] = useState<"cameras" | "lenses">("cameras");
-  const [hoveredCameraCategory, setHoveredCameraCategory] = useState<string>("Area Scan Cameras");
+  const [hoveredCameraCategory, setHoveredCameraCategory] = useState<string>("Line Scan Cameras");
   const [hoveredLensCategory, setHoveredLensCategory] = useState<string>("FA Lenses");
 
-  const currentCameraProducts = productsByCategory[hoveredCameraCategory] || productsByCategory["Area Scan Cameras"];
+  const currentCameraProducts = productsByCategory[hoveredCameraCategory] || productsByCategory["Line Scan Cameras"];
   const currentLensProducts = productsByCategory[hoveredLensCategory] || productsByCategory["FA Lenses"];
 
   return (
