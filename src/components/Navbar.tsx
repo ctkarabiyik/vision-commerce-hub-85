@@ -436,7 +436,7 @@ const Navbar = () => {
                   </Link>
                 </div>
               </div>
-              <div className="col-span-9 border-l border-border pl-6 flex flex-col justify-center">
+              <div className="col-span-9 border-l border-border pl-6 py-4 flex flex-col justify-center">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Cameras</h3>
                 <div className="grid grid-cols-4 gap-4">
                   {currentCameraProducts.map((product, index) => (
@@ -500,7 +500,7 @@ const Navbar = () => {
                   </Link>
                 </div>
               </div>
-              <div className="col-span-9 border-l border-border pl-6 flex flex-col justify-center">
+              <div className="col-span-9 border-l border-border pl-6 py-4 flex flex-col justify-center">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Lenses</h3>
                 <div className="grid grid-cols-4 gap-4">
                   {currentLensProducts.map((product, index) => (
