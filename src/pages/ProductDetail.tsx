@@ -189,10 +189,11 @@ const ProductDetail = () => {
                   <Star className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">Main features</h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {(product as any).mainFeatures.map((feature: string, index: number) => (
-                    <li key={index} className="text-muted-foreground text-sm">
-                      • {feature}
+                    <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
+                      <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -204,10 +205,11 @@ const ProductDetail = () => {
                   <Settings className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">Technical Specification</h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {(product as any).quickSpecs.map((spec: string, index: number) => (
-                    <li key={index} className="text-muted-foreground text-sm">
-                      • {spec}
+                    <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
+                      <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                      <span>{spec}</span>
                     </li>
                   ))}
                 </ul>
@@ -219,10 +221,11 @@ const ProductDetail = () => {
                   <Target className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">Application</h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {(product as any).applications.map((app: string, index: number) => (
-                    <li key={index} className="text-muted-foreground text-sm">
-                      • {app}
+                    <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
+                      <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                      <span>{app}</span>
                     </li>
                   ))}
                 </ul>
