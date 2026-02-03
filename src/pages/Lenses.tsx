@@ -134,7 +134,7 @@ const products = [
   {
     name: "2/3 inch Non-Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: telecentric18,
+    image: telecentric11NonCoaxial,
     resolution: "2/3\"",
     fps: "-",
     interface: "C-Mount",
@@ -143,7 +143,7 @@ const products = [
   {
     name: "1.1 inch Non-Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: telecentric11NonCoaxial,
+    image: telecentric12NonCoaxialAlt,
     resolution: "1.1\"",
     fps: "-",
     interface: "C-Mount",
@@ -152,7 +152,7 @@ const products = [
   {
     name: "1.2 inch Non-Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: telecentric12NonCoaxialAlt,
+    image: telecentric18,
     resolution: "1.2\"",
     fps: "-",
     interface: "C-Mount",
