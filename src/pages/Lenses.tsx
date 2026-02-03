@@ -361,12 +361,14 @@ const Lenses = () => {
                 ))}
               </div>
 
-              {/* Load More */}
-              <div className="text-center mt-12">
-                <Button variant="outline" size="lg">
-                  Load More Products
-                </Button>
-              </div>
+              {/* Load More - only show for All Lenses */}
+              {selectedCategory === "all" && (
+                <div className="text-center mt-12">
+                  <Button variant="outline" size="lg">
+                    Load More Products
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         </div>
