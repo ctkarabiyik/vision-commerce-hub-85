@@ -7,16 +7,63 @@ import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@
 import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, BookOpen, Wrench, Star, Settings, Target } from "lucide-react";
 
 // FA Lens variants data for 1/1.7" lenses
-const faLensVariants = [
-  { model: "DZO_LA0628A_1712", efl: "6", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.37%", mount: "C" },
-  { model: "DZO_LA0828A_1712", efl: "8", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.37%", mount: "C" },
-  { model: "DZO_LA1228A_1712", efl: "12", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.18%", mount: "C" },
-  { model: "DZO_LA1628A_1712", efl: "16", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.05%", mount: "C" },
-  { model: "DZO_LA2528A_1712", efl: "25", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "0.06%", mount: "C" },
-  { model: "DZO_LA3528A_1712", efl: "35", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "200-inf", distortion: "0.03%", mount: "C" },
-  { model: "DZO_LA5028A_1712", efl: "50", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "250-inf", distortion: "0.09%", mount: "C" },
-];
-
+const faLensVariants = [{
+  model: "DZO_LA0628A_1712",
+  efl: "6",
+  imgCircle: "1/1.7\"",
+  fNumber: "F2.8-16",
+  wdRange: "100-inf",
+  distortion: "-0.37%",
+  mount: "C"
+}, {
+  model: "DZO_LA0828A_1712",
+  efl: "8",
+  imgCircle: "1/1.7\"",
+  fNumber: "F2.8-16",
+  wdRange: "100-inf",
+  distortion: "-0.37%",
+  mount: "C"
+}, {
+  model: "DZO_LA1228A_1712",
+  efl: "12",
+  imgCircle: "1/1.7\"",
+  fNumber: "F2.8-16",
+  wdRange: "100-inf",
+  distortion: "-0.18%",
+  mount: "C"
+}, {
+  model: "DZO_LA1628A_1712",
+  efl: "16",
+  imgCircle: "1/1.7\"",
+  fNumber: "F2.8-16",
+  wdRange: "100-inf",
+  distortion: "-0.05%",
+  mount: "C"
+}, {
+  model: "DZO_LA2528A_1712",
+  efl: "25",
+  imgCircle: "1/1.7\"",
+  fNumber: "F2.8-16",
+  wdRange: "100-inf",
+  distortion: "0.06%",
+  mount: "C"
+}, {
+  model: "DZO_LA3528A_1712",
+  efl: "35",
+  imgCircle: "1/1.7\"",
+  fNumber: "F2.8-16",
+  wdRange: "200-inf",
+  distortion: "0.03%",
+  mount: "C"
+}, {
+  model: "DZO_LA5028A_1712",
+  efl: "50",
+  imgCircle: "1/1.7\"",
+  fNumber: "F2.8-16",
+  wdRange: "250-inf",
+  distortion: "0.09%",
+  mount: "C"
+}];
 const productData = {
   "ace-2040-pro-series": {
     name: "ACE-2040 Pro Series",
@@ -36,14 +83,7 @@ const productData = {
     operatingTemp: "-20°C to 60°C",
     dimensions: "29 x 29 x 41.5 mm",
     weight: "80g",
-    features: [
-      "Sony Pregius IMX267 CMOS sensor",
-      "Power over Ethernet (PoE) support",
-      "Hardware trigger with <1µs jitter",
-      "Multi-ROI and sequencer mode",
-      "Chunk data for image metadata",
-      "GenICam compliant",
-    ],
+    features: ["Sony Pregius IMX267 CMOS sensor", "Power over Ethernet (PoE) support", "Hardware trigger with <1µs jitter", "Multi-ROI and sequencer mode", "Chunk data for image metadata", "GenICam compliant"]
   },
   "1-1-7-inch-fa-lenses": {
     name: "1/1.7 inch FA Lenses",
@@ -63,42 +103,19 @@ const productData = {
     operatingTemp: "-10°C to 50°C",
     dimensions: "Ø29 x 32 mm",
     weight: "45g",
-    features: [
-      "Optimized for 1/1.7\" image sensors",
-      "Low distortion design (<0.5%)",
-      "High resolution across full image circle",
-      "Compact C-Mount form factor",
-      "Robust metal housing construction",
-      "Anti-reflection multi-coating",
-    ],
-    mainFeatures: [
-      "Applicable for 3.45µm pixel size sensor (2.74µm for option)",
-      "Image uniformity (resolution, distortion and chromatic aberration correction etc.) @full image circle & F#2.8",
-      "Stable imaging quality over working distances for diverse applications",
-      "Design for visible light application",
-    ],
-    quickSpecs: [
-      "Imaging circle: 1/1.7\"",
-      "Wavelength: 400-700nm",
-      "Focal length: 6mm - 50mm",
-      "C Mount",
-    ],
-    applications: [
-      "Scan Code",
-      "Color Selection",
-      "2D Ranging",
-      "3D Ranging",
-    ],
-  },
+    features: ["Optimized for 1/1.7\" image sensors", "Low distortion design (<0.5%)", "High resolution across full image circle", "Compact C-Mount form factor", "Robust metal housing construction", "Anti-reflection multi-coating"],
+    mainFeatures: ["Applicable for 3.45µm pixel size sensor (2.74µm for option)", "Image uniformity (resolution, distortion and chromatic aberration correction etc.) @full image circle & F#2.8", "Stable imaging quality over working distances for diverse applications", "Design for visible light application"],
+    quickSpecs: ["Imaging circle: 1/1.7\"", "Wavelength: 400-700nm", "Focal length: 6mm - 50mm", "C Mount"],
+    applications: ["Scan Code", "Color Selection", "2D Ranging", "3D Ranging"]
+  }
 };
-
 const ProductDetail = () => {
-  const { slug } = useParams();
+  const {
+    slug
+  } = useParams();
   const product = productData[slug as keyof typeof productData];
-
   if (!product) {
-    return (
-      <div className="min-h-screen bg-background">
+    return <div className="min-h-screen bg-background">
         <Navbar />
         <div className="pt-32 pb-16 text-center">
           <h1 className="text-2xl font-bold">Product not found</h1>
@@ -107,12 +124,9 @@ const ProductDetail = () => {
           </Link>
         </div>
         <Footer />
-      </div>
-    );
+      </div>;
   }
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Hero Section with 3D Model */}
@@ -132,11 +146,7 @@ const ProductDetail = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Product Image */}
             <div className="aspect-square bg-white rounded-lg border border-border overflow-hidden flex items-center justify-center">
-              <img 
-                src={product.image} 
-                alt={product.name}
-                className="w-full h-full object-contain p-8"
-              />
+              <img src={product.image} alt={product.name} className="w-full h-full object-contain p-8" />
             </div>
 
             {/* Product Info */}
@@ -181,8 +191,7 @@ const ProductDetail = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           {/* Three Column Overview for FA Lenses */}
-          {slug === "1-1-7-inch-fa-lenses" && 'mainFeatures' in product ? (
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {slug === "1-1-7-inch-fa-lenses" && 'mainFeatures' in product ? <div className="grid md:grid-cols-3 gap-8 mb-16">
               {/* Main Features */}
               <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
                 <div className="flex items-center gap-4 mb-4">
@@ -192,12 +201,10 @@ const ProductDetail = () => {
                   <h3 className="text-xl font-bold text-foreground">Main features</h3>
                 </div>
                 <ul className="space-y-3">
-                  {(product as any).mainFeatures.map((feature: string, index: number) => (
-                    <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
+                  {(product as any).mainFeatures.map((feature: string, index: number) => <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span>{feature}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
 
@@ -207,15 +214,13 @@ const ProductDetail = () => {
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                     <Settings className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">Technical Specification</h3>
+                  <h3 className="text-xl font-bold text-foreground">Technical Specifications</h3>
                 </div>
                 <ul className="space-y-3">
-                  {(product as any).quickSpecs.map((spec: string, index: number) => (
-                    <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
+                  {(product as any).quickSpecs.map((spec: string, index: number) => <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span>{spec}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
 
@@ -225,20 +230,16 @@ const ProductDetail = () => {
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                     <Target className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">Application</h3>
+                  <h3 className="text-xl font-bold text-foreground">Applications</h3>
                 </div>
                 <ul className="space-y-3">
-                  {(product as any).applications.map((app: string, index: number) => (
-                    <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
+                  {(product as any).applications.map((app: string, index: number) => <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span>{app}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
-            </div>
-          ) : (
-            <div className="mb-12">
+            </div> : <div className="mb-12">
               <h2 className="text-2xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-3xl">
                 {product.description}
@@ -246,23 +247,19 @@ const ProductDetail = () => {
 
               <h3 className="text-xl font-bold text-foreground mb-4">Key Features</h3>
               <ul className="grid md:grid-cols-2 gap-3">
-                {product.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                {product.features.map((feature, index) => <li key={index} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-3 h-3 text-primary" />
                     </div>
                     <span className="text-foreground">{feature}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
-            </div>
-          )}
+            </div>}
 
           {/* Technical Specs - Full Width */}
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-4">Product Models</h2>
-            {slug === "1-1-7-inch-fa-lenses" ? (
-              <div className="bg-card border border-border rounded-lg overflow-x-auto">
+            {slug === "1-1-7-inch-fa-lenses" ? <div className="bg-card border border-border rounded-lg overflow-x-auto">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-secondary/50">
@@ -276,8 +273,7 @@ const ProductDetail = () => {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {faLensVariants.map((lens, index) => (
-                      <TableRow key={lens.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
+                    {faLensVariants.map((lens, index) => <TableRow key={lens.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
                         <TableCell className="font-medium text-foreground">{lens.model}</TableCell>
                         <TableCell className="text-muted-foreground">{lens.efl}</TableCell>
                         <TableCell className="text-muted-foreground">{lens.imgCircle}</TableCell>
@@ -285,74 +281,147 @@ const ProductDetail = () => {
                         <TableCell className="text-muted-foreground">{lens.wdRange}</TableCell>
                         <TableCell className="text-muted-foreground">{lens.distortion}</TableCell>
                         <TableCell className="text-muted-foreground">{lens.mount}</TableCell>
-                      </TableRow>
-                    ))}
+                      </TableRow>)}
                   </TableBody>
                 </Table>
-              </div>
-            ) : (
-              <div className="bg-card border border-border rounded-lg overflow-hidden max-w-xl">
+              </div> : <div className="bg-card border border-border rounded-lg overflow-hidden max-w-xl">
                 <table className="w-full">
                   <tbody>
-                    {[
-                      { label: "Resolution", value: product.resolution },
-                      { label: "Frame Rate", value: `${product.fps} fps` },
-                      { label: "Interface", value: product.interface },
-                      { label: "Sensor", value: product.sensor },
-                      { label: "Sensor Size", value: product.sensorSize },
-                      { label: "Pixel Size", value: product.pixelSize },
-                      { label: "Dynamic Range", value: product.dynamicRange },
-                      { label: "Operating Temp", value: product.operatingTemp },
-                      { label: "Dimensions", value: product.dimensions },
-                      { label: "Weight", value: product.weight },
-                    ].map((spec, index) => (
-                      <tr key={index} className={index % 2 === 0 ? "bg-secondary/50" : ""}>
+                    {[{
+                  label: "Resolution",
+                  value: product.resolution
+                }, {
+                  label: "Frame Rate",
+                  value: `${product.fps} fps`
+                }, {
+                  label: "Interface",
+                  value: product.interface
+                }, {
+                  label: "Sensor",
+                  value: product.sensor
+                }, {
+                  label: "Sensor Size",
+                  value: product.sensorSize
+                }, {
+                  label: "Pixel Size",
+                  value: product.pixelSize
+                }, {
+                  label: "Dynamic Range",
+                  value: product.dynamicRange
+                }, {
+                  label: "Operating Temp",
+                  value: product.operatingTemp
+                }, {
+                  label: "Dimensions",
+                  value: product.dimensions
+                }, {
+                  label: "Weight",
+                  value: product.weight
+                }].map((spec, index) => <tr key={index} className={index % 2 === 0 ? "bg-secondary/50" : ""}>
                         <td className="px-4 py-3 text-sm font-medium text-muted-foreground">{spec.label}</td>
                         <td className="px-4 py-3 text-sm font-semibold text-foreground text-right">{spec.value}</td>
-                      </tr>
-                    ))}
+                      </tr>)}
                   </tbody>
                 </table>
-              </div>
-            )}
+              </div>}
           </div>
         </div>
       </section>
 
-      {/* Downloads & Resources CTA Section */}
+      {/* Software & Documentation Section */}
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4">
-          <div className="bg-card border border-border rounded-2xl p-8 lg:p-12 text-center">
-            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
-              <Download className="w-6 h-6 text-primary" />
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-bold text-foreground mb-2">Downloads & Resources</h2>
+            <p className="text-muted-foreground">Software, drivers, and documentation for {product.name}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Software Downloads */}
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                <Code className="w-5 h-5 text-primary" />
+                Software & Drivers
+              </h3>
+              <div className="space-y-3">
+                {[{
+                title: "Pylon Camera Software Suite",
+                version: "v7.4.0",
+                size: "245 MB",
+                icon: Code
+              }, {
+                title: "GigE Vision Driver",
+                version: "v2.1.3",
+                size: "12 MB",
+                icon: Wrench
+              }, {
+                title: "SDK & API Libraries",
+                version: "v3.2.1",
+                size: "89 MB",
+                icon: Code
+              }].map((item, index) => <div key={index} className="bg-card border border-border rounded-lg p-4 flex items-center gap-4 hover:border-primary/50 transition-colors group">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <item.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-foreground text-sm">{item.title}</h4>
+                      <p className="text-xs text-muted-foreground">{item.version} • {item.size}</p>
+                    </div>
+                    <Button size="sm" variant="outline" className="gap-1 flex-shrink-0">
+                      <Download className="w-4 h-4" />
+                      <span className="hidden sm:inline">Download</span>
+                    </Button>
+                  </div>)}
+              </div>
             </div>
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Downloads & Resources
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Access software, drivers, and technical documentation for {product.name} to get started with your integration.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/software-downloads">
-                <Button size="lg" className="group w-full sm:w-auto">
-                  <Code className="w-4 h-4 mr-2" />
-                  Software & Drivers
-                </Button>
-              </Link>
-              <Link to="/knowledge-base">
-                <Button size="lg" variant="outline" className="group w-full sm:w-auto">
-                  <BookOpen className="w-4 h-4 mr-2" />
-                  Technical Documentation
-                </Button>
-              </Link>
+
+            {/* Technical Documentation */}
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                <FileText className="w-5 h-5 text-primary" />
+                Technical Documentation
+              </h3>
+              <div className="space-y-3">
+                {[{
+                title: "Product Datasheet",
+                type: "PDF",
+                size: "2.4 MB",
+                icon: FileText
+              }, {
+                title: "User Manual",
+                type: "PDF",
+                size: "8.1 MB",
+                icon: BookOpen
+              }, {
+                title: "Integration Guide",
+                type: "PDF",
+                size: "4.2 MB",
+                icon: FileText
+              }, {
+                title: "CAD/3D Models",
+                type: "ZIP",
+                size: "15 MB",
+                icon: Wrench
+              }].map((doc, index) => <div key={index} className="bg-card border border-border rounded-lg p-4 flex items-center gap-4 hover:border-primary/50 transition-colors group">
+                    <div className="w-10 h-10 rounded-lg bg-accent/50 flex items-center justify-center flex-shrink-0 group-hover:bg-accent transition-colors">
+                      <doc.icon className="w-5 h-5 text-foreground" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-foreground text-sm">{doc.title}</h4>
+                      <p className="text-xs text-muted-foreground">{doc.type} • {doc.size}</p>
+                    </div>
+                    <Button size="sm" variant="outline" className="gap-1 flex-shrink-0">
+                      <Download className="w-4 h-4" />
+                      <span className="hidden sm:inline">Download</span>
+                    </Button>
+                  </div>)}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ProductDetail;
