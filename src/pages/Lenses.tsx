@@ -12,11 +12,7 @@ import cameraProduct4 from "@/assets/camera-product-4.jpg";
 
 const lensCategories = [
   { id: "all", title: "All Lenses", icon: Aperture, count: 367 },
-  { id: "fa-lenses", title: "FA Lenses", icon: Aperture, count: 120, isParent: true },
-  { id: "fa-1-1.7", title: "1/1.7 inch", icon: Aperture, count: 28, parentId: "fa-lenses" },
-  { id: "fa-2-3-standard", title: "2/3 inch Standard", icon: Aperture, count: 35, parentId: "fa-lenses" },
-  { id: "fa-2-3-superior", title: "2/3 inch Superior", icon: Aperture, count: 32, parentId: "fa-lenses" },
-  { id: "fa-1.1", title: "1.1 inch", icon: Aperture, count: 25, parentId: "fa-lenses" },
+  { id: "fa-lenses", title: "FA Lenses", icon: Aperture, count: 4 },
   { id: "telecentric", title: "Telecentric Lenses", icon: Focus, count: 48 },
   { id: "vr", title: "VR Lenses", icon: Circle, count: 42 },
   { id: "macro", title: "Macro Lenses", icon: ZoomIn, count: 35 },
@@ -26,153 +22,42 @@ const lensCategories = [
 ];
 
 const products = [
-  // FA Lenses - 1/1.7 inch
+  // FA Lenses
   {
-    name: "FA-117 8mm F1.4",
-    brand: "BASLER",
+    name: "1/1.7 inch",
+    brand: "FA LENS",
     image: cameraProduct2,
     resolution: "1/1.7\"",
     fps: "-",
     interface: "C-Mount",
-    category: "fa-1-1.7",
+    category: "fa-lenses",
   },
   {
-    name: "FA-117 12mm F1.8",
-    brand: "COGNEX",
-    image: cameraProduct1,
-    resolution: "1/1.7\"",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-1-1.7",
-  },
-  {
-    name: "FA-117 16mm F2.0",
-    brand: "FLIR",
-    image: cameraProduct3,
-    resolution: "1/1.7\"",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-1-1.7",
-  },
-  {
-    name: "FA-117 25mm F1.4",
-    brand: "HIKROBOT",
-    image: cameraProduct4,
-    resolution: "1/1.7\"",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-1-1.7",
-  },
-  // FA Lenses - 2/3 inch Standard
-  {
-    name: "FA-23S 8mm F1.4",
-    brand: "BASLER",
+    name: "2/3 inch Standard",
+    brand: "FA LENS",
     image: cameraProduct1,
     resolution: "2/3\"",
     fps: "-",
     interface: "C-Mount",
-    category: "fa-2-3-standard",
+    category: "fa-lenses",
   },
   {
-    name: "FA-23S 12mm F1.8",
-    brand: "COGNEX",
-    image: cameraProduct2,
-    resolution: "2/3\"",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-2-3-standard",
-  },
-  {
-    name: "FA-23S 16mm F2.0",
-    brand: "FLIR",
-    image: cameraProduct4,
-    resolution: "2/3\"",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-2-3-standard",
-  },
-  {
-    name: "FA-23S 25mm F1.4",
-    brand: "HIKROBOT",
+    name: "2/3 inch Superior",
+    brand: "FA LENS",
     image: cameraProduct3,
     resolution: "2/3\"",
     fps: "-",
     interface: "C-Mount",
-    category: "fa-2-3-standard",
-  },
-  // FA Lenses - 2/3 inch Superior
-  {
-    name: "FA-23X 8mm F1.2",
-    brand: "BASLER",
-    image: cameraProduct3,
-    resolution: "2/3\" Superior",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-2-3-superior",
+    category: "fa-lenses",
   },
   {
-    name: "FA-23X 12mm F1.4",
-    brand: "COGNEX",
-    image: cameraProduct4,
-    resolution: "2/3\" Superior",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-2-3-superior",
-  },
-  {
-    name: "FA-23X 16mm F1.8",
-    brand: "FLIR",
-    image: cameraProduct1,
-    resolution: "2/3\" Superior",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-2-3-superior",
-  },
-  {
-    name: "FA-23X 25mm F1.2",
-    brand: "HIKROBOT",
-    image: cameraProduct2,
-    resolution: "2/3\" Superior",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-2-3-superior",
-  },
-  // FA Lenses - 1.1 inch
-  {
-    name: "FA-11 8mm F1.4",
-    brand: "BASLER",
+    name: "1.1 inch",
+    brand: "FA LENS",
     image: cameraProduct4,
     resolution: "1.1\"",
     fps: "-",
     interface: "C-Mount",
-    category: "fa-1.1",
-  },
-  {
-    name: "FA-11 12mm F1.8",
-    brand: "COGNEX",
-    image: cameraProduct3,
-    resolution: "1.1\"",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-1.1",
-  },
-  {
-    name: "FA-11 16mm F2.0",
-    brand: "FLIR",
-    image: cameraProduct2,
-    resolution: "1.1\"",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-1.1",
-  },
-  {
-    name: "FA-11 25mm F1.4",
-    brand: "HIKROBOT",
-    image: cameraProduct1,
-    resolution: "1.1\"",
-    fps: "-",
-    interface: "C-Mount",
-    category: "fa-1.1",
+    category: "fa-lenses",
   },
   {
     name: "TelePrecision 0.5x",
@@ -361,8 +246,6 @@ const Lenses = () => {
 
   const filteredProducts = selectedCategory === "all" 
     ? products 
-    : selectedCategory === "fa-lenses"
-    ? products.filter(product => product.category.startsWith("fa-"))
     : products.filter(product => product.category === selectedCategory);
 
   return (
@@ -417,22 +300,20 @@ const Lenses = () => {
                       key={category.id}
                       onClick={() => setSelectedCategory(category.id)}
                       className={`flex items-center gap-3 p-3 rounded-lg transition-colors text-left w-full ${
-                        category.parentId ? 'ml-4' : ''
-                      } ${
                         selectedCategory === category.id 
                           ? 'bg-primary/10 border border-primary' 
                           : 'hover:bg-secondary border border-transparent'
                       }`}
                     >
-                      <div className={`${category.parentId ? 'w-6 h-6' : 'w-8 h-8'} rounded flex items-center justify-center flex-shrink-0 transition-colors ${
+                      <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
                         selectedCategory === category.id ? 'bg-primary/20' : 'bg-secondary'
                       }`}>
-                        <category.icon className={`${category.parentId ? 'w-3 h-3' : 'w-4 h-4'} ${
+                        <category.icon className={`w-4 h-4 ${
                           selectedCategory === category.id ? 'text-primary' : 'text-muted-foreground'
                         }`} />
                       </div>
                       <div className="flex-1">
-                        <div className={`font-medium ${category.parentId ? 'text-xs' : 'text-sm'} transition-colors ${
+                        <div className={`font-medium text-sm transition-colors ${
                           selectedCategory === category.id ? 'text-primary' : 'text-foreground'
                         }`}>
                           {category.title}
