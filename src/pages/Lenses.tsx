@@ -22,13 +22,13 @@ import telecentric12NonCoaxial from "@/assets/telecentric-12-noncoaxial.png";
 import telecentric23NonCoaxial from "@/assets/telecentric-23-noncoaxial.png";
 import telecentric11NonCoaxial from "@/assets/telecentric-11-noncoaxial.png";
 import telecentric12NonCoaxialAlt from "@/assets/telecentric-12-noncoaxial-alt.png";
-import telecentric18 from "@/assets/telecentric-18.png";
+
 import telecentricLargeNonCoaxial from "@/assets/telecentric-large-noncoaxial.png";
 
 const lensCategories = [
   { id: "all", title: "All Lenses", icon: Aperture, count: 367 },
   { id: "fa-lenses", title: "FA Lenses", icon: Aperture, count: 4 },
-  { id: "telecentric", title: "Telecentric Lenses", icon: Focus, count: 10 },
+  { id: "telecentric", title: "Telecentric Lenses", icon: Focus, count: 9 },
   { id: "vr", title: "VR Lenses", icon: Circle, count: 42 },
   { id: "macro", title: "Macro Lenses", icon: ZoomIn, count: 35 },
   { id: "scheimpflug", title: "Scheimpflug Lenses", icon: Settings, count: 28 },
@@ -144,15 +144,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentric12NonCoaxialAlt,
     resolution: "1.2\"",
-    fps: "-",
-    interface: "C-Mount",
-    category: "telecentric",
-  },
-  {
-    name: "1/8 inch Telecentric Lens",
-    brand: "DZOPTICS",
-    image: telecentric18,
-    resolution: "1/8\"",
     fps: "-",
     interface: "C-Mount",
     category: "telecentric",
