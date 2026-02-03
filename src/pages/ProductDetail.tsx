@@ -162,85 +162,83 @@ const ProductDetail = () => {
       {/* Specifications Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Description */}
-            <div>
-              <h2 className="text-2xl font-bold text-foreground mb-4">Overview</h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                {product.description}
-              </p>
+          {/* Description */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-foreground mb-4">Overview</h2>
+            <p className="text-muted-foreground leading-relaxed mb-8 max-w-3xl">
+              {product.description}
+            </p>
 
-              <h3 className="text-xl font-bold text-foreground mb-4">Key Features</h3>
-              <ul className="space-y-3">
-                {product.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-primary" />
-                    </div>
-                    <span className="text-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <h3 className="text-xl font-bold text-foreground mb-4">Key Features</h3>
+            <ul className="grid md:grid-cols-2 gap-3">
+              {product.features.map((feature, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-primary" />
+                  </div>
+                  <span className="text-foreground">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Technical Specs */}
-            <div>
-              <h2 className="text-2xl font-bold text-foreground mb-4">Technical Specifications</h2>
-              {slug === "1-1-7-inch-fa-lenses" ? (
-                <div className="bg-card border border-border rounded-lg overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow className="bg-secondary/50">
-                        <TableHead className="font-semibold text-foreground">Model</TableHead>
-                        <TableHead className="font-semibold text-foreground">EFL (mm)</TableHead>
-                        <TableHead className="font-semibold text-foreground">Img. Circle</TableHead>
-                        <TableHead className="font-semibold text-foreground">F#</TableHead>
-                        <TableHead className="font-semibold text-foreground">WD Range (mm)</TableHead>
-                        <TableHead className="font-semibold text-foreground">Optical Distortion</TableHead>
-                        <TableHead className="font-semibold text-foreground">Mount</TableHead>
+          {/* Technical Specs - Full Width */}
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Technical Specifications</h2>
+            {slug === "1-1-7-inch-fa-lenses" ? (
+              <div className="bg-card border border-border rounded-lg overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-secondary/50">
+                      <TableHead className="font-semibold text-foreground">Model</TableHead>
+                      <TableHead className="font-semibold text-foreground">EFL (mm)</TableHead>
+                      <TableHead className="font-semibold text-foreground">Img. Circle</TableHead>
+                      <TableHead className="font-semibold text-foreground">F#</TableHead>
+                      <TableHead className="font-semibold text-foreground">WD Range (mm)</TableHead>
+                      <TableHead className="font-semibold text-foreground">Optical Distortion</TableHead>
+                      <TableHead className="font-semibold text-foreground">Mount</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {faLensVariants.map((lens, index) => (
+                      <TableRow key={lens.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
+                        <TableCell className="font-medium text-foreground">{lens.model}</TableCell>
+                        <TableCell className="text-muted-foreground">{lens.efl}</TableCell>
+                        <TableCell className="text-muted-foreground">{lens.imgCircle}</TableCell>
+                        <TableCell className="text-muted-foreground">{lens.fNumber}</TableCell>
+                        <TableCell className="text-muted-foreground">{lens.wdRange}</TableCell>
+                        <TableCell className="text-muted-foreground">{lens.distortion}</TableCell>
+                        <TableCell className="text-muted-foreground">{lens.mount}</TableCell>
                       </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {faLensVariants.map((lens, index) => (
-                        <TableRow key={lens.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
-                          <TableCell className="font-medium text-foreground">{lens.model}</TableCell>
-                          <TableCell className="text-muted-foreground">{lens.efl}</TableCell>
-                          <TableCell className="text-muted-foreground">{lens.imgCircle}</TableCell>
-                          <TableCell className="text-muted-foreground">{lens.fNumber}</TableCell>
-                          <TableCell className="text-muted-foreground">{lens.wdRange}</TableCell>
-                          <TableCell className="text-muted-foreground">{lens.distortion}</TableCell>
-                          <TableCell className="text-muted-foreground">{lens.mount}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-              ) : (
-                <div className="bg-card border border-border rounded-lg overflow-hidden">
-                  <table className="w-full">
-                    <tbody>
-                      {[
-                        { label: "Resolution", value: product.resolution },
-                        { label: "Frame Rate", value: `${product.fps} fps` },
-                        { label: "Interface", value: product.interface },
-                        { label: "Sensor", value: product.sensor },
-                        { label: "Sensor Size", value: product.sensorSize },
-                        { label: "Pixel Size", value: product.pixelSize },
-                        { label: "Dynamic Range", value: product.dynamicRange },
-                        { label: "Operating Temp", value: product.operatingTemp },
-                        { label: "Dimensions", value: product.dimensions },
-                        { label: "Weight", value: product.weight },
-                      ].map((spec, index) => (
-                        <tr key={index} className={index % 2 === 0 ? "bg-secondary/50" : ""}>
-                          <td className="px-4 py-3 text-sm font-medium text-muted-foreground">{spec.label}</td>
-                          <td className="px-4 py-3 text-sm font-semibold text-foreground text-right">{spec.value}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-            </div>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+            ) : (
+              <div className="bg-card border border-border rounded-lg overflow-hidden max-w-xl">
+                <table className="w-full">
+                  <tbody>
+                    {[
+                      { label: "Resolution", value: product.resolution },
+                      { label: "Frame Rate", value: `${product.fps} fps` },
+                      { label: "Interface", value: product.interface },
+                      { label: "Sensor", value: product.sensor },
+                      { label: "Sensor Size", value: product.sensorSize },
+                      { label: "Pixel Size", value: product.pixelSize },
+                      { label: "Dynamic Range", value: product.dynamicRange },
+                      { label: "Operating Temp", value: product.operatingTemp },
+                      { label: "Dimensions", value: product.dimensions },
+                      { label: "Weight", value: product.weight },
+                    ].map((spec, index) => (
+                      <tr key={index} className={index % 2 === 0 ? "bg-secondary/50" : ""}>
+                        <td className="px-4 py-3 text-sm font-medium text-muted-foreground">{spec.label}</td>
+                        <td className="px-4 py-3 text-sm font-semibold text-foreground text-right">{spec.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         </div>
       </section>
