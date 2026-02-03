@@ -32,7 +32,7 @@ const productData = {
       "GenICam compliant",
     ],
   },
-  "1/1.7-inch-fa-lenses": {
+  "1-1-7-inch-fa-lenses": {
     name: "1/1.7 inch FA Lenses",
     brand: "DZOPTICS",
     category: "FA Lenses",
