@@ -9,6 +9,10 @@ import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import cameraProduct2 from "@/assets/camera-product-2.jpg";
 import cameraProduct3 from "@/assets/camera-product-3.jpg";
 import cameraProduct4 from "@/assets/camera-product-4.jpg";
+import faLens117 from "@/assets/fa-lens-1-1-7.png";
+import faLens23Standard from "@/assets/fa-lens-2-3-standard.png";
+import faLens23Superior from "@/assets/fa-lens-2-3-superior.png";
+import faLens11 from "@/assets/fa-lens-1-1.png";
 
 const lensCategories = [
   { id: "all", title: "All Lenses", icon: Aperture, count: 367 },
@@ -26,7 +30,7 @@ const products = [
   {
     name: "1/1.7 inch",
     brand: "FA LENS",
-    image: cameraProduct2,
+    image: faLens117,
     resolution: "1/1.7\"",
     fps: "-",
     interface: "C-Mount",
@@ -35,7 +39,7 @@ const products = [
   {
     name: "2/3 inch Standard",
     brand: "FA LENS",
-    image: cameraProduct1,
+    image: faLens23Standard,
     resolution: "2/3\"",
     fps: "-",
     interface: "C-Mount",
@@ -44,7 +48,7 @@ const products = [
   {
     name: "2/3 inch Superior",
     brand: "FA LENS",
-    image: cameraProduct3,
+    image: faLens23Superior,
     resolution: "2/3\"",
     fps: "-",
     interface: "C-Mount",
@@ -53,7 +57,7 @@ const products = [
   {
     name: "1.1 inch",
     brand: "FA LENS",
-    image: cameraProduct4,
+    image: faLens11,
     resolution: "1.1\"",
     fps: "-",
     interface: "C-Mount",
