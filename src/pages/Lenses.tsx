@@ -270,10 +270,26 @@ const products = [
 
 const Lenses = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [visibleCount, setVisibleCount] = useState(9);
 
   const filteredProducts = selectedCategory === "all" 
     ? products 
     : products.filter(product => product.category === selectedCategory);
+
+  const displayedProducts = selectedCategory === "all" 
+    ? filteredProducts.slice(0, visibleCount) 
+    : filteredProducts;
+
+  const hasMoreProducts = selectedCategory === "all" && visibleCount < filteredProducts.length;
+
+  const handleLoadMore = () => {
+    setVisibleCount(prev => prev + 9);
+  };
+
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    setVisibleCount(9); // Reset when changing categories
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -325,7 +341,7 @@ const Lenses = () => {
                   {lensCategories.map((category) => (
                     <button
                       key={category.id}
-                      onClick={() => setSelectedCategory(category.id)}
+                      onClick={() => handleCategoryChange(category.id)}
                       className={`flex items-center gap-3 p-3 rounded-lg transition-colors text-left w-full ${
                         selectedCategory === category.id 
                           ? 'bg-primary/10 border border-primary' 
@@ -356,7 +372,7 @@ const Lenses = () => {
             {/* Products Grid */}
             <div className="flex-1">
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {filteredProducts.map((product, index) => (
+                {displayedProducts.map((product, index) => (
                   <ProductCard key={index} {...product} />
                 ))}
               </div>
@@ -364,8 +380,14 @@ const Lenses = () => {
               {/* Load More - only show for All Lenses */}
               {selectedCategory === "all" && (
                 <div className="text-center mt-12">
-                  <Button variant="outline" size="lg">
-                    Load More Products
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    onClick={handleLoadMore}
+                    disabled={!hasMoreProducts}
+                    className={!hasMoreProducts ? "opacity-50 cursor-not-allowed" : ""}
+                  >
+                    {hasMoreProducts ? "Load More Products" : "Showing All Products"}
                   </Button>
                 </div>
               )}
