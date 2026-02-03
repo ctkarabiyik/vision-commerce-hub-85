@@ -30,8 +30,12 @@ import lineScan4k from "@/assets/line-scan-4k.png";
 import lineScan8k from "@/assets/line-scan-8k.png";
 import lineScan16k35u from "@/assets/line-scan-16k-35u.png";
 import lineScan16k5u from "@/assets/line-scan-16k-5u.png";
-// Large Format lens images
 import largeFormatLenses from "@/assets/large-format-lenses.png";
+// Other category lens images
+import macroLenses from "@/assets/macro-lenses.png";
+import infraredLenses from "@/assets/infrared-lenses.png";
+import vrLenses from "@/assets/vr-lenses.png";
+import scheimpflugLenses from "@/assets/scheimpflug-lenses.png";
 
 const lensCategories = [
   { id: "all", title: "All Lenses", icon: Aperture, count: 367 },
@@ -39,10 +43,10 @@ const lensCategories = [
   { id: "telecentric", title: "Telecentric Lenses", icon: Focus, count: 10 },
   { id: "line-scan", title: "Line Scan Lenses", icon: Scan, count: 4 },
   { id: "large-format", title: "Large Format Lenses", icon: Microscope, count: 1 },
-  { id: "macro", title: "Macro Lenses", icon: ZoomIn, count: 35 },
-  { id: "infrared", title: "Infrared Lenses", icon: Sun, count: 0 },
-  { id: "vr", title: "VR Lenses", icon: Circle, count: 42 },
-  { id: "scheimpflug", title: "Scheimpflug Lenses", icon: Settings, count: 28 },
+  { id: "macro", title: "Macro Lenses", icon: ZoomIn, count: 1 },
+  { id: "infrared", title: "Infrared Lenses", icon: Sun, count: 1 },
+  { id: "vr", title: "VR Lenses", icon: Circle, count: 1 },
+  { id: "scheimpflug", title: "Scheimpflug Lenses", icon: Settings, count: 1 },
 ];
 
 const products = [
@@ -212,83 +216,42 @@ const products = [
     interface: "M42",
     category: "line-scan",
   },
+  // Macro Lenses
   {
-    name: "WideVR 180",
-    brand: "BASLER",
-    image: cameraProduct3,
-    resolution: "180° FOV",
+    name: "Macro Lenses",
+    brand: "DZOPTICS",
+    image: macroLenses,
+    resolution: "Various",
     fps: "-",
-    interface: "Fixed",
-    category: "vr",
-  },
-  {
-    name: "PanoView Ultra",
-    brand: "COGNEX",
-    image: cameraProduct2,
-    resolution: "220° FOV",
-    fps: "-",
-    interface: "Fixed",
-    category: "vr",
-  },
-  {
-    name: "ImmerseLens 360",
-    brand: "FLIR",
-    image: cameraProduct4,
-    resolution: "360° FOV",
-    fps: "-",
-    interface: "Fixed",
-    category: "vr",
-  },
-  {
-    name: "MacroVision 5x",
-    brand: "BASLER",
-    image: cameraProduct1,
-    resolution: "5x Mag",
-    fps: "-",
-    interface: "Fixed",
+    interface: "C-Mount",
     category: "macro",
   },
+  // Infrared Lenses
   {
-    name: "CloseUp Pro 3x",
-    brand: "COGNEX",
-    image: cameraProduct3,
-    resolution: "3x Mag",
+    name: "Infrared Lenses",
+    brand: "DZOPTICS",
+    image: infraredLenses,
+    resolution: "Various",
     fps: "-",
-    interface: "Fixed",
-    category: "macro",
+    interface: "C-Mount",
+    category: "infrared",
   },
+  // VR Lenses
   {
-    name: "MicroInspect 10x",
-    brand: "FLIR",
-    image: cameraProduct4,
-    resolution: "10x Mag",
+    name: "VR Lenses",
+    brand: "DZOPTICS",
+    image: vrLenses,
+    resolution: "Wide FOV",
     fps: "-",
-    interface: "Fixed",
-    category: "macro",
+    interface: "Various",
+    category: "vr",
   },
+  // Scheimpflug Lenses
   {
-    name: "TiltShift Pro",
-    brand: "BASLER",
-    image: cameraProduct2,
-    resolution: "±8° Tilt",
-    fps: "-",
-    interface: "Adjustable",
-    category: "scheimpflug",
-  },
-  {
-    name: "ScheimView 45",
-    brand: "COGNEX",
-    image: cameraProduct1,
-    resolution: "±12° Tilt",
-    fps: "-",
-    interface: "Adjustable",
-    category: "scheimpflug",
-  },
-  {
-    name: "FocusPlane X",
-    brand: "FLIR",
-    image: cameraProduct3,
-    resolution: "±10° Tilt",
+    name: "Scheimpflug Lenses",
+    brand: "DZOPTICS",
+    image: scheimpflugLenses,
+    resolution: "Various",
     fps: "-",
     interface: "Adjustable",
     category: "scheimpflug",
