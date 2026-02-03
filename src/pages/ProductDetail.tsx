@@ -185,10 +185,12 @@ const ProductDetail = () => {
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               {/* Main Features */}
               <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Star className="w-6 h-6 text-primary" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
+                    <Star className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">Main features</h3>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-4">Main features</h3>
                 <ul className="space-y-3">
                   {(product as any).mainFeatures.map((feature: string, index: number) => (
                     <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
@@ -201,10 +203,12 @@ const ProductDetail = () => {
 
               {/* Technical Specification Summary */}
               <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Settings className="w-6 h-6 text-primary" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
+                    <Settings className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">Technical Specification</h3>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-4">Technical Specification</h3>
                 <ul className="space-y-3">
                   {(product as any).quickSpecs.map((spec: string, index: number) => (
                     <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
@@ -217,10 +221,12 @@ const ProductDetail = () => {
 
               {/* Application */}
               <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Target className="w-6 h-6 text-primary" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
+                    <Target className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">Application</h3>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-4">Application</h3>
                 <ul className="space-y-3">
                   {(product as any).applications.map((app: string, index: number) => (
                     <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
