@@ -29,8 +29,8 @@ import telecentricLargeNonCoaxial from "@/assets/telecentric-large-noncoaxial.pn
 const lensCategories = [
   { id: "all", title: "All Lenses", icon: Aperture, count: 367 },
   { id: "fa-lenses", title: "FA Lenses", icon: Aperture, count: 4 },
-  { id: "line-scan", title: "Line Scan Lenses", icon: Scan, count: 4 },
   { id: "telecentric", title: "Telecentric Lenses", icon: Focus, count: 10 },
+  { id: "line-scan", title: "Line Scan Lenses", icon: Scan, count: 4 },
   { id: "vr", title: "VR Lenses", icon: Circle, count: 42 },
   { id: "macro", title: "Macro Lenses", icon: ZoomIn, count: 35 },
   { id: "scheimpflug", title: "Scheimpflug Lenses", icon: Settings, count: 28 },
