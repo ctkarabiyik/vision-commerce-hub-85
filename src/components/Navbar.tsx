@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe } from "lucide-react";
 import alargeLogo from "@/assets/alarge-logo.svg";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
+import faLens117 from "@/assets/fa-lens-1-1-7.png";
+import faLens23Standard from "@/assets/fa-lens-2-3-standard.png";
+import faLens23Superior from "@/assets/fa-lens-2-3-superior.png";
+import faLens11 from "@/assets/fa-lens-1-1.png";
 
 const languages = [
   { code: "en", name: "English", flag: "🇬🇧" },
@@ -126,10 +130,10 @@ const productsByCategory: Record<string, Array<{ name: string; brand: string; im
     { name: "CompactCore X", brand: "FLIR", image: cameraProduct3, resolution: "5 MP", slug: "compactcore-x" },
   ],
   "FA Lenses": [
-    { name: "ProLens 25mm F1.4", brand: "BASLER", image: cameraProduct2, resolution: "C-Mount", slug: "prolens-25mm" },
-    { name: "OptiPrime 35mm", brand: "COGNEX", image: cameraProduct1, resolution: "F-Mount", slug: "optiprime-35mm" },
-    { name: "VisionFix 50mm", brand: "FLIR", image: cameraProduct3, resolution: "M42", slug: "visionfix-50mm" },
-    { name: "InduLens 16mm", brand: "HIKROBOT", image: cameraProduct4, resolution: "CS-Mount", slug: "indulens-16mm" },
+    { name: "1/1.7 inch FA Lenses", brand: "DZOPTICS", image: faLens117, resolution: "1/1.7\"", slug: "1-1-7-inch-fa-lenses" },
+    { name: "2/3 inch Standard FA Lenses", brand: "DZOPTICS", image: faLens23Standard, resolution: "2/3\"", slug: "2-3-inch-standard-fa-lenses" },
+    { name: "2/3 inch Superior FA Lenses", brand: "DZOPTICS", image: faLens23Superior, resolution: "2/3\"", slug: "2-3-inch-superior-fa-lenses" },
+    { name: "1.1 inch FA Lenses", brand: "DZOPTICS", image: faLens11, resolution: "1.1\"", slug: "1-1-inch-fa-lenses" },
   ],
   "Telecentric Lenses": [
     { name: "TelePrecision 0.5x", brand: "BASLER", image: cameraProduct4, resolution: "0.5x Mag", slug: "teleprecision-05x" },
