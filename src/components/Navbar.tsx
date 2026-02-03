@@ -8,6 +8,11 @@ import faLens117 from "@/assets/fa-lens-1-1-7.png";
 import faLens23Standard from "@/assets/fa-lens-2-3-standard.png";
 import faLens23Superior from "@/assets/fa-lens-2-3-superior.png";
 import faLens11 from "@/assets/fa-lens-1-1.png";
+// Telecentric lens images
+import telecentric23Coaxial from "@/assets/telecentric-23-coaxial.png";
+import telecentric11Coaxial from "@/assets/telecentric-11-coaxial.png";
+import telecentric12Coaxial from "@/assets/telecentric-12-coaxial.png";
+import telecentricLargeCoaxial from "@/assets/telecentric-large-coaxial.png";
 
 const languages = [
   { code: "en", name: "English", flag: "🇬🇧" },
@@ -136,10 +141,10 @@ const productsByCategory: Record<string, Array<{ name: string; brand: string; im
     { name: "1.1 inch FA Lenses", brand: "DZOPTICS", image: faLens11, resolution: "1.1\"", slug: "1-1-inch-fa-lenses" },
   ],
   "Telecentric Lenses": [
-    { name: "TelePrecision 0.5x", brand: "BASLER", image: cameraProduct4, resolution: "0.5x Mag", slug: "teleprecision-05x" },
-    { name: "MeasureOptic 1x", brand: "COGNEX", image: cameraProduct1, resolution: "1x Mag", slug: "measureoptic-1x" },
-    { name: "AccuView 2x", brand: "FLIR", image: cameraProduct2, resolution: "2x Mag", slug: "accuview-2x" },
-    { name: "BiTelecentric 1.5x", brand: "HIKROBOT", image: cameraProduct3, resolution: "1.5x Mag", slug: "bitelecentric-15x" },
+    { name: "2/3 inch Co-Axial Telecentric Lens", brand: "DZOPTICS", image: telecentric23Coaxial, resolution: "2/3\"", slug: "23-coaxial-telecentric" },
+    { name: "1.1 inch Co-Axial Telecentric Lens", brand: "DZOPTICS", image: telecentric11Coaxial, resolution: "1.1\"", slug: "11-coaxial-telecentric" },
+    { name: "1.2 inch Co-Axial Telecentric Lens", brand: "DZOPTICS", image: telecentric12Coaxial, resolution: "1.2\"", slug: "12-coaxial-telecentric" },
+    { name: "Large Format Co-Axial Telecentric Lens", brand: "DZOPTICS", image: telecentricLargeCoaxial, resolution: "Large", slug: "large-coaxial-telecentric" },
   ],
   "VR Lenses": [
     { name: "WideVR 180", brand: "BASLER", image: cameraProduct3, resolution: "180° FOV", slug: "widevr-180" },
