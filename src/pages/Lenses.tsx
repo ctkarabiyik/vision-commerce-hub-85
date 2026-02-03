@@ -28,8 +28,8 @@ const lensCategories = [
 const products = [
   // FA Lenses
   {
-    name: "1/1.7 inch",
-    brand: "FA LENS",
+    name: "1/1.7 inch FA Lenses",
+    brand: "DZOPTICS",
     image: faLens117,
     resolution: "1/1.7\"",
     fps: "-",
@@ -37,8 +37,8 @@ const products = [
     category: "fa-lenses",
   },
   {
-    name: "2/3 inch Standard",
-    brand: "FA LENS",
+    name: "2/3 inch Standard FA Lenses",
+    brand: "DZOPTICS",
     image: faLens23Standard,
     resolution: "2/3\"",
     fps: "-",
@@ -46,8 +46,8 @@ const products = [
     category: "fa-lenses",
   },
   {
-    name: "2/3 inch Superior",
-    brand: "FA LENS",
+    name: "2/3 inch Superior FA Lenses",
+    brand: "DZOPTICS",
     image: faLens23Superior,
     resolution: "2/3\"",
     fps: "-",
@@ -55,8 +55,8 @@ const products = [
     category: "fa-lenses",
   },
   {
-    name: "1.1 inch",
-    brand: "FA LENS",
+    name: "1.1 inch FA Lenses",
+    brand: "DZOPTICS",
     image: faLens11,
     resolution: "1.1\"",
     fps: "-",
