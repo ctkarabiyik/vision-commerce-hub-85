@@ -554,11 +554,11 @@ const Navbar = () => {
                       to={`/product/${product.slug}`}
                       className="group"
                     >
-                      <div className="aspect-square bg-secondary rounded-md overflow-hidden mb-2">
+                      <div className="aspect-square bg-white rounded-md overflow-hidden mb-2 flex items-center justify-center p-2">
                         <img 
                           src={product.image} 
                           alt={product.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                       <div className="text-xs text-primary font-semibold">{product.brand}</div>
