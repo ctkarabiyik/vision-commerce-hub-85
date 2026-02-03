@@ -23,6 +23,7 @@ const productData = {
     brand: "BASLER",
     category: "Area Scan Cameras",
     categorySlug: "area-scan-cameras",
+    image: "/src/assets/camera-product-1.jpg",
     shortDescription: "High-performance area scan camera with exceptional image quality for demanding industrial applications.",
     description: "The ACE-2040 Pro Series represents the pinnacle of industrial imaging technology. Featuring a state-of-the-art Sony IMX sensor, this camera delivers exceptional image quality with minimal noise, even in challenging lighting conditions. The robust housing is designed for 24/7 operation in harsh industrial environments.",
     resolution: "4.2 MP",
@@ -49,6 +50,7 @@ const productData = {
     brand: "DZOPTICS",
     category: "FA Lenses",
     categorySlug: "lenses",
+    image: "/src/assets/fa-lens-1-1-7.png",
     shortDescription: "Compact high-resolution FA lenses designed for 1/1.7\" sensors in factory automation applications.",
     description: "The DZOPTICS 1/1.7 inch FA Lens series delivers exceptional optical performance for machine vision applications. Designed specifically for 1/1.7\" sensors, these lenses provide edge-to-edge sharpness with minimal distortion. The robust metal housing ensures long-term stability in demanding industrial environments.",
     resolution: "1/1.7\"",
@@ -110,9 +112,13 @@ const ProductDetail = () => {
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* 3D Model */}
-            <div className="aspect-square bg-card rounded-lg border border-border overflow-hidden">
-              <SpinningCube />
+            {/* Product Image */}
+            <div className="aspect-square bg-white rounded-lg border border-border overflow-hidden flex items-center justify-center">
+              <img 
+                src={product.image} 
+                alt={product.name}
+                className="w-full h-full object-contain p-8"
+              />
             </div>
 
             {/* Product Info */}
