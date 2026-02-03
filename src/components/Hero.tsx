@@ -1,17 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Download, Cpu, Eye, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-camera.jpg";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-[95vh] flex items-center pt-20 overflow-hidden">
+  return <section className="relative min-h-[95vh] flex items-center pt-20 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Industrial Camera"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="Industrial Camera" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-accent/70" />
       </div>
 
@@ -22,7 +16,7 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-1.5 mb-6">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             <span className="text-xs font-medium uppercase tracking-wider text-primary-foreground">
-              Authorized Distributor
+              DZOptics Authorized Distributor
             </span>
           </div>
 
@@ -79,8 +73,6 @@ const Hero = () => {
 
       {/* Decorative Elements */}
       
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
