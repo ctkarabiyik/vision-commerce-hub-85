@@ -1,50 +1,59 @@
 
-# Product Specifications Table for 1/1.7" FA Lenses
+
+# Restyle Product Info Row to Match Website Design
 
 ## Summary
-Replace the current Technical Specifications section on the 1/1.7 inch FA Lenses product page with a horizontal comparison table that displays all 7 lens models in rows with their specifications in columns.
+Update the 3-column product info section (Main Features, Technical Specification, Application) to use the same card-based styling found throughout the rest of the website.
 
-## Table Layout
+## Current vs. Proposed Design
 
+**Current styling:**
+- Plain divs with no background or border
+- Small Award icons aligned to the right of headers
+- Simple list items with dashes
+
+**Proposed styling (matching site patterns):**
+- Each column wrapped in a card container with `bg-card border border-border rounded-lg p-6`
+- Icon positioned above the heading in a colored container (`w-12 h-12 rounded-lg bg-primary/10`)
+- Hover effect on cards (`hover:border-primary/50 transition-colors`)
+- Use more appropriate icons: Star/Award for Main Features, Settings/Cog for Technical Specs, Target for Applications
+- List items with subtle bullet styling matching other components
+
+## Visual Reference
+
+Looking at the Applications component and FeaturedProducts component, the standard card pattern is:
 ```text
-+--------------------+-----+-------------+----------+------------+--------------------+-------+
-| Model              | EFL | Img. Circle | F#       | WD Range   | Optical Distortion | Mount |
-+--------------------+-----+-------------+----------+------------+--------------------+-------+
-| DZO_LA0628A_1712   | 6   | 1/1.7"      | F2.8-16  | 100-inf    | -0.37%             | C     |
-| DZO_LA0828A_1712   | 8   | 1/1.7"      | F2.8-16  | 100-inf    | -0.37%             | C     |
-| DZO_LA1228A_1712   | 12  | 1/1.7"      | F2.8-16  | 100-inf    | -0.18%             | C     |
-| DZO_LA1628A_1712   | 16  | 1/1.7"      | F2.8-16  | 100-inf    | -0.05%             | C     |
-| DZO_LA2528A_1712   | 25  | 1/1.7"      | F2.8-16  | 100-inf    | 0.06%              | C     |
-| DZO_LA3528A_1712   | 35  | 1/1.7"      | F2.8-16  | 200-inf    | 0.03%              | C     |
-| DZO_LA5028A_1712   | 50  | 1/1.7"      | F2.8-16  | 250-inf    | 0.09%              | C     |
-+--------------------+-----+-------------+----------+------------+--------------------+-------+
++----------------------------------+
+|  [Icon Container]                |
+|                                  |
+|  Title                           |
+|                                  |
+|  • List item 1                   |
+|  • List item 2                   |
+|  • List item 3                   |
++----------------------------------+
 ```
 
 ## Implementation Steps
 
-### 1. Add FA Lens Variants Data
-Create a `faLensVariants` array in `ProductDetail.tsx` containing all 7 lens models with their specifications:
-- Model name
-- EFL (mm)
-- Image Circle
-- F-number range
-- Working Distance Range (mm)
-- Optical Distortion (%)
-- Mount type
+### 1. Update Icon Imports
+Add new icons for better semantic meaning:
+- `Star` for Main Features
+- `Settings` for Technical Specification  
+- `Target` for Application
 
-### 2. Update Technical Specifications Section
-For the `1-1-7-inch-fa-lenses` product only, replace the current vertical key-value table (lines 176-201) with:
-- A horizontal comparison table using the Table component
-- Header row with column names: Model, EFL, Img. Circle, F#, WD Range, Optical Distortion, Mount
-- 7 data rows, one for each lens variant
+### 2. Restyle the 3-Column Grid
+Wrap each column in a card container matching the site's established pattern:
+- Add `bg-card border border-border rounded-lg p-6` to each column
+- Add hover effect `hover:border-primary/50 transition-colors`
+- Move icon to top-left in a `w-12 h-12 rounded-lg bg-primary/10` container
+- Add `group` class for hover states
 
-### 3. Conditional Rendering
-Keep the existing specifications table for other products (like the camera), but use the new comparison table specifically for the FA Lenses product page.
-
-### 4. Responsive Design
-- Add horizontal scroll wrapper for smaller screens
-- Use the existing Table UI components for consistent styling
-- Apply alternating row colors for readability
+### 3. Update Header and List Styling
+- Remove the flex layout that placed icon next to header
+- Position icon above the heading
+- Change list item prefix from `-` to `•` for consistency
+- Adjust spacing between elements
 
 ---
 
@@ -52,15 +61,26 @@ Keep the existing specifications table for other products (like the camera), but
 
 **File to modify:** `src/pages/ProductDetail.tsx`
 
-**Imports to add:**
-- Table, TableHeader, TableBody, TableHead, TableRow, TableCell from `@/components/ui/table`
+**Icon changes:**
+- Import `Star`, `Settings`, `Target` from lucide-react (remove or keep `Award`)
 
-**Changes:**
-1. Add `faLensVariants` data array with all 7 products
-2. Add conditional check: if slug is `1-1-7-inch-fa-lenses`, render the comparison table
-3. Otherwise, render the existing vertical specifications table
+**Class changes for each column:**
+```
+Before: <div>
+After:  <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
+```
 
-**Styling:**
-- Use existing Table components which already have proper styling
-- Add `overflow-x-auto` wrapper for mobile responsiveness
-- Maintain visual consistency with the rest of the page
+**Icon container change:**
+```
+Before: <Award className="w-6 h-6 text-primary" />
+After:  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+          <Star className="w-6 h-6 text-primary" />
+        </div>
+```
+
+**List item change:**
+```
+Before: - {feature}
+After:  • {feature}
+```
+
