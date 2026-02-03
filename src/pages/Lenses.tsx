@@ -30,16 +30,18 @@ import lineScan4k from "@/assets/line-scan-4k.png";
 import lineScan8k from "@/assets/line-scan-8k.png";
 import lineScan16k35u from "@/assets/line-scan-16k-35u.png";
 import lineScan16k5u from "@/assets/line-scan-16k-5u.png";
+// Large Format lens images
+import largeFormatLenses from "@/assets/large-format-lenses.png";
 
 const lensCategories = [
   { id: "all", title: "All Lenses", icon: Aperture, count: 367 },
   { id: "fa-lenses", title: "FA Lenses", icon: Aperture, count: 4 },
   { id: "telecentric", title: "Telecentric Lenses", icon: Focus, count: 10 },
   { id: "line-scan", title: "Line Scan Lenses", icon: Scan, count: 4 },
+  { id: "large-format", title: "Large Format Lenses", icon: Microscope, count: 1 },
   { id: "vr", title: "VR Lenses", icon: Circle, count: 42 },
   { id: "macro", title: "Macro Lenses", icon: ZoomIn, count: 35 },
   { id: "scheimpflug", title: "Scheimpflug Lenses", icon: Settings, count: 28 },
-  { id: "large-format", title: "Large Format Lenses", icon: Microscope, count: 38 },
 ];
 
 const products = [
@@ -290,31 +292,14 @@ const products = [
     interface: "Adjustable",
     category: "scheimpflug",
   },
+  // Large Format Lenses
   {
-    name: "LargeView 120mm",
-    brand: "BASLER",
-    image: cameraProduct1,
-    resolution: "APS-H",
+    name: "Large Format Lenses",
+    brand: "DZOPTICS",
+    image: largeFormatLenses,
+    resolution: "Large",
     fps: "-",
-    interface: "Fixed",
-    category: "large-format",
-  },
-  {
-    name: "BigSensor Pro",
-    brand: "COGNEX",
-    image: cameraProduct4,
-    resolution: "Full Frame",
-    fps: "-",
-    interface: "Fixed",
-    category: "large-format",
-  },
-  {
-    name: "MegaFormat 80mm",
-    brand: "FLIR",
-    image: cameraProduct2,
-    resolution: "Medium Format",
-    fps: "-",
-    interface: "Fixed",
+    interface: "Various",
     category: "large-format",
   },
 ];
