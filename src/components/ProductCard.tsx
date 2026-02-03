@@ -18,11 +18,11 @@ const ProductCard = ({ name, brand, image, resolution, fps, interface: interface
   return (
     <div className="group bg-card rounded-sm border border-border hover:border-primary/50 transition-all duration-300 hover-lift overflow-hidden">
       {/* Image */}
-      <div className="relative aspect-square bg-white overflow-hidden">
+      <div className="relative aspect-square bg-white overflow-hidden flex items-center justify-center p-4">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute top-3 left-3">
           <span className="bg-accent text-accent-foreground text-[10px] font-semibold uppercase tracking-wider px-2 py-1 rounded-sm">
