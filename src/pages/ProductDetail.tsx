@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import SpinningCube from "@/components/SpinningCube";
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
-import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, BookOpen, Wrench } from "lucide-react";
+import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, BookOpen, Wrench, Award } from "lucide-react";
 
 // FA Lens variants data for 1/1.7" lenses
 const faLensVariants = [
@@ -70,6 +70,24 @@ const productData = {
       "Compact C-Mount form factor",
       "Robust metal housing construction",
       "Anti-reflection multi-coating",
+    ],
+    mainFeatures: [
+      "Applicable for 3.45µm pixel size sensor (2.74µm for option)",
+      "Image uniformity (resolution, distortion and chromatic aberration correction etc.) @full image circle & F#2.8",
+      "Stable imaging quality over working distances for diverse applications",
+      "Design for visible light application",
+    ],
+    quickSpecs: [
+      "Imaging circle: 1/1.7\"",
+      "Wavelength: 400-700nm",
+      "Focal length: 6mm - 50mm",
+      "C Mount",
+    ],
+    applications: [
+      "Scan Code",
+      "Color Selection",
+      "2D Ranging",
+      "3D Ranging",
     ],
   },
 };
@@ -162,25 +180,74 @@ const ProductDetail = () => {
       {/* Specifications Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          {/* Description */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Overview</h2>
-            <p className="text-muted-foreground leading-relaxed mb-8 max-w-3xl">
-              {product.description}
-            </p>
+          {/* Three Column Overview for FA Lenses */}
+          {slug === "1-1-7-inch-fa-lenses" && 'mainFeatures' in product ? (
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {/* Main Features */}
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-bold text-foreground">Main features</h3>
+                  <Award className="w-6 h-6 text-primary" />
+                </div>
+                <ul className="space-y-2">
+                  {(product as any).mainFeatures.map((feature: string, index: number) => (
+                    <li key={index} className="text-muted-foreground text-sm">
+                      - {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            <h3 className="text-xl font-bold text-foreground mb-4">Key Features</h3>
-            <ul className="grid md:grid-cols-2 gap-3">
-              {product.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-primary" />
-                  </div>
-                  <span className="text-foreground">{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              {/* Technical Specification Summary */}
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-bold text-foreground">Technical Specification</h3>
+                  <Award className="w-6 h-6 text-primary" />
+                </div>
+                <ul className="space-y-2">
+                  {(product as any).quickSpecs.map((spec: string, index: number) => (
+                    <li key={index} className="text-muted-foreground text-sm">
+                      - {spec}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Application */}
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-bold text-foreground">Application</h3>
+                  <Award className="w-6 h-6 text-primary" />
+                </div>
+                <ul className="space-y-2">
+                  {(product as any).applications.map((app: string, index: number) => (
+                    <li key={index} className="text-muted-foreground text-sm">
+                      - {app}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ) : (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-foreground mb-4">Overview</h2>
+              <p className="text-muted-foreground leading-relaxed mb-8 max-w-3xl">
+                {product.description}
+              </p>
+
+              <h3 className="text-xl font-bold text-foreground mb-4">Key Features</h3>
+              <ul className="grid md:grid-cols-2 gap-3">
+                {product.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <span className="text-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Technical Specs - Full Width */}
           <div>
