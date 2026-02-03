@@ -13,6 +13,17 @@ import faLens117 from "@/assets/fa-lens-1-1-7.png";
 import faLens23Standard from "@/assets/fa-lens-2-3-standard.png";
 import faLens23Superior from "@/assets/fa-lens-2-3-superior.png";
 import faLens11 from "@/assets/fa-lens-1-1.png";
+// Telecentric lens images
+import telecentric23Coaxial from "@/assets/telecentric-23-coaxial.png";
+import telecentric11Coaxial from "@/assets/telecentric-11-coaxial.png";
+import telecentric12Coaxial from "@/assets/telecentric-12-coaxial.png";
+import telecentricLargeCoaxial from "@/assets/telecentric-large-coaxial.png";
+import telecentric12NonCoaxial from "@/assets/telecentric-12-noncoaxial.png";
+import telecentric23NonCoaxial from "@/assets/telecentric-23-noncoaxial.png";
+import telecentric11NonCoaxial from "@/assets/telecentric-11-noncoaxial.png";
+import telecentric12NonCoaxialAlt from "@/assets/telecentric-12-noncoaxial-alt.png";
+import telecentric18 from "@/assets/telecentric-18.png";
+import telecentricLargeNonCoaxial from "@/assets/telecentric-large-noncoaxial.png";
 
 const lensCategories = [
   { id: "all", title: "All Lenses", icon: Aperture, count: 367 },
@@ -67,7 +78,7 @@ const products = [
   {
     name: "2/3 inch Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: cameraProduct1,
+    image: telecentric23Coaxial,
     resolution: "2/3\"",
     fps: "-",
     interface: "C-Mount",
@@ -76,7 +87,7 @@ const products = [
   {
     name: "1.1 inch Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: cameraProduct2,
+    image: telecentric11Coaxial,
     resolution: "1.1\"",
     fps: "-",
     interface: "C-Mount",
@@ -85,7 +96,7 @@ const products = [
   {
     name: "1.2 inch Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: cameraProduct3,
+    image: telecentric12Coaxial,
     resolution: "1.2\"",
     fps: "-",
     interface: "C-Mount",
@@ -94,7 +105,7 @@ const products = [
   {
     name: "Large Format Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: cameraProduct4,
+    image: telecentricLargeCoaxial,
     resolution: "Large",
     fps: "-",
     interface: "C-Mount",
@@ -104,7 +115,7 @@ const products = [
   {
     name: "1/2 inch Non-Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: cameraProduct1,
+    image: telecentric12NonCoaxial,
     resolution: "1/2\"",
     fps: "-",
     interface: "C-Mount",
@@ -113,7 +124,7 @@ const products = [
   {
     name: "2/3 inch Non-Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: cameraProduct2,
+    image: telecentric23NonCoaxial,
     resolution: "2/3\"",
     fps: "-",
     interface: "C-Mount",
@@ -122,7 +133,7 @@ const products = [
   {
     name: "1.1 inch Non-Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: cameraProduct3,
+    image: telecentric11NonCoaxial,
     resolution: "1.1\"",
     fps: "-",
     interface: "C-Mount",
@@ -131,7 +142,7 @@ const products = [
   {
     name: "1.2 inch Non-Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: cameraProduct4,
+    image: telecentric12NonCoaxialAlt,
     resolution: "1.2\"",
     fps: "-",
     interface: "C-Mount",
@@ -140,7 +151,7 @@ const products = [
   {
     name: "1/8 inch Telecentric Lens",
     brand: "DZOPTICS",
-    image: cameraProduct1,
+    image: telecentric18,
     resolution: "1/8\"",
     fps: "-",
     interface: "C-Mount",
@@ -149,7 +160,7 @@ const products = [
   {
     name: "Large Format Non-Co-Axial Telecentric Lens",
     brand: "DZOPTICS",
-    image: cameraProduct2,
+    image: telecentricLargeNonCoaxial,
     resolution: "Large",
     fps: "-",
     interface: "C-Mount",
