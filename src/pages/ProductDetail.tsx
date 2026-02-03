@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import SpinningCube from "@/components/SpinningCube";
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
-import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, BookOpen, Wrench, Award } from "lucide-react";
+import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, BookOpen, Wrench, Star, Settings, Target } from "lucide-react";
 
 // FA Lens variants data for 1/1.7" lenses
 const faLensVariants = [
@@ -184,45 +184,45 @@ const ProductDetail = () => {
           {slug === "1-1-7-inch-fa-lenses" && 'mainFeatures' in product ? (
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               {/* Main Features */}
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold text-foreground">Main features</h3>
-                  <Award className="w-6 h-6 text-primary" />
+              <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Star className="w-6 h-6 text-primary" />
                 </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">Main features</h3>
                 <ul className="space-y-2">
                   {(product as any).mainFeatures.map((feature: string, index: number) => (
                     <li key={index} className="text-muted-foreground text-sm">
-                      - {feature}
+                      • {feature}
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Technical Specification Summary */}
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold text-foreground">Technical Specification</h3>
-                  <Award className="w-6 h-6 text-primary" />
+              <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Settings className="w-6 h-6 text-primary" />
                 </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">Technical Specification</h3>
                 <ul className="space-y-2">
                   {(product as any).quickSpecs.map((spec: string, index: number) => (
                     <li key={index} className="text-muted-foreground text-sm">
-                      - {spec}
+                      • {spec}
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Application */}
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold text-foreground">Application</h3>
-                  <Award className="w-6 h-6 text-primary" />
+              <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Target className="w-6 h-6 text-primary" />
                 </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">Application</h3>
                 <ul className="space-y-2">
                   {(product as any).applications.map((app: string, index: number) => (
                     <li key={index} className="text-muted-foreground text-sm">
-                      - {app}
+                      • {app}
                     </li>
                   ))}
                 </ul>
