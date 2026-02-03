@@ -1,9 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle } from "lucide-react";
+import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe } from "lucide-react";
 import alargeLogo from "@/assets/alarge-logo.svg";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
+
+const languages = [
+  { code: "en", name: "English", flag: "🇺🇸" },
+  { code: "zh", name: "中文", flag: "🇨🇳" },
+  { code: "ja", name: "日本語", flag: "🇯🇵" },
+  { code: "ko", name: "한국어", flag: "🇰🇷" },
+  { code: "de", name: "Deutsch", flag: "🇩🇪" },
+];
 import cameraProduct2 from "@/assets/camera-product-2.jpg";
 import cameraProduct3 from "@/assets/camera-product-3.jpg";
 import cameraProduct4 from "@/assets/camera-product-4.jpg";
@@ -179,6 +187,8 @@ const Navbar = () => {
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
+  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
   const [activeProductTab, setActiveProductTab] = useState<"cameras" | "lenses">("cameras");
   const [hoveredCameraCategory, setHoveredCameraCategory] = useState<string>("Line Scan Cameras");
   const [hoveredLensCategory, setHoveredLensCategory] = useState<string>("FA Lenses");
@@ -236,6 +246,40 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
+            {/* Language Selector */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setLanguageDropdownOpen(true)}
+              onMouseLeave={() => setLanguageDropdownOpen(false)}
+            >
+              <button className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors outline-none px-2 py-1 rounded-md hover:bg-muted">
+                <span className="text-lg">{selectedLanguage.flag}</span>
+                <span className="hidden xl:inline">{selectedLanguage.code.toUpperCase()}</span>
+                <ChevronDown className={`w-3 h-3 transition-transform ${languageDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {/* Language Dropdown */}
+              <div className={`absolute right-0 top-full mt-2 bg-card border border-border rounded-lg shadow-lg py-2 min-w-[160px] transition-all duration-200 z-50 ${
+                languageDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+              }`}>
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      setSelectedLanguage(lang);
+                      setLanguageDropdownOpen(false);
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-muted transition-colors text-left ${
+                      selectedLanguage.code === lang.code ? 'text-primary bg-muted/50' : 'text-foreground'
+                    }`}
+                  >
+                    <span className="text-lg">{lang.flag}</span>
+                    <span>{lang.name}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            
             <Link to="/contact-us">
               <Button variant="default">Contact Us</Button>
             </Link>
