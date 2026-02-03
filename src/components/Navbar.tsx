@@ -6,11 +6,8 @@ import alargeLogo from "@/assets/alarge-logo.svg";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
 
 const languages = [
-  { code: "en", name: "English", flag: "🇺🇸" },
-  { code: "zh", name: "中文", flag: "🇨🇳" },
-  { code: "ja", name: "日本語", flag: "🇯🇵" },
-  { code: "ko", name: "한국어", flag: "🇰🇷" },
-  { code: "de", name: "Deutsch", flag: "🇩🇪" },
+  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "tr", name: "Türkçe", flag: "🇹🇷" },
 ];
 import cameraProduct2 from "@/assets/camera-product-2.jpg";
 import cameraProduct3 from "@/assets/camera-product-3.jpg";
