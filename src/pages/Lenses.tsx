@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Grid3X3, LayoutList, Aperture, Focus, Scan, Circle, ZoomIn, Settings, Microscope } from "lucide-react";
+import { ChevronRight, Grid3X3, LayoutList, Aperture, Focus, Scan, Circle, ZoomIn, Settings, Microscope, Sun } from "lucide-react";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import cameraProduct2 from "@/assets/camera-product-2.jpg";
 import cameraProduct3 from "@/assets/camera-product-3.jpg";
@@ -39,8 +39,9 @@ const lensCategories = [
   { id: "telecentric", title: "Telecentric Lenses", icon: Focus, count: 10 },
   { id: "line-scan", title: "Line Scan Lenses", icon: Scan, count: 4 },
   { id: "large-format", title: "Large Format Lenses", icon: Microscope, count: 1 },
-  { id: "vr", title: "VR Lenses", icon: Circle, count: 42 },
   { id: "macro", title: "Macro Lenses", icon: ZoomIn, count: 35 },
+  { id: "infrared", title: "Infrared Lenses", icon: Sun, count: 0 },
+  { id: "vr", title: "VR Lenses", icon: Circle, count: 42 },
   { id: "scheimpflug", title: "Scheimpflug Lenses", icon: Settings, count: 28 },
 ];
 
