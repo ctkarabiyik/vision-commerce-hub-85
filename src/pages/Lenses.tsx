@@ -25,6 +25,11 @@ import telecentric12NonCoaxialAlt from "@/assets/telecentric-12-noncoaxial-alt.p
 import telecentric18 from "@/assets/telecentric-18.png";
 
 import telecentricLargeNonCoaxial from "@/assets/telecentric-large-noncoaxial.png";
+// Line Scan lens images
+import lineScan4k from "@/assets/line-scan-4k.png";
+import lineScan8k from "@/assets/line-scan-8k.png";
+import lineScan16k35u from "@/assets/line-scan-16k-35u.png";
+import lineScan16k5u from "@/assets/line-scan-16k-5u.png";
 
 const lensCategories = [
   { id: "all", title: "All Lenses", icon: Aperture, count: 367 },
@@ -171,7 +176,7 @@ const products = [
   {
     name: "4K Line Scan Lens",
     brand: "DZOPTICS",
-    image: cameraProduct1,
+    image: lineScan4k,
     resolution: "4K",
     fps: "-",
     interface: "M42",
@@ -180,7 +185,7 @@ const products = [
   {
     name: "8K Line Scan Lens",
     brand: "DZOPTICS",
-    image: cameraProduct2,
+    image: lineScan8k,
     resolution: "8K",
     fps: "-",
     interface: "M42",
@@ -189,7 +194,7 @@ const products = [
   {
     name: "16K / 3.5u Line Scan Lens",
     brand: "DZOPTICS",
-    image: cameraProduct3,
+    image: lineScan16k35u,
     resolution: "16K",
     fps: "-",
     interface: "M42",
@@ -198,7 +203,7 @@ const products = [
   {
     name: "16K / 5u Line Scan Lens",
     brand: "DZOPTICS",
-    image: cameraProduct4,
+    image: lineScan16k5u,
     resolution: "16K",
     fps: "-",
     interface: "M42",
