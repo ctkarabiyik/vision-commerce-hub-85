@@ -182,7 +182,7 @@ const ProductDetail = () => {
         <div className="container mx-auto px-4">
           {/* Three Column Overview for FA Lenses */}
           {slug === "1-1-7-inch-fa-lenses" && 'mainFeatures' in product ? (
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
               {/* Main Features */}
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -251,7 +251,7 @@ const ProductDetail = () => {
 
           {/* Technical Specs - Full Width */}
           <div>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Technical Specifications</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Product Models</h2>
             {slug === "1-1-7-inch-fa-lenses" ? (
               <div className="bg-card border border-border rounded-lg overflow-x-auto">
                 <Table>
