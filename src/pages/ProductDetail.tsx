@@ -153,14 +153,6 @@ const ProductDetail = () => {
                   <ShoppingCart className="w-5 h-5 flex-shrink-0" />
                   Request Quote
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="gap-2 w-full sm:w-auto whitespace-normal sm:whitespace-nowrap"
-                >
-                  <Download className="w-5 h-5 flex-shrink-0" />
-                  <span className="text-center leading-snug">Download Datasheet</span>
-                </Button>
               </div>
             </div>
           </div>
