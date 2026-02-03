@@ -3,7 +3,19 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SpinningCube from "@/components/SpinningCube";
 import { Button } from "@/components/ui/button";
+import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
 import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, BookOpen, Wrench } from "lucide-react";
+
+// FA Lens variants data for 1/1.7" lenses
+const faLensVariants = [
+  { model: "DZO_LA0628A_1712", efl: "6", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.37%", mount: "C" },
+  { model: "DZO_LA0828A_1712", efl: "8", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.37%", mount: "C" },
+  { model: "DZO_LA1228A_1712", efl: "12", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.18%", mount: "C" },
+  { model: "DZO_LA1628A_1712", efl: "16", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.05%", mount: "C" },
+  { model: "DZO_LA2528A_1712", efl: "25", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "0.06%", mount: "C" },
+  { model: "DZO_LA3528A_1712", efl: "35", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "200-inf", distortion: "0.03%", mount: "C" },
+  { model: "DZO_LA5028A_1712", efl: "50", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "250-inf", distortion: "0.09%", mount: "C" },
+];
 
 const productData = {
   "ace-2040-pro-series": {
@@ -176,29 +188,60 @@ const ProductDetail = () => {
             {/* Technical Specs */}
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-4">Technical Specifications</h2>
-              <div className="bg-card border border-border rounded-lg overflow-hidden">
-                <table className="w-full">
-                  <tbody>
-                    {[
-                      { label: "Resolution", value: product.resolution },
-                      { label: "Frame Rate", value: `${product.fps} fps` },
-                      { label: "Interface", value: product.interface },
-                      { label: "Sensor", value: product.sensor },
-                      { label: "Sensor Size", value: product.sensorSize },
-                      { label: "Pixel Size", value: product.pixelSize },
-                      { label: "Dynamic Range", value: product.dynamicRange },
-                      { label: "Operating Temp", value: product.operatingTemp },
-                      { label: "Dimensions", value: product.dimensions },
-                      { label: "Weight", value: product.weight },
-                    ].map((spec, index) => (
-                      <tr key={index} className={index % 2 === 0 ? "bg-secondary/50" : ""}>
-                        <td className="px-4 py-3 text-sm font-medium text-muted-foreground">{spec.label}</td>
-                        <td className="px-4 py-3 text-sm font-semibold text-foreground text-right">{spec.value}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              {slug === "1-1-7-inch-fa-lenses" ? (
+                <div className="bg-card border border-border rounded-lg overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow className="bg-secondary/50">
+                        <TableHead className="font-semibold text-foreground">Model</TableHead>
+                        <TableHead className="font-semibold text-foreground">EFL (mm)</TableHead>
+                        <TableHead className="font-semibold text-foreground">Img. Circle</TableHead>
+                        <TableHead className="font-semibold text-foreground">F#</TableHead>
+                        <TableHead className="font-semibold text-foreground">WD Range (mm)</TableHead>
+                        <TableHead className="font-semibold text-foreground">Optical Distortion</TableHead>
+                        <TableHead className="font-semibold text-foreground">Mount</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {faLensVariants.map((lens, index) => (
+                        <TableRow key={lens.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
+                          <TableCell className="font-medium text-foreground">{lens.model}</TableCell>
+                          <TableCell className="text-muted-foreground">{lens.efl}</TableCell>
+                          <TableCell className="text-muted-foreground">{lens.imgCircle}</TableCell>
+                          <TableCell className="text-muted-foreground">{lens.fNumber}</TableCell>
+                          <TableCell className="text-muted-foreground">{lens.wdRange}</TableCell>
+                          <TableCell className="text-muted-foreground">{lens.distortion}</TableCell>
+                          <TableCell className="text-muted-foreground">{lens.mount}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              ) : (
+                <div className="bg-card border border-border rounded-lg overflow-hidden">
+                  <table className="w-full">
+                    <tbody>
+                      {[
+                        { label: "Resolution", value: product.resolution },
+                        { label: "Frame Rate", value: `${product.fps} fps` },
+                        { label: "Interface", value: product.interface },
+                        { label: "Sensor", value: product.sensor },
+                        { label: "Sensor Size", value: product.sensorSize },
+                        { label: "Pixel Size", value: product.pixelSize },
+                        { label: "Dynamic Range", value: product.dynamicRange },
+                        { label: "Operating Temp", value: product.operatingTemp },
+                        { label: "Dimensions", value: product.dimensions },
+                        { label: "Weight", value: product.weight },
+                      ].map((spec, index) => (
+                        <tr key={index} className={index % 2 === 0 ? "bg-secondary/50" : ""}>
+                          <td className="px-4 py-3 text-sm font-medium text-muted-foreground">{spec.label}</td>
+                          <td className="px-4 py-3 text-sm font-semibold text-foreground text-right">{spec.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </div>
           </div>
         </div>
