@@ -59,6 +59,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "fa-lenses",
+    slug: "1/1.7-inch-fa-lenses",
   },
   {
     name: "2/3 inch Standard FA Lenses",

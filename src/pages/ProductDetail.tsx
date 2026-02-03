@@ -32,6 +32,32 @@ const productData = {
       "GenICam compliant",
     ],
   },
+  "1/1.7-inch-fa-lenses": {
+    name: "1/1.7 inch FA Lenses",
+    brand: "DZOPTICS",
+    category: "FA Lenses",
+    categorySlug: "lenses",
+    shortDescription: "Compact high-resolution FA lenses designed for 1/1.7\" sensors in factory automation applications.",
+    description: "The DZOPTICS 1/1.7 inch FA Lens series delivers exceptional optical performance for machine vision applications. Designed specifically for 1/1.7\" sensors, these lenses provide edge-to-edge sharpness with minimal distortion. The robust metal housing ensures long-term stability in demanding industrial environments.",
+    resolution: "1/1.7\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "1/1.7\" Sensors",
+    sensorSize: "1/1.7\"",
+    pixelSize: "Compatible with 2.5µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø29 x 32 mm",
+    weight: "45g",
+    features: [
+      "Optimized for 1/1.7\" image sensors",
+      "Low distortion design (<0.5%)",
+      "High resolution across full image circle",
+      "Compact C-Mount form factor",
+      "Robust metal housing construction",
+      "Anti-reflection multi-coating",
+    ],
+  },
 };
 
 const ProductDetail = () => {
