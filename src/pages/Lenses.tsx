@@ -384,7 +384,7 @@ const Lenses = () => {
                         }`}>
                           {category.title}
                         </div>
-                        <div className="text-xs text-muted-foreground">{category.count} Product Types</div>
+                        <div className="text-xs text-muted-foreground">{category.count} Product {category.count === 1 ? 'Type' : 'Types'}</div>
                       </div>
                     </button>
                   ))}
