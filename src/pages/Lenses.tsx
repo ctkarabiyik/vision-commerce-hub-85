@@ -38,7 +38,7 @@ import vrLenses from "@/assets/vr-lenses.png";
 import scheimpflugLenses from "@/assets/scheimpflug-lenses.png";
 
 const lensCategories = [
-  { id: "all", title: "All Lenses", icon: Aperture, count: 367 },
+  { id: "all", title: "All Lenses", icon: Aperture, count: 23 },
   { id: "fa-lenses", title: "FA Lenses", icon: Aperture, count: 4 },
   { id: "telecentric", title: "Telecentric Lenses", icon: Focus, count: 10 },
   { id: "line-scan", title: "Line Scan Lenses", icon: Scan, count: 4 },
@@ -384,7 +384,7 @@ const Lenses = () => {
                         }`}>
                           {category.title}
                         </div>
-                        <div className="text-xs text-muted-foreground">{category.count} Products</div>
+                        <div className="text-xs text-muted-foreground">{category.count} Product Types</div>
                       </div>
                     </button>
                   ))}
