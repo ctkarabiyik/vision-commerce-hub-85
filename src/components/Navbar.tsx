@@ -21,52 +21,6 @@ const languages = [
 import cameraProduct2 from "@/assets/camera-product-2.jpg";
 import cameraProduct3 from "@/assets/camera-product-3.jpg";
 import cameraProduct4 from "@/assets/camera-product-4.jpg";
-import solutionManufacturing from "@/assets/solution-manufacturing.jpg";
-import solutionAutomotive from "@/assets/solution-automotive.jpg";
-import solutionPharmaceutical from "@/assets/solution-pharmaceutical.jpg";
-import solutionLogistics from "@/assets/solution-logistics.jpg";
-import solutionElectronics from "@/assets/solution-electronics.jpg";
-import solutionResearch from "@/assets/solution-research.jpg";
-
-const solutions = [
-  {
-    image: solutionManufacturing,
-    title: "Manufacturing & Quality Control",
-    description: "Automated defect detection and measurement",
-    href: "/solutions/manufacturing",
-  },
-  {
-    image: solutionAutomotive,
-    title: "Automotive Industry",
-    description: "Vision-guided robotics and inspection",
-    href: "#",
-  },
-  {
-    image: solutionPharmaceutical,
-    title: "Pharmaceutical & Medical",
-    description: "Label verification and contamination detection",
-    href: "#",
-  },
-  {
-    image: solutionLogistics,
-    title: "Logistics & Packaging",
-    description: "Barcode reading and sorting automation",
-    href: "#",
-  },
-  {
-    image: solutionElectronics,
-    title: "Electronics & Semiconductor",
-    description: "PCB inspection and chip alignment",
-    href: "#",
-  },
-  {
-    image: solutionResearch,
-    title: "Research & Laboratory",
-    description: "High-resolution scientific imaging",
-    href: "#",
-  },
-];
-
 const cameraCategories = [
   {
     icon: Scan,
@@ -187,11 +141,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileCameras, setMobileCameras] = useState(false);
   const [mobileLenses, setMobileLenses] = useState(false);
-  const [mobileSolutions, setMobileSolutions] = useState(false);
+  
   const [mobileSupport, setMobileSupport] = useState(false);
   const [mobileProducts, setMobileProducts] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
-  const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
+  
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
@@ -204,7 +158,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-colors duration-200 ${
-      productsDropdownOpen || solutionsDropdownOpen || supportDropdownOpen ? 'bg-background' : 'bg-background/95 backdrop-blur-sm'
+      productsDropdownOpen || supportDropdownOpen ? 'bg-background' : 'bg-background/95 backdrop-blur-sm'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -223,16 +177,6 @@ const Navbar = () => {
               <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">
                 Products
                 <ChevronDown className={`w-4 h-4 transition-transform ${productsDropdownOpen ? 'rotate-180' : ''}`} />
-              </button>
-            </div>
-            <div
-              className="relative"
-              onMouseEnter={() => setSolutionsDropdownOpen(true)}
-              onMouseLeave={() => setSolutionsDropdownOpen(false)}
-            >
-              <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">
-                Solutions
-                <ChevronDown className={`w-4 h-4 transition-transform ${solutionsDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
             </div>
             <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
@@ -355,27 +299,6 @@ const Navbar = () => {
                       ))}
                     </div>
                   )}
-                </div>
-              )}
-              <button 
-                onClick={() => setMobileSolutions(!mobileSolutions)}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left"
-              >
-                Solutions
-                <ChevronDown className={`w-4 h-4 transition-transform ${mobileSolutions ? 'rotate-180' : ''}`} />
-              </button>
-              {mobileSolutions && (
-                <div className="pl-4 flex flex-col gap-2">
-                  {solutions.map((solution, index) => (
-                    <a 
-                      key={index}
-                      href="#"
-                      className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors py-1"
-                    >
-                      <img src={solution.image} alt={solution.title} className="w-8 h-8 rounded object-cover" />
-                      {solution.title}
-                    </a>
-                  ))}
                 </div>
               )}
               <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
@@ -575,45 +498,6 @@ const Navbar = () => {
               </div>
             </div>
           )}
-        </div>
-      </div>
-
-      {/* Solutions Dropdown Menu */}
-      <div 
-        className={`absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg transition-all duration-200 z-50 ${
-          solutionsDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
-        onMouseEnter={() => setSolutionsDropdownOpen(true)}
-        onMouseLeave={() => setSolutionsDropdownOpen(false)}
-      >
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-3 gap-6">
-            {solutions.map((solution, index) => (
-              <div 
-                key={index}
-                className="group rounded-lg overflow-hidden hover:bg-secondary transition-colors"
-              >
-                <div className="aspect-[16/7] bg-secondary overflow-hidden">
-                  <img 
-                    src={solution.image} 
-                    alt={solution.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-4">
-                  <div className="font-semibold text-foreground group-hover:text-primary transition-colors">{solution.title}</div>
-                  <div className="text-sm text-muted-foreground mb-3">{solution.description}</div>
-                  <Link 
-                    to={solution.href}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                  >
-                    Read More
-                    <ChevronDown className="w-3 h-3 rotate-[-90deg]" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
