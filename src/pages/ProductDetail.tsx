@@ -825,7 +825,7 @@ const ProductDetail = () => {
                 </Table>
               </div>
             ) : (
-              <div className="bg-card border border-border rounded-lg overflow-hidden max-w-xl">
+              <div className="bg-card border border-border rounded-lg overflow-hidden">
                 <table className="w-full">
                   <tbody>
                     {[
@@ -847,35 +847,6 @@ const ProductDetail = () => {
                 </table>
               </div>
             )}
-          </div>
-        </div>
-      </section>
-
-      {/* Downloads & Resources CTA Section */}
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="bg-card border border-border rounded-2xl p-8 lg:p-12 text-center">
-            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
-              <Download className="w-6 h-6 text-primary" />
-            </div>
-            <h2 className="text-3xl font-bold text-foreground mb-4">Downloads & Resources</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Access software, drivers, and technical documentation for {product.name} and other products in our catalog.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/software-downloads">
-                <Button size="lg" className="gap-2">
-                  <Code className="w-5 h-5" />
-                  Software & Drivers
-                </Button>
-              </Link>
-              <Link to="/knowledge-base">
-                <Button size="lg" variant="outline" className="gap-2">
-                  <FileText className="w-5 h-5" />
-                  Technical Documentation
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
