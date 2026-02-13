@@ -69,6 +69,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "fa-lenses",
+    slug: "2-3-inch-standard-fa-lenses",
   },
   {
     name: "2/3 inch Superior FA Lenses",
@@ -78,6 +79,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "fa-lenses",
+    slug: "2-3-inch-superior-fa-lenses",
   },
   {
     name: "1.1 inch FA Lenses",
@@ -87,6 +89,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "fa-lenses",
+    slug: "1-1-inch-fa-lenses",
   },
   // Telecentric Lenses - Co-Axial
   {
@@ -97,6 +100,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "telecentric",
+    slug: "23-coaxial-telecentric",
   },
   {
     name: "1.1 inch Co-Axial Telecentric Lens",
@@ -106,6 +110,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "telecentric",
+    slug: "11-coaxial-telecentric",
   },
   {
     name: "1.2 inch Co-Axial Telecentric Lens",
@@ -115,6 +120,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "telecentric",
+    slug: "12-coaxial-telecentric",
   },
   {
     name: "Large Format Co-Axial Telecentric Lens",
@@ -124,6 +130,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "telecentric",
+    slug: "large-coaxial-telecentric",
   },
   // Telecentric Lenses - Non-Co-Axial
   {
@@ -134,6 +141,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "telecentric",
+    slug: "half-inch-noncoaxial-telecentric",
   },
   {
     name: "2/3 inch Non-Co-Axial Telecentric Lens",
@@ -143,15 +151,17 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "telecentric",
+    slug: "23-noncoaxial-telecentric",
   },
   {
-    name: "2/3 inch Non-Co-Axial Telecentric Lens",
+    name: "2/3 inch Non-Co-Axial Telecentric Lens (Type B)",
     brand: "DZOPTICS",
     image: telecentric11NonCoaxial,
     resolution: "2/3\"",
     fps: "-",
     interface: "C-Mount",
     category: "telecentric",
+    slug: "23-noncoaxial-telecentric-b",
   },
   {
     name: "1.1 inch Non-Co-Axial Telecentric Lens",
@@ -161,6 +171,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "telecentric",
+    slug: "11-noncoaxial-telecentric",
   },
   {
     name: "1.2 inch Non-Co-Axial Telecentric Lens",
@@ -170,6 +181,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "telecentric",
+    slug: "12-noncoaxial-telecentric",
   },
   {
     name: "Large Format Non-Co-Axial Telecentric Lens",
@@ -179,6 +191,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "telecentric",
+    slug: "large-noncoaxial-telecentric",
   },
   // Line Scan Lenses
   {
@@ -189,6 +202,7 @@ const products = [
     fps: "-",
     interface: "M42",
     category: "line-scan",
+    slug: "4k-line-scan-lens",
   },
   {
     name: "8K Line Scan Lens",
@@ -198,6 +212,7 @@ const products = [
     fps: "-",
     interface: "M42",
     category: "line-scan",
+    slug: "8k-line-scan-lens",
   },
   {
     name: "16K / 3.5u Line Scan Lens",
@@ -207,6 +222,7 @@ const products = [
     fps: "-",
     interface: "M42",
     category: "line-scan",
+    slug: "16k-35u-line-scan-lens",
   },
   {
     name: "16K / 5u Line Scan Lens",
@@ -216,6 +232,7 @@ const products = [
     fps: "-",
     interface: "M42",
     category: "line-scan",
+    slug: "16k-5u-line-scan-lens",
   },
   // Macro Lenses
   {
@@ -226,6 +243,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "macro",
+    slug: "macro-lenses",
   },
   // Infrared Lenses
   {
@@ -236,6 +254,7 @@ const products = [
     fps: "-",
     interface: "C-Mount",
     category: "infrared",
+    slug: "infrared-lenses",
   },
   // VR Lenses
   {
@@ -246,6 +265,7 @@ const products = [
     fps: "-",
     interface: "Various",
     category: "vr",
+    slug: "vr-lenses",
   },
   // Scheimpflug Lenses
   {
@@ -256,6 +276,7 @@ const products = [
     fps: "-",
     interface: "Adjustable",
     category: "scheimpflug",
+    slug: "scheimpflug-lenses",
   },
   // Large Format Lenses
   {
@@ -266,6 +287,7 @@ const products = [
     fps: "-",
     interface: "Various",
     category: "large-format",
+    slug: "large-format-lenses",
   },
 ];
 
