@@ -13,6 +13,10 @@ import telecentric23Coaxial from "@/assets/telecentric-23-coaxial.png";
 import telecentric11Coaxial from "@/assets/telecentric-11-coaxial.png";
 import telecentric12Coaxial from "@/assets/telecentric-12-coaxial.png";
 import telecentricLargeCoaxial from "@/assets/telecentric-large-coaxial.png";
+import lineScan4k from "@/assets/line-scan-4k.png";
+import lineScan8k from "@/assets/line-scan-8k.png";
+import lineScan16k35u from "@/assets/line-scan-16k-35u.png";
+import lineScan16k5u from "@/assets/line-scan-16k-5u.png";
 
 const languages = [
   { code: "en", name: "English", flag: "🇬🇧" },
@@ -50,21 +54,21 @@ const lensCategories = [
     icon: Aperture,
     title: "FA Lenses",
     description: "Factory automation imaging lenses",
-    count: 120,
+    count: 4,
     href: "#fa-lenses",
   },
   {
     icon: Focus,
     title: "Telecentric Lenses",
     description: "Distortion-free measurement optics",
-    count: 48,
+    count: 10,
     href: "#telecentric-lenses",
   },
   {
     icon: Scan,
     title: "Line Scan Lenses",
     description: "Optimized for line scan cameras",
-    count: 56,
+    count: 4,
     href: "#line-scan-lenses",
   },
 ];
@@ -95,40 +99,16 @@ const productsByCategory: Record<string, Array<{ name: string; brand: string; im
     { name: "1.1 inch FA Lenses", brand: "DZOPTICS", image: faLens11, resolution: "1.1\"", slug: "1-1-inch-fa-lenses" },
   ],
   "Telecentric Lenses": [
-    { name: "2/3 inch Co-Axial Telecentric Lens", brand: "DZOPTICS", image: telecentric23Coaxial, resolution: "2/3\"", slug: "23-coaxial-telecentric" },
-    { name: "1.1 inch Co-Axial Telecentric Lens", brand: "DZOPTICS", image: telecentric11Coaxial, resolution: "1.1\"", slug: "11-coaxial-telecentric" },
-    { name: "1.2 inch Co-Axial Telecentric Lens", brand: "DZOPTICS", image: telecentric12Coaxial, resolution: "1.2\"", slug: "12-coaxial-telecentric" },
-    { name: "Large Format Co-Axial Telecentric Lens", brand: "DZOPTICS", image: telecentricLargeCoaxial, resolution: "Large", slug: "large-coaxial-telecentric" },
-  ],
-  "VR Lenses": [
-    { name: "WideVR 180", brand: "BASLER", image: cameraProduct3, resolution: "180° FOV", slug: "widevr-180" },
-    { name: "PanoView Ultra", brand: "COGNEX", image: cameraProduct2, resolution: "220° FOV", slug: "panoview-ultra" },
-    { name: "ImmerseLens 360", brand: "FLIR", image: cameraProduct4, resolution: "360° FOV", slug: "immerselens-360" },
-    { name: "VR-Optic Pro", brand: "HIKROBOT", image: cameraProduct1, resolution: "200° FOV", slug: "vr-optic-pro" },
-  ],
-  "Macro Lenses": [
-    { name: "MacroVision 5x", brand: "BASLER", image: cameraProduct1, resolution: "5x Mag", slug: "macrovision-5x" },
-    { name: "CloseUp Pro 3x", brand: "COGNEX", image: cameraProduct3, resolution: "3x Mag", slug: "closeup-pro-3x" },
-    { name: "MicroInspect 10x", brand: "FLIR", image: cameraProduct4, resolution: "10x Mag", slug: "microinspect-10x" },
-    { name: "DetailLens 7x", brand: "HIKROBOT", image: cameraProduct2, resolution: "7x Mag", slug: "detaillens-7x" },
-  ],
-  "Scheimpflug Lenses": [
-    { name: "TiltShift Pro", brand: "BASLER", image: cameraProduct2, resolution: "±8° Tilt", slug: "tiltshift-pro" },
-    { name: "ScheimView 45", brand: "COGNEX", image: cameraProduct1, resolution: "±12° Tilt", slug: "scheimview-45" },
-    { name: "FocusPlane X", brand: "FLIR", image: cameraProduct3, resolution: "±10° Tilt", slug: "focusplane-x" },
-    { name: "AngleFocus Elite", brand: "HIKROBOT", image: cameraProduct4, resolution: "±15° Tilt", slug: "anglefocus-elite" },
+    { name: "2/3\" Co-Axial Telecentric", brand: "DZOPTICS", image: telecentric23Coaxial, resolution: "2/3\"", slug: "23-coaxial-telecentric" },
+    { name: "1.1\" Co-Axial Telecentric", brand: "DZOPTICS", image: telecentric11Coaxial, resolution: "1.1\"", slug: "11-coaxial-telecentric" },
+    { name: "1.2\" Co-Axial Telecentric", brand: "DZOPTICS", image: telecentric12Coaxial, resolution: "1.2\"", slug: "12-coaxial-telecentric" },
+    { name: "Large Co-Axial Telecentric", brand: "DZOPTICS", image: telecentricLargeCoaxial, resolution: "Large", slug: "large-coaxial-telecentric" },
   ],
   "Line Scan Lenses": [
-    { name: "LineScan Optic 35", brand: "BASLER", image: cameraProduct4, resolution: "8K Ready", slug: "linescan-optic-35" },
-    { name: "WebView LS Pro", brand: "COGNEX", image: cameraProduct2, resolution: "16K Ready", slug: "webview-ls-pro" },
-    { name: "ScanLine Ultra", brand: "FLIR", image: cameraProduct1, resolution: "12K Ready", slug: "scanline-ultra" },
-    { name: "LinearOptic 50", brand: "HIKROBOT", image: cameraProduct3, resolution: "8K Ready", slug: "linearoptic-50" },
-  ],
-  "Large Format Lenses": [
-    { name: "LargeView 120mm", brand: "BASLER", image: cameraProduct1, resolution: "APS-H", slug: "largeview-120mm" },
-    { name: "BigSensor Pro", brand: "COGNEX", image: cameraProduct4, resolution: "Full Frame", slug: "bigsensor-pro" },
-    { name: "MegaFormat 80mm", brand: "FLIR", image: cameraProduct2, resolution: "Medium Format", slug: "megaformat-80mm" },
-    { name: "LF-Vision Elite", brand: "HIKROBOT", image: cameraProduct3, resolution: "APS-C", slug: "lf-vision-elite" },
+    { name: "4K Line Scan Lens", brand: "DZOPTICS", image: lineScan4k, resolution: "4K", slug: "4k-line-scan-lens" },
+    { name: "8K Line Scan Lens", brand: "DZOPTICS", image: lineScan8k, resolution: "8K", slug: "8k-line-scan-lens" },
+    { name: "16K / 3.5u Line Scan Lens", brand: "DZOPTICS", image: lineScan16k35u, resolution: "16K", slug: "16k-35u-line-scan-lens" },
+    { name: "16K / 5u Line Scan Lens", brand: "DZOPTICS", image: lineScan16k5u, resolution: "16K", slug: "16k-5u-line-scan-lens" },
   ],
 };
 
@@ -459,7 +439,7 @@ const Navbar = () => {
                         <div className={`font-semibold text-sm transition-colors ${
                           hoveredLensCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
                         }`}>{category.title}</div>
-                        <div className="text-xs text-muted-foreground">{category.count} Products</div>
+                        <div className="text-xs text-muted-foreground">{category.count} Product {category.count === 1 ? 'Type' : 'Types'}</div>
                       </div>
                     </a>
                   ))}
