@@ -12,7 +12,7 @@ import ProductDetail from "./pages/ProductDetail";
 import ContactUs from "./pages/ContactUs";
 import SoftwareDownloads from "./pages/SoftwareDownloads";
 import KnowledgeBase from "./pages/KnowledgeBase";
-
+import AboutUs from "./pages/AboutUs";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +31,7 @@ const App = () => (
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/software-downloads" element={<SoftwareDownloads />} />
           <Route path="/knowledge-base" element={<KnowledgeBase />} />
+          <Route path="/about" element={<AboutUs />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
