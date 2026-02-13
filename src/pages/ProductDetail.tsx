@@ -1,70 +1,75 @@
 import { Link, useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SpinningCube from "@/components/SpinningCube";
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
-import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, BookOpen, Wrench, Star, Settings, Target } from "lucide-react";
+import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, Star, Settings, Target } from "lucide-react";
 
-// FA Lens variants data for 1/1.7" lenses
-const faLensVariants = [{
-  model: "DZO_LA0628A_1712",
-  efl: "6",
-  imgCircle: "1/1.7\"",
-  fNumber: "F2.8-16",
-  wdRange: "100-inf",
-  distortion: "-0.37%",
-  mount: "C"
-}, {
-  model: "DZO_LA0828A_1712",
-  efl: "8",
-  imgCircle: "1/1.7\"",
-  fNumber: "F2.8-16",
-  wdRange: "100-inf",
-  distortion: "-0.37%",
-  mount: "C"
-}, {
-  model: "DZO_LA1228A_1712",
-  efl: "12",
-  imgCircle: "1/1.7\"",
-  fNumber: "F2.8-16",
-  wdRange: "100-inf",
-  distortion: "-0.18%",
-  mount: "C"
-}, {
-  model: "DZO_LA1628A_1712",
-  efl: "16",
-  imgCircle: "1/1.7\"",
-  fNumber: "F2.8-16",
-  wdRange: "100-inf",
-  distortion: "-0.05%",
-  mount: "C"
-}, {
-  model: "DZO_LA2528A_1712",
-  efl: "25",
-  imgCircle: "1/1.7\"",
-  fNumber: "F2.8-16",
-  wdRange: "100-inf",
-  distortion: "0.06%",
-  mount: "C"
-}, {
-  model: "DZO_LA3528A_1712",
-  efl: "35",
-  imgCircle: "1/1.7\"",
-  fNumber: "F2.8-16",
-  wdRange: "200-inf",
-  distortion: "0.03%",
-  mount: "C"
-}, {
-  model: "DZO_LA5028A_1712",
-  efl: "50",
-  imgCircle: "1/1.7\"",
-  fNumber: "F2.8-16",
-  wdRange: "250-inf",
-  distortion: "0.09%",
-  mount: "C"
-}];
-const productData = {
+// Model variant data keyed by slug
+const modelVariants: Record<string, Array<Record<string, string>>> = {
+  "1-1-7-inch-fa-lenses": [
+    { model: "DZO_LA0628A_1712", efl: "6", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.37%", mount: "C" },
+    { model: "DZO_LA0828A_1712", efl: "8", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.37%", mount: "C" },
+    { model: "DZO_LA1228A_1712", efl: "12", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.18%", mount: "C" },
+    { model: "DZO_LA1628A_1712", efl: "16", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.05%", mount: "C" },
+    { model: "DZO_LA2528A_1712", efl: "25", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "0.06%", mount: "C" },
+    { model: "DZO_LA3528A_1712", efl: "35", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "200-inf", distortion: "0.03%", mount: "C" },
+    { model: "DZO_LA5028A_1712", efl: "50", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "250-inf", distortion: "0.09%", mount: "C" },
+  ],
+  "2-3-inch-standard-fa-lenses": [
+    { model: "DZO_LA0628A_2314", efl: "6", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.50%", mount: "C" },
+    { model: "DZO_LA0828A_2314", efl: "8", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.40%", mount: "C" },
+    { model: "DZO_LA1228A_2314", efl: "12", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.20%", mount: "C" },
+    { model: "DZO_LA1628A_2314", efl: "16", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.10%", mount: "C" },
+    { model: "DZO_LA2528A_2314", efl: "25", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "0.05%", mount: "C" },
+    { model: "DZO_LA3528A_2314", efl: "35", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "200-inf", distortion: "0.03%", mount: "C" },
+    { model: "DZO_LA5028A_2314", efl: "50", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "250-inf", distortion: "0.08%", mount: "C" },
+  ],
+  "2-3-inch-superior-fa-lenses": [
+    { model: "DZO_LB0628A_2314", efl: "6", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.30%", mount: "C" },
+    { model: "DZO_LB0828A_2314", efl: "8", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.25%", mount: "C" },
+    { model: "DZO_LB1228A_2314", efl: "12", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.12%", mount: "C" },
+    { model: "DZO_LB1628A_2314", efl: "16", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.05%", mount: "C" },
+    { model: "DZO_LB2528A_2314", efl: "25", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "0.03%", mount: "C" },
+    { model: "DZO_LB3528A_2314", efl: "35", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "200-inf", distortion: "0.02%", mount: "C" },
+    { model: "DZO_LB5028A_2314", efl: "50", imgCircle: "2/3\"", fNumber: "F2.8-16", wdRange: "250-inf", distortion: "0.05%", mount: "C" },
+  ],
+  "1-1-inch-fa-lenses": [
+    { model: "DZO_LA0828A_1116", efl: "8", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.45%", mount: "C" },
+    { model: "DZO_LA1228A_1116", efl: "12", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.22%", mount: "C" },
+    { model: "DZO_LA1628A_1116", efl: "16", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.08%", mount: "C" },
+    { model: "DZO_LA2528A_1116", efl: "25", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "0.04%", mount: "C" },
+    { model: "DZO_LA3528A_1116", efl: "35", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "200-inf", distortion: "0.02%", mount: "C" },
+    { model: "DZO_LA5028A_1116", efl: "50", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "250-inf", distortion: "0.06%", mount: "C" },
+    { model: "DZO_LA7528A_1116", efl: "75", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "400-inf", distortion: "0.04%", mount: "C" },
+  ],
+};
+
+interface ProductInfo {
+  name: string;
+  brand: string;
+  category: string;
+  categorySlug: string;
+  image: string;
+  shortDescription: string;
+  description: string;
+  resolution: string;
+  fps: string;
+  interface: string;
+  sensor: string;
+  sensorSize: string;
+  pixelSize: string;
+  dynamicRange: string;
+  operatingTemp: string;
+  dimensions: string;
+  weight: string;
+  features: string[];
+  mainFeatures?: string[];
+  quickSpecs?: string[];
+  applications?: string[];
+}
+
+const productData: Record<string, ProductInfo> = {
   "ace-2040-pro-series": {
     name: "ACE-2040 Pro Series",
     brand: "BASLER",
@@ -72,7 +77,7 @@ const productData = {
     categorySlug: "area-scan-cameras",
     image: "/src/assets/camera-product-1.jpg",
     shortDescription: "High-performance area scan camera with exceptional image quality for demanding industrial applications.",
-    description: "The ACE-2040 Pro Series represents the pinnacle of industrial imaging technology. Featuring a state-of-the-art Sony IMX sensor, this camera delivers exceptional image quality with minimal noise, even in challenging lighting conditions. The robust housing is designed for 24/7 operation in harsh industrial environments.",
+    description: "The ACE-2040 Pro Series represents the pinnacle of industrial imaging technology. Featuring a state-of-the-art Sony IMX sensor, this camera delivers exceptional image quality with minimal noise, even in challenging lighting conditions.",
     resolution: "4.2 MP",
     fps: "120",
     interface: "GigE",
@@ -83,8 +88,10 @@ const productData = {
     operatingTemp: "-20°C to 60°C",
     dimensions: "29 x 29 x 41.5 mm",
     weight: "80g",
-    features: ["Sony Pregius IMX267 CMOS sensor", "Power over Ethernet (PoE) support", "Hardware trigger with <1µs jitter", "Multi-ROI and sequencer mode", "Chunk data for image metadata", "GenICam compliant"]
+    features: ["Sony Pregius IMX267 CMOS sensor", "Power over Ethernet (PoE) support", "Hardware trigger with <1µs jitter", "Multi-ROI and sequencer mode", "Chunk data for image metadata", "GenICam compliant"],
   },
+
+  // === FA LENSES ===
   "1-1-7-inch-fa-lenses": {
     name: "1/1.7 inch FA Lenses",
     brand: "DZOPTICS",
@@ -92,7 +99,7 @@ const productData = {
     categorySlug: "lenses",
     image: "/src/assets/fa-lens-1-1-7.png",
     shortDescription: "Compact high-resolution FA lenses designed for 1/1.7\" sensors in factory automation applications.",
-    description: "The DZOPTICS 1/1.7 inch FA Lens series delivers exceptional optical performance for machine vision applications. Designed specifically for 1/1.7\" sensors, these lenses provide edge-to-edge sharpness with minimal distortion. The robust metal housing ensures long-term stability in demanding industrial environments.",
+    description: "The DZOPTICS 1/1.7 inch FA Lens series delivers exceptional optical performance for machine vision applications.",
     resolution: "1/1.7\"",
     fps: "-",
     interface: "C-Mount",
@@ -106,30 +113,554 @@ const productData = {
     features: ["Optimized for 1/1.7\" image sensors", "Low distortion design (<0.5%)", "High resolution across full image circle", "Compact C-Mount form factor", "Robust metal housing construction", "Anti-reflection multi-coating"],
     mainFeatures: ["Applicable for 3.45µm pixel size sensor (2.74µm for option)", "Image uniformity (resolution, distortion and chromatic aberration correction etc.) @full image circle & F#2.8", "Stable imaging quality over working distances for diverse applications", "Design for visible light application"],
     quickSpecs: ["Imaging circle: 1/1.7\"", "Wavelength: 400-700nm", "Focal length: 6mm - 50mm", "C Mount"],
-    applications: ["Scan Code", "Color Selection", "2D Ranging", "3D Ranging"]
-  }
+    applications: ["Scan Code", "Color Selection", "2D Ranging", "3D Ranging"],
+  },
+  "2-3-inch-standard-fa-lenses": {
+    name: "2/3 inch Standard FA Lenses",
+    brand: "DZOPTICS",
+    category: "FA Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/fa-lens-2-3-standard.png",
+    shortDescription: "Standard-grade FA lenses optimized for 2/3\" sensors, delivering reliable performance for factory automation.",
+    description: "The DZOPTICS 2/3 inch Standard FA Lens series provides cost-effective, high-quality imaging for mainstream machine vision applications.",
+    resolution: "2/3\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "2/3\" Sensors",
+    sensorSize: "2/3\"",
+    pixelSize: "Compatible with 3.45µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø29 x 34 mm",
+    weight: "50g",
+    features: ["Optimized for 2/3\" image sensors", "Low distortion design", "Consistent edge-to-edge sharpness", "C-Mount compatibility", "Industrial-grade housing", "Multi-coated optics"],
+    mainFeatures: ["Applicable for 3.45µm pixel size sensor", "Balanced cost-performance ratio for standard FA applications", "Stable imaging quality across working distance range", "Design for visible light application"],
+    quickSpecs: ["Imaging circle: 2/3\"", "Wavelength: 400-700nm", "Focal length: 6mm - 50mm", "C Mount"],
+    applications: ["Scan Code", "Color Selection", "2D Ranging", "3D Ranging"],
+  },
+  "2-3-inch-superior-fa-lenses": {
+    name: "2/3 inch Superior FA Lenses",
+    brand: "DZOPTICS",
+    category: "FA Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/fa-lens-2-3-superior.png",
+    shortDescription: "Premium-grade FA lenses for 2/3\" sensors with superior optical performance and ultra-low distortion.",
+    description: "The DZOPTICS 2/3 inch Superior FA Lens series represents the highest optical quality for 2/3\" sensor applications, with enhanced resolution and minimized aberrations.",
+    resolution: "2/3\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "2/3\" Sensors",
+    sensorSize: "2/3\"",
+    pixelSize: "Compatible with 2.5µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø29 x 36 mm",
+    weight: "55g",
+    features: ["Premium optics for 2/3\" sensors", "Ultra-low distortion (<0.3%)", "Superior edge resolution", "C-Mount form factor", "Precision metal housing", "Advanced anti-reflection coating"],
+    mainFeatures: ["Applicable for 2.74µm pixel size sensor and below", "Superior image uniformity with enhanced chromatic aberration correction @F#2.8", "Ultra-stable imaging over extended working distances", "Design for visible light application"],
+    quickSpecs: ["Imaging circle: 2/3\"", "Wavelength: 400-700nm", "Focal length: 6mm - 50mm", "C Mount"],
+    applications: ["Precision Measurement", "Color Inspection", "2D Ranging", "3D Ranging"],
+  },
+  "1-1-inch-fa-lenses": {
+    name: "1.1 inch FA Lenses",
+    brand: "DZOPTICS",
+    category: "FA Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/fa-lens-1-1.png",
+    shortDescription: "Large-format FA lenses designed for 1.1\" sensors, providing wide coverage for high-resolution imaging.",
+    description: "The DZOPTICS 1.1 inch FA Lens series covers larger sensor formats for demanding machine vision applications requiring higher pixel counts.",
+    resolution: "1.1\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "1.1\" Sensors",
+    sensorSize: "1.1\"",
+    pixelSize: "Compatible with 2.5µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø33 x 38 mm",
+    weight: "65g",
+    features: ["Optimized for 1.1\" image sensors", "Large image circle coverage", "High resolution across full field", "C-Mount compatibility", "Robust industrial housing", "Multi-coated glass elements"],
+    mainFeatures: ["Applicable for 2.74µm pixel size sensor (2.5µm for option)", "Full image circle coverage for 1.1\" sensors @F#2.8", "Stable imaging quality over extended working distances", "Design for visible light application"],
+    quickSpecs: ["Imaging circle: 1.1\"", "Wavelength: 400-700nm", "Focal length: 8mm - 75mm", "C Mount"],
+    applications: ["Scan Code", "Precision Measurement", "2D Ranging", "3D Ranging"],
+  },
+
+  // === TELECENTRIC LENSES - CO-AXIAL ===
+  "23-coaxial-telecentric": {
+    name: "2/3 inch Co-Axial Telecentric Lens",
+    brand: "DZOPTICS",
+    category: "Telecentric Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/telecentric-23-coaxial.png",
+    shortDescription: "Co-axial telecentric lens for 2/3\" sensors with integrated illumination for precise dimensional measurement.",
+    description: "The DZOPTICS 2/3\" Co-Axial Telecentric Lens provides distortion-free imaging with built-in co-axial illumination, ideal for precision measurement applications.",
+    resolution: "2/3\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "2/3\" Sensors",
+    sensorSize: "2/3\"",
+    pixelSize: "Compatible with 3.45µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø50 x 120 mm",
+    weight: "320g",
+    features: ["Zero parallax error", "Built-in co-axial illumination port", "Ultra-low distortion (<0.1%)", "Telecentric on both object and image side", "High depth of field", "Anti-reflection coated"],
+    mainFeatures: ["Bi-telecentric design eliminating perspective errors", "Integrated co-axial illumination for surface inspection", "Ultra-low distortion for precision dimensional measurement", "Constant magnification independent of working distance"],
+    quickSpecs: ["Imaging circle: 2/3\"", "Telecentricity: <0.1°", "Distortion: <0.1%", "C Mount"],
+    applications: ["Dimensional Measurement", "Surface Inspection", "Flatness Detection", "Defect Inspection"],
+  },
+  "11-coaxial-telecentric": {
+    name: "1.1 inch Co-Axial Telecentric Lens",
+    brand: "DZOPTICS",
+    category: "Telecentric Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/telecentric-11-coaxial.png",
+    shortDescription: "Co-axial telecentric lens for 1.1\" sensors with integrated illumination for high-resolution measurement.",
+    description: "The DZOPTICS 1.1\" Co-Axial Telecentric Lens delivers distortion-free imaging for larger sensors with co-axial illumination capability.",
+    resolution: "1.1\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "1.1\" Sensors",
+    sensorSize: "1.1\"",
+    pixelSize: "Compatible with 2.5µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø55 x 130 mm",
+    weight: "380g",
+    features: ["Bi-telecentric optical design", "Co-axial illumination port", "Ultra-low distortion", "1.1\" sensor coverage", "High resolution optics", "Industrial-grade construction"],
+    mainFeatures: ["Bi-telecentric design for 1.1\" sensor coverage", "Integrated co-axial illumination for reflective surfaces", "Minimal distortion for precision gauging", "Stable magnification across depth of field"],
+    quickSpecs: ["Imaging circle: 1.1\"", "Telecentricity: <0.1°", "Distortion: <0.08%", "C Mount"],
+    applications: ["Precision Gauging", "Surface Inspection", "Component Measurement", "Assembly Verification"],
+  },
+  "12-coaxial-telecentric": {
+    name: "1.2 inch Co-Axial Telecentric Lens",
+    brand: "DZOPTICS",
+    category: "Telecentric Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/telecentric-12-coaxial.png",
+    shortDescription: "Co-axial telecentric lens for 1.2\" sensors providing distortion-free measurement with integrated illumination.",
+    description: "The DZOPTICS 1.2\" Co-Axial Telecentric Lens supports larger format sensors for high-precision measurement applications.",
+    resolution: "1.2\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "1.2\" Sensors",
+    sensorSize: "1.2\"",
+    pixelSize: "Compatible with 2.5µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø58 x 135 mm",
+    weight: "420g",
+    features: ["Bi-telecentric design", "Co-axial illumination port", "1.2\" full coverage", "Ultra-low distortion", "High MTF performance", "Robust metal construction"],
+    mainFeatures: ["Bi-telecentric design for 1.2\" large format sensors", "Co-axial illumination for uniform surface lighting", "Ultra-precise dimensional measurement capability", "Consistent magnification through full depth of field"],
+    quickSpecs: ["Imaging circle: 1.2\"", "Telecentricity: <0.1°", "Distortion: <0.08%", "C Mount"],
+    applications: ["Large Field Measurement", "PCB Inspection", "Wafer Inspection", "Precision Metrology"],
+  },
+  "large-coaxial-telecentric": {
+    name: "Large Format Co-Axial Telecentric Lens",
+    brand: "DZOPTICS",
+    category: "Telecentric Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/telecentric-large-coaxial.png",
+    shortDescription: "Large format co-axial telecentric lens for oversized sensor coverage in demanding measurement applications.",
+    description: "The DZOPTICS Large Format Co-Axial Telecentric Lens provides telecentric imaging for the largest sensor formats available.",
+    resolution: "Large",
+    fps: "-",
+    interface: "F-Mount",
+    sensor: "Large Format Sensors",
+    sensorSize: "Large Format",
+    pixelSize: "Compatible with 3.45µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø80 x 180 mm",
+    weight: "850g",
+    features: ["Large format sensor coverage", "Co-axial illumination", "Ultra-low distortion", "Bi-telecentric design", "High-resolution optics", "Premium metal housing"],
+    mainFeatures: ["Full coverage for large format industrial sensors", "Integrated co-axial illumination for complex surface analysis", "Bi-telecentric design with minimal distortion", "Designed for high-accuracy metrology applications"],
+    quickSpecs: ["Imaging circle: Large Format", "Telecentricity: <0.1°", "Distortion: <0.05%", "F Mount"],
+    applications: ["Large Area Inspection", "Display Panel Inspection", "Solar Cell Inspection", "Precision Metrology"],
+  },
+
+  // === TELECENTRIC LENSES - NON-CO-AXIAL ===
+  "half-inch-noncoaxial-telecentric": {
+    name: "1/2 inch Non-Co-Axial Telecentric Lens",
+    brand: "DZOPTICS",
+    category: "Telecentric Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/telecentric-12-noncoaxial.png",
+    shortDescription: "Compact non-co-axial telecentric lens for 1/2\" sensors, ideal for space-constrained measurement setups.",
+    description: "The DZOPTICS 1/2\" Non-Co-Axial Telecentric Lens provides distortion-free imaging in a compact form factor for smaller sensor applications.",
+    resolution: "1/2\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "1/2\" Sensors",
+    sensorSize: "1/2\"",
+    pixelSize: "Compatible with 3.45µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø42 x 95 mm",
+    weight: "200g",
+    features: ["Compact telecentric design", "Non-co-axial configuration", "Low distortion optics", "1/2\" sensor coverage", "C-Mount interface", "External illumination compatible"],
+    mainFeatures: ["Object-side telecentric design for 1/2\" sensors", "Compact form factor for tight integration spaces", "Low distortion for reliable dimensional measurement", "Compatible with external ring or diffuse illumination"],
+    quickSpecs: ["Imaging circle: 1/2\"", "Telecentricity: <0.1°", "Distortion: <0.1%", "C Mount"],
+    applications: ["Dimensional Measurement", "Part Inspection", "Gap Measurement", "Pin Inspection"],
+  },
+  "23-noncoaxial-telecentric": {
+    name: "2/3 inch Non-Co-Axial Telecentric Lens",
+    brand: "DZOPTICS",
+    category: "Telecentric Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/telecentric-23-noncoaxial.png",
+    shortDescription: "Non-co-axial telecentric lens for 2/3\" sensors with external illumination compatibility.",
+    description: "The DZOPTICS 2/3\" Non-Co-Axial Telecentric Lens provides precise measurement capabilities with flexibility in illumination setup.",
+    resolution: "2/3\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "2/3\" Sensors",
+    sensorSize: "2/3\"",
+    pixelSize: "Compatible with 3.45µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø48 x 110 mm",
+    weight: "280g",
+    features: ["Object-side telecentric", "Non-co-axial design", "Ultra-low distortion", "2/3\" coverage", "C-Mount interface", "Flexible illumination options"],
+    mainFeatures: ["Object-side telecentric design eliminating perspective errors", "Non-co-axial configuration for flexible lighting setups", "Ultra-low distortion for dimensional measurement", "Optimized for 2/3\" sensor formats"],
+    quickSpecs: ["Imaging circle: 2/3\"", "Telecentricity: <0.1°", "Distortion: <0.1%", "C Mount"],
+    applications: ["Edge Detection", "Dimensional Measurement", "Profile Inspection", "Contour Measurement"],
+  },
+  "23-noncoaxial-telecentric-b": {
+    name: "2/3 inch Non-Co-Axial Telecentric Lens (Type B)",
+    brand: "DZOPTICS",
+    category: "Telecentric Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/telecentric-11-noncoaxial.png",
+    shortDescription: "Alternative non-co-axial telecentric lens for 2/3\" sensors with different magnification options.",
+    description: "The DZOPTICS 2/3\" Non-Co-Axial Telecentric Lens Type B offers an alternative magnification range for specialized measurement needs.",
+    resolution: "2/3\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "2/3\" Sensors",
+    sensorSize: "2/3\"",
+    pixelSize: "Compatible with 3.45µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø48 x 115 mm",
+    weight: "290g",
+    features: ["Object-side telecentric", "Alternative magnification range", "Low distortion", "2/3\" coverage", "C-Mount interface", "Industrial-grade build"],
+    mainFeatures: ["Alternative magnification for specialized measurement tasks", "Object-side telecentric design", "Low distortion for reliable gauging", "Designed for 2/3\" sensor compatibility"],
+    quickSpecs: ["Imaging circle: 2/3\"", "Telecentricity: <0.1°", "Distortion: <0.1%", "C Mount"],
+    applications: ["Precision Gauging", "Micro-part Inspection", "Thread Inspection", "Gear Measurement"],
+  },
+  "11-noncoaxial-telecentric": {
+    name: "1.1 inch Non-Co-Axial Telecentric Lens",
+    brand: "DZOPTICS",
+    category: "Telecentric Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/telecentric-12-noncoaxial-alt.png",
+    shortDescription: "Non-co-axial telecentric lens for 1.1\" sensors with high-resolution measurement capability.",
+    description: "The DZOPTICS 1.1\" Non-Co-Axial Telecentric Lens provides large-field telecentric imaging for demanding measurement applications.",
+    resolution: "1.1\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "1.1\" Sensors",
+    sensorSize: "1.1\"",
+    pixelSize: "Compatible with 2.5µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø55 x 125 mm",
+    weight: "350g",
+    features: ["1.1\" sensor coverage", "Non-co-axial telecentric", "High-resolution optics", "Low distortion", "C-Mount interface", "External illumination compatible"],
+    mainFeatures: ["Object-side telecentric for 1.1\" large format sensors", "Non-co-axial design for versatile illumination setups", "High-resolution optics for detailed measurement", "Minimal distortion across full field of view"],
+    quickSpecs: ["Imaging circle: 1.1\"", "Telecentricity: <0.1°", "Distortion: <0.08%", "C Mount"],
+    applications: ["Large Field Measurement", "Multi-part Inspection", "Connector Inspection", "Precision Metrology"],
+  },
+  "12-noncoaxial-telecentric": {
+    name: "1.2 inch Non-Co-Axial Telecentric Lens",
+    brand: "DZOPTICS",
+    category: "Telecentric Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/telecentric-18.png",
+    shortDescription: "Non-co-axial telecentric lens for 1.2\" sensors, designed for high-precision large-field measurement.",
+    description: "The DZOPTICS 1.2\" Non-Co-Axial Telecentric Lens supports large format sensors for precise dimensional measurement.",
+    resolution: "1.2\"",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "1.2\" Sensors",
+    sensorSize: "1.2\"",
+    pixelSize: "Compatible with 2.5µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø58 x 130 mm",
+    weight: "400g",
+    features: ["1.2\" full sensor coverage", "Non-co-axial configuration", "Ultra-low distortion", "High MTF", "C-Mount compatible", "Robust construction"],
+    mainFeatures: ["Full 1.2\" sensor coverage for maximum field of view", "Non-co-axial design with external illumination flexibility", "Ultra-low distortion for critical measurement", "High MTF across entire image field"],
+    quickSpecs: ["Imaging circle: 1.2\"", "Telecentricity: <0.1°", "Distortion: <0.08%", "C Mount"],
+    applications: ["PCB Inspection", "Display Inspection", "Large Area Metrology", "Wafer Measurement"],
+  },
+  "large-noncoaxial-telecentric": {
+    name: "Large Format Non-Co-Axial Telecentric Lens",
+    brand: "DZOPTICS",
+    category: "Telecentric Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/telecentric-large-noncoaxial.png",
+    shortDescription: "Large format non-co-axial telecentric lens for oversized sensor coverage in industrial metrology.",
+    description: "The DZOPTICS Large Format Non-Co-Axial Telecentric Lens provides the widest field telecentric imaging for large-area inspection.",
+    resolution: "Large",
+    fps: "-",
+    interface: "F-Mount",
+    sensor: "Large Format Sensors",
+    sensorSize: "Large Format",
+    pixelSize: "Compatible with 3.45µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø75 x 170 mm",
+    weight: "780g",
+    features: ["Large format coverage", "Non-co-axial telecentric", "High-precision optics", "Ultra-low distortion", "F-Mount interface", "Premium build quality"],
+    mainFeatures: ["Maximum field coverage for large format sensors", "Non-co-axial design for flexible illumination schemes", "Ultra-low distortion for precision metrology", "Engineered for continuous industrial operation"],
+    quickSpecs: ["Imaging circle: Large Format", "Telecentricity: <0.1°", "Distortion: <0.05%", "F Mount"],
+    applications: ["Large Panel Inspection", "Solar Cell Measurement", "Flat Panel Display QC", "Industrial Metrology"],
+  },
+
+  // === LINE SCAN LENSES ===
+  "4k-line-scan-lens": {
+    name: "4K Line Scan Lens",
+    brand: "DZOPTICS",
+    category: "Line Scan Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/line-scan-4k.png",
+    shortDescription: "High-performance line scan lens optimized for 4K line scan cameras in web inspection applications.",
+    description: "The DZOPTICS 4K Line Scan Lens is engineered for optimal line-rate imaging with 4K resolution line scan cameras.",
+    resolution: "4K",
+    fps: "-",
+    interface: "M42",
+    sensor: "4K Line Sensors",
+    sensorSize: "Line Scan",
+    pixelSize: "Compatible with 7µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø42 x 65 mm",
+    weight: "180g",
+    features: ["Optimized for 4K line sensors", "High line-rate performance", "Low chromatic aberration", "M42 mount interface", "Industrial-grade housing", "Anti-reflection coated"],
+    mainFeatures: ["Optimized MTF for 4K line scan sensor resolution", "Minimal chromatic aberration for color line scan applications", "Uniform illumination across full line length", "Designed for continuous high-speed web inspection"],
+    quickSpecs: ["Resolution: 4K", "Wavelength: 400-700nm", "Sensor compatibility: 4K line scan", "M42 Mount"],
+    applications: ["Web Inspection", "Print Inspection", "Textile Inspection", "Surface Scanning"],
+  },
+  "8k-line-scan-lens": {
+    name: "8K Line Scan Lens",
+    brand: "DZOPTICS",
+    category: "Line Scan Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/line-scan-8k.png",
+    shortDescription: "High-resolution line scan lens for 8K cameras, delivering superior image quality for demanding inspection tasks.",
+    description: "The DZOPTICS 8K Line Scan Lens provides enhanced resolution for high-pixel-count line scan imaging applications.",
+    resolution: "8K",
+    fps: "-",
+    interface: "M42",
+    sensor: "8K Line Sensors",
+    sensorSize: "Line Scan",
+    pixelSize: "Compatible with 5µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø48 x 72 mm",
+    weight: "220g",
+    features: ["Optimized for 8K line sensors", "High MTF at Nyquist", "Low distortion", "M42 mount", "Robust construction", "Multi-coated elements"],
+    mainFeatures: ["High MTF performance at 8K resolution", "Optimized for 5µm pixel pitch sensors", "Edge-to-edge sharpness across full line length", "Designed for high-throughput inspection systems"],
+    quickSpecs: ["Resolution: 8K", "Wavelength: 400-700nm", "Sensor compatibility: 8K line scan", "M42 Mount"],
+    applications: ["High-res Web Inspection", "PCB Scanning", "Film Inspection", "Material Surface Analysis"],
+  },
+  "16k-35u-line-scan-lens": {
+    name: "16K / 3.5u Line Scan Lens",
+    brand: "DZOPTICS",
+    category: "Line Scan Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/line-scan-16k-35u.png",
+    shortDescription: "Ultra-high resolution 16K line scan lens optimized for 3.5µm pixel pitch sensors.",
+    description: "The DZOPTICS 16K/3.5µ Line Scan Lens delivers maximum resolution for the finest pixel pitch 16K line scan cameras.",
+    resolution: "16K",
+    fps: "-",
+    interface: "M42",
+    sensor: "16K Line Sensors (3.5µm)",
+    sensorSize: "Line Scan",
+    pixelSize: "Compatible with 3.5µm",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø52 x 80 mm",
+    weight: "280g",
+    features: ["16K resolution support", "3.5µm pixel pitch optimized", "Ultra-high MTF", "M42 mount", "Premium glass elements", "Industrial-grade build"],
+    mainFeatures: ["Designed specifically for 3.5µm pixel pitch 16K sensors", "Ultra-high MTF for maximum resolving power", "Minimal chromatic and geometric aberration", "Premium optical glass for superior imaging"],
+    quickSpecs: ["Resolution: 16K", "Pixel pitch: 3.5µm", "Wavelength: 400-700nm", "M42 Mount"],
+    applications: ["Ultra-high-res Inspection", "Semiconductor Wafer Scanning", "Precision Film Inspection", "Advanced Material Analysis"],
+  },
+  "16k-5u-line-scan-lens": {
+    name: "16K / 5u Line Scan Lens",
+    brand: "DZOPTICS",
+    category: "Line Scan Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/line-scan-16k-5u.png",
+    shortDescription: "16K line scan lens optimized for 5µm pixel pitch sensors, balancing resolution and light throughput.",
+    description: "The DZOPTICS 16K/5µ Line Scan Lens provides excellent imaging for 5µm pixel pitch 16K line scan cameras.",
+    resolution: "16K",
+    fps: "-",
+    interface: "M42",
+    sensor: "16K Line Sensors (5µm)",
+    sensorSize: "Line Scan",
+    pixelSize: "Compatible with 5µm",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Ø52 x 78 mm",
+    weight: "270g",
+    features: ["16K resolution support", "5µm pixel pitch optimized", "High light throughput", "M42 mount", "Multi-coated optics", "Robust housing"],
+    mainFeatures: ["Optimized for 5µm pixel pitch 16K sensors", "Balanced resolution and light throughput", "High MTF at Nyquist frequency", "Designed for high-speed continuous operation"],
+    quickSpecs: ["Resolution: 16K", "Pixel pitch: 5µm", "Wavelength: 400-700nm", "M42 Mount"],
+    applications: ["Web Inspection", "Large Format Scanning", "Industrial Print QC", "Continuous Surface Inspection"],
+  },
+
+  // === SPECIALTY LENSES ===
+  "macro-lenses": {
+    name: "Macro Lenses",
+    brand: "DZOPTICS",
+    category: "Macro Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/macro-lenses.png",
+    shortDescription: "High-magnification macro lenses for close-up inspection of small components and fine details.",
+    description: "The DZOPTICS Macro Lens series provides high-magnification imaging for detailed inspection of miniature components.",
+    resolution: "Various",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "Various Sensors",
+    sensorSize: "Various",
+    pixelSize: "Application dependent",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Various",
+    weight: "Various",
+    features: ["High magnification ratios", "Excellent close-focus performance", "Low distortion at macro range", "C-Mount compatibility", "Flat field design", "Multi-coated elements"],
+    mainFeatures: ["High magnification ratios (1x to 10x) for micro-inspection", "Flat field design for uniform sharpness across image", "Optimized for short working distance applications", "Compatible with a wide range of sensor formats"],
+    quickSpecs: ["Magnification: 1x - 10x", "Working distance: 20-100mm", "Wavelength: 400-700nm", "C Mount"],
+    applications: ["Micro-component Inspection", "Solder Joint Analysis", "Surface Texture Analysis", "Biological Imaging"],
+  },
+  "infrared-lenses": {
+    name: "Infrared Lenses",
+    brand: "DZOPTICS",
+    category: "Infrared Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/infrared-lenses.png",
+    shortDescription: "Specialized lenses for infrared imaging applications including SWIR and thermal wavelength ranges.",
+    description: "The DZOPTICS Infrared Lens series is designed for imaging beyond the visible spectrum, supporting SWIR and thermal applications.",
+    resolution: "Various",
+    fps: "-",
+    interface: "C-Mount",
+    sensor: "IR Sensors",
+    sensorSize: "Various",
+    pixelSize: "Application dependent",
+    dynamicRange: "-",
+    operatingTemp: "-20°C to 60°C",
+    dimensions: "Various",
+    weight: "Various",
+    features: ["IR-optimized optical design", "SWIR wavelength support", "Low thermal drift", "C-Mount interface", "AR-coated for IR transmission", "Industrial-grade housing"],
+    mainFeatures: ["Optimized for SWIR (900-1700nm) wavelength range", "IR-specific anti-reflection coatings for maximum transmission", "Minimal thermal focus shift for stable operation", "Compatible with InGaAs and other IR sensor technologies"],
+    quickSpecs: ["Wavelength: 900-1700nm (SWIR)", "Coating: IR-optimized AR", "Thermal stability: Low drift", "C Mount"],
+    applications: ["Moisture Detection", "Silicon Wafer Inspection", "Thermal Imaging", "Food Quality Inspection"],
+  },
+  "vr-lenses": {
+    name: "VR Lenses",
+    brand: "DZOPTICS",
+    category: "VR Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/vr-lenses.png",
+    shortDescription: "Wide field-of-view lenses designed for virtual reality and panoramic imaging applications.",
+    description: "The DZOPTICS VR Lens series provides ultra-wide field of view imaging for VR content capture and panoramic systems.",
+    resolution: "Wide FOV",
+    fps: "-",
+    interface: "Various",
+    sensor: "Various Sensors",
+    sensorSize: "Various",
+    pixelSize: "Application dependent",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Various",
+    weight: "Various",
+    features: ["Ultra-wide field of view", "Low chromatic aberration", "Optimized for VR capture", "Multiple mount options", "High-quality glass elements", "Compact design"],
+    mainFeatures: ["Ultra-wide field of view (up to 220°) for immersive capture", "Low chromatic aberration for high-quality VR content", "Optimized distortion profile for VR stitching software", "Compact form factor for multi-camera VR rigs"],
+    quickSpecs: ["Field of view: up to 220°", "Low chromatic aberration", "VR-optimized distortion", "Multiple mounts available"],
+    applications: ["VR Content Capture", "360° Panoramic Imaging", "Surveillance Systems", "Autonomous Navigation"],
+  },
+  "scheimpflug-lenses": {
+    name: "Scheimpflug Lenses",
+    brand: "DZOPTICS",
+    category: "Scheimpflug Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/scheimpflug-lenses.png",
+    shortDescription: "Tilt-capable lenses utilizing the Scheimpflug principle for extended depth of field on tilted planes.",
+    description: "The DZOPTICS Scheimpflug Lens series features adjustable tilt mechanisms for imaging tilted planes with full sharpness.",
+    resolution: "Various",
+    fps: "-",
+    interface: "Adjustable",
+    sensor: "Various Sensors",
+    sensorSize: "Various",
+    pixelSize: "Application dependent",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Various",
+    weight: "Various",
+    features: ["Adjustable tilt mechanism", "Scheimpflug principle imaging", "Extended depth of field", "Lockable tilt angles", "Industrial-grade construction", "Multi-coated optics"],
+    mainFeatures: ["Adjustable tilt (±15°) for Scheimpflug plane alignment", "Extended depth of field on tilted object planes", "Precision lockable tilt mechanism for stable operation", "Compatible with line scan and area scan configurations"],
+    quickSpecs: ["Tilt range: ±15°", "Lockable tilt mechanism", "Extended depth of field", "Adjustable mount"],
+    applications: ["3D Laser Triangulation", "Tilted Surface Inspection", "Weld Seam Inspection", "Profile Measurement"],
+  },
+  "large-format-lenses": {
+    name: "Large Format Lenses",
+    brand: "DZOPTICS",
+    category: "Large Format Lenses",
+    categorySlug: "lenses",
+    image: "/src/assets/large-format-lenses.png",
+    shortDescription: "High-coverage lenses designed for large format sensors in high-resolution industrial imaging.",
+    description: "The DZOPTICS Large Format Lens series provides full coverage for oversized sensors used in high-resolution applications.",
+    resolution: "Large",
+    fps: "-",
+    interface: "Various",
+    sensor: "Large Format Sensors",
+    sensorSize: "Large Format",
+    pixelSize: "Compatible with 3.45µm+",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "Various",
+    weight: "Various",
+    features: ["Large sensor format coverage", "High-resolution optics", "Low vignetting", "Multiple mount options", "Robust construction", "Premium glass elements"],
+    mainFeatures: ["Full coverage for APS-C, APS-H and larger sensor formats", "High-resolution optics with minimal vignetting", "Optimized for high pixel count sensors (50MP+)", "Designed for flat-field industrial imaging"],
+    quickSpecs: ["Sensor coverage: up to Medium Format", "Low vignetting design", "High resolution optics", "Multiple mounts available"],
+    applications: ["Aerial Imaging", "Large Area Inspection", "High-res Document Scanning", "Flat Panel Inspection"],
+  },
 };
+
+const modelTableHeaders = ["Model", "EFL (mm)", "Img. Circle", "F#", "WD Range (mm)", "Optical Distortion", "Mount"];
+const modelTableKeys = ["model", "efl", "imgCircle", "fNumber", "wdRange", "distortion", "mount"];
+
 const ProductDetail = () => {
-  const {
-    slug
-  } = useParams();
+  const { slug } = useParams();
   const product = productData[slug as keyof typeof productData];
+  const variants = slug ? modelVariants[slug] : undefined;
+
   if (!product) {
-    return <div className="min-h-screen bg-background">
+    return (
+      <div className="min-h-screen bg-background">
         <Navbar />
         <div className="pt-32 pb-16 text-center">
           <h1 className="text-2xl font-bold">Product not found</h1>
-          <Link to="/area-scan-cameras" className="text-primary hover:underline mt-4 inline-block">
+          <Link to="/lenses" className="text-primary hover:underline mt-4 inline-block">
             Back to products
           </Link>
         </div>
         <Footer />
-      </div>;
+      </div>
+    );
   }
-  return <div className="min-h-screen bg-background">
+
+  const hasLensLayout = !!product.mainFeatures;
+
+  return (
+    <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero Section with 3D Model */}
+      {/* Hero Section */}
       <section className="pt-24 lg:pt-32 pb-16 bg-secondary">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
@@ -190,8 +721,9 @@ const ProductDetail = () => {
       {/* Specifications Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          {/* Three Column Overview for FA Lenses */}
-          {slug === "1-1-7-inch-fa-lenses" && 'mainFeatures' in product ? <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {/* Three Column Overview for Lens Products */}
+          {hasLensLayout ? (
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
               {/* Main Features */}
               <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
                 <div className="flex items-center gap-4 mb-4">
@@ -201,10 +733,12 @@ const ProductDetail = () => {
                   <h3 className="text-xl font-bold text-foreground">Main features</h3>
                 </div>
                 <ul className="space-y-3">
-                  {(product as any).mainFeatures.map((feature: string, index: number) => <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
+                  {product.mainFeatures!.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span>{feature}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -217,10 +751,12 @@ const ProductDetail = () => {
                   <h3 className="text-xl font-bold text-foreground">Technical Specifications</h3>
                 </div>
                 <ul className="space-y-3">
-                  {(product as any).quickSpecs.map((spec: string, index: number) => <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
+                  {product.quickSpecs!.map((spec, index) => (
+                    <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span>{spec}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -233,97 +769,84 @@ const ProductDetail = () => {
                   <h3 className="text-xl font-bold text-foreground">Applications</h3>
                 </div>
                 <ul className="space-y-3">
-                  {(product as any).applications.map((app: string, index: number) => <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
+                  {product.applications!.map((app, index) => (
+                    <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span>{app}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </div>
-            </div> : <div className="mb-12">
+            </div>
+          ) : (
+            <div className="mb-12">
               <h2 className="text-2xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-3xl">
                 {product.description}
               </p>
-
               <h3 className="text-xl font-bold text-foreground mb-4">Key Features</h3>
               <ul className="grid md:grid-cols-2 gap-3">
-                {product.features.map((feature, index) => <li key={index} className="flex items-start gap-3">
+                {product.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-3 h-3 text-primary" />
                     </div>
                     <span className="text-foreground">{feature}</span>
-                  </li>)}
+                  </li>
+                ))}
               </ul>
-            </div>}
+            </div>
+          )}
 
-          {/* Technical Specs - Full Width */}
+          {/* Product Models / Technical Specs */}
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-4">Product Models</h2>
-            {slug === "1-1-7-inch-fa-lenses" ? <div className="bg-card border border-border rounded-lg overflow-x-auto">
+            {variants ? (
+              <div className="bg-card border border-border rounded-lg overflow-x-auto">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-secondary/50">
-                      <TableHead className="font-semibold text-foreground">Model</TableHead>
-                      <TableHead className="font-semibold text-foreground">EFL (mm)</TableHead>
-                      <TableHead className="font-semibold text-foreground">Img. Circle</TableHead>
-                      <TableHead className="font-semibold text-foreground">F#</TableHead>
-                      <TableHead className="font-semibold text-foreground">WD Range (mm)</TableHead>
-                      <TableHead className="font-semibold text-foreground">Optical Distortion</TableHead>
-                      <TableHead className="font-semibold text-foreground">Mount</TableHead>
+                      {modelTableHeaders.map((header) => (
+                        <TableHead key={header} className="font-semibold text-foreground">{header}</TableHead>
+                      ))}
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {faLensVariants.map((lens, index) => <TableRow key={lens.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
-                        <TableCell className="font-medium text-foreground">{lens.model}</TableCell>
-                        <TableCell className="text-muted-foreground">{lens.efl}</TableCell>
-                        <TableCell className="text-muted-foreground">{lens.imgCircle}</TableCell>
-                        <TableCell className="text-muted-foreground">{lens.fNumber}</TableCell>
-                        <TableCell className="text-muted-foreground">{lens.wdRange}</TableCell>
-                        <TableCell className="text-muted-foreground">{lens.distortion}</TableCell>
-                        <TableCell className="text-muted-foreground">{lens.mount}</TableCell>
-                      </TableRow>)}
+                    {variants.map((variant, index) => (
+                      <TableRow key={variant.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
+                        {modelTableKeys.map((key) => (
+                          <TableCell key={key} className={key === "model" ? "font-medium text-foreground" : "text-muted-foreground"}>
+                            {variant[key]}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                    ))}
                   </TableBody>
                 </Table>
-              </div> : <div className="bg-card border border-border rounded-lg overflow-hidden max-w-xl">
+              </div>
+            ) : (
+              <div className="bg-card border border-border rounded-lg overflow-hidden max-w-xl">
                 <table className="w-full">
                   <tbody>
-                    {[{
-                  label: "Resolution",
-                  value: product.resolution
-                }, {
-                  label: "Frame Rate",
-                  value: `${product.fps} fps`
-                }, {
-                  label: "Interface",
-                  value: product.interface
-                }, {
-                  label: "Sensor",
-                  value: product.sensor
-                }, {
-                  label: "Sensor Size",
-                  value: product.sensorSize
-                }, {
-                  label: "Pixel Size",
-                  value: product.pixelSize
-                }, {
-                  label: "Dynamic Range",
-                  value: product.dynamicRange
-                }, {
-                  label: "Operating Temp",
-                  value: product.operatingTemp
-                }, {
-                  label: "Dimensions",
-                  value: product.dimensions
-                }, {
-                  label: "Weight",
-                  value: product.weight
-                }].map((spec, index) => <tr key={index} className={index % 2 === 0 ? "bg-secondary/50" : ""}>
+                    {[
+                      { label: "Resolution", value: product.resolution },
+                      { label: "Interface", value: product.interface },
+                      { label: "Sensor", value: product.sensor },
+                      { label: "Sensor Size", value: product.sensorSize },
+                      { label: "Pixel Size", value: product.pixelSize },
+                      { label: "Operating Temp", value: product.operatingTemp },
+                      { label: "Dimensions", value: product.dimensions },
+                      { label: "Weight", value: product.weight },
+                    ].map((spec, index) => (
+                      <tr key={index} className={index % 2 === 0 ? "bg-secondary/50" : ""}>
                         <td className="px-4 py-3 text-sm font-medium text-muted-foreground">{spec.label}</td>
                         <td className="px-4 py-3 text-sm font-semibold text-foreground text-right">{spec.value}</td>
-                      </tr>)}
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
-              </div>}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -358,6 +881,8 @@ const ProductDetail = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default ProductDetail;
