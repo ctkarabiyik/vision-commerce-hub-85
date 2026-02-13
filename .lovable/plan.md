@@ -1,86 +1,34 @@
 
 
-# Restyle Product Info Row to Match Website Design
+# Combine About Us and Industries into One Page
 
-## Summary
-Update the 3-column product info section (Main Features, Technical Specification, Application) to use the same card-based styling found throughout the rest of the website.
+## What we'll do
 
-## Current vs. Proposed Design
+Create a dedicated **About Us** page at `/about` that contains two sections stacked together:
 
-**Current styling:**
-- Plain divs with no background or border
-- Small Award icons aligned to the right of headers
-- Simple list items with dashes
+1. **Why Choose Us** -- the existing company trust signals (Authorized Distributor, Fast Shipping, Expert Support, etc.)
+2. **Industries We Serve** -- the existing Applications component showing the 6 industry categories (Manufacturing, Automotive, Pharmaceutical, etc.)
 
-**Proposed styling (matching site patterns):**
-- Each column wrapped in a card container with `bg-card border border-border rounded-lg p-6`
-- Icon positioned above the heading in a colored container (`w-12 h-12 rounded-lg bg-primary/10`)
-- Hover effect on cards (`hover:border-primary/50 transition-colors`)
-- Use more appropriate icons: Star/Award for Main Features, Settings/Cog for Technical Specs, Target for Applications
-- List items with subtle bullet styling matching other components
+## Changes
 
-## Visual Reference
+### 1. Create new page: `src/pages/AboutUs.tsx`
+- Include Navbar, Footer, and a hero/header area with breadcrumb navigation (matching the style of other pages like Software Downloads and Knowledge Base)
+- Render the existing `WhyChooseUs` component
+- Render the existing `Applications` component
+- Optionally add a brief company intro paragraph at the top
 
-Looking at the Applications component and FeaturedProducts component, the standard card pattern is:
-```text
-+----------------------------------+
-|  [Icon Container]                |
-|                                  |
-|  Title                           |
-|                                  |
-|  • List item 1                   |
-|  • List item 2                   |
-|  • List item 3                   |
-+----------------------------------+
-```
+### 2. Update `src/App.tsx`
+- Import the new `AboutUs` page
+- Add route: `/about`
 
-## Implementation Steps
+### 3. Update `src/components/Navbar.tsx`
+- Change the "About Us" link from `href="#about"` to a proper `Link` component pointing to `/about` (both desktop and mobile nav)
 
-### 1. Update Icon Imports
-Add new icons for better semantic meaning:
-- `Star` for Main Features
-- `Settings` for Technical Specification  
-- `Target` for Application
-
-### 2. Restyle the 3-Column Grid
-Wrap each column in a card container matching the site's established pattern:
-- Add `bg-card border border-border rounded-lg p-6` to each column
-- Add hover effect `hover:border-primary/50 transition-colors`
-- Move icon to top-left in a `w-12 h-12 rounded-lg bg-primary/10` container
-- Add `group` class for hover states
-
-### 3. Update Header and List Styling
-- Remove the flex layout that placed icon next to header
-- Position icon above the heading
-- Change list item prefix from `-` to `•` for consistency
-- Adjust spacing between elements
-
----
+### 4. Update `src/pages/Index.tsx` (optional)
+- Consider whether to keep `WhyChooseUs` on the homepage as well, or remove it since it now lives on the About page. Recommendation: keep it on the homepage too, since it serves as a trust signal for first-time visitors.
 
 ## Technical Details
 
-**File to modify:** `src/pages/ProductDetail.tsx`
-
-**Icon changes:**
-- Import `Star`, `Settings`, `Target` from lucide-react (remove or keep `Award`)
-
-**Class changes for each column:**
-```
-Before: <div>
-After:  <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
-```
-
-**Icon container change:**
-```
-Before: <Award className="w-6 h-6 text-primary" />
-After:  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-          <Star className="w-6 h-6 text-primary" />
-        </div>
-```
-
-**List item change:**
-```
-Before: - {feature}
-After:  • {feature}
-```
-
+- The new page reuses the existing `WhyChooseUs` and `Applications` components with no modifications needed to those components
+- The `id="about"` anchor on WhyChooseUs can be kept for backwards compatibility
+- Navbar links will use `react-router-dom`'s `Link` component instead of anchor tags
