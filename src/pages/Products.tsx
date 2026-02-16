@@ -3,128 +3,46 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
-import { Button } from "@/components/ui/button";
-import { ChevronRight, Grid3X3, LayoutList, Scan, Camera, Settings } from "lucide-react";
-import cameraProduct1 from "@/assets/camera-product-1.jpg";
-import cameraProduct2 from "@/assets/camera-product-2.jpg";
-import cameraProduct3 from "@/assets/camera-product-3.jpg";
-import cameraProduct4 from "@/assets/camera-product-4.jpg";
+import { ChevronRight, Grid3X3, LayoutList, Scan, Camera } from "lucide-react";
+import lineScanCamera1GigE from "@/assets/line-scan-camera-1gige.png";
+import lineScanCamera25GigE from "@/assets/line-scan-camera-2-5gige.png";
+import lineScanCamera10GigE from "@/assets/line-scan-camera-10gige.png";
 
 const cameraCategories = [
-  { id: "all", title: "All Cameras", icon: Camera, count: 285 },
-  { id: "line-scan", title: "Line Scan Cameras", icon: Scan, count: 84 },
-  { id: "frame-scan", title: "Frame Scan Cameras", icon: Camera, count: 156 },
-  { id: "other", title: "Other", icon: Settings, count: 45 },
+  { id: "all", title: "All Cameras", icon: Camera, count: 3 },
+  { id: "line-scan", title: "Line Scan Cameras", icon: Scan, count: 3 },
 ];
 
 const products = [
   {
-    name: "ACE-2040 Pro Series",
-    brand: "BASLER",
-    image: cameraProduct1,
-    resolution: "4.2 MP",
-    fps: "120",
-    interface: "GigE",
-    category: "frame-scan",
-  },
-  {
-    name: "DART-X Industrial",
-    brand: "COGNEX",
-    image: cameraProduct2,
-    resolution: "12 MP",
-    fps: "60",
-    interface: "USB3",
-    category: "frame-scan",
-  },
-  {
-    name: "APEX Vision Core",
-    brand: "FLIR",
-    image: cameraProduct3,
-    resolution: "5.1 MP",
-    fps: "90",
-    interface: "CoaXPress",
-    category: "line-scan",
-  },
-  {
-    name: "MV-8000 Ultra",
-    brand: "HIKROBOT",
-    image: cameraProduct4,
-    resolution: "8.9 MP",
-    fps: "45",
-    interface: "GigE",
-    category: "other",
-  },
-  {
-    name: "Ace2 Pro GigE",
-    brand: "BASLER",
-    image: cameraProduct1,
-    resolution: "20 MP",
-    fps: "25",
-    interface: "GigE",
-    category: "frame-scan",
-  },
-  {
-    name: "IS-5000 Vision",
-    brand: "COGNEX",
-    image: cameraProduct2,
-    resolution: "5 MP",
-    fps: "75",
-    interface: "USB3",
-    category: "other",
-  },
-  {
-    name: "Blackfly S USB3",
-    brand: "FLIR",
-    image: cameraProduct3,
-    resolution: "12.3 MP",
-    fps: "30",
-    interface: "USB3",
-    category: "frame-scan",
-  },
-  {
-    name: "MV-CA023-10GC",
-    brand: "HIKROBOT",
-    image: cameraProduct4,
-    resolution: "2.3 MP",
-    fps: "166",
+    name: "1GigE Line Scan Camera",
+    brand: "ALARGE",
+    image: lineScanCamera1GigE,
+    resolution: "1GigE",
+    fps: "-",
     interface: "GigE",
     category: "line-scan",
+    slug: "1gige-line-scan-camera",
   },
   {
-    name: "Triton TRI-050S",
-    brand: "LUCID",
-    image: cameraProduct1,
-    resolution: "5 MP",
-    fps: "52",
-    interface: "GigE",
-    category: "other",
-  },
-  {
-    name: "Phoenix PHX-016S",
-    brand: "LUCID",
-    image: cameraProduct2,
-    resolution: "1.6 MP",
-    fps: "226",
-    interface: "GigE",
-    category: "other",
-  },
-  {
-    name: "Grasshopper3 GS3",
-    brand: "FLIR",
-    image: cameraProduct3,
-    resolution: "20 MP",
-    fps: "18",
-    interface: "USB3",
-    category: "frame-scan",
-  },
-  {
-    name: "MV-SC2004-10GC",
-    brand: "HIKROBOT",
-    image: cameraProduct4,
-    resolution: "4 MP",
-    fps: "120",
+    name: "2.5GigE Line Scan Camera",
+    brand: "ALARGE",
+    image: lineScanCamera25GigE,
+    resolution: "2.5GigE",
+    fps: "-",
     interface: "GigE",
     category: "line-scan",
+    slug: "2-5gige-line-scan-camera",
+  },
+  {
+    name: "10GigE Line Scan Camera",
+    brand: "ALARGE",
+    image: lineScanCamera10GigE,
+    resolution: "10GigE",
+    fps: "-",
+    interface: "GigE",
+    category: "line-scan",
+    slug: "10gige-line-scan-camera",
   },
 ];
 
@@ -205,7 +123,7 @@ const Products = () => {
                         }`}>
                           {category.title}
                         </div>
-                        <div className="text-xs text-muted-foreground">{category.count} Products</div>
+                        <div className="text-xs text-muted-foreground">{category.count} Product {category.count === 1 ? 'Type' : 'Types'}</div>
                       </div>
                     </button>
                   ))}
@@ -219,13 +137,6 @@ const Products = () => {
                 {filteredProducts.map((product, index) => (
                   <ProductCard key={index} {...product} />
                 ))}
-              </div>
-
-              {/* Load More */}
-              <div className="text-center mt-12">
-                <Button variant="outline" size="lg">
-                  Load More Products
-                </Button>
               </div>
             </div>
           </div>

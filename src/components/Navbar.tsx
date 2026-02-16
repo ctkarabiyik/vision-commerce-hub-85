@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe } from "lucide-react";
 import alargeLogo from "@/assets/alarge-logo.svg";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
+import lineScanCamera1GigE from "@/assets/line-scan-camera-1gige.png";
+import lineScanCamera25GigE from "@/assets/line-scan-camera-2-5gige.png";
+import lineScanCamera10GigE from "@/assets/line-scan-camera-10gige.png";
 import faLens117 from "@/assets/fa-lens-1-1-7.png";
 import faLens23Standard from "@/assets/fa-lens-2-3-standard.png";
 import faLens23Superior from "@/assets/fa-lens-2-3-superior.png";
@@ -22,30 +25,13 @@ const languages = [
   { code: "en", name: "English", flag: "🇬🇧" },
   { code: "tr", name: "Türkçe", flag: "🇹🇷" },
 ];
-import cameraProduct2 from "@/assets/camera-product-2.jpg";
-import cameraProduct3 from "@/assets/camera-product-3.jpg";
-import cameraProduct4 from "@/assets/camera-product-4.jpg";
 const cameraCategories = [
   {
     icon: Scan,
     title: "Line Scan Cameras",
     description: "Continuous imaging for web inspection",
-    count: 84,
+    count: 3,
     href: "#line-scan-cameras",
-  },
-  {
-    icon: Camera,
-    title: "Frame Scan Cameras",
-    description: "High-resolution sensors for quality inspection",
-    count: 156,
-    href: "#frame-scan-cameras",
-  },
-  {
-    icon: Settings,
-    title: "Other",
-    description: "Specialty cameras and accessories",
-    count: 45,
-    href: "#other-cameras",
   },
 ];
 
@@ -75,22 +61,9 @@ const lensCategories = [
 
 const productsByCategory: Record<string, Array<{ name: string; brand: string; image: string; resolution: string; slug: string }>> = {
   "Line Scan Cameras": [
-    { name: "LineScan Pro 8K", brand: "BASLER", image: cameraProduct2, resolution: "8K", slug: "linescan-pro-8k" },
-    { name: "SpeedLine X200", brand: "COGNEX", image: cameraProduct3, resolution: "4K", slug: "speedline-x200" },
-    { name: "WebScan Elite", brand: "FLIR", image: cameraProduct1, resolution: "16K", slug: "webscan-elite" },
-    { name: "RapidScan LS", brand: "HIKROBOT", image: cameraProduct4, resolution: "12K", slug: "rapidscan-ls" },
-  ],
-  "Frame Scan Cameras": [
-    { name: "ACE-2040 Pro Series", brand: "BASLER", image: cameraProduct1, resolution: "4.2 MP", slug: "ace-2040-pro-series" },
-    { name: "DART-X Industrial", brand: "COGNEX", image: cameraProduct2, resolution: "12 MP", slug: "dart-x-industrial" },
-    { name: "APEX Vision Core", brand: "FLIR", image: cameraProduct3, resolution: "5.1 MP", slug: "apex-vision-core" },
-    { name: "MV-8000 Ultra", brand: "HIKROBOT", image: cameraProduct4, resolution: "8.9 MP", slug: "mv-8000-ultra" },
-  ],
-  "Other": [
-    { name: "VisionAI 5000", brand: "COGNEX", image: cameraProduct3, resolution: "5 MP", slug: "visionai-5000" },
-    { name: "DepthSense 3D", brand: "FLIR", image: cameraProduct4, resolution: "1.3 MP", slug: "depthsense-3d" },
-    { name: "MicroVision OEM", brand: "BASLER", image: cameraProduct1, resolution: "2 MP", slug: "microvision-oem" },
-    { name: "CompactCore X", brand: "FLIR", image: cameraProduct3, resolution: "5 MP", slug: "compactcore-x" },
+    { name: "1GigE Line Scan Camera", brand: "ALARGE", image: lineScanCamera1GigE, resolution: "1GigE", slug: "1gige-line-scan-camera" },
+    { name: "2.5GigE Line Scan Camera", brand: "ALARGE", image: lineScanCamera25GigE, resolution: "2.5GigE", slug: "2-5gige-line-scan-camera" },
+    { name: "10GigE Line Scan Camera", brand: "ALARGE", image: lineScanCamera10GigE, resolution: "10GigE", slug: "10gige-line-scan-camera" },
   ],
   "FA Lenses": [
     { name: "1/1.7 inch FA Lenses", brand: "DZOPTICS", image: faLens117, resolution: "1/1.7\"", slug: "1-1-7-inch-fa-lenses" },
@@ -375,7 +348,7 @@ const Navbar = () => {
                         <div className={`font-semibold text-sm transition-colors ${
                           hoveredCameraCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'
                         }`}>{category.title}</div>
-                        <div className="text-xs text-muted-foreground">{category.count} Products</div>
+                        <div className="text-xs text-muted-foreground">{category.count} Product {category.count === 1 ? 'Type' : 'Types'}</div>
                       </div>
                     </a>
                   ))}
@@ -398,11 +371,11 @@ const Navbar = () => {
                       to={`/product/${product.slug}`}
                       className="group"
                     >
-                      <div className="aspect-square bg-secondary rounded-md overflow-hidden mb-2">
+                      <div className="aspect-square bg-white rounded-md overflow-hidden mb-2 flex items-center justify-center p-2">
                         <img 
                           src={product.image} 
                           alt={product.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                       <div className="text-xs text-primary font-semibold">{product.brand}</div>
