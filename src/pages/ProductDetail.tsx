@@ -125,9 +125,8 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "M2S502M-H2", resolution: "2592x1944", fps: "8.1", interface: "USB2.0", pixelSize: "2.2 µm", sensorType: "Mono" },
   ],
   "10gige-fiber-optic-area-scan": [
-    { model: "AF10-2500", resolution: "25.0 MP", fps: "30", interface: "10GigE Fiber", pixelSize: "2.5 µm", sensorType: "CMOS" },
-    { model: "AF10-5000", resolution: "50.0 MP", fps: "15", interface: "10GigE Fiber", pixelSize: "2.5 µm", sensorType: "CMOS" },
-    { model: "AF10-6500", resolution: "65.0 MP", fps: "12", interface: "10GigE Fiber", pixelSize: "3.2 µm", sensorType: "CMOS" },
+    { model: "DSX2502M", resolution: "5120x5120", fps: "39.26", interface: "10GigE Fiber", pixelSize: "2.5 µm", sensorType: "Mono" },
+    { model: "DSX6500M", resolution: "9344×7000", fps: "15.5", interface: "10GigE Fiber", pixelSize: "3.2 µm", sensorType: "Mono" },
   ],
   "ds-series-dual-usb3-area-scan": [
     { model: "DS-200-DU3", resolution: "2.0 MP", fps: "180", interface: "Dual USB3.0", pixelSize: "4.8 µm", sensorType: "CMOS" },
@@ -1069,6 +1068,7 @@ const modelNotes: Record<string, string> = {
   "m3s-series-usb3-area-scan": "Note: M3ST means USB3.0 area scan. 1207 means the resolution is 12MP, M means Mono, H means hardware version, O2C means two optocoupler isolated output.",
   "u3p-series-usb3-area-scan": "Note: U3P means USB3.0 area scan. 520 means the resolution is 5MP, M means Mono, H means hardware version.",
   "m2s-series-usb2-area-scan": "Note: M2S means USB2.0 area scan. 132 and 138 both means the resolution is 1.3MP, M means Mono, H2 means hardware version.",
+  "10gige-fiber-optic-area-scan": "Note: DSX means 10GigE fiber optic area scan. 6500 means the resolution is 65MP, M means Mono.",
 };
 
 const ProductDetail = () => {
