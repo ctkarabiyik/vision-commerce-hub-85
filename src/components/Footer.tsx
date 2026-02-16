@@ -11,12 +11,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-6">Products</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Area Scan Cameras</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Line Scan Cameras</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Smart Cameras</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">3D Cameras</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Embedded Vision</a></li>
-              <li><a href="#" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Accessories</a></li>
+              <li><a href="/products" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Area Scan Cameras</a></li>
+              <li><a href="/products" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Line Scan Cameras</a></li>
+              <li><a href="/products" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Frame Grabbers</a></li>
+              <li><a href="/lenses" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Lenses</a></li>
             </ul>
           </div>
 
