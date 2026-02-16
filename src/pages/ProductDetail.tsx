@@ -177,6 +177,27 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "TC150110A1_20C", imgCircle: "1.2\"", mag: "1.5", wd: "110", fHash: "10-30", oi: "275.6", mount: "C" },
     { model: "TC200110A1_20C", imgCircle: "1.2\"", mag: "2", wd: "110", fHash: "10-30", oi: "287.4", mount: "C" },
   ],
+  "large-coaxial-telecentric": [
+    { model: "TC031250W2", imgCircle: "Φ30", mag: "0.31", wd: "250", fHash: "8-22", oi: "582.37", mount: "M42" },
+    { model: "TC037150K", imgCircle: "Φ30", mag: "0.37", wd: "150", fHash: "8-22", oi: "447.5", mount: "M36" },
+    { model: "TC037250W", imgCircle: "Φ30", mag: "0.37", wd: "250", fHash: "8-22", oi: "577.31", mount: "M36" },
+    { model: "TC0393185W", imgCircle: "Φ28.5", mag: "0.393", wd: "185", fHash: "14", oi: "450.58", mount: "M42" },
+    { model: "TC046150K", imgCircle: "Φ30", mag: "0.46", wd: "150", fHash: "9-22", oi: "440", mount: "M36" },
+    { model: "TC046250W", imgCircle: "Φ30", mag: "0.46", wd: "250", fHash: "9-22", oi: "580", mount: "M36" },
+    { model: "TC055150K", imgCircle: "Φ30", mag: "0.55", wd: "150", fHash: "9-22", oi: "436.1", mount: "M36" },
+    { model: "TC055250A1", imgCircle: "Φ30", mag: "0.55", wd: "250", fHash: "9-22", oi: "455", mount: "M36" },
+    { model: "TC068150K", imgCircle: "Φ30", mag: "0.68", wd: "150", fHash: "10-32", oi: "445", mount: "M36" },
+    { model: "TC079150K", imgCircle: "Φ30", mag: "0.79", wd: "150", fHash: "11-32", oi: "447.7", mount: "M36" },
+    { model: "TC079230W", imgCircle: "Φ30", mag: "0.79", wd: "230", fHash: "11-22", oi: "560", mount: "M36" },
+    { model: "TC110150k", imgCircle: "Φ30", mag: "1.1", wd: "150", fHash: "12-44", oi: "444", mount: "M36" },
+    { model: "TC150110W", imgCircle: "Φ30", mag: "1.5", wd: "110", fHash: "12-64", oi: "357.48", mount: "M42" },
+    { model: "TC200110W", imgCircle: "Φ30", mag: "2", wd: "110", fHash: "13-64", oi: "395", mount: "M42" },
+    { model: "TC100142A1", imgCircle: "Φ33", mag: "1", wd: "142", fHash: "8-22", oi: "368.8", mount: "M42/M58" },
+    { model: "TC150128A1", imgCircle: "Φ33", mag: "1.5", wd: "128", fHash: "8-22", oi: "378.8", mount: "M42/M58" },
+    { model: "TC200115A1", imgCircle: "Φ33", mag: "2", wd: "115", fHash: "8-22", oi: "396.3", mount: "M42/M58" },
+    { model: "TC064130A1", imgCircle: "Φ38", mag: "0.64", wd: "130", fHash: "8-22", oi: "400", mount: "M58" },
+    { model: "TC091130A1", imgCircle: "Φ38", mag: "0.91", wd: "130", fHash: "8-22", oi: "393.2", mount: "M58" },
+  ],
 };
 
 interface ProductInfo {
@@ -1074,7 +1095,7 @@ const lensTableKeys = ["model", "imgCircle", "efl", "fNumber", "distortion", "wd
 
 const telecentricTableHeaders = ["Product Model", "Img Circle (in)", "Mag.", "WD(mm)", "F#", "O/I", "Mount"];
 const telecentricTableKeys = ["model", "imgCircle", "mag", "wd", "fHash", "oi", "mount"];
-const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "12-coaxial-telecentric"];
+const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "12-coaxial-telecentric", "large-coaxial-telecentric"];
 
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
