@@ -15,9 +15,9 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-1.5 mb-6">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-xs font-medium uppercase tracking-wider text-primary-foreground">
-              DZOptics Authorized Distributor
-            </span>
+            <span className="text-xs font-medium uppercase tracking-wider text-primary-foreground">DZOPTICS AND DO3THINK AUTHORIZED DISTRIBUTOR
+
+          </span>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
