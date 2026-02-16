@@ -1184,7 +1184,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "26.5 x 26.5 x 14 mm",
     weight: "12g",
     features: ["Ultra-compact coin size", "USB3.0 interface", "Lightweight design", "Board-level option", "GenICam compliant", "Low power"],
-    mainFeatures: ["Ultra-miniature 26.5mm coin-sized form factor", "USB3.0 bandwidth in the smallest possible package", "Weight under 12g for drone and portable applications", "Board-level version available for OEM integration"],
+    mainFeatures: ["Ultra-small volume: 20mm*20mm*22mm", "Designed for applications in limited spaces", "USB3.0 data interface", "5MP, rolling shutter, 60FPS", "Primarily used in the semiconductor industries"],
     quickSpecs: ["Interface: USB3.0 (5 Gbps)", "Resolution: 0.3 - 1.3 MP", "Frame rate: up to 200 fps", "USB3 Vision / GenICam"],
     applications: ["Drone Vision", "Wearable Devices", "Endoscopy", "Embedded OEM Systems"],
   },
