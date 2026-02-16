@@ -135,10 +135,7 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "DSV501M", resolution: "2568x1920", fps: "60", interface: "USB3.0", pixelSize: "2.2 µm", sensorType: "Mono" },
   ],
   "lipstick-series-1gige-area-scan": [
-    { model: "LP-030-G", resolution: "0.3 MP", fps: "120", interface: "GigE", pixelSize: "7.4 µm", sensorType: "CMOS" },
-    { model: "LP-050-G", resolution: "0.5 MP", fps: "90", interface: "GigE", pixelSize: "5.86 µm", sensorType: "CMOS" },
-    { model: "LP-130-G", resolution: "1.3 MP", fps: "60", interface: "GigE", pixelSize: "4.8 µm", sensorType: "CMOS" },
-    { model: "LP-200-G", resolution: "2.0 MP", fps: "45", interface: "GigE", pixelSize: "4.8 µm", sensorType: "CMOS" },
+    { model: "DSG135M", resolution: "1000x1000", fps: "120", interface: "GigE", pixelSize: "2.7 µm", sensorType: "Mono" },
   ],
   "frame-grabber-10-40gige": [
     { model: "FG-10G-4P", resolution: "10GigE x4", fps: "-", interface: "PCIe 3.0 x8", pixelSize: "-", sensorType: "Frame Grabber" },
@@ -1066,6 +1063,7 @@ const modelNotes: Record<string, string> = {
   "10gige-fiber-optic-area-scan": "Note: DSX means 10GigE fiber optic area scan. 6500 means the resolution is 65MP, M means Mono.",
   "ds-series-dual-usb3-area-scan": "Note 1: DS2502M supports time-division strobing application with 2/3/4 lights. Note 2: 2502 means the resolution is 25MP, M means Mono.",
   "dsv-series-usb3-coin": "Note: 501 means the resolution is 5MP, M means Mono.",
+  "lipstick-series-1gige-area-scan": "Note: 135 means the resolution is 1.3MP, M means Mono.",
 };
 
 const ProductDetail = () => {
