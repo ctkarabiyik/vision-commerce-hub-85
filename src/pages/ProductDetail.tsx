@@ -459,9 +459,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø29 x 36 mm",
     weight: "55g",
     features: ["Premium optics for 2/3\" sensors", "Ultra-low distortion (<0.3%)", "Superior edge resolution", "C-Mount form factor", "Precision metal housing", "Advanced anti-reflection coating"],
-    mainFeatures: ["Applicable for 2.74µm pixel size sensor and below", "Superior image uniformity with enhanced chromatic aberration correction @F#2.8", "Ultra-stable imaging over extended working distances", "Design for visible light application"],
-    quickSpecs: ["Imaging circle: 2/3\"", "Wavelength: 400-700nm", "Focal length: 6mm - 50mm", "C Mount"],
-    applications: ["Precision Measurement", "Color Inspection", "2D Ranging", "3D Ranging"],
+    mainFeatures: ["Appliable for 3.45um pixel size sensor(2.74um for option);", "Faster F#, applicable for low light inspection;", "Image uniformity (resolution, distortion and chromatic aberration correction etc.) @full image circle & F#1.8, no need to achieve better image uniformity by a smaller aperture;", "Imaging quality stability within the working distance, a wider range of application;", "Design for visible light application"],
+    quickSpecs: ["Imaging circle: 2/3\"", "Applicable wavelength: 400-700nm", "Focal length: 8-75 mm", "C Mount"],
+    applications: ["Barcode scanning", "Pharmacy"],
   },
   "1-1-inch-fa-lenses": {
     name: "1.1 inch FA Lenses",
