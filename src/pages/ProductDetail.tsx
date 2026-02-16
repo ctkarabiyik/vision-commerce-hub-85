@@ -530,9 +530,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø55 x 130 mm",
     weight: "380g",
     features: ["Bi-telecentric optical design", "Co-axial illumination port", "Ultra-low distortion", "1.1\" sensor coverage", "High resolution optics", "Industrial-grade construction"],
-    mainFeatures: ["Bi-telecentric design for 1.1\" sensor coverage", "Integrated co-axial illumination for reflective surfaces", "Minimal distortion for precision gauging", "Stable magnification across depth of field"],
-    quickSpecs: ["Imaging circle: 1.1\"", "Telecentricity: <0.1°", "Distortion: <0.08%", "C Mount"],
-    applications: ["Precision Gauging", "Surface Inspection", "Component Measurement", "Assembly Verification"],
+    mainFeatures: ["Apochromatic design enhances image sharpness, depth of field, and authentic color reproduction;", "Ultra low distortion, ensure the precise;", "Uniform image quality across the field and aperture;", "Compatible with RGB, refocusing not required for different illumination."],
+    quickSpecs: ["Imaging circle 1.1\" - 1.2\"", "Wavelength 400 - 700 nm", "Magnification 0.23x - 2x", "WD 110-220mm", "C Mount", "Prism optional"],
+    applications: ["3C & semi-con high-precision inspection"],
   },
   "12-coaxial-telecentric": {
     name: "1.2 inch Co-Axial Telecentric Lens",
