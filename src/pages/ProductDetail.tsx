@@ -953,7 +953,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "62 x 62 x 44 mm",
     weight: "150g",
     features: ["GigE Vision interface", "Power over Ethernet", "Hardware trigger", "GenICam compliant", "Compact housing", "Industrial-grade"],
-    mainFeatures: ["Standard GigE Vision interface for easy integration", "Resolutions from 1K to 8K pixels for versatile applications", "Power over Ethernet (PoE) for simplified cabling", "Compact industrial design for space-constrained environments"],
+    mainFeatures: ["1G Platform", "7um Large Pixel Size", "Low Cost", "Network cable connection", "Easy to deploy"],
     quickSpecs: ["Interface: 1GigE (1 Gbps)", "Resolution: 1024 - 8192 px", "Line rate: up to 18 kHz", "GigE Vision / GenICam"],
     applications: ["Web Inspection", "Print Inspection", "Food Sorting", "Textile Inspection"],
   },
@@ -1384,6 +1384,7 @@ const ProductDetail = () => {
           {hasLensLayout && isCameraProduct ? (
             <div className={`flex justify-center ${variants && variants.length > 0 ? 'mb-16' : ''}`}>
               <div className="bg-card border border-border rounded-lg p-8 w-full max-w-xl">
+                <h3 className="text-xl font-bold text-foreground mb-6">Main features</h3>
                 <ul className="space-y-5">
                   {product.mainFeatures!.map((feature, index) => {
                     const IconComponent = cameraFeatureIcons[index % cameraFeatureIcons.length];
