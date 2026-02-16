@@ -482,9 +482,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø33 x 38 mm",
     weight: "65g",
     features: ["Optimized for 1.1\" image sensors", "Large image circle coverage", "High resolution across full field", "C-Mount compatibility", "Robust industrial housing", "Multi-coated glass elements"],
-    mainFeatures: ["Applicable for 2.74µm pixel size sensor (2.5µm for option)", "Full image circle coverage for 1.1\" sensors @F#2.8", "Stable imaging quality over extended working distances", "Design for visible light application"],
-    quickSpecs: ["Imaging circle: 1.1\"", "Wavelength: 400-700nm", "Focal length: 8mm - 75mm", "C Mount"],
-    applications: ["Scan Code", "Precision Measurement", "2D Ranging", "3D Ranging"],
+    mainFeatures: ["Appliable for 3.45um sensor(2.74um for option);", "Image uniformity (resolution, distortion and chromatic aberration correction etc.)@full image circle & F#2.4, no need to achieve better image uniformity by a smaller aperture;", "Stable imaging quality over working distances for diverse applications;", "Design for visible light application"],
+    quickSpecs: ["Imaging circle: 1/1\"", "Applicable wavelength: 400-700nm", "Focal length: 12mm -75mm", "C Mount"],
+    applications: ["Scan Code", "Color selection", "2D ranging", "3D ranging"],
   },
 
   // === TELECENTRIC LENSES - CO-AXIAL ===
