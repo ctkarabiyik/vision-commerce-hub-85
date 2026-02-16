@@ -418,7 +418,7 @@ const productData: Record<string, ProductInfo> = {
     applications: ["Scan Code", "Color Selection", "2D Ranging", "3D Ranging"],
   },
   "2-3-inch-standard-fa-lenses": {
-    name: "2/3 inch Standard FA Lenses",
+    name: "2/3 inch Budget FA Lenses",
     brand: "DZOPTICS",
     category: "FA Lenses",
     categorySlug: "lenses",

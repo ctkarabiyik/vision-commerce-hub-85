@@ -109,7 +109,7 @@ const productsByCategory: Record<string, Array<{name: string;brand: string;image
 
   "FA Lenses": [
   { name: "1/1.7 inch FA Lenses", brand: "DZOPTICS", image: faLens117, resolution: "1/1.7\"", slug: "1-1-7-inch-fa-lenses" },
-  { name: "2/3 inch Standard FA Lenses", brand: "DZOPTICS", image: faLens23Standard, resolution: "2/3\"", slug: "2-3-inch-standard-fa-lenses" },
+  { name: "2/3 inch Budget FA Lenses", brand: "DZOPTICS", image: faLens23Standard, resolution: "2/3\"", slug: "2-3-inch-standard-fa-lenses" },
   { name: "2/3 inch Superior FA Lenses", brand: "DZOPTICS", image: faLens23Superior, resolution: "2/3\"", slug: "2-3-inch-superior-fa-lenses" },
   { name: "1.1 inch FA Lenses", brand: "DZOPTICS", image: faLens11, resolution: "1.1\"", slug: "1-1-inch-fa-lenses" }],
 
