@@ -51,10 +51,10 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "ALC-8001G", resolution: "8192 px", lineRate: "4.5 kHz", interface: "GigE", pixelSize: "7 µm", sensorType: "CMOS" },
   ],
   "2-5gige-line-scan-camera": [
-    { model: "ALC-2002G", resolution: "2048 px", lineRate: "45 kHz", interface: "2.5GigE", pixelSize: "14 µm", sensorType: "CMOS" },
-    { model: "ALC-4002G", resolution: "4096 px", lineRate: "22 kHz", interface: "2.5GigE", pixelSize: "10 µm", sensorType: "CMOS" },
-    { model: "ALC-8002G", resolution: "8192 px", lineRate: "11 kHz", interface: "2.5GigE", pixelSize: "7 µm", sensorType: "CMOS" },
-    { model: "ALC-16002G", resolution: "16384 px", lineRate: "5.5 kHz", interface: "2.5GigE", pixelSize: "5 µm", sensorType: "CMOS" },
+    { model: "DSR4KC", resolution: "4096x3", lineRate: "23K (70K Bayer)", interface: "M42", pixelSize: "7 µm", sensorType: "Color" },
+    { model: "DSR4KM", resolution: "4096x4", lineRate: "70K", interface: "M42", pixelSize: "7 µm", sensorType: "Mono" },
+    { model: "DSR8KC", resolution: "8192x3", lineRate: "12.5K", interface: "M72x0.75", pixelSize: "7 µm", sensorType: "Color" },
+    { model: "DSR8KM", resolution: "8192x1", lineRate: "37.5K", interface: "M72x0.75", pixelSize: "7 µm", sensorType: "Mono" },
   ],
   "10gige-line-scan-camera": [
     { model: "ALC-4010G", resolution: "4096 px", lineRate: "90 kHz", interface: "10GigE", pixelSize: "10 µm", sensorType: "CMOS" },
