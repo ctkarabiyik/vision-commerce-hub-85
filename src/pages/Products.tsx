@@ -20,147 +20,147 @@ import areaScanLipstick from "@/assets/area-scan-lipstick-1gige.png";
 import frameGrabber from "@/assets/frame-grabber-10-40gige.png";
 
 const cameraCategories = [
-  { id: "all", title: "All Camera Products", icon: Camera, count: 13 },
-  { id: "line-scan", title: "Line Scan Cameras", icon: Scan, count: 3 },
-  { id: "area-scan", title: "Area Scan Cameras", icon: Camera, count: 9 },
-  { id: "other", title: "Other", icon: Settings, count: 1 },
-];
+{ id: "all", title: "All Camera Products", icon: Camera, count: 13 },
+{ id: "line-scan", title: "Line Scan Cameras", icon: Scan, count: 3 },
+{ id: "area-scan", title: "Area Scan Cameras", icon: Camera, count: 9 },
+{ id: "other", title: "Other", icon: Settings, count: 1 }];
+
 
 const products = [
-  // Line Scan Cameras
-  {
-    name: "1GigE Line Scan Camera",
-    brand: "ALARGE",
-    image: lineScanCamera1GigE,
-    resolution: "1GigE",
-    fps: "-",
-    interface: "GigE",
-    category: "line-scan",
-    slug: "1gige-line-scan-camera",
-  },
-  {
-    name: "2.5GigE Line Scan Camera",
-    brand: "ALARGE",
-    image: lineScanCamera25GigE,
-    resolution: "2.5GigE",
-    fps: "-",
-    interface: "GigE",
-    category: "line-scan",
-    slug: "2-5gige-line-scan-camera",
-  },
-  {
-    name: "10GigE Line Scan Camera",
-    brand: "ALARGE",
-    image: lineScanCamera10GigE,
-    resolution: "10GigE",
-    fps: "-",
-    interface: "GigE",
-    category: "line-scan",
-    slug: "10gige-line-scan-camera",
-  },
-  // Area Scan Cameras
-  {
-    name: "MGV Series 1GigE Area Scan Cameras",
-    brand: "ALARGE",
-    image: areaScanMgv,
-    resolution: "Various",
-    fps: "-",
-    interface: "GigE",
-    category: "area-scan",
-    slug: "mgv-series-1gige-area-scan",
-  },
-  {
-    name: "MGS Series 1GigE Area Scan Cameras",
-    brand: "ALARGE",
-    image: areaScanMgs,
-    resolution: "Various",
-    fps: "-",
-    interface: "GigE",
-    category: "area-scan",
-    slug: "mgs-series-1gige-area-scan",
-  },
-  {
-    name: "M3S Series USB3.0 Area Scan Cameras",
-    brand: "ALARGE",
-    image: areaScanM3s,
-    resolution: "Various",
-    fps: "-",
-    interface: "USB3.0",
-    category: "area-scan",
-    slug: "m3s-series-usb3-area-scan",
-  },
-  {
-    name: "U3P Series USB3.0 Area Scan Cameras",
-    brand: "ALARGE",
-    image: areaScanU3p,
-    resolution: "Various",
-    fps: "-",
-    interface: "USB3.0",
-    category: "area-scan",
-    slug: "u3p-series-usb3-area-scan",
-  },
-  {
-    name: "M2S Series USB2.0 Area Scan Cameras",
-    brand: "ALARGE",
-    image: areaScanM2s,
-    resolution: "Various",
-    fps: "-",
-    interface: "USB2.0",
-    category: "area-scan",
-    slug: "m2s-series-usb2-area-scan",
-  },
-  {
-    name: "10GigE Fiber Optic Area Scan Cameras",
-    brand: "ALARGE",
-    image: areaScan10gige,
-    resolution: "Various",
-    fps: "-",
-    interface: "10GigE",
-    category: "area-scan",
-    slug: "10gige-fiber-optic-area-scan",
-  },
-  {
-    name: "DS Series Dual USB3.0 Area Scan Cameras",
-    brand: "ALARGE",
-    image: areaScanDs,
-    resolution: "Various",
-    fps: "-",
-    interface: "USB3.0",
-    category: "area-scan",
-    slug: "ds-series-dual-usb3-area-scan",
-  },
-  {
-    name: "DSV Series USB3.0 Super-mini Coin Cameras",
-    brand: "ALARGE",
-    image: areaScanDsv,
-    resolution: "Various",
-    fps: "-",
-    interface: "USB3.0",
-    category: "area-scan",
-    slug: "dsv-series-usb3-coin",
-  },
-  {
-    name: "Lipstick Series 1GigE Area Scan Cameras",
-    brand: "ALARGE",
-    image: areaScanLipstick,
-    resolution: "Various",
-    fps: "-",
-    interface: "GigE",
-    category: "area-scan",
-    slug: "lipstick-series-1gige-area-scan",
-  },
-  // Other
-  {
-    name: "Frame Grabber For 10-40GigE Optical Fiber Camera",
-    brand: "ALARGE",
-    image: frameGrabber,
-    resolution: "Various",
-    fps: "-",
-    interface: "PCIe",
-    category: "other",
-    slug: "frame-grabber-10-40gige",
-  },
-];
+// Line Scan Cameras
+{
+  name: "1GigE Line Scan Camera",
+  brand: "ALARGE",
+  image: lineScanCamera1GigE,
+  resolution: "1GigE",
+  fps: "-",
+  interface: "GigE",
+  category: "line-scan",
+  slug: "1gige-line-scan-camera"
+},
+{
+  name: "2.5GigE Line Scan Camera",
+  brand: "ALARGE",
+  image: lineScanCamera25GigE,
+  resolution: "2.5GigE",
+  fps: "-",
+  interface: "GigE",
+  category: "line-scan",
+  slug: "2-5gige-line-scan-camera"
+},
+{
+  name: "10GigE Line Scan Camera",
+  brand: "ALARGE",
+  image: lineScanCamera10GigE,
+  resolution: "10GigE",
+  fps: "-",
+  interface: "GigE",
+  category: "line-scan",
+  slug: "10gige-line-scan-camera"
+},
+// Area Scan Cameras
+{
+  name: "MGV Series 1GigE Area Scan Cameras",
+  brand: "ALARGE",
+  image: areaScanMgv,
+  resolution: "Various",
+  fps: "-",
+  interface: "GigE",
+  category: "area-scan",
+  slug: "mgv-series-1gige-area-scan"
+},
+{
+  name: "MGS Series 1GigE Area Scan Cameras",
+  brand: "ALARGE",
+  image: areaScanMgs,
+  resolution: "Various",
+  fps: "-",
+  interface: "GigE",
+  category: "area-scan",
+  slug: "mgs-series-1gige-area-scan"
+},
+{
+  name: "M3S Series USB3.0 Area Scan Cameras",
+  brand: "ALARGE",
+  image: areaScanM3s,
+  resolution: "Various",
+  fps: "-",
+  interface: "USB3.0",
+  category: "area-scan",
+  slug: "m3s-series-usb3-area-scan"
+},
+{
+  name: "U3P Series USB3.0 Area Scan Cameras",
+  brand: "ALARGE",
+  image: areaScanU3p,
+  resolution: "Various",
+  fps: "-",
+  interface: "USB3.0",
+  category: "area-scan",
+  slug: "u3p-series-usb3-area-scan"
+},
+{
+  name: "M2S Series USB2.0 Area Scan Cameras",
+  brand: "ALARGE",
+  image: areaScanM2s,
+  resolution: "Various",
+  fps: "-",
+  interface: "USB2.0",
+  category: "area-scan",
+  slug: "m2s-series-usb2-area-scan"
+},
+{
+  name: "10GigE Fiber Optic Area Scan Cameras",
+  brand: "ALARGE",
+  image: areaScan10gige,
+  resolution: "Various",
+  fps: "-",
+  interface: "10GigE",
+  category: "area-scan",
+  slug: "10gige-fiber-optic-area-scan"
+},
+{
+  name: "DS Series Dual USB3.0 Area Scan Cameras",
+  brand: "ALARGE",
+  image: areaScanDs,
+  resolution: "Various",
+  fps: "-",
+  interface: "USB3.0",
+  category: "area-scan",
+  slug: "ds-series-dual-usb3-area-scan"
+},
+{
+  name: "DSV Series USB3.0 Super-mini Coin Cameras",
+  brand: "ALARGE",
+  image: areaScanDsv,
+  resolution: "Various",
+  fps: "-",
+  interface: "USB3.0",
+  category: "area-scan",
+  slug: "dsv-series-usb3-coin"
+},
+{
+  name: "Lipstick Series 1GigE Area Scan Cameras",
+  brand: "ALARGE",
+  image: areaScanLipstick,
+  resolution: "Various",
+  fps: "-",
+  interface: "GigE",
+  category: "area-scan",
+  slug: "lipstick-series-1gige-area-scan"
+},
+// Other
+{
+  name: "Frame Grabber For 10-40GigE Optical Fiber Camera",
+  brand: "ALARGE",
+  image: frameGrabber,
+  resolution: "Various",
+  fps: "-",
+  interface: "PCIe",
+  category: "other",
+  slug: "frame-grabber-10-40gige"
+}];
+
 
 const PRODUCTS_PER_PAGE = 9;
 
@@ -168,9 +168,9 @@ const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_PAGE);
 
-  const filteredProducts = selectedCategory === "all" 
-    ? products 
-    : products.filter(product => product.category === selectedCategory);
+  const filteredProducts = selectedCategory === "all" ?
+  products :
+  products.filter((product) => product.category === selectedCategory);
 
   const displayedProducts = filteredProducts.slice(0, visibleCount);
   const hasMore = visibleCount < filteredProducts.length;
@@ -195,8 +195,8 @@ const Products = () => {
           </nav>
           
           <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              All Camera Products
+            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">All Cameras and Accessories
+
             </h1>
             <p className="text-lg text-muted-foreground">
               Explore our complete range of industrial cameras, from high-speed line scan sensors 
@@ -227,33 +227,33 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="flex flex-col gap-1">
-                  {cameraCategories.map((category) => (
-                    <button
-                      key={category.id}
-                      onClick={() => handleCategoryChange(category.id)}
-                      className={`flex items-center gap-3 p-3 rounded-lg transition-colors text-left w-full ${
-                        selectedCategory === category.id 
-                          ? 'bg-primary/10 border border-primary' 
-                          : 'hover:bg-secondary border border-transparent'
-                      }`}
-                    >
+                  {cameraCategories.map((category) =>
+                  <button
+                    key={category.id}
+                    onClick={() => handleCategoryChange(category.id)}
+                    className={`flex items-center gap-3 p-3 rounded-lg transition-colors text-left w-full ${
+                    selectedCategory === category.id ?
+                    'bg-primary/10 border border-primary' :
+                    'hover:bg-secondary border border-transparent'}`
+                    }>
+
                       <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
-                        selectedCategory === category.id ? 'bg-primary/20' : 'bg-secondary'
-                      }`}>
+                    selectedCategory === category.id ? 'bg-primary/20' : 'bg-secondary'}`
+                    }>
                         <category.icon className={`w-4 h-4 ${
-                          selectedCategory === category.id ? 'text-primary' : 'text-muted-foreground'
-                        }`} />
+                      selectedCategory === category.id ? 'text-primary' : 'text-muted-foreground'}`
+                      } />
                       </div>
                       <div className="flex-1">
                         <div className={`font-medium text-sm transition-colors ${
-                          selectedCategory === category.id ? 'text-primary' : 'text-foreground'
-                        }`}>
+                      selectedCategory === category.id ? 'text-primary' : 'text-foreground'}`
+                      }>
                           {category.title}
                         </div>
                         <div className="text-xs text-muted-foreground">{category.count} Product {category.count === 1 ? 'Type' : 'Types'}</div>
                       </div>
                     </button>
-                  ))}
+                  )}
                 </div>
               </div>
             </aside>
@@ -261,32 +261,32 @@ const Products = () => {
             {/* Products Grid */}
             <div className="flex-1">
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {displayedProducts.map((product, index) => (
-                  <ProductCard key={index} {...product} />
-                ))}
+                {displayedProducts.map((product, index) =>
+                <ProductCard key={index} {...product} />
+                )}
               </div>
 
               {/* Load More */}
-              {filteredProducts.length > PRODUCTS_PER_PAGE && (
-                <div className="text-center mt-12">
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    onClick={() => setVisibleCount(prev => prev + PRODUCTS_PER_PAGE)}
-                    disabled={!hasMore}
-                  >
+              {filteredProducts.length > PRODUCTS_PER_PAGE &&
+              <div className="text-center mt-12">
+                  <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => setVisibleCount((prev) => prev + PRODUCTS_PER_PAGE)}
+                  disabled={!hasMore}>
+
                     {hasMore ? 'Load More Products' : 'Showing All Products'}
                   </Button>
                 </div>
-              )}
+              }
             </div>
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default Products;
