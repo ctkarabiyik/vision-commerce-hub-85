@@ -329,6 +329,12 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "LM9056APO", imgCircle: "Φ67", efl: "93", fNumber: "F5.6-22", mag: "0.25x@423.8mm", magRange: "0.2-0.3x", mount: "M72/M90/M95" },
     { model: "DZO_LM8220A1", imgCircle: "Φ68", efl: "82", fNumber: "F2-22", mag: "2x@51.6mm", magRange: "1-3.5", mount: "M72" },
   ],
+  "infrared-lenses": [
+    { model: "IR1214A", imgCircle: "Φ16", efl: "12.3", fNumber: "F1.4-16", mag: "0.07173x@700mm", magRange: "0.0121-0.0294x", mount: "C" },
+    { model: "IR2514A", imgCircle: "Φ16", efl: "25.3", fNumber: "F1.4-16", mag: "0.0504x@492mm", magRange: "0.0121-0.0839x", mount: "C" },
+    { model: "IR3520A", imgCircle: "Φ30", efl: "35", fNumber: "F2-22", mag: "0.12x@278mm", magRange: "0-0.2x", mount: "M42*1" },
+    { model: "IR3515A1", imgCircle: "Φ30", efl: "38.5", fNumber: "F1.5-16", mag: "0.125x@300mm", magRange: "0.08-0.17x", mount: "M42*1" },
+  ],
 };
 
 interface ProductInfo {
@@ -1230,7 +1236,7 @@ const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "1
 
 const lineScanLensTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "F#", "Mag.", "Mag. Range", "Mount"];
 const lineScanLensTableKeys = ["model", "imgCircle", "efl", "fNumber", "mag", "magRange", "mount"];
-const lineScanLensSlugs = ["4k-line-scan-lens", "8k-line-scan-lens", "16k-35u-line-scan-lens", "16k-5u-line-scan-lens", "large-format-lenses"];
+const lineScanLensSlugs = ["4k-line-scan-lens", "8k-line-scan-lens", "16k-35u-line-scan-lens", "16k-5u-line-scan-lens", "large-format-lenses", "infrared-lenses"];
 
 const macroLensTableHeaders = ["Product Model", "Img. Circle(mm)", "F#", "EFL(mm)", "Mag.", "Mag. Range", "Mount"];
 const macroLensTableKeys = ["model", "imgCircle", "fNumber", "efl", "mag", "magRange", "mount"];
