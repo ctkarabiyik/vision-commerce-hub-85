@@ -30,7 +30,7 @@ const products = [
 // Line Scan Cameras
 {
   name: "1GigE Line Scan Camera",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: lineScanCamera1GigE,
   resolution: "1GigE",
   fps: "-",
@@ -40,7 +40,7 @@ const products = [
 },
 {
   name: "2.5GigE Line Scan Camera",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: lineScanCamera25GigE,
   resolution: "2.5GigE",
   fps: "-",
@@ -50,7 +50,7 @@ const products = [
 },
 {
   name: "10GigE Line Scan Camera",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: lineScanCamera10GigE,
   resolution: "10GigE",
   fps: "-",
@@ -61,7 +61,7 @@ const products = [
 // Area Scan Cameras
 {
   name: "MGV Series 1GigE Area Scan Cameras",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: areaScanMgv,
   resolution: "Various",
   fps: "-",
@@ -71,7 +71,7 @@ const products = [
 },
 {
   name: "MGS Series 1GigE Area Scan Cameras",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: areaScanMgs,
   resolution: "Various",
   fps: "-",
@@ -81,7 +81,7 @@ const products = [
 },
 {
   name: "M3S Series USB3.0 Area Scan Cameras",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: areaScanM3s,
   resolution: "Various",
   fps: "-",
@@ -91,7 +91,7 @@ const products = [
 },
 {
   name: "U3P Series USB3.0 Area Scan Cameras",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: areaScanU3p,
   resolution: "Various",
   fps: "-",
@@ -101,7 +101,7 @@ const products = [
 },
 {
   name: "M2S Series USB2.0 Area Scan Cameras",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: areaScanM2s,
   resolution: "Various",
   fps: "-",
@@ -111,7 +111,7 @@ const products = [
 },
 {
   name: "10GigE Fiber Optic Area Scan Cameras",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: areaScan10gige,
   resolution: "Various",
   fps: "-",
@@ -121,7 +121,7 @@ const products = [
 },
 {
   name: "DS Series Dual USB3.0 Area Scan Cameras",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: areaScanDs,
   resolution: "Various",
   fps: "-",
@@ -131,7 +131,7 @@ const products = [
 },
 {
   name: "DSV Series USB3.0 Super-mini Coin Cameras",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: areaScanDsv,
   resolution: "Various",
   fps: "-",
@@ -141,7 +141,7 @@ const products = [
 },
 {
   name: "Lipstick Series 1GigE Area Scan Cameras",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: areaScanLipstick,
   resolution: "Various",
   fps: "-",
@@ -152,7 +152,7 @@ const products = [
 // Other
 {
   name: "Frame Grabber For 10-40GigE Optical Fiber Camera",
-  brand: "ALARGE",
+  brand: "Do3Think",
   image: frameGrabber,
   resolution: "Various",
   fps: "-",

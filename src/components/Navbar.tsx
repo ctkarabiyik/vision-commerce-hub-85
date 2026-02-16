@@ -80,18 +80,18 @@ const lensCategories = [
 
 const productsByCategory: Record<string, Array<{name: string;brand: string;image: string;resolution: string;slug: string;}>> = {
   "Line Scan Cameras": [
-  { name: "1GigE Line Scan Camera", brand: "ALARGE", image: lineScanCamera1GigE, resolution: "1GigE", slug: "1gige-line-scan-camera" },
-  { name: "2.5GigE Line Scan Camera", brand: "ALARGE", image: lineScanCamera25GigE, resolution: "2.5GigE", slug: "2-5gige-line-scan-camera" },
-  { name: "10GigE Line Scan Camera", brand: "ALARGE", image: lineScanCamera10GigE, resolution: "10GigE", slug: "10gige-line-scan-camera" }],
+  { name: "1GigE Line Scan Camera", brand: "Do3Think", image: lineScanCamera1GigE, resolution: "1GigE", slug: "1gige-line-scan-camera" },
+  { name: "2.5GigE Line Scan Camera", brand: "Do3Think", image: lineScanCamera25GigE, resolution: "2.5GigE", slug: "2-5gige-line-scan-camera" },
+  { name: "10GigE Line Scan Camera", brand: "Do3Think", image: lineScanCamera10GigE, resolution: "10GigE", slug: "10gige-line-scan-camera" }],
 
   "Area Scan Cameras": [
-  { name: "MGV Series 1GigE", brand: "ALARGE", image: areaScanMgv, resolution: "GigE", slug: "mgv-series-1gige-area-scan" },
-  { name: "MGS Series 1GigE", brand: "ALARGE", image: areaScanMgs, resolution: "GigE", slug: "mgs-series-1gige-area-scan" },
-  { name: "M3S Series USB3.0", brand: "ALARGE", image: areaScanM3s, resolution: "USB3.0", slug: "m3s-series-usb3-area-scan" },
-  { name: "U3P Series USB3.0", brand: "ALARGE", image: areaScanU3p, resolution: "USB3.0", slug: "u3p-series-usb3-area-scan" }],
+  { name: "MGV Series 1GigE", brand: "Do3Think", image: areaScanMgv, resolution: "GigE", slug: "mgv-series-1gige-area-scan" },
+  { name: "MGS Series 1GigE", brand: "Do3Think", image: areaScanMgs, resolution: "GigE", slug: "mgs-series-1gige-area-scan" },
+  { name: "M3S Series USB3.0", brand: "Do3Think", image: areaScanM3s, resolution: "USB3.0", slug: "m3s-series-usb3-area-scan" },
+  { name: "U3P Series USB3.0", brand: "Do3Think", image: areaScanU3p, resolution: "USB3.0", slug: "u3p-series-usb3-area-scan" }],
 
   "Other": [
-  { name: "Frame Grabber 10-40GigE", brand: "ALARGE", image: frameGrabber, resolution: "PCIe", slug: "frame-grabber-10-40gige" }],
+  { name: "Frame Grabber 10-40GigE", brand: "Do3Think", image: frameGrabber, resolution: "PCIe", slug: "frame-grabber-10-40gige" }],
 
   "FA Lenses": [
   { name: "1/1.7 inch FA Lenses", brand: "DZOPTICS", image: faLens117, resolution: "1/1.7\"", slug: "1-1-7-inch-fa-lenses" },
