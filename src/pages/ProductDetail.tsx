@@ -858,9 +858,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Various",
     weight: "Various",
     features: ["IR-optimized optical design", "SWIR wavelength support", "Low thermal drift", "C-Mount interface", "AR-coated for IR transmission", "Industrial-grade housing"],
-    mainFeatures: ["Optimized for SWIR (900-1700nm) wavelength range", "IR-specific anti-reflection coatings for maximum transmission", "Minimal thermal focus shift for stable operation", "Compatible with InGaAs and other IR sensor technologies"],
-    quickSpecs: ["Wavelength: 900-1700nm (SWIR)", "Coating: IR-optimized AR", "Thermal stability: Low drift", "C Mount"],
-    applications: ["Moisture Detection", "Silicon Wafer Inspection", "Thermal Imaging", "Food Quality Inspection"],
+    mainFeatures: ["1\"-Dia30mm classic infrared area scan lens, support 5um/7um pixel size cameras;", "700-1700nm wide brand pass;", "Super fast F#<2.0, higher efficiency;", "C/M42 mount, no more other adapters, no additional adapters required;", "Applicable for NIR/SWIR applications"],
+    quickSpecs: ["Applicable wavelength: 700nm-2000nm", "Magnification: 0.03x - 0.25x", "Interface: V38 / M42 / M58 / F"],
+    applications: ["Wafer (e.g. solar silicon wafer) inspection"],
   },
   "vr-lenses": {
     name: "VR Lenses",
