@@ -18,7 +18,7 @@ const ProductCard = ({ name, brand, image, resolution, fps, interface: interface
   return (
     <div className="group bg-card rounded-sm border border-border hover:border-primary/50 transition-all duration-300 hover-lift overflow-hidden">
       {/* Image */}
-      <div className="relative aspect-square bg-white overflow-hidden flex items-center justify-center p-4">
+      <div className="relative aspect-square bg-white overflow-hidden flex items-center justify-center p-10">
         <img
           src={image}
           alt={name}
