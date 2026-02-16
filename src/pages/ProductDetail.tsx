@@ -1032,6 +1032,11 @@ const areaScanCameraSlugs = [
   "frame-grabber-10-40gige",
 ];
 
+const modelNotes: Record<string, string> = {
+  "1gige-line-scan-camera": "Note: DSG means 1GigE line scan. Continuous means continuous data transmission, Burst means interval data transmission.",
+  "2-5gige-line-scan-camera": "Note: DSR means 2.5GigE line scan. 4K/8K means resolution, C means Color.",
+};
+
 const ProductDetail = () => {
   const { slug } = useParams();
   const product = productData[slug as keyof typeof productData];
@@ -1200,36 +1205,43 @@ const ProductDetail = () => {
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-4">Product Models</h2>
             {variants ? (
-              <div className="bg-card border border-border rounded-lg overflow-x-auto">
-                {(() => {
-                  const isLineScan = lineScanCameraSlugs.includes(slug as string);
-                  const isAreaScan = areaScanCameraSlugs.includes(slug as string);
-                  const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : lensTableHeaders;
-                  const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : lensTableKeys;
-                  return (
-                    <Table>
-                      <TableHeader>
-                        <TableRow className="bg-secondary/50">
-                          {headers.map((header) => (
-                            <TableHead key={header} className="font-semibold text-foreground">{header}</TableHead>
-                          ))}
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        {variants.map((variant, index) => (
-                          <TableRow key={variant.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
-                            {keys.map((key) => (
-                              <TableCell key={key} className={key === "model" ? "font-medium text-foreground" : "text-muted-foreground"}>
-                                {variant[key]}
-                              </TableCell>
+              <>
+                <div className="bg-card border border-border rounded-lg overflow-x-auto">
+                  {(() => {
+                    const isLineScan = lineScanCameraSlugs.includes(slug as string);
+                    const isAreaScan = areaScanCameraSlugs.includes(slug as string);
+                    const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : lensTableHeaders;
+                    const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : lensTableKeys;
+                    return (
+                      <Table>
+                        <TableHeader>
+                          <TableRow className="bg-secondary/50">
+                            {headers.map((header) => (
+                              <TableHead key={header} className="font-semibold text-foreground">{header}</TableHead>
                             ))}
                           </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  );
-                })()}
-              </div>
+                        </TableHeader>
+                        <TableBody>
+                          {variants.map((variant, index) => (
+                            <TableRow key={variant.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
+                              {keys.map((key) => (
+                                <TableCell key={key} className={key === "model" ? "font-medium text-foreground" : "text-muted-foreground"}>
+                                  {variant[key]}
+                                </TableCell>
+                              ))}
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    );
+                  })()}
+                </div>
+                {modelNotes[slug as string] && (
+                  <p className="text-sm text-muted-foreground mt-3 italic">
+                    {modelNotes[slug as string]}
+                  </p>
+                )}
+              </>
             ) : (
               <div className="bg-card border border-border rounded-lg overflow-hidden">
                 <table className="w-full">
