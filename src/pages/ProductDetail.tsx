@@ -1151,7 +1151,7 @@ const ProductDetail = () => {
         <div className="container mx-auto px-4">
           {/* Three Column Overview for Lens Products */}
           {hasLensLayout ? (
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="grid md:grid-cols-3 gap-8">
               {/* Main Features */}
               <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
                 <div className="flex items-center gap-4 mb-4">
