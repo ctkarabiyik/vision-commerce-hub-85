@@ -1227,70 +1227,46 @@ const ProductDetail = () => {
           )}
 
           {/* Product Models / Technical Specs */}
-          <div>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Product Models</h2>
-            {variants && variants.length > 0 ? (
-              <>
-                <div className="bg-card border border-border rounded-lg overflow-x-auto">
-                  {(() => {
-                    const isLineScan = lineScanCameraSlugs.includes(slug as string);
-                    const isAreaScan = areaScanCameraSlugs.includes(slug as string);
-                    const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : lensTableHeaders;
-                    const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : lensTableKeys;
-                    return (
-                      <Table>
-                        <TableHeader>
-                          <TableRow className="bg-secondary/50">
-                            {headers.map((header) => (
-                              <TableHead key={header} className="font-semibold text-foreground">{header}</TableHead>
+          {variants && variants.length > 0 && (
+            <div>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Product Models</h2>
+              <div className="bg-card border border-border rounded-lg overflow-x-auto">
+                {(() => {
+                  const isLineScan = lineScanCameraSlugs.includes(slug as string);
+                  const isAreaScan = areaScanCameraSlugs.includes(slug as string);
+                  const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : lensTableHeaders;
+                  const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : lensTableKeys;
+                  return (
+                    <Table>
+                      <TableHeader>
+                        <TableRow className="bg-secondary/50">
+                          {headers.map((header) => (
+                            <TableHead key={header} className="font-semibold text-foreground">{header}</TableHead>
+                          ))}
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {variants.map((variant, index) => (
+                          <TableRow key={variant.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
+                            {keys.map((key) => (
+                              <TableCell key={key} className={key === "model" ? "font-medium text-foreground" : "text-muted-foreground"}>
+                                {variant[key]}
+                              </TableCell>
                             ))}
                           </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                          {variants.map((variant, index) => (
-                            <TableRow key={variant.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
-                              {keys.map((key) => (
-                                <TableCell key={key} className={key === "model" ? "font-medium text-foreground" : "text-muted-foreground"}>
-                                  {variant[key]}
-                                </TableCell>
-                              ))}
-                            </TableRow>
-                          ))}
-                        </TableBody>
-                      </Table>
-                    );
-                  })()}
-                </div>
-                {modelNotes[slug as string] && (
-                  <p className="text-sm text-muted-foreground mt-3 italic">
-                    {modelNotes[slug as string]}
-                  </p>
-                )}
-              </>
-            ) : (
-              <div className="bg-card border border-border rounded-lg overflow-hidden">
-                <table className="w-full">
-                  <tbody>
-                    {[
-                      { label: "Resolution", value: product.resolution },
-                      { label: "Interface", value: product.interface },
-                      { label: "Sensor", value: product.sensor },
-                      { label: "Sensor Size", value: product.sensorSize },
-                      { label: "Pixel Size", value: product.pixelSize },
-                      { label: "Operating Temp", value: product.operatingTemp },
-                      { label: "Dimensions", value: product.dimensions },
-                      { label: "Weight", value: product.weight },
-                    ].map((spec, index) => (
-                      <tr key={index} className={index % 2 === 0 ? "bg-secondary/50" : ""}>
-                        <td className="px-4 py-3 text-sm font-medium text-muted-foreground">{spec.label}</td>
-                        <td className="px-4 py-3 text-sm font-semibold text-foreground text-right">{spec.value}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  );
+                })()}
               </div>
-            )}
-          </div>
+              {modelNotes[slug as string] && (
+                <p className="text-sm text-muted-foreground mt-3 italic">
+                  {modelNotes[slug as string]}
+                </p>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
