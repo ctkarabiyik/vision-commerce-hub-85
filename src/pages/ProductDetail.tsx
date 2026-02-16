@@ -57,10 +57,10 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "DSR8KM", resolution: "8192x1", lineRate: "37.5K", interface: "M72x0.75", pixelSize: "7 µm", sensorType: "Mono" },
   ],
   "10gige-line-scan-camera": [
-    { model: "ALC-4010G", resolution: "4096 px", lineRate: "90 kHz", interface: "10GigE", pixelSize: "10 µm", sensorType: "CMOS" },
-    { model: "ALC-8010G", resolution: "8192 px", lineRate: "45 kHz", interface: "10GigE", pixelSize: "7 µm", sensorType: "CMOS" },
-    { model: "ALC-16010G", resolution: "16384 px", lineRate: "22 kHz", interface: "10GigE", pixelSize: "5 µm", sensorType: "CMOS" },
-    { model: "ALC-16010G-HR", resolution: "16384 px", lineRate: "18 kHz", interface: "10GigE", pixelSize: "3.5 µm", sensorType: "CMOS" },
+    { model: "DSX8KM", resolution: "8192x4", lineRate: "110K (29K 4TDI)", interface: "M72x0.75", pixelSize: "7 µm", sensorType: "Mono" },
+    { model: "DSX8KC", resolution: "8192x6", lineRate: "37K (20K 2TDI)", interface: "M72x0.75", pixelSize: "7 µm", sensorType: "Color" },
+    { model: "DSX16KC", resolution: "16384x3", lineRate: "23.6K", interface: "M90x1", pixelSize: "5 µm", sensorType: "Color" },
+    { model: "DSX16KM", resolution: "16384x2", lineRate: "57K (28K 2TDI)", interface: "M72x0.75", pixelSize: "3.5 µm", sensorType: "Mono" },
   ],
   // === AREA SCAN CAMERAS ===
   "mgv-series-1gige-area-scan": [
@@ -1035,6 +1035,7 @@ const areaScanCameraSlugs = [
 const modelNotes: Record<string, string> = {
   "1gige-line-scan-camera": "Note: DSG means 1GigE line scan. Continuous means continuous data transmission, Burst means interval data transmission.",
   "2-5gige-line-scan-camera": "Note: DSR means 2.5GigE line scan. 4K/8K means resolution, C means Color.",
+  "10gige-line-scan-camera": "Note: DSX means 10GigE line scan. 8K means resolution, C means Color.",
 };
 
 const ProductDetail = () => {
