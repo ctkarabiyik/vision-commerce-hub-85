@@ -713,12 +713,12 @@ const productData: Record<string, ProductInfo> = {
   // === LINE SCAN CAMERAS ===
   "1gige-line-scan-camera": {
     name: "1GigE Line Scan Camera",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Line Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/line-scan-camera-1gige.png",
     shortDescription: "Cost-effective 1GigE line scan camera for standard-speed continuous inspection applications.",
-    description: "The ALARGE 1GigE Line Scan Camera provides reliable line scan imaging over standard Gigabit Ethernet for mainstream inspection tasks.",
+    description: "The Do3Think 1GigE Line Scan Camera provides reliable line scan imaging over standard Gigabit Ethernet for mainstream inspection tasks.",
     resolution: "1GigE",
     fps: "-",
     interface: "GigE",
@@ -736,12 +736,12 @@ const productData: Record<string, ProductInfo> = {
   },
   "2-5gige-line-scan-camera": {
     name: "2.5GigE Line Scan Camera",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Line Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/line-scan-camera-2-5gige.png",
     shortDescription: "High-throughput 2.5GigE line scan camera for demanding continuous inspection with increased bandwidth.",
-    description: "The ALARGE 2.5GigE Line Scan Camera delivers 2.5x the bandwidth of standard GigE for higher line rates and resolutions.",
+    description: "The Do3Think 2.5GigE Line Scan Camera delivers 2.5x the bandwidth of standard GigE for higher line rates and resolutions.",
     resolution: "2.5GigE",
     fps: "-",
     interface: "2.5GigE",
@@ -759,12 +759,12 @@ const productData: Record<string, ProductInfo> = {
   },
   "10gige-line-scan-camera": {
     name: "10GigE Line Scan Camera",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Line Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/line-scan-camera-10gige.png",
     shortDescription: "Ultra-high bandwidth 10GigE line scan camera for the most demanding high-speed, high-resolution inspection tasks.",
-    description: "The ALARGE 10GigE Line Scan Camera delivers maximum bandwidth for ultra-high-speed line scan applications requiring top resolution and line rates.",
+    description: "The Do3Think 10GigE Line Scan Camera delivers maximum bandwidth for ultra-high-speed line scan applications requiring top resolution and line rates.",
     resolution: "10GigE",
     fps: "-",
     interface: "10GigE",
@@ -783,7 +783,7 @@ const productData: Record<string, ProductInfo> = {
   // === AREA SCAN CAMERAS ===
   "mgv-series-1gige-area-scan": {
     name: "MGV Series 1GigE Area Scan Cameras",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/area-scan-mgv-1gige.png",
@@ -806,7 +806,7 @@ const productData: Record<string, ProductInfo> = {
   },
   "mgs-series-1gige-area-scan": {
     name: "MGS Series 1GigE Area Scan Cameras",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/area-scan-mgs-1gige.png",
@@ -829,7 +829,7 @@ const productData: Record<string, ProductInfo> = {
   },
   "m3s-series-usb3-area-scan": {
     name: "M3S Series USB3.0 Area Scan Cameras",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/area-scan-m3s-usb3.png",
@@ -852,7 +852,7 @@ const productData: Record<string, ProductInfo> = {
   },
   "u3p-series-usb3-area-scan": {
     name: "U3P Series USB3.0 Area Scan Cameras",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/area-scan-u3p-usb3.png",
@@ -875,7 +875,7 @@ const productData: Record<string, ProductInfo> = {
   },
   "m2s-series-usb2-area-scan": {
     name: "M2S Series USB2.0 Area Scan Cameras",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/area-scan-m2s-usb2.png",
@@ -898,7 +898,7 @@ const productData: Record<string, ProductInfo> = {
   },
   "10gige-fiber-optic-area-scan": {
     name: "10GigE Fiber Optic Area Scan Cameras",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/area-scan-10gige-fiber.png",
@@ -921,7 +921,7 @@ const productData: Record<string, ProductInfo> = {
   },
   "ds-series-dual-usb3-area-scan": {
     name: "DS Series Dual USB3.0 High-speed Area Scan Cameras",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/area-scan-ds-dual-usb3.png",
@@ -944,7 +944,7 @@ const productData: Record<string, ProductInfo> = {
   },
   "dsv-series-usb3-coin": {
     name: "DSV Series USB3.0 Super-mini Coin Cameras",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/area-scan-dsv-coin.png",
@@ -967,7 +967,7 @@ const productData: Record<string, ProductInfo> = {
   },
   "lipstick-series-1gige-area-scan": {
     name: "Lipstick Series 1GigE Area Scan Cameras",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
     image: "/src/assets/area-scan-lipstick-1gige.png",
@@ -992,12 +992,12 @@ const productData: Record<string, ProductInfo> = {
   // === OTHER ===
   "frame-grabber-10-40gige": {
     name: "Frame Grabber For 10-40GigE Optical Fiber Camera",
-    brand: "ALARGE",
+    brand: "Do3Think",
     category: "Other",
     categorySlug: "products",
     image: "/src/assets/frame-grabber-10-40gige.png",
     shortDescription: "High-performance PCIe frame grabber supporting 10GigE to 40GigE optical fiber camera interfaces.",
-    description: "The ALARGE Frame Grabber enables seamless integration of 10-40GigE fiber optic cameras with host PCs via PCIe.",
+    description: "The Do3Think Frame Grabber enables seamless integration of 10-40GigE fiber optic cameras with host PCs via PCIe.",
     resolution: "Various",
     fps: "-",
     interface: "PCIe",

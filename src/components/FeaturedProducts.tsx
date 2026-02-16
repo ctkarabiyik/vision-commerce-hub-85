@@ -10,7 +10,7 @@ import telecentricLens from "@/assets/telecentric-11-coaxial.png";
 const products = [
   {
     name: "MGV Series 1GigE Area Scan",
-    brand: "DZOPTICS",
+    brand: "Do3Think",
     image: areaScanMgv,
     resolution: "5.0 MP",
     fps: "120",
@@ -19,7 +19,7 @@ const products = [
   },
   {
     name: "1GigE Line Scan Camera",
-    brand: "DZOPTICS",
+    brand: "Do3Think",
     image: lineScan1gige,
     resolution: "4K",
     fps: "80 kHz",
