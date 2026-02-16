@@ -276,6 +276,16 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "LS10056A", imgCircle: "Φ108", efl: "100", fNumber: "F5.6-16", mag: "0.17x@680.9mm", magRange: "0.04-0.58", mount: "M58/M72" },
     { model: "LS12056A", imgCircle: "Φ86", efl: "120", fNumber: "F5.6-16", mag: "0.5x@335.3mm", magRange: "0.37-0.65", mount: "M58/M72" },
   ],
+  "16k-35u-line-scan-lens": [
+    { model: "LS16006APO", imgCircle: "Φ58", efl: "60", fNumber: "F4.5-16", mag: "0.06x@1058.2mm", magRange: "0.04-0.075", mount: "M72" },
+    { model: "LS16010APO", imgCircle: "Φ58", efl: "60", fNumber: "F4.5-16", mag: "0.107x@581.7mm", magRange: "0.078-0.0119", mount: "M72" },
+    { model: "LS80014APO", imgCircle: "Φ64", efl: "80", fNumber: "F5.6-16", mag: "0.146x@590mm", magRange: "0.13-0.166", mount: "M72" },
+    { model: "LS80021APO", imgCircle: "Φ64", efl: "80", fNumber: "F5.6-16", mag: "0.21x@430mm", magRange: "0.18-0.24", mount: "M72" },
+    { model: "LS160255APO-B1", imgCircle: "Φ63", efl: "114", fNumber: "F4.2-22", mag: "0.255x@518mm", magRange: "0.23-0.28", mount: "M72" },
+    { model: "LS16033APO", imgCircle: "Φ64", efl: "116", fNumber: "F4.2-16", mag: "0.33x@409mm", magRange: "0.31-0.36", mount: "M72" },
+    { model: "LS16042APO-B1", imgCircle: "Φ66", efl: "116", fNumber: "F4-22", mag: "0.42x@341mm", magRange: "0.38-0.45", mount: "M72" },
+    { model: "LS160476APO", imgCircle: "Φ64", efl: "115.682", fNumber: "F3.8-22", mag: "0.476x@315mm", magRange: "0.46-0.5", mount: "M72" },
+  ],
 };
 
 interface ProductInfo {
@@ -1177,7 +1187,7 @@ const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "1
 
 const lineScanLensTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "F#", "Mag.", "Mag. Range", "Mount"];
 const lineScanLensTableKeys = ["model", "imgCircle", "efl", "fNumber", "mag", "magRange", "mount"];
-const lineScanLensSlugs = ["4k-line-scan-lens", "8k-line-scan-lens"];
+const lineScanLensSlugs = ["4k-line-scan-lens", "8k-line-scan-lens", "16k-35u-line-scan-lens"];
 
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
