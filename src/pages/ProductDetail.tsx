@@ -258,6 +258,14 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "TL055220W", imgCircle: "Φ30", mag: "0.55", wd: "220", fHash: "8-22", oi: "449.3", mount: "M42" },
     { model: "TL068220W", imgCircle: "Φ30", mag: "0.68", wd: "220", fHash: "8-22", oi: "425", mount: "M42" },
   ],
+  "4k-line-scan-lens": [
+    { model: "LS25008A", imgCircle: "Φ29", efl: "25", fNumber: "F4.5-22", mag: "0.1x@243.7mm", magRange: "0.04-0.15", mount: "M42" },
+    { model: "LS25020A", imgCircle: "Φ29", efl: "25", fNumber: "F4.5-22", mag: "0.2x@119.5mm", magRange: "0.15-0.25", mount: "M42" },
+    { model: "LS28002A", imgCircle: "Φ42", efl: "29.52", fNumber: "F4-16", mag: "0.019x@1527.39mm", magRange: "/", mount: "M58" },
+    { model: "LS28007A", imgCircle: "Φ42", efl: "29", fNumber: "F4-16", mag: "0.074x@365.3mm", magRange: "0.059-0.083", mount: "M58/M72" },
+    { model: "LS4045A", imgCircle: "Φ31.7", efl: "39.4", fNumber: "F4.5-16", mag: "0.1x@412.57mm", magRange: "0.04-0.2", mount: "M42" },
+    { model: "LS4028A", imgCircle: "Φ44", efl: "41.5", fNumber: "F2.8-11", mag: "0.1x@420.3mm", magRange: "0.04-0.33", mount: "M42" },
+  ],
 };
 
 interface ProductInfo {
@@ -1157,6 +1165,10 @@ const telecentricTableHeaders = ["Product Model", "Img Circle (in)", "Mag.", "WD
 const telecentricTableKeys = ["model", "imgCircle", "mag", "wd", "fHash", "oi", "mount"];
 const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "12-coaxial-telecentric", "large-coaxial-telecentric", "half-inch-noncoaxial-telecentric", "23-noncoaxial-telecentric", "23-noncoaxial-telecentric-b", "11-noncoaxial-telecentric", "12-noncoaxial-telecentric", "large-noncoaxial-telecentric"];
 
+const lineScanLensTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "F#", "Mag.", "Mag. Range", "Mount"];
+const lineScanLensTableKeys = ["model", "imgCircle", "efl", "fNumber", "mag", "magRange", "mount"];
+const lineScanLensSlugs = ["4k-line-scan-lens"];
+
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
 
@@ -1359,8 +1371,9 @@ const ProductDetail = () => {
                   const isLineScan = lineScanCameraSlugs.includes(slug as string);
                   const isAreaScan = areaScanCameraSlugs.includes(slug as string);
                   const isTelecentric = telecentricSlugs.includes(slug as string);
-                  const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : isTelecentric ? telecentricTableHeaders : lensTableHeaders;
-                  const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : isTelecentric ? telecentricTableKeys : lensTableKeys;
+                  const isLineScanLens = lineScanLensSlugs.includes(slug as string);
+                  const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : isTelecentric ? telecentricTableHeaders : isLineScanLens ? lineScanLensTableHeaders : lensTableHeaders;
+                  const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : isTelecentric ? telecentricTableKeys : isLineScanLens ? lineScanLensTableKeys : lensTableKeys;
                   return (
                     <Table>
                       <TableHeader>
