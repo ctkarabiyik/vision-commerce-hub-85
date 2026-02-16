@@ -694,9 +694,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø58 x 130 mm",
     weight: "400g",
     features: ["1.2\" full sensor coverage", "Non-co-axial configuration", "Ultra-low distortion", "High MTF", "C-Mount compatible", "Robust construction"],
-    mainFeatures: ["Full 1.2\" sensor coverage for maximum field of view", "Non-co-axial design with external illumination flexibility", "Ultra-low distortion for critical measurement", "High MTF across entire image field"],
-    quickSpecs: ["Imaging circle: 1.2\"", "Telecentricity: <0.1°", "Distortion: <0.08%", "C Mount"],
-    applications: ["PCB Inspection", "Display Inspection", "Large Area Metrology", "Wafer Measurement"],
+    mainFeatures: ["Apochromatic design enhances image sharpness, depth of field, and authentic color reproduction;", "Ultra low distortion, ensure the precise;", "Uniform image quality across the field and aperture;", "Compatible with RGB, refocusing not required for different illumination."],
+    quickSpecs: ["Imaging circle 1.1\" - 1.2\"", "Wavelength 400 - 700 nm", "Magnification 0.23x - 2x", "WD 110-220mm", "C Mount", "Prism optional"],
+    applications: ["3C & semi-con high-precision inspection"],
   },
   "large-noncoaxial-telecentric": {
     name: "Large Format Non-Co-Axial Telecentric Lens",
