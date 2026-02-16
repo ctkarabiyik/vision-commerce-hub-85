@@ -341,9 +341,10 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "FXG-FFVR220", imgCircle: "Φ24.08", efl: "6.32", fNumber: "F3.5-16", fTheta: "0.60%", mount: "C、E" },
   ],
   "scheimpflug-lenses": [
-    { model: "MC2535W", imgCircle: "1.1inch", efl: "25", magRange: "0.1-0.4x", mount: "M22*0.75" },
-    { model: "MC3530W", imgCircle: "1.1inch", efl: "35", magRange: "0.25-0.7x", mount: "M24*0.75" },
-    { model: "MC5028E", imgCircle: "1.1inch", efl: "50", magRange: "0.43-0.82x", mount: "M30*0.75" },
+    { model: "SM2535A", imgCircle: "Φ19", mag: "0.73-1.04", fNumber: "F3.5-16", distortion: "1.37-1.23", wd: "42-40", conjugateDistance: "101-98", mount: "C" },
+    { model: "SM3530A", imgCircle: "Φ19", mag: "0.73-1.18", fNumber: "F3.0-16", distortion: "0.4-0.34", wd: "64-61", conjugateDistance: "132-129", mount: "C" },
+    { model: "SM5028A", imgCircle: "Φ19", mag: "0.79-1.15", fNumber: "F2.8-16", distortion: "0.17-0.18", wd: "121-119", conjugateDistance: "194-192", mount: "C" },
+    { model: "SM7528A", imgCircle: "Φ19", mag: "0.46-0.69", fNumber: "F2.8-15", distortion: "0.04-0.06", wd: "236-196", conjugateDistance: "339-299", mount: "C" },
   ],
 };
 
@@ -1256,8 +1257,8 @@ const vrLensTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "F#",
 const vrLensTableKeys = ["model", "imgCircle", "efl", "fNumber", "fTheta", "mount"];
 const vrLensSlugs = ["vr-lenses"];
 
-const scheimpflugTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "Mag. Range", "Mount"];
-const scheimpflugTableKeys = ["model", "imgCircle", "efl", "magRange", "mount"];
+const scheimpflugTableHeaders = ["Model", "Img Circle", "Mag.", "F#", "Distortion (%)", "WD (mm)", "Conjugate Distance", "Mount"];
+const scheimpflugTableKeys = ["model", "imgCircle", "mag", "fNumber", "distortion", "wd", "conjugateDistance", "mount"];
 const scheimpflugSlugs = ["scheimpflug-lenses"];
 
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
