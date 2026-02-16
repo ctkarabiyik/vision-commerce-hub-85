@@ -1382,8 +1382,8 @@ const ProductDetail = () => {
         <div className="container mx-auto px-4">
           {/* Three Column Overview for Lens Products / Camera Feature List */}
           {hasLensLayout && isCameraProduct ? (
-            <div className={`${variants && variants.length > 0 ? 'mb-16' : ''}`}>
-              <div className="bg-card border border-border rounded-lg p-6 max-w-md">
+            <div className={`flex justify-center ${variants && variants.length > 0 ? 'mb-16' : ''}`}>
+              <div className="bg-card border border-border rounded-lg p-8 w-full max-w-xl">
                 <ul className="space-y-5">
                   {product.mainFeatures!.map((feature, index) => {
                     const IconComponent = cameraFeatureIcons[index % cameraFeatureIcons.length];
