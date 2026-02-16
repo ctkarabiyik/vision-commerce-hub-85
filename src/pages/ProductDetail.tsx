@@ -1384,7 +1384,10 @@ const ProductDetail = () => {
         <div className="container mx-auto px-4">
           {/* Three Column Overview for Lens Products / Camera Feature List */}
           {hasLensLayout && isCameraProduct ? (
-            <div className={`flex justify-center ${variants && variants.length > 0 ? 'mb-16' : ''}`}>
+            <div className={`flex flex-col items-center ${variants && variants.length > 0 ? 'mb-16' : ''}`}>
+              {product.descriptionBox && (
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-xl w-full mb-6">{product.descriptionBox}</p>
+              )}
               <div className="bg-card border border-border rounded-lg p-8 w-full max-w-xl">
                 <h3 className="text-xl font-bold text-foreground mb-6">Main features</h3>
                 <ul className="space-y-5">
@@ -1399,11 +1402,6 @@ const ProductDetail = () => {
                   })}
                 </ul>
               </div>
-              {product.descriptionBox && (
-                <div className="bg-card border border-border rounded-lg p-8 w-full max-w-xl mt-6">
-                  <p className="text-sm text-muted-foreground leading-relaxed">{product.descriptionBox}</p>
-                </div>
-              )}
             </div>
           ) : hasLensLayout ? (
             <div className={`grid md:grid-cols-3 gap-8 ${variants && variants.length > 0 ? 'mb-16' : ''}`}>
