@@ -33,9 +33,11 @@ const products = [
   name: "1GigE Line Scan Camera",
   brand: "Do3Think",
   image: lineScanCamera1GigE,
-  resolution: "1GigE",
-  fps: "-",
-  interface: "GigE",
+  specs: [
+    { label: "Speed", value: "1 Gbps" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "GigE" },
+  ],
   category: "line-scan",
   slug: "1gige-line-scan-camera"
 },
@@ -43,9 +45,11 @@ const products = [
   name: "2.5GigE Line Scan Camera",
   brand: "Do3Think",
   image: lineScanCamera25GigE,
-  resolution: "2.5GigE",
-  fps: "-",
-  interface: "GigE",
+  specs: [
+    { label: "Speed", value: "2.5 Gbps" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "GigE" },
+  ],
   category: "line-scan",
   slug: "2-5gige-line-scan-camera"
 },
@@ -53,9 +57,11 @@ const products = [
   name: "10GigE Line Scan Camera",
   brand: "Do3Think",
   image: lineScanCamera10GigE,
-  resolution: "10GigE",
-  fps: "-",
-  interface: "GigE",
+  specs: [
+    { label: "Speed", value: "10 Gbps" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "GigE" },
+  ],
   category: "line-scan",
   slug: "10gige-line-scan-camera"
 },
@@ -64,9 +70,11 @@ const products = [
   name: "MGV Series 1GigE Area Scan Cameras",
   brand: "Do3Think",
   image: areaScanMgv,
-  resolution: "Various",
-  fps: "-",
-  interface: "GigE",
+  specs: [
+    { label: "Resolution", value: "0.3–20 MP" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "GigE" },
+  ],
   category: "area-scan",
   slug: "mgv-series-1gige-area-scan"
 },
@@ -74,9 +82,11 @@ const products = [
   name: "MGS Series 1GigE Area Scan Cameras",
   brand: "Do3Think",
   image: areaScanMgs,
-  resolution: "Various",
-  fps: "-",
-  interface: "GigE",
+  specs: [
+    { label: "Resolution", value: "0.3–20 MP" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "GigE" },
+  ],
   category: "area-scan",
   slug: "mgs-series-1gige-area-scan"
 },
@@ -84,9 +94,11 @@ const products = [
   name: "M3S Series USB3.0 Area Scan Cameras",
   brand: "Do3Think",
   image: areaScanM3s,
-  resolution: "Various",
-  fps: "-",
-  interface: "USB3.0",
+  specs: [
+    { label: "Resolution", value: "0.3–20 MP" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "USB 3.0" },
+  ],
   category: "area-scan",
   slug: "m3s-series-usb3-area-scan"
 },
@@ -94,9 +106,11 @@ const products = [
   name: "U3P Series USB3.0 Area Scan Cameras",
   brand: "Do3Think",
   image: areaScanU3p,
-  resolution: "Various",
-  fps: "-",
-  interface: "USB3.0",
+  specs: [
+    { label: "Resolution", value: "0.3–20 MP" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "USB 3.0" },
+  ],
   category: "area-scan",
   slug: "u3p-series-usb3-area-scan"
 },
@@ -104,9 +118,11 @@ const products = [
   name: "M2S Series USB2.0 Area Scan Cameras",
   brand: "Do3Think",
   image: areaScanM2s,
-  resolution: "Various",
-  fps: "-",
-  interface: "USB2.0",
+  specs: [
+    { label: "Resolution", value: "0.3–5 MP" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "USB 2.0" },
+  ],
   category: "area-scan",
   slug: "m2s-series-usb2-area-scan"
 },
@@ -114,9 +130,11 @@ const products = [
   name: "10GigE Fiber Optic Area Scan Cameras",
   brand: "Do3Think",
   image: areaScan10gige,
-  resolution: "Various",
-  fps: "-",
-  interface: "10GigE",
+  specs: [
+    { label: "Speed", value: "10 Gbps" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "Fiber" },
+  ],
   category: "area-scan",
   slug: "10gige-fiber-optic-area-scan"
 },
@@ -124,9 +142,11 @@ const products = [
   name: "DS Series Dual USB3.0 Area Scan Cameras",
   brand: "Do3Think",
   image: areaScanDs,
-  resolution: "Various",
-  fps: "-",
-  interface: "USB3.0",
+  specs: [
+    { label: "Channels", value: "Dual" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "USB 3.0" },
+  ],
   category: "area-scan",
   slug: "ds-series-dual-usb3-area-scan"
 },
@@ -134,9 +154,11 @@ const products = [
   name: "DSV Series USB3.0 Super-mini Coin Cameras",
   brand: "Do3Think",
   image: areaScanDsv,
-  resolution: "Various",
-  fps: "-",
-  interface: "USB3.0",
+  specs: [
+    { label: "Form", value: "Coin" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "USB 3.0" },
+  ],
   category: "area-scan",
   slug: "dsv-series-usb3-coin"
 },
@@ -144,9 +166,11 @@ const products = [
   name: "Lipstick Series 1GigE Area Scan Cameras",
   brand: "Do3Think",
   image: areaScanLipstick,
-  resolution: "Various",
-  fps: "-",
-  interface: "GigE",
+  specs: [
+    { label: "Form", value: "Lipstick" },
+    { label: "Sensor", value: "CMOS" },
+    { label: "Interface", value: "GigE" },
+  ],
   category: "area-scan",
   slug: "lipstick-series-1gige-area-scan"
 },
@@ -155,9 +179,11 @@ const products = [
   name: "Frame Grabber For 10-40GigE Optical Fiber Camera",
   brand: "Do3Think",
   image: frameGrabber,
-  resolution: "Various",
-  fps: "-",
-  interface: "PCIe",
+  specs: [
+    { label: "Speed", value: "10–40 Gbps" },
+    { label: "Channels", value: "1–4" },
+    { label: "Interface", value: "PCIe" },
+  ],
   category: "other",
   slug: "frame-grabber-10-40gige"
 }];
