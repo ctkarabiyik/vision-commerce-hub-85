@@ -248,6 +248,10 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "TL060185D", imgCircle: "1.1\"", mag: "0.6", wd: "185", fHash: "10", oi: "447.196", mount: "C" },
     { model: "TL100180J", imgCircle: "1.1\"", mag: "1", wd: "180", fHash: "8-22", oi: "414.28", mount: "C" },
   ],
+  "12-noncoaxial-telecentric": [
+    { model: "TL080110A1_20C", imgCircle: "1.2\"", mag: "0.8", wd: "110", fHash: "8-30", oi: "263.6", mount: "C" },
+    { model: "TL150110A1_20C", imgCircle: "1.2\"", mag: "1.5", wd: "110", fHash: "10-30", oi: "275.6", mount: "C" },
+  ],
 };
 
 interface ProductInfo {
@@ -1145,7 +1149,7 @@ const lensTableKeys = ["model", "imgCircle", "efl", "fNumber", "distortion", "wd
 
 const telecentricTableHeaders = ["Product Model", "Img Circle (in)", "Mag.", "WD(mm)", "F#", "O/I", "Mount"];
 const telecentricTableKeys = ["model", "imgCircle", "mag", "wd", "fHash", "oi", "mount"];
-const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "12-coaxial-telecentric", "large-coaxial-telecentric", "half-inch-noncoaxial-telecentric", "23-noncoaxial-telecentric", "23-noncoaxial-telecentric-b", "11-noncoaxial-telecentric"];
+const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "12-coaxial-telecentric", "large-coaxial-telecentric", "half-inch-noncoaxial-telecentric", "23-noncoaxial-telecentric", "23-noncoaxial-telecentric-b", "11-noncoaxial-telecentric", "12-noncoaxial-telecentric"];
 
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
