@@ -226,6 +226,12 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "DZO_TL500110A", imgCircle: "2/3\"", mag: "5", wd: "110", fHash: "31", oi: "288", mount: "C" },
     { model: "TL600110A", imgCircle: "2/3\"", mag: "6", wd: "110", fHash: "38.6", oi: "282.6", mount: "C" },
   ],
+  "23-noncoaxial-telecentric-b": [
+    { model: "TL0143220Z", imgCircle: "2/3\"", mag: "0.143", wd: "220", fHash: "8-22", oi: "419.31", mount: "C" },
+    { model: "TL017220A", imgCircle: "2/3\"", mag: "0.178", wd: "220", fHash: "8-22", oi: "388.74", mount: "C" },
+    { model: "TL022220A", imgCircle: "2/3\"", mag: "0.22", wd: "220", fHash: "8-22", oi: "398.39", mount: "C" },
+    { model: "TL150220A", imgCircle: "2/3\"", mag: "1.5", wd: "220", fHash: "10", oi: "425", mount: "C" },
+  ],
 };
 
 interface ProductInfo {
@@ -487,7 +493,7 @@ const productData: Record<string, ProductInfo> = {
     applications: ["Dimensional Measurement", "Part Inspection", "Gap Measurement", "Pin Inspection"],
   },
   "23-noncoaxial-telecentric": {
-    name: "2/3 inch Non-Co-Axial Telecentric Lens",
+    name: "2/3 inch Non-Co-Axial Telecentric Lens (WD 65/110)",
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
@@ -510,7 +516,7 @@ const productData: Record<string, ProductInfo> = {
     applications: ["Edge Detection", "Dimensional Measurement", "Profile Inspection", "Contour Measurement"],
   },
   "23-noncoaxial-telecentric-b": {
-    name: "2/3 inch Non-Co-Axial Telecentric Lens (Type B)",
+    name: "2/3 inch Non-Co-Axial Telecentric Lens (WD 220)",
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
@@ -1123,7 +1129,7 @@ const lensTableKeys = ["model", "imgCircle", "efl", "fNumber", "distortion", "wd
 
 const telecentricTableHeaders = ["Product Model", "Img Circle (in)", "Mag.", "WD(mm)", "F#", "O/I", "Mount"];
 const telecentricTableKeys = ["model", "imgCircle", "mag", "wd", "fHash", "oi", "mount"];
-const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "12-coaxial-telecentric", "large-coaxial-telecentric", "half-inch-noncoaxial-telecentric", "23-noncoaxial-telecentric"];
+const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "12-coaxial-telecentric", "large-coaxial-telecentric", "half-inch-noncoaxial-telecentric", "23-noncoaxial-telecentric", "23-noncoaxial-telecentric-b"];
 
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
