@@ -436,9 +436,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø29 x 34 mm",
     weight: "50g",
     features: ["Optimized for 2/3\" image sensors", "Low distortion design", "Consistent edge-to-edge sharpness", "C-Mount compatibility", "Industrial-grade housing", "Multi-coated optics"],
-    mainFeatures: ["Applicable for 3.45µm pixel size sensor", "Balanced cost-performance ratio for standard FA applications", "Stable imaging quality across working distance range", "Design for visible light application"],
-    quickSpecs: ["Imaging circle: 2/3\"", "Wavelength: 400-700nm", "Focal length: 6mm - 50mm", "C Mount"],
-    applications: ["Scan Code", "Color Selection", "2D Ranging", "3D Ranging"],
+    mainFeatures: ["Appliable for 5um pixel size sensor(3.45um for option);", "Faster F#, applicable for low light inspection;", "Image uniformity (resolution,distortion and chromatic aberration correction etc.) @full image circle under F#2.0 & recommended WD, no need to achieve better image uniformity by a smaller aperture;", "Cost effective solution for your vision system;", "Design for visible light application"],
+    quickSpecs: ["Imaging circle: 2/3\"", "Applicable wavelength: 400-700nm", "Focal length: 8mm -75mm", "C Mount"],
+    applications: ["Barcode scanning", "Pharmacy"],
   },
   "2-3-inch-superior-fa-lenses": {
     name: "2/3 inch Superior FA Lenses",
