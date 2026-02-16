@@ -881,9 +881,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Various",
     weight: "Various",
     features: ["Ultra-wide field of view", "Low chromatic aberration", "Optimized for VR capture", "Multiple mount options", "High-quality glass elements", "Compact design"],
-    mainFeatures: ["Ultra-wide field of view (up to 220°) for immersive capture", "Low chromatic aberration for high-quality VR content", "Optimized distortion profile for VR stitching software", "Compact form factor for multi-camera VR rigs"],
-    quickSpecs: ["Field of view: up to 220°", "Low chromatic aberration", "VR-optimized distortion", "Multiple mounts available"],
-    applications: ["VR Content Capture", "360° Panoramic Imaging", "Surveillance Systems", "Autonomous Navigation"],
+    mainFeatures: ["Optimized for Dia10-14mm image circle, high resolution;", "Ultra F-Theta distortion, ensure the image uniformity under full image circle. Natural transition in the splicing area;", "Applicable for Z-Cam camera, C/M42 mount"],
+    quickSpecs: ["Image circle from φ10 to φ24.08", "Focal length from 3.54 to 6.32mm", "F#2.8-F#16", "C/M42 mount"],
+    applications: ["180°/360° Panoramic Solutions", "Inner Tube Inspection"],
   },
   "scheimpflug-lenses": {
     name: "Scheimpflug Lenses",
