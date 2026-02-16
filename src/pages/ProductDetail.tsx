@@ -787,9 +787,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø52 x 80 mm",
     weight: "280g",
     features: ["16K resolution support", "3.5µm pixel pitch optimized", "Ultra-high MTF", "M42 mount", "Premium glass elements", "Industrial-grade build"],
-    mainFeatures: ["Designed specifically for 3.5µm pixel pitch 16K sensors", "Ultra-high MTF for maximum resolving power", "Minimal chromatic and geometric aberration", "Premium optical glass for superior imaging"],
-    quickSpecs: ["Resolution: 16K", "Pixel pitch: 3.5µm", "Wavelength: 400-700nm", "M42 Mount"],
-    applications: ["Ultra-high-res Inspection", "Semiconductor Wafer Scanning", "Precision Film Inspection", "Advanced Material Analysis"],
+    mainFeatures: ["Optimized for 16K3.5um camera;", "Apochromatic design enhances image sharpness, depth of field, and authentic color reproduction;", "Ultra low distortion, ensure the precise;", "Uniform image quality across the field and aperture", "Special design, appliable for more environment;", "RGBNIR capable, no refocusing needed for different illumination."],
+    quickSpecs: ["Imaging circle: 82-108 mm", "Magnification: 0.15x - 0.65x", "Special compact V-mount design"],
+    applications: ["Rolling surface inspection", "PCB inspection", "2nd Lithium battery inspection", "High-end printing"],
   },
   "16k-5u-line-scan-lens": {
     name: "16K / 5u Line Scan Lens",
