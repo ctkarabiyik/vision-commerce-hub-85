@@ -20,7 +20,7 @@ import areaScanLipstick from "@/assets/area-scan-lipstick-1gige.png";
 import frameGrabber from "@/assets/frame-grabber-10-40gige.png";
 
 const cameraCategories = [
-  { id: "all", title: "All Cameras", icon: Camera, count: 13 },
+  { id: "all", title: "All Camera Products", icon: Camera, count: 13 },
   { id: "line-scan", title: "Line Scan Cameras", icon: Scan, count: 3 },
   { id: "area-scan", title: "Area Scan Cameras", icon: Camera, count: 9 },
   { id: "other", title: "Other", icon: Settings, count: 1 },
@@ -191,12 +191,12 @@ const Products = () => {
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
             <Link to="/" className="hover:text-primary transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-foreground font-medium">All Cameras</span>
+            <span className="text-foreground font-medium">All Camera Products</span>
           </nav>
           
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              All Cameras
+              All Camera Products
             </h1>
             <p className="text-lg text-muted-foreground">
               Explore our complete range of industrial cameras, from high-speed line scan sensors 
