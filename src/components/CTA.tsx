@@ -32,7 +32,7 @@ const CTA = () => {
             </a>
             <a href="mailto:sales@alargecamera.com" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               <Mail className="w-5 h-5" />
-              <span>sales@alargecamera.com</span>
+              <span>sales2@alarge.com.tr</span>
             </a>
           </div>
         </div>
