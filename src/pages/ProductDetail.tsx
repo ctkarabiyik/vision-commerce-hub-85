@@ -129,10 +129,7 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "DSX6500M", resolution: "9344×7000", fps: "15.5", interface: "10GigE Fiber", pixelSize: "3.2 µm", sensorType: "Mono" },
   ],
   "ds-series-dual-usb3-area-scan": [
-    { model: "DS-200-DU3", resolution: "2.0 MP", fps: "180", interface: "Dual USB3.0", pixelSize: "4.8 µm", sensorType: "CMOS" },
-    { model: "DS-500-DU3", resolution: "5.0 MP", fps: "90", interface: "Dual USB3.0", pixelSize: "3.45 µm", sensorType: "CMOS" },
-    { model: "DS-900-DU3", resolution: "9.0 MP", fps: "50", interface: "Dual USB3.0", pixelSize: "3.45 µm", sensorType: "CMOS" },
-    { model: "DS-1200-DU3", resolution: "12.0 MP", fps: "38", interface: "Dual USB3.0", pixelSize: "3.45 µm", sensorType: "CMOS" },
+    { model: "DS2502M", resolution: "5120x5120", fps: "30", interface: "Dual USB3.0", pixelSize: "2.5 µm", sensorType: "Mono" },
   ],
   "dsv-series-usb3-coin": [
     { model: "DSV-030-C", resolution: "0.3 MP", fps: "200", interface: "USB3.0", pixelSize: "7.4 µm", sensorType: "CMOS" },
@@ -1069,6 +1066,7 @@ const modelNotes: Record<string, string> = {
   "u3p-series-usb3-area-scan": "Note: U3P means USB3.0 area scan. 520 means the resolution is 5MP, M means Mono, H means hardware version.",
   "m2s-series-usb2-area-scan": "Note: M2S means USB2.0 area scan. 132 and 138 both means the resolution is 1.3MP, M means Mono, H2 means hardware version.",
   "10gige-fiber-optic-area-scan": "Note: DSX means 10GigE fiber optic area scan. 6500 means the resolution is 65MP, M means Mono.",
+  "ds-series-dual-usb3-area-scan": "Note 1: DS2502M supports time-division strobing application with 2/3/4 lights. Note 2: 2502 means the resolution is 25MP, M means Mono.",
 };
 
 const ProductDetail = () => {
