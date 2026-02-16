@@ -553,9 +553,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø58 x 135 mm",
     weight: "420g",
     features: ["Bi-telecentric design", "Co-axial illumination port", "1.2\" full coverage", "Ultra-low distortion", "High MTF performance", "Robust metal construction"],
-    mainFeatures: ["Bi-telecentric design for 1.2\" large format sensors", "Co-axial illumination for uniform surface lighting", "Ultra-precise dimensional measurement capability", "Consistent magnification through full depth of field"],
-    quickSpecs: ["Imaging circle: 1.2\"", "Telecentricity: <0.1°", "Distortion: <0.08%", "C Mount"],
-    applications: ["Large Field Measurement", "PCB Inspection", "Wafer Inspection", "Precision Metrology"],
+    mainFeatures: ["Apochromatic design enhances image sharpness, depth of field, and authentic color reproduction;", "Ultra low distortion, ensure the precise;", "Uniform image quality across the field and aperture;", "Compatible with RGB, refocusing not required for different illumination."],
+    quickSpecs: ["Imaging circle 1.1\" - 1.2\"", "Wavelength 400 - 700 nm", "Magnification 0.23x - 2x", "WD 110-220mm", "C Mount", "Prism optional"],
+    applications: ["3C & semi-con high-precision inspection"],
   },
   "large-coaxial-telecentric": {
     name: "Large Format Co-Axial Telecentric Lens",
