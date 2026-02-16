@@ -624,9 +624,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø48 x 110 mm",
     weight: "280g",
     features: ["Object-side telecentric", "Non-co-axial design", "Ultra-low distortion", "2/3\" coverage", "C-Mount interface", "Flexible illumination options"],
-    mainFeatures: ["Object-side telecentric design eliminating perspective errors", "Non-co-axial configuration for flexible lighting setups", "Ultra-low distortion for dimensional measurement", "Optimized for 2/3\" sensor formats"],
-    quickSpecs: ["Imaging circle: 2/3\"", "Telecentricity: <0.1°", "Distortion: <0.1%", "C Mount"],
-    applications: ["Edge Detection", "Dimensional Measurement", "Profile Inspection", "Contour Measurement"],
+    mainFeatures: ["1/2\"- 2/3\" classic telecentric lens;", "Ultra-low distortion for precision;", "Uniform image quality across the field and aperture;", "Applicable for visible illumination."],
+    quickSpecs: ["Imaging circle: 1/2\" - 2/3\"", "Wavelengths: 400 - 700nm", "Magnification: 0.3x - 10x", "WD 65-110mm", "C mount", "Prism optional"],
+    applications: ["Positioning"],
   },
   "23-noncoaxial-telecentric-b": {
     name: "2/3 inch Non-Co-Axial Telecentric Lens (WD 220)",
