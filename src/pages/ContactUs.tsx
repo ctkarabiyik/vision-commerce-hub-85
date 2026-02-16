@@ -122,8 +122,8 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-foreground mb-1">Email</div>
-                      <a href="mailto:sales@alargecamera.com" className="text-muted-foreground hover:text-primary transition-colors">sales2@alarge.com.tr
-
+                      <a className="text-muted-foreground hover:text-primary transition-colors" href="mailto:sales2@alarge.com.tr">
+                        sales@alargecamera.com
                       </a>
                     </div>
                   </div>
@@ -134,8 +134,8 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-foreground mb-1">Phone</div>
-                      <a className="text-muted-foreground hover:text-primary transition-colors" href="tel:+902122786102">
-                        +90 212 278 61 02
+                      <a href="tel:+18005551234" className="text-muted-foreground hover:text-primary transition-colors">
+                        +1 (800) 555-1234
                       </a>
                     </div>
                   </div>
@@ -146,8 +146,8 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-foreground mb-1">Address</div>
-                      <p className="text-muted-foreground">Yıldız Teknik Üniversitesi Davutpaşa Teknopark
-                        <br />
+                      <p className="text-muted-foreground">
+                        123 Industrial Blvd<br />
                         San Jose, CA 95134<br />
                         United States
                       </p>
