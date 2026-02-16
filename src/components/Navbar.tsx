@@ -253,14 +253,25 @@ const Navbar = () => {
                   {mobileCameras &&
               <div className="pl-4 flex flex-col gap-2">
                       {cameraCategories.map((category, index) =>
-                <a
-                  key={index}
-                  href={category.href}
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
-
-                          <category.icon className="w-4 h-4" />
-                          {category.title}
-                        </a>
+                <div key={index} className="flex flex-col gap-1">
+                  <a
+                    href={category.href}
+                    className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1">
+                    <category.icon className="w-4 h-4" />
+                    {category.title}
+                  </a>
+                  <div className="pl-6 flex flex-col gap-1">
+                    {(productsByCategory[category.title] || []).map((product) => (
+                      <Link
+                        key={product.slug}
+                        to={`/products/${product.slug}`}
+                        onClick={() => setIsOpen(false)}
+                        className="text-sm text-muted-foreground/80 hover:text-primary transition-colors py-0.5">
+                        {product.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
                 )}
                     </div>
               }
@@ -274,14 +285,25 @@ const Navbar = () => {
                   {mobileLenses &&
               <div className="pl-4 flex flex-col gap-2">
                       {lensCategories.map((category, index) =>
-                <a
-                  key={index}
-                  href={category.href}
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
-
-                          <category.icon className="w-4 h-4" />
-                          {category.title}
-                        </a>
+                <div key={index} className="flex flex-col gap-1">
+                  <a
+                    href={category.href}
+                    className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1">
+                    <category.icon className="w-4 h-4" />
+                    {category.title}
+                  </a>
+                  <div className="pl-6 flex flex-col gap-1">
+                    {(productsByCategory[category.title] || []).map((product) => (
+                      <Link
+                        key={product.slug}
+                        to={`/products/${product.slug}`}
+                        onClick={() => setIsOpen(false)}
+                        className="text-sm text-muted-foreground/80 hover:text-primary transition-colors py-0.5">
+                        {product.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
                 )}
                     </div>
               }
