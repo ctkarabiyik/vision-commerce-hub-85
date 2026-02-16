@@ -80,42 +80,16 @@ const lensCategories = [
   description: "Optimized for line scan cameras",
   count: 4,
   href: "#line-scan-lenses"
-},
-{
-  icon: Microscope,
-  title: "Large Format Lenses",
-  description: "Large sensor coverage optics",
-  count: 1,
-  href: "#large-format"
-},
-{
-  icon: ZoomIn,
-  title: "Macro Lenses",
-  description: "Close-up inspection optics",
-  count: 1,
-  href: "#macro"
-},
-{
-  icon: Sun,
-  title: "Infrared Lenses",
-  description: "Thermal and IR imaging optics",
-  count: 1,
-  href: "#infrared"
-},
-{
-  icon: Circle,
-  title: "VR Lenses",
-  description: "Virtual reality imaging optics",
-  count: 1,
-  href: "#vr"
-},
-{
-  icon: Settings,
-  title: "Scheimpflug Lenses",
-  description: "Tilt-focus plane correction",
-  count: 1,
-  href: "#scheimpflug"
 }];
+
+const allLensCategories = [
+  ...lensCategories,
+  { icon: Microscope, title: "Large Format Lenses", description: "Large sensor coverage optics", count: 1, href: "#large-format" },
+  { icon: ZoomIn, title: "Macro Lenses", description: "Close-up inspection optics", count: 1, href: "#macro" },
+  { icon: Sun, title: "Infrared Lenses", description: "Thermal and IR imaging optics", count: 1, href: "#infrared" },
+  { icon: Circle, title: "VR Lenses", description: "Virtual reality imaging optics", count: 1, href: "#vr" },
+  { icon: Settings, title: "Scheimpflug Lenses", description: "Tilt-focus plane correction", count: 1, href: "#scheimpflug" },
+];
 
 
 const productsByCategory: Record<string, Array<{name: string;brand: string;image: string;resolution: string;slug: string;}>> = {
@@ -278,28 +252,46 @@ const Navbar = () => {
               </button>
               {mobileProducts &&
             <div className="pl-4 flex flex-col gap-3">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60">Cameras</p>
-                  {cameraCategories.map((category, index) =>
-                    <Link
-                      key={`cam-${index}`}
-                      to={`/products?category=${encodeURIComponent(category.title)}`}
-                      onClick={() => setIsOpen(false)}
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
-                      <category.icon className="w-4 h-4" />
-                      {category.title}
-                    </Link>
-                  )}
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mt-2">Lenses</p>
-                  {lensCategories.map((category, index) =>
-                    <Link
-                      key={`lens-${index}`}
-                      to={`/lenses?category=${encodeURIComponent(category.title)}`}
-                      onClick={() => setIsOpen(false)}
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
-                      <category.icon className="w-4 h-4" />
-                      {category.title}
-                    </Link>
-                  )}
+                  <button
+                    onClick={() => setMobileCameras(!mobileCameras)}
+                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
+                    Cameras
+                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileCameras ? 'rotate-180' : ''}`} />
+                  </button>
+                  {mobileCameras &&
+                    <div className="pl-4 flex flex-col gap-2">
+                      {cameraCategories.map((category, index) =>
+                        <Link
+                          key={`cam-${index}`}
+                          to={`/products?category=${encodeURIComponent(category.title)}`}
+                          onClick={() => setIsOpen(false)}
+                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
+                          <category.icon className="w-4 h-4" />
+                          {category.title}
+                        </Link>
+                      )}
+                    </div>
+                  }
+                  <button
+                    onClick={() => setMobileLenses(!mobileLenses)}
+                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
+                    Lenses
+                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileLenses ? 'rotate-180' : ''}`} />
+                  </button>
+                  {mobileLenses &&
+                    <div className="pl-4 flex flex-col gap-2">
+                      {allLensCategories.map((category, index) =>
+                        <Link
+                          key={`lens-${index}`}
+                          to={`/lenses?category=${encodeURIComponent(category.title)}`}
+                          onClick={() => setIsOpen(false)}
+                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
+                          <category.icon className="w-4 h-4" />
+                          {category.title}
+                        </Link>
+                      )}
+                    </div>
+                  }
                 </div>
             }
               <Link to="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
