@@ -123,7 +123,7 @@ const ContactUs = () => {
                     <div>
                       <div className="font-semibold text-foreground mb-1">Email</div>
                       <a className="text-muted-foreground hover:text-primary transition-colors" href="mailto:sales2@alarge.com.tr">
-                        sales@alargecamera.com
+                        sales2@alarge.com.tr
                       </a>
                     </div>
                   </div>
