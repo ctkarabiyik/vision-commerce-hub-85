@@ -1054,7 +1054,7 @@ const productData: Record<string, ProductInfo> = {
 const lensTableHeaders = ["Model", "Img Circle (in)", "EFL (mm)", "F#", "Distortion(%)", "WD Range(mm)", "Mount"];
 const lensTableKeys = ["model", "imgCircle", "efl", "fNumber", "distortion", "wdRange", "mount"];
 
-const telecentricTableHeaders = ["Product Model", "Img. Circle(mm)", "Mag.", "WD(mm)", "F#", "O/I", "Mount"];
+const telecentricTableHeaders = ["Product Model", "Img Circle (in)", "Mag.", "WD(mm)", "F#", "O/I", "Mount"];
 const telecentricTableKeys = ["model", "imgCircle", "mag", "wd", "fHash", "oi", "mount"];
 const telecentricSlugs = ["23-coaxial-telecentric"];
 
