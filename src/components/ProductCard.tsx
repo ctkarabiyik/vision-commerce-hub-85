@@ -2,18 +2,34 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
 
+interface Spec {
+  label: string;
+  value: string;
+}
+
 interface ProductCardProps {
   name: string;
   brand: string;
   image: string;
-  resolution: string;
-  fps: string;
-  interface: string;
+  specs?: Spec[];
   slug?: string;
+  // Legacy props for backward compatibility
+  resolution?: string;
+  fps?: string;
+  interface?: string;
 }
 
-const ProductCard = ({ name, brand, image, resolution, fps, interface: interfaceType, slug }: ProductCardProps) => {
+const ProductCard = ({ name, brand, image, specs, slug, resolution, fps, interface: interfaceType }: ProductCardProps) => {
   const productSlug = slug || name.toLowerCase().replace(/\s+/g, '-');
+
+  // Use specs array if provided, otherwise fall back to legacy props
+  const displaySpecs: Spec[] = specs && specs.length > 0
+    ? specs
+    : [
+        { label: "Resolution", value: resolution || "-" },
+        { label: "FPS", value: fps || "-" },
+        { label: "Interface", value: interfaceType || "-" },
+      ];
   
   return (
     <div className="group bg-card rounded-sm border border-border hover:border-primary/50 transition-all duration-300 hover-lift overflow-hidden">
@@ -44,18 +60,12 @@ const ProductCard = ({ name, brand, image, resolution, fps, interface: interface
         
         {/* Specs */}
         <div className="grid grid-cols-3 gap-2 mb-4">
-          <div className="text-center bg-secondary rounded-sm py-2">
-            <div className="text-xs text-muted-foreground">Resolution</div>
-            <div className="text-sm font-semibold text-foreground">{resolution}</div>
-          </div>
-          <div className="text-center bg-secondary rounded-sm py-2">
-            <div className="text-xs text-muted-foreground">FPS</div>
-            <div className="text-sm font-semibold text-foreground">{fps}</div>
-          </div>
-          <div className="text-center bg-secondary rounded-sm py-2">
-            <div className="text-xs text-muted-foreground">Interface</div>
-            <div className="text-sm font-semibold text-foreground">{interfaceType}</div>
-          </div>
+          {displaySpecs.map((spec, index) => (
+            <div key={index} className="text-center bg-secondary rounded-sm py-2">
+              <div className="text-xs text-muted-foreground">{spec.label}</div>
+              <div className="text-sm font-semibold text-foreground">{spec.value}</div>
+            </div>
+          ))}
         </div>
 
         {/* CTA */}
