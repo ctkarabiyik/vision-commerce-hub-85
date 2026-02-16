@@ -204,6 +204,28 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "TL150110A1_8C", imgCircle: "1/2\"", mag: "1.5", wd: "110", fHash: "19", oi: "210", mount: "C" },
     { model: "TL200110A1_8C", imgCircle: "1/2\"", mag: "2", wd: "110", fHash: "25", oi: "216.6", mount: "C" },
   ],
+  "23-noncoaxial-telecentric": [
+    { model: "TL030065A", imgCircle: "2/3\"", mag: "0.3", wd: "65", fHash: "10", oi: "86.037", mount: "C" },
+    { model: "TL050065A", imgCircle: "2/3\"", mag: "0.5", wd: "65", fHash: "10", oi: "172.026", mount: "C" },
+    { model: "TL080065A", imgCircle: "2/3\"", mag: "0.8", wd: "65", fHash: "10", oi: "172", mount: "C" },
+    { model: "TL100065A", imgCircle: "2/3\"", mag: "1", wd: "65", fHash: "11", oi: "162.526", mount: "C" },
+    { model: "DZO_TL150065A", imgCircle: "2/3\"", mag: "1.5", wd: "65", fHash: "12.5", oi: "158", mount: "C" },
+    { model: "TL200065A", imgCircle: "2/3\"", mag: "2", wd: "65", fHash: "13.2", oi: "162.5", mount: "C" },
+    { model: "TL300065A", imgCircle: "2/3\"", mag: "3", wd: "65", fHash: "20.2", oi: "167.2", mount: "C" },
+    { model: "TL400065A", imgCircle: "2/3\"", mag: "4", wd: "65", fHash: "17.9", oi: "188", mount: "C" },
+    { model: "DZO_TL500065A", imgCircle: "2/3\"", mag: "5", wd: "65", fHash: "22", oi: "288", mount: "C" },
+    { model: "TL600065A", imgCircle: "2/3\"", mag: "6", wd: "65", fHash: "24.6", oi: "194.8", mount: "C" },
+    { model: "DZO_TL030110A", imgCircle: "2/3\"", mag: "0.3", wd: "110", fHash: "5.6", oi: "245.5", mount: "C" },
+    { model: "TL050110C", imgCircle: "2/3\"", mag: "0.5", wd: "110", fHash: "9.6", oi: "245.5", mount: "C" },
+    { model: "TL080110B", imgCircle: "2/3\"", mag: "0.8", wd: "110", fHash: "11", oi: "245.5", mount: "C" },
+    { model: "TL100110B", imgCircle: "2/3\"", mag: "1", wd: "110", fHash: "11", oi: "245.5", mount: "C" },
+    { model: "TL150110A", imgCircle: "2/3\"", mag: "1.5", wd: "110", fHash: "10", oi: "256.4", mount: "C" },
+    { model: "TL200110A", imgCircle: "2/3\"", mag: "2", wd: "110", fHash: "12.2", oi: "261", mount: "C" },
+    { model: "TL300110A", imgCircle: "2/3\"", mag: "3", wd: "110", fHash: "18.3", oi: "293.2", mount: "C" },
+    { model: "TL400110A", imgCircle: "2/3\"", mag: "4", wd: "110", fHash: "22", oi: "258.2", mount: "C" },
+    { model: "DZO_TL500110A", imgCircle: "2/3\"", mag: "5", wd: "110", fHash: "31", oi: "288", mount: "C" },
+    { model: "TL600110A", imgCircle: "2/3\"", mag: "6", wd: "110", fHash: "38.6", oi: "282.6", mount: "C" },
+  ],
 };
 
 interface ProductInfo {
@@ -1101,7 +1123,7 @@ const lensTableKeys = ["model", "imgCircle", "efl", "fNumber", "distortion", "wd
 
 const telecentricTableHeaders = ["Product Model", "Img Circle (in)", "Mag.", "WD(mm)", "F#", "O/I", "Mount"];
 const telecentricTableKeys = ["model", "imgCircle", "mag", "wd", "fHash", "oi", "mount"];
-const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "12-coaxial-telecentric", "large-coaxial-telecentric", "half-inch-noncoaxial-telecentric"];
+const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "12-coaxial-telecentric", "large-coaxial-telecentric", "half-inch-noncoaxial-telecentric", "23-noncoaxial-telecentric"];
 
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
