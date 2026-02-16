@@ -1161,7 +1161,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "58 x 58 x 52 mm",
     weight: "180g",
     features: ["Dual USB3.0 interface", "Ultra-high frame rates", "High-resolution sensors", "Hardware trigger", "GenICam compliant", "Active cooling"],
-    mainFeatures: ["Dual USB3.0 interface for 10 Gbps aggregate bandwidth", "Ultra-high frame rates up to 180 fps at 2 MP", "Ideal for high-speed production line inspection", "Advanced triggering for multi-camera synchronization"],
+    mainFeatures: ["Dual USB3.0 data interface", "10G bandwidth", "Resolution: 25MP", "10G camera without the need for an frame grabber"],
     quickSpecs: ["Interface: Dual USB3.0 (10 Gbps)", "Resolution: 2.0 - 12.0 MP", "Frame rate: up to 180 fps", "USB3 Vision / GenICam"],
     applications: ["High-speed Sorting", "Sports Analysis", "Motion Capture", "Rapid Inspection"],
   },
