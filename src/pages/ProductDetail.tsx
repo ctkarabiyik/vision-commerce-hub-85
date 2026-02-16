@@ -1069,7 +1069,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "40 x 29 x 29 mm",
     weight: "75g",
     features: ["USB3 Vision interface", "High frame rates", "Compact design", "Hardware trigger", "GenICam compliant", "Low power consumption"],
-    mainFeatures: ["USB3.0 interface delivering up to 5 Gbps bandwidth", "Ultra-compact form factor for embedded applications", "Frame rates up to 200 fps for high-speed capture", "Plug-and-play operation without network configuration"],
+    mainFeatures: ["Best-selling for 13 years", "Size:29*29*29", "Stable & Reliable", "Ultra-low power consumption", "Easy to use", "Resolution range: 0.4MP - 20MP"],
     quickSpecs: ["Interface: USB3.0 (5 Gbps)", "Resolution: 0.3 - 5.0 MP", "Frame rate: up to 200 fps", "USB3 Vision / GenICam"],
     applications: ["Embedded Vision", "Robotics Guidance", "3D Scanning", "Motion Analysis"],
   },
