@@ -1351,21 +1351,7 @@ const ProductDetail = () => {
                 {product.shortDescription}
               </p>
 
-              {/* Quick Specs */}
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="bg-card border border-border rounded-lg p-4 text-center">
-                  <div className="text-xs text-muted-foreground mb-1">Resolution</div>
-                  <div className="text-xl font-bold text-foreground">{product.resolution}</div>
-                </div>
-                <div className="bg-card border border-border rounded-lg p-4 text-center">
-                  <div className="text-xs text-muted-foreground mb-1">Frame Rate</div>
-                  <div className="text-xl font-bold text-foreground">{product.fps} fps</div>
-                </div>
-                <div className="bg-card border border-border rounded-lg p-4 text-center">
-                  <div className="text-xs text-muted-foreground mb-1">Interface</div>
-                  <div className="text-xl font-bold text-foreground">{product.interface}</div>
-                </div>
-              </div>
+
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 min-w-0">
