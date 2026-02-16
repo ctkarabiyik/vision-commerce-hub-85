@@ -399,7 +399,7 @@ const Navbar = () => {
                   to={`/product/${product.slug}`}
                   className="group">
 
-                      <div className="aspect-square bg-white rounded-md overflow-hidden mb-2 flex items-center justify-center p-2">
+                      <div className="aspect-square bg-white rounded-md overflow-hidden mb-2 flex items-center justify-center p-6">
                         <img
                       src={product.image}
                       alt={product.name}
@@ -463,7 +463,7 @@ const Navbar = () => {
                   to={`/product/${product.slug}`}
                   className="group">
 
-                      <div className="aspect-square bg-white rounded-md overflow-hidden mb-2 flex items-center justify-center p-2">
+                      <div className="aspect-square bg-white rounded-md overflow-hidden mb-2 flex items-center justify-center p-6">
                         <img
                       src={product.image}
                       alt={product.name}
