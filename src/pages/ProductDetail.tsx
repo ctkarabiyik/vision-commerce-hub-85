@@ -370,6 +370,7 @@ interface ProductInfo {
   mainFeatures?: string[];
   quickSpecs?: string[];
   applications?: string[];
+  descriptionBox?: string;
 }
 
 const productData: Record<string, ProductInfo> = {
@@ -1235,6 +1236,7 @@ const productData: Record<string, ProductInfo> = {
     mainFeatures: ["Meet the needs of high-speed or high-resolution image big data transmission applications", "Up to 10Gbps for a single SFP interface", "4 SFP interfaces for simultaneous access to 4 cameras", "Support DMA write memory, CPU load less than 5%", "5-50us ultra-short time delay, to meet the needs of high-speed applications", "Fiber optic transmission, long distance, high bandwidth, free from electromagnetic interference", "Support GigE Vision protocol, support fast retransmission", "Camera interface rate 10Gbps/20Gbps/30Gbps/40Gbps", "Dimensions: 146.5mm × 120mm × 21.7mm"],
     quickSpecs: ["Host interface: PCIe 3.0 x8", "Network: 10/25/40GigE", "Ports: 4x SFP28", "GigE Vision compliant"],
     applications: ["Multi-camera Systems", "High-bandwidth Imaging", "Fiber Optic Camera Integration", "Real-time Processing Pipelines"],
+    descriptionBox: "The XGG242 series (10-40GigE frame grabber) supports GigE Vision protocol with 10Gbps interface rate, and up to 4 cameras can be connected to its SFP interface through pluggable SFP modules.",
   },
 };
 
@@ -1397,6 +1399,11 @@ const ProductDetail = () => {
                   })}
                 </ul>
               </div>
+              {product.descriptionBox && (
+                <div className="bg-card border border-border rounded-lg p-8 w-full max-w-xl mt-6">
+                  <p className="text-sm text-muted-foreground leading-relaxed">{product.descriptionBox}</p>
+                </div>
+              )}
             </div>
           ) : hasLensLayout ? (
             <div className={`grid md:grid-cols-3 gap-8 ${variants && variants.length > 0 ? 'mb-16' : ''}`}>
