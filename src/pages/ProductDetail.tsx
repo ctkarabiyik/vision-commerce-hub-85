@@ -810,9 +810,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø52 x 78 mm",
     weight: "270g",
     features: ["16K resolution support", "5µm pixel pitch optimized", "High light throughput", "M42 mount", "Multi-coated optics", "Robust housing"],
-    mainFeatures: ["Optimized for 5µm pixel pitch 16K sensors", "Balanced resolution and light throughput", "High MTF at Nyquist frequency", "Designed for high-speed continuous operation"],
-    quickSpecs: ["Resolution: 16K", "Pixel pitch: 5µm", "Wavelength: 400-700nm", "M42 Mount"],
-    applications: ["Web Inspection", "Large Format Scanning", "Industrial Print QC", "Continuous Surface Inspection"],
+    mainFeatures: ["Optimized for 16K3.5um camera;", "Apochromatic design enhances image sharpness, depth of field, and authentic color reproduction;", "Ultra low distortion, ensure the precise;", "Uniform image quality across the field and aperture", "Special design, appliable for more environment;", "RGBNIR capable, no refocusing needed for different illumination."],
+    quickSpecs: ["Imaging circle: 82mm - 88mm", "Wavelength: 400 - 700 nm", "Magnification: 0.33-6.2x", "Mount: V49 / V56 / V62"],
+    applications: ["Rolling surface inspection", "PCB inspection", "2nd Lithium battery inspection", "High-end printing"],
   },
 
   // === SPECIALTY LENSES ===
