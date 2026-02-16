@@ -11,6 +11,7 @@ import areaScanMgv from "@/assets/area-scan-mgv-1gige.png";
 import areaScanMgs from "@/assets/area-scan-mgs-1gige.png";
 import areaScanM3s from "@/assets/area-scan-m3s-usb3.png";
 import areaScanU3p from "@/assets/area-scan-u3p-usb3.png";
+import frameGrabber from "@/assets/frame-grabber-10-40gige.png";
 import faLens117 from "@/assets/fa-lens-1-1-7.png";
 import faLens23Standard from "@/assets/fa-lens-2-3-standard.png";
 import faLens23Superior from "@/assets/fa-lens-2-3-superior.png";
@@ -43,6 +44,13 @@ const cameraCategories = [
     description: "High-resolution sensors for quality inspection",
     count: 9,
     href: "#area-scan-cameras",
+  },
+  {
+    icon: Settings,
+    title: "Other",
+    description: "Accessories and peripherals",
+    count: 1,
+    href: "#other-cameras",
   },
 ];
 
@@ -81,6 +89,9 @@ const productsByCategory: Record<string, Array<{ name: string; brand: string; im
     { name: "MGS Series 1GigE", brand: "ALARGE", image: areaScanMgs, resolution: "GigE", slug: "mgs-series-1gige-area-scan" },
     { name: "M3S Series USB3.0", brand: "ALARGE", image: areaScanM3s, resolution: "USB3.0", slug: "m3s-series-usb3-area-scan" },
     { name: "U3P Series USB3.0", brand: "ALARGE", image: areaScanU3p, resolution: "USB3.0", slug: "u3p-series-usb3-area-scan" },
+  ],
+  "Other": [
+    { name: "Frame Grabber 10-40GigE", brand: "ALARGE", image: frameGrabber, resolution: "PCIe", slug: "frame-grabber-10-40gige" },
   ],
   "FA Lenses": [
     { name: "1/1.7 inch FA Lenses", brand: "DZOPTICS", image: faLens117, resolution: "1/1.7\"", slug: "1-1-7-inch-fa-lenses" },

@@ -118,6 +118,11 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "LP-130-G", resolution: "1.3 MP", fps: "60", interface: "GigE", pixelSize: "4.8 µm", sensorType: "CMOS" },
     { model: "LP-200-G", resolution: "2.0 MP", fps: "45", interface: "GigE", pixelSize: "4.8 µm", sensorType: "CMOS" },
   ],
+  "frame-grabber-10-40gige": [
+    { model: "FG-10G-4P", resolution: "10GigE x4", fps: "-", interface: "PCIe 3.0 x8", pixelSize: "-", sensorType: "Frame Grabber" },
+    { model: "FG-25G-4P", resolution: "25GigE x4", fps: "-", interface: "PCIe 3.0 x8", pixelSize: "-", sensorType: "Frame Grabber" },
+    { model: "FG-40G-2P", resolution: "40GigE x2", fps: "-", interface: "PCIe 3.0 x8", pixelSize: "-", sensorType: "Frame Grabber" },
+  ],
 };
 
 interface ProductInfo {
@@ -983,6 +988,31 @@ const productData: Record<string, ProductInfo> = {
     quickSpecs: ["Interface: GigE (1 Gbps)", "Resolution: 0.3 - 2.0 MP", "Frame rate: up to 120 fps", "GigE Vision / GenICam"],
     applications: ["Robotic Vision", "Conveyor Inspection", "In-line Measurement", "Confined Space Imaging"],
   },
+
+  // === OTHER ===
+  "frame-grabber-10-40gige": {
+    name: "Frame Grabber For 10-40GigE Optical Fiber Camera",
+    brand: "ALARGE",
+    category: "Other",
+    categorySlug: "products",
+    image: "/src/assets/frame-grabber-10-40gige.png",
+    shortDescription: "High-performance PCIe frame grabber supporting 10GigE to 40GigE optical fiber camera interfaces.",
+    description: "The ALARGE Frame Grabber enables seamless integration of 10-40GigE fiber optic cameras with host PCs via PCIe.",
+    resolution: "Various",
+    fps: "-",
+    interface: "PCIe",
+    sensor: "-",
+    sensorSize: "-",
+    pixelSize: "-",
+    dynamicRange: "-",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "168 x 69 mm (half-height PCIe)",
+    weight: "120g",
+    features: ["10/25/40GigE support", "PCIe 3.0 x8 interface", "4x SFP28 ports", "Low-latency DMA", "Active cooling", "Multi-camera support"],
+    mainFeatures: ["Supports 10GigE, 25GigE, and 40GigE fiber optic cameras", "PCIe 3.0 x8 for maximum host bandwidth", "Up to 4 independent camera connections via SFP28 ports", "Ultra-low latency DMA engine for real-time processing"],
+    quickSpecs: ["Host interface: PCIe 3.0 x8", "Network: 10/25/40GigE", "Ports: 4x SFP28", "GigE Vision compliant"],
+    applications: ["Multi-camera Systems", "High-bandwidth Imaging", "Fiber Optic Camera Integration", "Real-time Processing Pipelines"],
+  },
 };
 
 const lensTableHeaders = ["Model", "EFL (mm)", "Img. Circle", "F#", "WD Range (mm)", "Optical Distortion", "Mount"];
@@ -999,6 +1029,7 @@ const areaScanCameraSlugs = [
   "mgv-series-1gige-area-scan", "mgs-series-1gige-area-scan", "m3s-series-usb3-area-scan",
   "u3p-series-usb3-area-scan", "m2s-series-usb2-area-scan", "10gige-fiber-optic-area-scan",
   "ds-series-dual-usb3-area-scan", "dsv-series-usb3-coin", "lipstick-series-1gige-area-scan",
+  "frame-grabber-10-40gige",
 ];
 
 const ProductDetail = () => {

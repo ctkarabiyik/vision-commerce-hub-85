@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Grid3X3, LayoutList, Scan, Camera } from "lucide-react";
+import { ChevronRight, Grid3X3, LayoutList, Scan, Camera, Settings } from "lucide-react";
 import lineScanCamera1GigE from "@/assets/line-scan-camera-1gige.png";
 import lineScanCamera25GigE from "@/assets/line-scan-camera-2-5gige.png";
 import lineScanCamera10GigE from "@/assets/line-scan-camera-10gige.png";
@@ -17,11 +17,13 @@ import areaScan10gige from "@/assets/area-scan-10gige-fiber.png";
 import areaScanDs from "@/assets/area-scan-ds-dual-usb3.png";
 import areaScanDsv from "@/assets/area-scan-dsv-coin.png";
 import areaScanLipstick from "@/assets/area-scan-lipstick-1gige.png";
+import frameGrabber from "@/assets/frame-grabber-10-40gige.png";
 
 const cameraCategories = [
-  { id: "all", title: "All Cameras", icon: Camera, count: 12 },
+  { id: "all", title: "All Cameras", icon: Camera, count: 13 },
   { id: "line-scan", title: "Line Scan Cameras", icon: Scan, count: 3 },
   { id: "area-scan", title: "Area Scan Cameras", icon: Camera, count: 9 },
+  { id: "other", title: "Other", icon: Settings, count: 1 },
 ];
 
 const products = [
@@ -146,6 +148,17 @@ const products = [
     interface: "GigE",
     category: "area-scan",
     slug: "lipstick-series-1gige-area-scan",
+  },
+  // Other
+  {
+    name: "Frame Grabber For 10-40GigE Optical Fiber Camera",
+    brand: "ALARGE",
+    image: frameGrabber,
+    resolution: "Various",
+    fps: "-",
+    interface: "PCIe",
+    category: "other",
+    slug: "frame-grabber-10-40gige",
   },
 ];
 
