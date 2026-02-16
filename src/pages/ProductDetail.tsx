@@ -64,11 +64,17 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
   ],
   // === AREA SCAN CAMERAS ===
   "mgv-series-1gige-area-scan": [
-    { model: "MGV-030-G", resolution: "0.3 MP", fps: "120", interface: "GigE", pixelSize: "7.4 µm", sensorType: "CMOS" },
-    { model: "MGV-050-G", resolution: "0.5 MP", fps: "90", interface: "GigE", pixelSize: "5.86 µm", sensorType: "CMOS" },
-    { model: "MGV-130-G", resolution: "1.3 MP", fps: "60", interface: "GigE", pixelSize: "4.8 µm", sensorType: "CMOS" },
-    { model: "MGV-200-G", resolution: "2.0 MP", fps: "45", interface: "GigE", pixelSize: "4.8 µm", sensorType: "CMOS" },
-    { model: "MGV-500-G", resolution: "5.0 MP", fps: "22", interface: "GigE", pixelSize: "3.45 µm", sensorType: "CMOS" },
+    { model: "MGV040M-H2", resolution: "720×540", fps: "313", interface: "GigE", pixelSize: "8.0 µm", sensorType: "Mono" },
+    { model: "MGV136-H2", resolution: "1280×1024", fps: "93", interface: "GigE", pixelSize: "4.0 µm", sensorType: "Color" },
+    { model: "MGV136M-H2", resolution: "1280×1024", fps: "93", interface: "GigE", pixelSize: "4.0 µm", sensorType: "Mono" },
+    { model: "MGV160-H2", resolution: "1480×1092", fps: "75", interface: "GigE", pixelSize: "4.0 µm", sensorType: "Color" },
+    { model: "MGV160M-H2", resolution: "1480×1092", fps: "75", interface: "GigE", pixelSize: "4.0 µm", sensorType: "Mono" },
+    { model: "MGV231-H2", resolution: "2048×1200", fps: "49", interface: "GigE", pixelSize: "4.0 µm", sensorType: "Color" },
+    { model: "MGV231M-H2", resolution: "2048×1200", fps: "49", interface: "GigE", pixelSize: "4.0 µm", sensorType: "Mono" },
+    { model: "MGV518-H2", resolution: "2448×2048", fps: "24", interface: "GigE", pixelSize: "3.4 µm", sensorType: "Color" },
+    { model: "MGV518M-H2", resolution: "2448×2048", fps: "24", interface: "GigE", pixelSize: "3.4 µm", sensorType: "Mono" },
+    { model: "MGV1209M-H2-NP", resolution: "4096×3072", fps: "9.4", interface: "GigE", pixelSize: "3.4 µm", sensorType: "Mono" },
+    { model: "MGV2001-H2-NP", resolution: "5480×3648", fps: "5.8", interface: "GigE", pixelSize: "2.4 µm", sensorType: "Color" },
   ],
   "mgs-series-1gige-area-scan": [
     { model: "MGS-030-G", resolution: "0.3 MP", fps: "150", interface: "GigE", pixelSize: "7.4 µm", sensorType: "CMOS" },
@@ -1036,6 +1042,7 @@ const modelNotes: Record<string, string> = {
   "1gige-line-scan-camera": "Note: DSG means 1GigE line scan. Continuous means continuous data transmission, Burst means interval data transmission.",
   "2-5gige-line-scan-camera": "Note: DSR means 2.5GigE line scan. 4K/8K means resolution, C means Color.",
   "10gige-line-scan-camera": "Note: DSX means 10GigE line scan. 8K means resolution, C means Color.",
+  "mgv-series-1gige-area-scan": "Note: MGV means 1GigE area scan. 1209 means the resolution is 12MP, M means Mono, H2 means hardware version.",
 };
 
 const ProductDetail = () => {
