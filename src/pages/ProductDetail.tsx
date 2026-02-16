@@ -116,10 +116,8 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "M3ST2000M-H-O2C", resolution: "5480x3648", fps: "22", interface: "USB3.0", pixelSize: "2.4 µm", sensorType: "Mono" },
   ],
   "u3p-series-usb3-area-scan": [
-    { model: "U3P-200-U3", resolution: "2.0 MP", fps: "90", interface: "USB3.0", pixelSize: "4.8 µm", sensorType: "CMOS" },
-    { model: "U3P-500-U3", resolution: "5.0 MP", fps: "45", interface: "USB3.0", pixelSize: "3.45 µm", sensorType: "CMOS" },
-    { model: "U3P-900-U3", resolution: "9.0 MP", fps: "25", interface: "USB3.0", pixelSize: "3.45 µm", sensorType: "CMOS" },
-    { model: "U3P-1200-U3", resolution: "12.0 MP", fps: "18", interface: "USB3.0", pixelSize: "3.45 µm", sensorType: "CMOS" },
+    { model: "U3P520M-H", resolution: "2640x1978", fps: "27", interface: "USB3.0", pixelSize: "6.9 µm", sensorType: "Mono" },
+    { model: "U3P2500-H", resolution: "5120x5120", fps: "17", interface: "USB3.0", pixelSize: "2.5 µm", sensorType: "Color" },
   ],
   "m2s-series-usb2-area-scan": [
     { model: "M2S-030-U2", resolution: "0.3 MP", fps: "60", interface: "USB2.0", pixelSize: "7.4 µm", sensorType: "CMOS" },
@@ -1070,6 +1068,7 @@ const modelNotes: Record<string, string> = {
   "mgv-series-1gige-area-scan": "Note: MGV means 1GigE area scan. 1209 means the resolution is 12MP, M means Mono, H2 means hardware version.",
   "mgs-series-1gige-area-scan": "Note: MGS means 1GigE area scan. 1207 means the resolution is 12MP, M means Mono, H2 means hardware version.",
   "m3s-series-usb3-area-scan": "Note: M3ST means USB3.0 area scan. 1207 means the resolution is 12MP, M means Mono, H means hardware version, O2C means two optocoupler isolated output.",
+  "u3p-series-usb3-area-scan": "Note: U3P means USB3.0 area scan. 520 means the resolution is 5MP, M means Mono, H means hardware version.",
 };
 
 const ProductDetail = () => {
