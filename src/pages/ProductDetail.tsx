@@ -159,6 +159,17 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "DZO_TC500110A", imgCircle: "2/3\"", mag: "5", wd: "110", fHash: "31", oi: "293", mount: "C" },
     { model: "TC600110A", imgCircle: "2/3\"", mag: "6", wd: "110", fHash: "38.7", oi: "288.1", mount: "C" },
   ],
+  "11-coaxial-telecentric": [
+    { model: "TC025150F", imgCircle: "1.1\"", mag: "0.25", wd: "150", fHash: "8-22", oi: "415", mount: "C" },
+    { model: "TC0287150A1", imgCircle: "1.1\"", mag: "0.287", wd: "150", fHash: "6-14", oi: "349.54", mount: "C" },
+    { model: "TC031150F", imgCircle: "1.1\"", mag: "0.31", wd: "150", fHash: "8-22", oi: "400.889", mount: "C" },
+    { model: "TC0345150A1", imgCircle: "1.1\"", mag: "0.345", wd: "150", fHash: "6-14", oi: "349.72", mount: "C" },
+    { model: "TC037150F", imgCircle: "1.1\"", mag: "0.37", wd: "150", fHash: "8-22", oi: "413.068", mount: "C" },
+    { model: "TC043150A1", imgCircle: "1.1\"", mag: "0.43", wd: "150", fHash: "6-14", oi: "347.89", mount: "C" },
+    { model: "TC060080D", imgCircle: "1.1\"", mag: "0.6", wd: "80", fHash: "8", oi: "250", mount: "C" },
+    { model: "TC069150A1", imgCircle: "1.1\"", mag: "0.69", wd: "150", fHash: "6-14", oi: "349.14", mount: "C" },
+    { model: "TC100150B2_18C", imgCircle: "1.1\"", mag: "1", wd: "150", fHash: "6-14", oi: "349.8", mount: "C" },
+  ],
 };
 
 interface ProductInfo {
@@ -1056,7 +1067,7 @@ const lensTableKeys = ["model", "imgCircle", "efl", "fNumber", "distortion", "wd
 
 const telecentricTableHeaders = ["Product Model", "Img Circle (in)", "Mag.", "WD(mm)", "F#", "O/I", "Mount"];
 const telecentricTableKeys = ["model", "imgCircle", "mag", "wd", "fHash", "oi", "mount"];
-const telecentricSlugs = ["23-coaxial-telecentric"];
+const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric"];
 
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
