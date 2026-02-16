@@ -2,47 +2,47 @@ import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import cameraProduct1 from "@/assets/camera-product-1.jpg";
-import cameraProduct2 from "@/assets/camera-product-2.jpg";
-import cameraProduct3 from "@/assets/camera-product-3.jpg";
-import cameraProduct4 from "@/assets/camera-product-4.jpg";
+import areaScanMgv from "@/assets/area-scan-mgv-1gige.png";
+import lineScan1gige from "@/assets/line-scan-camera-1gige.png";
+import faLens1 from "@/assets/fa-lens-1-1.png";
+import telecentricLens from "@/assets/telecentric-11-coaxial.png";
 
 const products = [
   {
-    name: "ACE-2040 Pro Series",
-    brand: "BASLER",
-    image: cameraProduct1,
-    resolution: "4.2 MP",
+    name: "MGV Series 1GigE Area Scan",
+    brand: "DZOPTICS",
+    image: areaScanMgv,
+    resolution: "5.0 MP",
     fps: "120",
     interface: "GigE",
-    slug: "ace-2040-pro-series",
+    slug: "mgv-series-1gige-area-scan",
   },
   {
-    name: "DART-X Industrial",
-    brand: "COGNEX",
-    image: cameraProduct2,
-    resolution: "12 MP",
-    fps: "60",
-    interface: "USB 3.0",
-    slug: "dart-x-industrial",
+    name: "1GigE Line Scan Camera",
+    brand: "DZOPTICS",
+    image: lineScan1gige,
+    resolution: "4K",
+    fps: "80 kHz",
+    interface: "GigE",
+    slug: "1gige-line-scan-camera",
   },
   {
-    name: "APEX Vision Core",
-    brand: "FLIR",
-    image: cameraProduct3,
-    resolution: "5.1 MP",
-    fps: "90",
-    interface: "CoaXPress",
-    slug: "apex-vision-core",
+    name: '1/1" FA Lens',
+    brand: "DZOPTICS",
+    image: faLens1,
+    resolution: "25 MP",
+    fps: "—",
+    interface: "C-Mount",
+    slug: "fa-lens-1-1",
   },
   {
-    name: "MV-8000 Ultra",
-    brand: "HIKROBOT",
-    image: cameraProduct4,
-    resolution: "8.9 MP",
-    fps: "75",
-    interface: "10GigE",
-    slug: "mv-8000-ultra",
+    name: "1/1\" Telecentric Lens (Co-Axial)",
+    brand: "DZOPTICS",
+    image: telecentricLens,
+    resolution: "20 MP",
+    fps: "—",
+    interface: "F-Mount",
+    slug: "telecentric-1-1-coaxial",
   },
 ];
 
@@ -58,15 +58,23 @@ const FeaturedProducts = () => {
               Featured Products
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Industrial-Grade Cameras
+              Cameras & Lenses
             </h2>
           </div>
-          <Link to="/area-scan-cameras">
-            <Button variant="outline" className="mt-4 md:mt-0 group">
-              View All Products
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
+          <div className="flex gap-3 mt-4 md:mt-0">
+            <Link to="/products">
+              <Button variant="outline" className="group">
+                View All Cameras
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+            <Link to="/lenses">
+              <Button variant="outline" className="group">
+                View All Lenses
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Products Grid */}
