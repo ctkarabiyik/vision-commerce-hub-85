@@ -120,10 +120,9 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "U3P2500-H", resolution: "5120x5120", fps: "17", interface: "USB3.0", pixelSize: "2.5 µm", sensorType: "Color" },
   ],
   "m2s-series-usb2-area-scan": [
-    { model: "M2S-030-U2", resolution: "0.3 MP", fps: "60", interface: "USB2.0", pixelSize: "7.4 µm", sensorType: "CMOS" },
-    { model: "M2S-050-U2", resolution: "0.5 MP", fps: "45", interface: "USB2.0", pixelSize: "5.86 µm", sensorType: "CMOS" },
-    { model: "M2S-130-U2", resolution: "1.3 MP", fps: "30", interface: "USB2.0", pixelSize: "4.8 µm", sensorType: "CMOS" },
-    { model: "M2S-200-U2", resolution: "2.0 MP", fps: "22", interface: "USB2.0", pixelSize: "4.8 µm", sensorType: "CMOS" },
+    { model: "M2S132M-H2", resolution: "1280x1024", fps: "30", interface: "USB2.0", pixelSize: "4.0 µm", sensorType: "Mono" },
+    { model: "M2S138M-H2", resolution: "1280x1024", fps: "30", interface: "USB2.0", pixelSize: "4.8 µm", sensorType: "Mono" },
+    { model: "M2S502M-H2", resolution: "2592x1944", fps: "8.1", interface: "USB2.0", pixelSize: "2.2 µm", sensorType: "Mono" },
   ],
   "10gige-fiber-optic-area-scan": [
     { model: "AF10-2500", resolution: "25.0 MP", fps: "30", interface: "10GigE Fiber", pixelSize: "2.5 µm", sensorType: "CMOS" },
@@ -1069,6 +1068,7 @@ const modelNotes: Record<string, string> = {
   "mgs-series-1gige-area-scan": "Note: MGS means 1GigE area scan. 1207 means the resolution is 12MP, M means Mono, H2 means hardware version.",
   "m3s-series-usb3-area-scan": "Note: M3ST means USB3.0 area scan. 1207 means the resolution is 12MP, M means Mono, H means hardware version, O2C means two optocoupler isolated output.",
   "u3p-series-usb3-area-scan": "Note: U3P means USB3.0 area scan. 520 means the resolution is 5MP, M means Mono, H means hardware version.",
+  "m2s-series-usb2-area-scan": "Note: M2S means USB2.0 area scan. 132 and 138 both means the resolution is 1.3MP, M means Mono, H2 means hardware version.",
 };
 
 const ProductDetail = () => {
