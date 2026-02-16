@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -165,8 +166,17 @@ const products = [
 const PRODUCTS_PER_PAGE = 9;
 
 const Products = () => {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchParams] = useSearchParams();
+  const categoryParam = searchParams.get("category");
+  const [selectedCategory, setSelectedCategory] = useState(categoryParam || "all");
   const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_PAGE);
+
+  useEffect(() => {
+    if (categoryParam && cameraCategories.some(c => c.id === categoryParam)) {
+      setSelectedCategory(categoryParam);
+      setVisibleCount(PRODUCTS_PER_PAGE);
+    }
+  }, [categoryParam]);
 
   const filteredProducts = selectedCategory === "all" ?
   products :

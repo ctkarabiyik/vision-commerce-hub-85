@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Linkedin, Youtube, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import alargeLogo from "@/assets/alarge-logo-footer.svg";
 
@@ -11,10 +12,14 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-6">Products</h4>
             <ul className="space-y-3">
-              <li><a href="/products" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Area Scan Cameras</a></li>
-              <li><a href="/products" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Line Scan Cameras</a></li>
-              <li><a href="/products" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Frame Grabbers</a></li>
-              <li><a href="/lenses" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Lenses</a></li>
+              <li><Link to="/products?category=area-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Area Scan Cameras</Link></li>
+              <li><Link to="/products?category=line-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Line Scan Cameras</Link></li>
+              <li><Link to="/products?category=other" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Frame Grabbers</Link></li>
+              <li><Link to="/lenses?category=fa-lenses" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">FA Lenses</Link></li>
+              <li><Link to="/lenses?category=telecentric" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Telecentric Lenses</Link></li>
+              <li><Link to="/lenses?category=line-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Line Scan Lenses</Link></li>
+              <li><Link to="/lenses?category=macro" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Macro Lenses</Link></li>
+              <li><Link to="/lenses?category=infrared" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Infrared Lenses</Link></li>
             </ul>
           </div>
 
