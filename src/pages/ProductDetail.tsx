@@ -1138,7 +1138,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "86 x 86 x 62 mm",
     weight: "350g",
     features: ["10GigE fiber optic interface", "Ultra-high resolution", "Long-distance transmission", "Active cooling", "GenICam compliant", "Industrial-grade"],
-    mainFeatures: ["10 Gbps fiber optic for ultra-high bandwidth at distance", "Resolutions up to 65 MP for maximum detail capture", "Fiber optic transmission up to 10 km without signal loss", "Active thermal management for 24/7 continuous operation"],
+    mainFeatures: ["High-resolution area scan series", "10GigE data interface", "Fiber optic connection", "Transmission distance >300 meters", "Support time-division strobing application with 2/3/4 lights"],
     quickSpecs: ["Interface: 10GigE Fiber Optic", "Resolution: 25 - 65 MP", "Frame rate: up to 30 fps", "GigE Vision / GenICam"],
     applications: ["Flat Panel Display Inspection", "Semiconductor Wafer Inspection", "Large Area Metrology", "High-res Aerial Imaging"],
   },
