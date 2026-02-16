@@ -764,9 +764,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø48 x 72 mm",
     weight: "220g",
     features: ["Optimized for 8K line sensors", "High MTF at Nyquist", "Low distortion", "M42 mount", "Robust construction", "Multi-coated elements"],
-    mainFeatures: ["High MTF performance at 8K resolution", "Optimized for 5µm pixel pitch sensors", "Edge-to-edge sharpness across full line length", "Designed for high-throughput inspection systems"],
-    quickSpecs: ["Resolution: 8K", "Wavelength: 400-700nm", "Sensor compatibility: 8K line scan", "M42 Mount"],
-    applications: ["High-res Web Inspection", "PCB Scanning", "Film Inspection", "Material Surface Analysis"],
+    mainFeatures: ["8-12K classic line scan lens;", "Wide-angle lens for compact installation and larger FOV;", "Plus series lenses offer apochromatic clarity, deep DOF, and color fidelity, with large aperture enhances efficient inspection;", "Optimized for visible light application."],
+    quickSpecs: ["Imaging circle: 42mm - 108 mm", "Applicable wavelength: 400 - 700nm", "Magnification: 0.04x - 0.65x", "Special compact V-mount design"],
+    applications: ["Thin film inspection", "Solar panel inspection", "2nd Lithium battery inspection", "Printing"],
   },
   "16k-35u-line-scan-lens": {
     name: "16K / 3.5u Line Scan Lens",
