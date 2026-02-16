@@ -95,11 +95,11 @@ const ContactUs = () => {
                   {/* Message */}
                   <div className="space-y-2">
                     <Label htmlFor="message">Project Details *</Label>
-                    <Textarea 
-                      id="message" 
+                    <Textarea
+                      id="message"
                       placeholder="Tell us about your project requirements, application, timeline, or any specific questions..."
-                      rows={5}
-                    />
+                      rows={5} />
+
                   </div>
 
                   {/* Submit */}
@@ -122,8 +122,8 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-foreground mb-1">Email</div>
-                      <a href="mailto:sales@alargecamera.com" className="text-muted-foreground hover:text-primary transition-colors">
-                        sales@alargecamera.com
+                      <a href="mailto:sales@alargecamera.com" className="text-muted-foreground hover:text-primary transition-colors">sales2@alarge.com.tr
+
                       </a>
                     </div>
                   </div>
@@ -134,8 +134,8 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-foreground mb-1">Phone</div>
-                      <a href="tel:+18005551234" className="text-muted-foreground hover:text-primary transition-colors">
-                        +1 (800) 555-1234
+                      <a className="text-muted-foreground hover:text-primary transition-colors" href="tel:+902122786102">
+                        +90 212 278 61 02
                       </a>
                     </div>
                   </div>
@@ -146,8 +146,8 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-foreground mb-1">Address</div>
-                      <p className="text-muted-foreground">
-                        123 Industrial Blvd<br />
+                      <p className="text-muted-foreground">Yıldız Teknik Üniversitesi Davutpaşa Teknopark
+                        <br />
                         San Jose, CA 95134<br />
                         United States
                       </p>
@@ -180,8 +180,8 @@ const ContactUs = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default ContactUs;
