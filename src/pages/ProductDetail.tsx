@@ -1115,7 +1115,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "36 x 36 x 30 mm",
     weight: "45g",
     features: ["USB2.0 interface", "Compact form factor", "Low power consumption", "UVC compatible", "Plug-and-play", "Cost-effective"],
-    mainFeatures: ["Cost-effective USB2.0 interface for budget-conscious projects", "Ultra-compact design for the tightest integration spaces", "UVC compatibility for broad OS support", "Low power consumption for portable and embedded systems"],
+    mainFeatures: ["USB2.0 series products", "Cost-effective", "Delicate and compact", "Support for multi-cameras application", "Particularly suitable for vibration applications"],
     quickSpecs: ["Interface: USB2.0 (480 Mbps)", "Resolution: 0.3 - 2.0 MP", "Frame rate: up to 60 fps", "DirectShow / UVC"],
     applications: ["Legacy System Integration", "Teaching & Research", "Basic Inspection", "Document Scanning"],
   },
