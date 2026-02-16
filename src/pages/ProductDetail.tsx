@@ -308,6 +308,16 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "PLSC16333APO-A1", imgCircle: "Φ82", efl: "116", fNumber: "F2.26-9", mag: "3.33x@51mm", magRange: "/", mount: "M90/M95" },
     { model: "PLS16500APO-B1", imgCircle: "Φ84", efl: "112.3", fNumber: "F0.18-0.5", mag: "5x@40mm", magRange: "/", mount: "M90/M95" },
   ],
+  "macro-lenses": [
+    { model: "MC5028C", imgCircle: "Φ11", fNumber: "F2.8-16", efl: "50", mag: "0.2x@364.7mm", magRange: "0.1-0.3x", mount: "C" },
+    { model: "MC2535B", imgCircle: "Φ19", fNumber: "F3.5-16", efl: "25", mag: "0.2x@122mm", magRange: "0.1-0.4x", mount: "C" },
+    { model: "MC3530B", imgCircle: "Φ19", fNumber: "F3.0-16", efl: "35", mag: "0.4x@83mm", magRange: "0.25-0.7x", mount: "C" },
+    { model: "MC5028B", imgCircle: "Φ19", fNumber: "F2.8-16", efl: "50", mag: "0.59x@109.8mm", magRange: "0.46-0.82x", mount: "C" },
+    { model: "MC7528B", imgCircle: "Φ19", fNumber: "F2.8-16", efl: "75", mag: "0.37x@242mm", magRange: "0.24-0.48x", mount: "C" },
+    { model: "MC2538F1_20C", imgCircle: "Φ20", fNumber: "F3.8-16", efl: "25", mag: "0.25x@117.6mm", magRange: "0.1-0.4x", mount: "C" },
+    { model: "MC3530F1_20C", imgCircle: "Φ20", fNumber: "F3.0-16", efl: "35", mag: "0.35x@123mm", magRange: "0.2-0.55x", mount: "C" },
+    { model: "MC5028D", imgCircle: "Φ20", fNumber: "F2.8-16", efl: "50", mag: "0.2x@271.1mm", magRange: "0.1-0.3x", mount: "C" },
+  ],
 };
 
 interface ProductInfo {
@@ -1211,6 +1221,10 @@ const lineScanLensTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)",
 const lineScanLensTableKeys = ["model", "imgCircle", "efl", "fNumber", "mag", "magRange", "mount"];
 const lineScanLensSlugs = ["4k-line-scan-lens", "8k-line-scan-lens", "16k-35u-line-scan-lens", "16k-5u-line-scan-lens"];
 
+const macroLensTableHeaders = ["Product Model", "Img. Circle(mm)", "F#", "EFL(mm)", "Mag.", "Mag. Range", "Mount"];
+const macroLensTableKeys = ["model", "imgCircle", "fNumber", "efl", "mag", "magRange", "mount"];
+const macroLensSlugs = ["macro-lenses"];
+
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
 
@@ -1414,8 +1428,9 @@ const ProductDetail = () => {
                   const isAreaScan = areaScanCameraSlugs.includes(slug as string);
                   const isTelecentric = telecentricSlugs.includes(slug as string);
                   const isLineScanLens = lineScanLensSlugs.includes(slug as string);
-                  const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : isTelecentric ? telecentricTableHeaders : isLineScanLens ? lineScanLensTableHeaders : lensTableHeaders;
-                  const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : isTelecentric ? telecentricTableKeys : isLineScanLens ? lineScanLensTableKeys : lensTableKeys;
+                  const isMacroLens = macroLensSlugs.includes(slug as string);
+                  const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : isTelecentric ? telecentricTableHeaders : isLineScanLens ? lineScanLensTableHeaders : isMacroLens ? macroLensTableHeaders : lensTableHeaders;
+                  const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : isTelecentric ? telecentricTableKeys : isLineScanLens ? lineScanLensTableKeys : isMacroLens ? macroLensTableKeys : lensTableKeys;
                   return (
                     <Table>
                       <TableHeader>
