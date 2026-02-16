@@ -28,7 +28,7 @@ const CTA = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8 border-t border-primary-foreground/20">
             <a href="tel:+18001234567" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               <Phone className="w-5 h-5" />
-              <span>1-800-VISION</span>
+              <span>+90 212 278 61 02</span>
             </a>
             <a href="mailto:sales@alargecamera.com" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               <Mail className="w-5 h-5" />
@@ -37,8 +37,8 @@ const CTA = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default CTA;
