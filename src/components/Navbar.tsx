@@ -27,8 +27,13 @@ import lineScan16k35u from "@/assets/line-scan-16k-35u.png";
 import lineScan16k5u from "@/assets/line-scan-16k-5u.png";
 
 const languages = [
-{ code: "en", name: "English", flag: "🇬🇧" },
-{ code: "tr", name: "Türkçe", flag: "🇹🇷" }];
+  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "tr", name: "Türkçe", flag: "🇹🇷" },
+  { code: "ru", name: "Русский", flag: "🇷🇺" },
+  { code: "it", name: "Italiano", flag: "🇮🇹" },
+  { code: "ar", name: "العربية", flag: "🇸🇦" },
+  { code: "de", name: "Deutsch", flag: "🇩🇪" },
+];
 
 const cameraCategories = [
 {
