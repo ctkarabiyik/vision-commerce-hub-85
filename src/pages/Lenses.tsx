@@ -145,7 +145,7 @@ const products = [
     slug: "half-inch-noncoaxial-telecentric",
   },
   {
-    name: "2/3 inch Non-Co-Axial Telecentric Lens",
+    name: "2/3 inch Non-Co-Axial Telecentric Lens (WD 65/110)",
     brand: "DZOPTICS",
     image: telecentric23NonCoaxial,
     resolution: "2/3\"",
@@ -155,7 +155,7 @@ const products = [
     slug: "23-noncoaxial-telecentric",
   },
   {
-    name: "2/3 inch Non-Co-Axial Telecentric Lens (Type B)",
+    name: "2/3 inch Non-Co-Axial Telecentric Lens (WD 220)",
     brand: "DZOPTICS",
     image: telecentric11NonCoaxial,
     resolution: "2/3\"",
