@@ -1092,7 +1092,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "58 x 58 x 44 mm",
     weight: "150g",
     features: ["High-resolution sensors", "USB3 Vision interface", "Large sensor coverage", "GenICam compliant", "Precision trigger", "Industrial-grade housing"],
-    mainFeatures: ["High-resolution sensors up to 12 MP for detailed imaging", "USB3.0 bandwidth for large image transfer", "Large sensor formats for wide field of view", "Precision triggering for synchronized capture"],
+    mainFeatures: ["Designed for medical & science applications", "USB3.0 data interface", "Large Optical Size", "Excellent color fidelity", "4-sided installation, flexible deployment", "Support timed strobe function with 2/3/4 light"],
     quickSpecs: ["Interface: USB3.0 (5 Gbps)", "Resolution: 2.0 - 12.0 MP", "Frame rate: up to 90 fps", "USB3 Vision / GenICam"],
     applications: ["Precision Measurement", "Semiconductor Inspection", "Medical Imaging", "Scientific Research"],
   },
