@@ -576,9 +576,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø80 x 180 mm",
     weight: "850g",
     features: ["Large format sensor coverage", "Co-axial illumination", "Ultra-low distortion", "Bi-telecentric design", "High-resolution optics", "Premium metal housing"],
-    mainFeatures: ["Full coverage for large format industrial sensors", "Integrated co-axial illumination for complex surface analysis", "Bi-telecentric design with minimal distortion", "Designed for high-accuracy metrology applications"],
-    quickSpecs: ["Imaging circle: Large Format", "Telecentricity: <0.1°", "Distortion: <0.05%", "F Mount"],
-    applications: ["Large Area Inspection", "Display Panel Inspection", "Solar Cell Inspection", "Precision Metrology"],
+    mainFeatures: ["Dia44mm high performance telecentric lens;", "Apochromatic design enhances image sharpness, depth of field, and authentic color reproduction;", "Ultra low distortion, ensure the precise;", "Uniform image quality across the full image circle and aperture, no need to achieve better image uniformity by a smaller aperture.", "Compatible with RGB, refocusing not required for different illumination."],
+    quickSpecs: ["Imaging circle: 1.75\"-44 mm", "Wavelength: 400-700nm", "Magnification: 0.37x-5.0x", "M42/M58 mount", "Prism optional"],
+    applications: ["3C & semi-con high-precision inspection"],
   },
 
   // === TELECENTRIC LENSES - NON-CO-AXIAL ===
