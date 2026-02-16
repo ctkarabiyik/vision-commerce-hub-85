@@ -716,9 +716,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø75 x 170 mm",
     weight: "780g",
     features: ["Large format coverage", "Non-co-axial telecentric", "High-precision optics", "Ultra-low distortion", "F-Mount interface", "Premium build quality"],
-    mainFeatures: ["Maximum field coverage for large format sensors", "Non-co-axial design for flexible illumination schemes", "Ultra-low distortion for precision metrology", "Engineered for continuous industrial operation"],
-    quickSpecs: ["Imaging circle: Large Format", "Telecentricity: <0.1°", "Distortion: <0.05%", "F Mount"],
-    applications: ["Large Panel Inspection", "Solar Cell Measurement", "Flat Panel Display QC", "Industrial Metrology"],
+    mainFeatures: ["Dia44mm high performance telecentric lens;", "Apochromatic design enhances image sharpness, depth of field, and authentic color reproduction;", "Ultra low distortion, ensure the precise;", "Uniform image quality across the full image circle and aperture, no need to achieve better image uniformity by a smaller aperture.", "Compatible with RGB, refocusing not required for different illumination."],
+    quickSpecs: ["Imaging circle: 1.75\"-44mm", "Wavelength: 400-700nm", "Magnification: 0.37x-5.0x", "M42/M58 mount", "Prism optional"],
+    applications: ["3C & semi-con high-precision inspection"],
   },
 
   // === LINE SCAN LENSES ===
