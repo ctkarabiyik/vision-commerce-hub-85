@@ -835,9 +835,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Various",
     weight: "Various",
     features: ["High magnification ratios", "Excellent close-focus performance", "Low distortion at macro range", "C-Mount compatibility", "Flat field design", "Multi-coated elements"],
-    mainFeatures: ["High magnification ratios (1x to 10x) for micro-inspection", "Flat field design for uniform sharpness across image", "Optimized for short working distance applications", "Compatible with a wide range of sensor formats"],
-    quickSpecs: ["Magnification: 1x - 10x", "Working distance: 20-100mm", "Wavelength: 400-700nm", "C Mount"],
-    applications: ["Micro-component Inspection", "Solder Joint Analysis", "Surface Texture Analysis", "Biological Imaging"],
+    mainFeatures: ["Compatible with 3.45um pixel sensors;", "Distortion as low as telecentric lenses;", "Higher magnification for clearer defect visibility.", "Image uniformity (resolution, distortion and chromatic aberration correction etc.)@full image circle & full open aperture, no need to achieve better image uniformity by a smaller aperture;", "Design for visible light application"],
+    quickSpecs: ["Imaging circle: 2/3\", 1.1\"", "Applicable wavelength: 400-700nm", "Focal length: 25-75 mm", "C Mount"],
+    applications: ["Barcode scanning", "Laser Tri-angulation", "3D AOI/SPI", "Measurement"],
   },
   "infrared-lenses": {
     name: "Infrared Lenses",
