@@ -8,13 +8,13 @@ import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, Star, Sett
 // Model variant data keyed by slug
 const modelVariants: Record<string, Array<Record<string, string>>> = {
   "1-1-7-inch-fa-lenses": [
-    { model: "LA0628A_1712", efl: "6", imgCircle: "φ9.5", fNumber: "F2.8-16", wdRange: "100-Inf", distortion: "-2.7@y=4.5", mount: "C" },
-    { model: "LA0828A_1712", efl: "8", imgCircle: "φ9.5", fNumber: "F2.8-16", wdRange: "100-Inf", distortion: "-0.04@y=4.5", mount: "C" },
-    { model: "LA1228A_1712", efl: "12", imgCircle: "φ9.5", fNumber: "F2.8-16", wdRange: "100-Inf", distortion: "-0.01@y=4.5", mount: "C" },
-    { model: "LA1628A_1712", efl: "16", imgCircle: "φ9.5", fNumber: "F2.8-16", wdRange: "100-Inf", distortion: "-0.04@y=4.5", mount: "C" },
-    { model: "LA2528A_1712", efl: "25", imgCircle: "φ9.5", fNumber: "F2.8-16", wdRange: "100-Inf", distortion: "-0.06@y=4.5", mount: "C" },
-    { model: "LA3528A_1712", efl: "35", imgCircle: "φ9.5", fNumber: "F2.8-16", wdRange: "200-Inf", distortion: "-0.03@y=4.5", mount: "C" },
-    { model: "LA5028A_1712", efl: "50", imgCircle: "φ9.5", fNumber: "F2.8-16", wdRange: "250-Inf", distortion: "-0.18@y=4.5", mount: "C" },
+    { model: "DZO_LA0628A_1712", efl: "6", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.37%", mount: "C" },
+    { model: "DZO_LA0828A_1712", efl: "8", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.37%", mount: "C" },
+    { model: "DZO_LA1228A_1712", efl: "12", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.18%", mount: "C" },
+    { model: "DZO_LA1628A_1712", efl: "16", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.05%", mount: "C" },
+    { model: "DZO_LA2528A_1712", efl: "25", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "0.06%", mount: "C" },
+    { model: "DZO_LA3528A_1712", efl: "35", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "200-inf", distortion: "0.03%", mount: "C" },
+    { model: "DZO_LA5028A_1712", efl: "50", imgCircle: "1/1.7\"", fNumber: "F2.8-16", wdRange: "250-inf", distortion: "0.09%", mount: "C" },
   ],
   "2-3-inch-standard-fa-lenses": [
     { model: "DZO_LA0820A", efl: "8", imgCircle: "2/3\"", fNumber: "F2.0-16", wdRange: "100-inf", distortion: "-1.49%", mount: "C" },
