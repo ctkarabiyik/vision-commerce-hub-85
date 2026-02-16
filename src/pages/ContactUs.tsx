@@ -146,8 +146,8 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-foreground mb-1">Address</div>
-                      <p className="text-muted-foreground">
-                        123 Industrial Blvd<br />
+                      <p className="text-muted-foreground">Yıldız Teknik Üniversitesi Davutpaşa Teknopark
+                        <br />
                         San Jose, CA 95134<br />
                         United States
                       </p>
