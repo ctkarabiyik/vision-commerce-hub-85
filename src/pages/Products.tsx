@@ -34,8 +34,8 @@ const products = [
   brand: "Do3Think",
   image: lineScanCamera1GigE,
   specs: [
-    { label: "Speed", value: "1 Gbps" },
-    { label: "Sensor", value: "CMOS" },
+    { label: "Resolution", value: "2K–8K" },
+    { label: "FPS", value: "18–80 kHz" },
     { label: "Interface", value: "GigE" },
   ],
   category: "line-scan",
@@ -46,9 +46,9 @@ const products = [
   brand: "Do3Think",
   image: lineScanCamera25GigE,
   specs: [
-    { label: "Speed", value: "2.5 Gbps" },
-    { label: "Sensor", value: "CMOS" },
-    { label: "Interface", value: "GigE" },
+    { label: "Resolution", value: "2K–8K" },
+    { label: "FPS", value: "45–200 kHz" },
+    { label: "Interface", value: "2.5GigE" },
   ],
   category: "line-scan",
   slug: "2-5gige-line-scan-camera"
@@ -58,9 +58,9 @@ const products = [
   brand: "Do3Think",
   image: lineScanCamera10GigE,
   specs: [
-    { label: "Speed", value: "10 Gbps" },
-    { label: "Sensor", value: "CMOS" },
-    { label: "Interface", value: "GigE" },
+    { label: "Resolution", value: "4K–16K" },
+    { label: "FPS", value: "75–300 kHz" },
+    { label: "Interface", value: "10GigE" },
   ],
   category: "line-scan",
   slug: "10gige-line-scan-camera"
@@ -72,7 +72,7 @@ const products = [
   image: areaScanMgv,
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
-    { label: "Sensor", value: "CMOS" },
+    { label: "FPS", value: "Up to 300" },
     { label: "Interface", value: "GigE" },
   ],
   category: "area-scan",
@@ -84,7 +84,7 @@ const products = [
   image: areaScanMgs,
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
-    { label: "Sensor", value: "CMOS" },
+    { label: "FPS", value: "Up to 300" },
     { label: "Interface", value: "GigE" },
   ],
   category: "area-scan",
@@ -96,7 +96,7 @@ const products = [
   image: areaScanM3s,
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
-    { label: "Sensor", value: "CMOS" },
+    { label: "FPS", value: "Up to 500" },
     { label: "Interface", value: "USB 3.0" },
   ],
   category: "area-scan",
@@ -108,7 +108,7 @@ const products = [
   image: areaScanU3p,
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
-    { label: "Sensor", value: "CMOS" },
+    { label: "FPS", value: "Up to 500" },
     { label: "Interface", value: "USB 3.0" },
   ],
   category: "area-scan",
@@ -120,7 +120,7 @@ const products = [
   image: areaScanM2s,
   specs: [
     { label: "Resolution", value: "0.3–5 MP" },
-    { label: "Sensor", value: "CMOS" },
+    { label: "FPS", value: "Up to 120" },
     { label: "Interface", value: "USB 2.0" },
   ],
   category: "area-scan",
@@ -131,9 +131,9 @@ const products = [
   brand: "Do3Think",
   image: areaScan10gige,
   specs: [
-    { label: "Speed", value: "10 Gbps" },
-    { label: "Sensor", value: "CMOS" },
-    { label: "Interface", value: "Fiber" },
+    { label: "Resolution", value: "5–45 MP" },
+    { label: "FPS", value: "Up to 200" },
+    { label: "Interface", value: "10GigE" },
   ],
   category: "area-scan",
   slug: "10gige-fiber-optic-area-scan"
@@ -143,8 +143,8 @@ const products = [
   brand: "Do3Think",
   image: areaScanDs,
   specs: [
-    { label: "Channels", value: "Dual" },
-    { label: "Sensor", value: "CMOS" },
+    { label: "Resolution", value: "1–5 MP" },
+    { label: "FPS", value: "Up to 300" },
     { label: "Interface", value: "USB 3.0" },
   ],
   category: "area-scan",
@@ -155,8 +155,8 @@ const products = [
   brand: "Do3Think",
   image: areaScanDsv,
   specs: [
-    { label: "Form", value: "Coin" },
-    { label: "Sensor", value: "CMOS" },
+    { label: "Resolution", value: "0.3–5 MP" },
+    { label: "FPS", value: "Up to 250" },
     { label: "Interface", value: "USB 3.0" },
   ],
   category: "area-scan",
@@ -167,8 +167,8 @@ const products = [
   brand: "Do3Think",
   image: areaScanLipstick,
   specs: [
-    { label: "Form", value: "Lipstick" },
-    { label: "Sensor", value: "CMOS" },
+    { label: "Resolution", value: "0.3–5 MP" },
+    { label: "FPS", value: "Up to 200" },
     { label: "Interface", value: "GigE" },
   ],
   category: "area-scan",
@@ -180,8 +180,8 @@ const products = [
   brand: "Do3Think",
   image: frameGrabber,
   specs: [
-    { label: "Speed", value: "10–40 Gbps" },
-    { label: "Channels", value: "1–4" },
+    { label: "Resolution", value: "10–40G" },
+    { label: "FPS", value: "1–4 Ch" },
     { label: "Interface", value: "PCIe" },
   ],
   category: "other",
