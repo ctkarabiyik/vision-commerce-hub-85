@@ -927,9 +927,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Various",
     weight: "Various",
     features: ["Large sensor format coverage", "High-resolution optics", "Low vignetting", "Multiple mount options", "Robust construction", "Premium glass elements"],
-    mainFeatures: ["Full coverage for APS-C, APS-H and larger sensor formats", "High-resolution optics with minimal vignetting", "Optimized for high pixel count sensors (50MP+)", "Designed for flat-field industrial imaging"],
-    quickSpecs: ["Sensor coverage: up to Medium Format", "Low vignetting design", "High resolution optics", "Multiple mounts available"],
-    applications: ["Aerial Imaging", "Large Area Inspection", "High-res Document Scanning", "Flat Panel Inspection"],
+    mainFeatures: ["Dia>43mm classic area scan lens;", "Consistent imaging quality across working distances for broader applications;", "Plus series prioritizes image uniformity for efficient inspections;", "X group floating design maintains stability without extra adapters;", "Optimized for visible light application."],
+    quickSpecs: ["Imaging circle: 38 mm - 68 mm", "Applicable wavelength: 400-700nm", "Magnification: 0.00-0.69x", "Mount: M55/M58/M72/F"],
+    applications: ["High temperature metal liquid inspection", "Micro led screen inspection"],
   },
 
   // === LINE SCAN CAMERAS ===
