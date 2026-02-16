@@ -507,9 +507,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø50 x 120 mm",
     weight: "320g",
     features: ["Zero parallax error", "Built-in co-axial illumination port", "Ultra-low distortion (<0.1%)", "Telecentric on both object and image side", "High depth of field", "Anti-reflection coated"],
-    mainFeatures: ["Bi-telecentric design eliminating perspective errors", "Integrated co-axial illumination for surface inspection", "Ultra-low distortion for precision dimensional measurement", "Constant magnification independent of working distance"],
-    quickSpecs: ["Imaging circle: 2/3\"", "Telecentricity: <0.1°", "Distortion: <0.1%", "C Mount"],
-    applications: ["Dimensional Measurement", "Surface Inspection", "Flatness Detection", "Defect Inspection"],
+    mainFeatures: ["1/2\"- 2/3\" classic telecentric lens;", "Ultra-low distortion for precision;", "Uniform image quality across the field and aperture;", "Applicable for visible illumination."],
+    quickSpecs: ["Imaging circle: 1/2\" - 2/3\"", "Wavelengths: 400 - 700nm", "Magnification: 0.3x - 10x", "WD 65-110mm", "C mount", "Prism optional"],
+    applications: ["Positioning"],
   },
   "11-coaxial-telecentric": {
     name: "1.1 inch Co-Axial Telecentric Lens",
