@@ -243,70 +243,28 @@ const Navbar = () => {
               </button>
               {mobileProducts &&
             <div className="pl-4 flex flex-col gap-3">
-                  <button
-                onClick={() => setMobileCameras(!mobileCameras)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
-
-                    Cameras
-                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileCameras ? 'rotate-180' : ''}`} />
-                  </button>
-                  {mobileCameras &&
-              <div className="pl-4 flex flex-col gap-2">
-                      {cameraCategories.map((category, index) =>
-                <div key={index} className="flex flex-col gap-1">
-                  <a
-                    href={category.href}
-                    className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1">
-                    <category.icon className="w-4 h-4" />
-                    {category.title}
-                  </a>
-                  <div className="pl-6 flex flex-col gap-1">
-                    {(productsByCategory[category.title] || []).map((product) => (
-                      <Link
-                        key={product.slug}
-                        to={`/products/${product.slug}`}
-                        onClick={() => setIsOpen(false)}
-                        className="text-sm text-muted-foreground/80 hover:text-primary transition-colors py-0.5">
-                        {product.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-                )}
-                    </div>
-              }
-                  <button
-                onClick={() => setMobileLenses(!mobileLenses)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
-
-                    Lenses
-                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileLenses ? 'rotate-180' : ''}`} />
-                  </button>
-                  {mobileLenses &&
-              <div className="pl-4 flex flex-col gap-2">
-                      {lensCategories.map((category, index) =>
-                <div key={index} className="flex flex-col gap-1">
-                  <a
-                    href={category.href}
-                    className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1">
-                    <category.icon className="w-4 h-4" />
-                    {category.title}
-                  </a>
-                  <div className="pl-6 flex flex-col gap-1">
-                    {(productsByCategory[category.title] || []).map((product) => (
-                      <Link
-                        key={product.slug}
-                        to={`/products/${product.slug}`}
-                        onClick={() => setIsOpen(false)}
-                        className="text-sm text-muted-foreground/80 hover:text-primary transition-colors py-0.5">
-                        {product.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-                )}
-                    </div>
-              }
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60">Cameras</p>
+                  {cameraCategories.map((category, index) =>
+                    <Link
+                      key={`cam-${index}`}
+                      to={`/products?category=${encodeURIComponent(category.title)}`}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
+                      <category.icon className="w-4 h-4" />
+                      {category.title}
+                    </Link>
+                  )}
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 mt-2">Lenses</p>
+                  {lensCategories.map((category, index) =>
+                    <Link
+                      key={`lens-${index}`}
+                      to={`/lenses?category=${encodeURIComponent(category.title)}`}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
+                      <category.icon className="w-4 h-4" />
+                      {category.title}
+                    </Link>
+                  )}
                 </div>
             }
               <Link to="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
