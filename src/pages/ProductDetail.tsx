@@ -43,6 +43,25 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "DZO_LA5028A_1116", efl: "50", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "250-inf", distortion: "0.06%", mount: "C" },
     { model: "DZO_LA7528A_1116", efl: "75", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "400-inf", distortion: "0.04%", mount: "C" },
   ],
+  // === LINE SCAN CAMERAS ===
+  "1gige-line-scan-camera": [
+    { model: "ALC-1001G", resolution: "1024 px", lineRate: "18 kHz", interface: "GigE", pixelSize: "14 µm", sensorType: "CMOS" },
+    { model: "ALC-2001G", resolution: "2048 px", lineRate: "18 kHz", interface: "GigE", pixelSize: "14 µm", sensorType: "CMOS" },
+    { model: "ALC-4001G", resolution: "4096 px", lineRate: "9 kHz", interface: "GigE", pixelSize: "10 µm", sensorType: "CMOS" },
+    { model: "ALC-8001G", resolution: "8192 px", lineRate: "4.5 kHz", interface: "GigE", pixelSize: "7 µm", sensorType: "CMOS" },
+  ],
+  "2-5gige-line-scan-camera": [
+    { model: "ALC-2002G", resolution: "2048 px", lineRate: "45 kHz", interface: "2.5GigE", pixelSize: "14 µm", sensorType: "CMOS" },
+    { model: "ALC-4002G", resolution: "4096 px", lineRate: "22 kHz", interface: "2.5GigE", pixelSize: "10 µm", sensorType: "CMOS" },
+    { model: "ALC-8002G", resolution: "8192 px", lineRate: "11 kHz", interface: "2.5GigE", pixelSize: "7 µm", sensorType: "CMOS" },
+    { model: "ALC-16002G", resolution: "16384 px", lineRate: "5.5 kHz", interface: "2.5GigE", pixelSize: "5 µm", sensorType: "CMOS" },
+  ],
+  "10gige-line-scan-camera": [
+    { model: "ALC-4010G", resolution: "4096 px", lineRate: "90 kHz", interface: "10GigE", pixelSize: "10 µm", sensorType: "CMOS" },
+    { model: "ALC-8010G", resolution: "8192 px", lineRate: "45 kHz", interface: "10GigE", pixelSize: "7 µm", sensorType: "CMOS" },
+    { model: "ALC-16010G", resolution: "16384 px", lineRate: "22 kHz", interface: "10GigE", pixelSize: "5 µm", sensorType: "CMOS" },
+    { model: "ALC-16010G-HR", resolution: "16384 px", lineRate: "18 kHz", interface: "10GigE", pixelSize: "3.5 µm", sensorType: "CMOS" },
+  ],
 };
 
 interface ProductInfo {
@@ -629,10 +648,86 @@ const productData: Record<string, ProductInfo> = {
     quickSpecs: ["Sensor coverage: up to Medium Format", "Low vignetting design", "High resolution optics", "Multiple mounts available"],
     applications: ["Aerial Imaging", "Large Area Inspection", "High-res Document Scanning", "Flat Panel Inspection"],
   },
+
+  // === LINE SCAN CAMERAS ===
+  "1gige-line-scan-camera": {
+    name: "1GigE Line Scan Camera",
+    brand: "ALARGE",
+    category: "Line Scan Cameras",
+    categorySlug: "products",
+    image: "/src/assets/line-scan-camera-1gige.png",
+    shortDescription: "Cost-effective 1GigE line scan camera for standard-speed continuous inspection applications.",
+    description: "The ALARGE 1GigE Line Scan Camera provides reliable line scan imaging over standard Gigabit Ethernet for mainstream inspection tasks.",
+    resolution: "1GigE",
+    fps: "-",
+    interface: "GigE",
+    sensor: "Linear CMOS",
+    sensorSize: "Line Scan",
+    pixelSize: "7-14 µm",
+    dynamicRange: "60 dB",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "62 x 62 x 44 mm",
+    weight: "150g",
+    features: ["GigE Vision interface", "Power over Ethernet", "Hardware trigger", "GenICam compliant", "Compact housing", "Industrial-grade"],
+    mainFeatures: ["Standard GigE Vision interface for easy integration", "Resolutions from 1K to 8K pixels for versatile applications", "Power over Ethernet (PoE) for simplified cabling", "Compact industrial design for space-constrained environments"],
+    quickSpecs: ["Interface: 1GigE (1 Gbps)", "Resolution: 1024 - 8192 px", "Line rate: up to 18 kHz", "GigE Vision / GenICam"],
+    applications: ["Web Inspection", "Print Inspection", "Food Sorting", "Textile Inspection"],
+  },
+  "2-5gige-line-scan-camera": {
+    name: "2.5GigE Line Scan Camera",
+    brand: "ALARGE",
+    category: "Line Scan Cameras",
+    categorySlug: "products",
+    image: "/src/assets/line-scan-camera-2-5gige.png",
+    shortDescription: "High-throughput 2.5GigE line scan camera for demanding continuous inspection with increased bandwidth.",
+    description: "The ALARGE 2.5GigE Line Scan Camera delivers 2.5x the bandwidth of standard GigE for higher line rates and resolutions.",
+    resolution: "2.5GigE",
+    fps: "-",
+    interface: "2.5GigE",
+    sensor: "Linear CMOS",
+    sensorSize: "Line Scan",
+    pixelSize: "5-14 µm",
+    dynamicRange: "64 dB",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "62 x 62 x 44 mm",
+    weight: "155g",
+    features: ["2.5GigE Vision interface", "High line rates", "Power over Ethernet", "GenICam compliant", "Multi-line TDI support", "Robust housing"],
+    mainFeatures: ["2.5 Gbps bandwidth for higher line rates and resolutions", "Support for up to 16K resolution line sensors", "NBASE-T compatible for use with standard Cat5e cabling", "Advanced triggering and multi-ROI capabilities"],
+    quickSpecs: ["Interface: 2.5GigE (2.5 Gbps)", "Resolution: 2048 - 16384 px", "Line rate: up to 45 kHz", "GigE Vision / GenICam"],
+    applications: ["High-speed Web Inspection", "PCB Inspection", "Pharmaceutical Packaging", "Surface Scanning"],
+  },
+  "10gige-line-scan-camera": {
+    name: "10GigE Line Scan Camera",
+    brand: "ALARGE",
+    category: "Line Scan Cameras",
+    categorySlug: "products",
+    image: "/src/assets/line-scan-camera-10gige.png",
+    shortDescription: "Ultra-high bandwidth 10GigE line scan camera for the most demanding high-speed, high-resolution inspection tasks.",
+    description: "The ALARGE 10GigE Line Scan Camera delivers maximum bandwidth for ultra-high-speed line scan applications requiring top resolution and line rates.",
+    resolution: "10GigE",
+    fps: "-",
+    interface: "10GigE",
+    sensor: "Linear CMOS",
+    sensorSize: "Line Scan",
+    pixelSize: "3.5-10 µm",
+    dynamicRange: "68 dB",
+    operatingTemp: "-10°C to 50°C",
+    dimensions: "72 x 72 x 52 mm",
+    weight: "200g",
+    features: ["10GigE Vision interface", "Ultra-high line rates", "Hardware trigger", "GenICam compliant", "Active cooling", "Industrial-grade"],
+    mainFeatures: ["10 Gbps bandwidth for maximum throughput applications", "Ultra-high line rates up to 90 kHz for fastest inspection", "Support for 16K resolution with 3.5µm pixel pitch sensors", "Active thermal management for continuous 24/7 operation"],
+    quickSpecs: ["Interface: 10GigE (10 Gbps)", "Resolution: 4096 - 16384 px", "Line rate: up to 90 kHz", "GigE Vision / GenICam"],
+    applications: ["Ultra-high-speed Inspection", "Semiconductor Wafer Scanning", "High-res Print QC", "Advanced Material Analysis"],
+  },
 };
 
-const modelTableHeaders = ["Model", "EFL (mm)", "Img. Circle", "F#", "WD Range (mm)", "Optical Distortion", "Mount"];
-const modelTableKeys = ["model", "efl", "imgCircle", "fNumber", "wdRange", "distortion", "mount"];
+const lensTableHeaders = ["Model", "EFL (mm)", "Img. Circle", "F#", "WD Range (mm)", "Optical Distortion", "Mount"];
+const lensTableKeys = ["model", "efl", "imgCircle", "fNumber", "wdRange", "distortion", "mount"];
+
+const cameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
+const cameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
+
+const cameraProductSlugs = ["1gige-line-scan-camera", "2-5gige-line-scan-camera", "10gige-line-scan-camera"];
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -803,26 +898,33 @@ const ProductDetail = () => {
             <h2 className="text-2xl font-bold text-foreground mb-4">Product Models</h2>
             {variants ? (
               <div className="bg-card border border-border rounded-lg overflow-x-auto">
-                <Table>
-                  <TableHeader>
-                    <TableRow className="bg-secondary/50">
-                      {modelTableHeaders.map((header) => (
-                        <TableHead key={header} className="font-semibold text-foreground">{header}</TableHead>
-                      ))}
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {variants.map((variant, index) => (
-                      <TableRow key={variant.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
-                        {modelTableKeys.map((key) => (
-                          <TableCell key={key} className={key === "model" ? "font-medium text-foreground" : "text-muted-foreground"}>
-                            {variant[key]}
-                          </TableCell>
+                {(() => {
+                  const isCamera = cameraProductSlugs.includes(slug as string);
+                  const headers = isCamera ? cameraTableHeaders : lensTableHeaders;
+                  const keys = isCamera ? cameraTableKeys : lensTableKeys;
+                  return (
+                    <Table>
+                      <TableHeader>
+                        <TableRow className="bg-secondary/50">
+                          {headers.map((header) => (
+                            <TableHead key={header} className="font-semibold text-foreground">{header}</TableHead>
+                          ))}
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {variants.map((variant, index) => (
+                          <TableRow key={variant.model} className={index % 2 === 0 ? "bg-secondary/30" : ""}>
+                            {keys.map((key) => (
+                              <TableCell key={key} className={key === "model" ? "font-medium text-foreground" : "text-muted-foreground"}>
+                                {variant[key]}
+                              </TableCell>
+                            ))}
+                          </TableRow>
                         ))}
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
+                      </TableBody>
+                    </Table>
+                  );
+                })()}
               </div>
             ) : (
               <div className="bg-card border border-border rounded-lg overflow-hidden">
