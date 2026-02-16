@@ -137,11 +137,7 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
   "lipstick-series-1gige-area-scan": [
     { model: "DSG135M", resolution: "1000x1000", fps: "120", interface: "GigE", pixelSize: "2.7 µm", sensorType: "Mono" },
   ],
-  "frame-grabber-10-40gige": [
-    { model: "FG-10G-4P", resolution: "10GigE x4", fps: "-", interface: "PCIe 3.0 x8", pixelSize: "-", sensorType: "Frame Grabber" },
-    { model: "FG-25G-4P", resolution: "25GigE x4", fps: "-", interface: "PCIe 3.0 x8", pixelSize: "-", sensorType: "Frame Grabber" },
-    { model: "FG-40G-2P", resolution: "40GigE x2", fps: "-", interface: "PCIe 3.0 x8", pixelSize: "-", sensorType: "Frame Grabber" },
-  ],
+  "frame-grabber-10-40gige": [],
 };
 
 interface ProductInfo {
