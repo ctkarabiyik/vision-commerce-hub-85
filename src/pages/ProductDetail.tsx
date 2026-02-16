@@ -976,7 +976,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "62 x 62 x 44 mm",
     weight: "155g",
     features: ["2.5GigE Vision interface", "High line rates", "Power over Ethernet", "GenICam compliant", "Multi-line TDI support", "Robust housing"],
-    mainFeatures: ["2.5 Gbps bandwidth for higher line rates and resolutions", "Support for up to 16K resolution line sensors", "NBASE-T compatible for use with standard Cat5e cabling", "Advanced triggering and multi-ROI capabilities"],
+    mainFeatures: ["2.5G Platform", "Line rate doubled, easy to deploy", "High performance-price ratio", "Network cable connection", "All series support Multifield"],
     quickSpecs: ["Interface: 2.5GigE (2.5 Gbps)", "Resolution: 2048 - 16384 px", "Line rate: up to 45 kHz", "GigE Vision / GenICam"],
     applications: ["High-speed Web Inspection", "PCB Inspection", "Pharmaceutical Packaging", "Surface Scanning"],
   },
