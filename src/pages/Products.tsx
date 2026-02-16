@@ -3,17 +3,29 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
+import { Button } from "@/components/ui/button";
 import { ChevronRight, Grid3X3, LayoutList, Scan, Camera } from "lucide-react";
 import lineScanCamera1GigE from "@/assets/line-scan-camera-1gige.png";
 import lineScanCamera25GigE from "@/assets/line-scan-camera-2-5gige.png";
 import lineScanCamera10GigE from "@/assets/line-scan-camera-10gige.png";
+import areaScanMgv from "@/assets/area-scan-mgv-1gige.png";
+import areaScanMgs from "@/assets/area-scan-mgs-1gige.png";
+import areaScanM3s from "@/assets/area-scan-m3s-usb3.png";
+import areaScanU3p from "@/assets/area-scan-u3p-usb3.png";
+import areaScanM2s from "@/assets/area-scan-m2s-usb2.png";
+import areaScan10gige from "@/assets/area-scan-10gige-fiber.png";
+import areaScanDs from "@/assets/area-scan-ds-dual-usb3.png";
+import areaScanDsv from "@/assets/area-scan-dsv-coin.png";
+import areaScanLipstick from "@/assets/area-scan-lipstick-1gige.png";
 
 const cameraCategories = [
-  { id: "all", title: "All Cameras", icon: Camera, count: 3 },
+  { id: "all", title: "All Cameras", icon: Camera, count: 12 },
   { id: "line-scan", title: "Line Scan Cameras", icon: Scan, count: 3 },
+  { id: "area-scan", title: "Area Scan Cameras", icon: Camera, count: 9 },
 ];
 
 const products = [
+  // Line Scan Cameras
   {
     name: "1GigE Line Scan Camera",
     brand: "ALARGE",
@@ -44,14 +56,116 @@ const products = [
     category: "line-scan",
     slug: "10gige-line-scan-camera",
   },
+  // Area Scan Cameras
+  {
+    name: "MGV Series 1GigE Area Scan Cameras",
+    brand: "ALARGE",
+    image: areaScanMgv,
+    resolution: "Various",
+    fps: "-",
+    interface: "GigE",
+    category: "area-scan",
+    slug: "mgv-series-1gige-area-scan",
+  },
+  {
+    name: "MGS Series 1GigE Area Scan Cameras",
+    brand: "ALARGE",
+    image: areaScanMgs,
+    resolution: "Various",
+    fps: "-",
+    interface: "GigE",
+    category: "area-scan",
+    slug: "mgs-series-1gige-area-scan",
+  },
+  {
+    name: "M3S Series USB3.0 Area Scan Cameras",
+    brand: "ALARGE",
+    image: areaScanM3s,
+    resolution: "Various",
+    fps: "-",
+    interface: "USB3.0",
+    category: "area-scan",
+    slug: "m3s-series-usb3-area-scan",
+  },
+  {
+    name: "U3P Series USB3.0 Area Scan Cameras",
+    brand: "ALARGE",
+    image: areaScanU3p,
+    resolution: "Various",
+    fps: "-",
+    interface: "USB3.0",
+    category: "area-scan",
+    slug: "u3p-series-usb3-area-scan",
+  },
+  {
+    name: "M2S Series USB2.0 Area Scan Cameras",
+    brand: "ALARGE",
+    image: areaScanM2s,
+    resolution: "Various",
+    fps: "-",
+    interface: "USB2.0",
+    category: "area-scan",
+    slug: "m2s-series-usb2-area-scan",
+  },
+  {
+    name: "10GigE Fiber Optic Area Scan Cameras",
+    brand: "ALARGE",
+    image: areaScan10gige,
+    resolution: "Various",
+    fps: "-",
+    interface: "10GigE",
+    category: "area-scan",
+    slug: "10gige-fiber-optic-area-scan",
+  },
+  {
+    name: "DS Series Dual USB3.0 Area Scan Cameras",
+    brand: "ALARGE",
+    image: areaScanDs,
+    resolution: "Various",
+    fps: "-",
+    interface: "USB3.0",
+    category: "area-scan",
+    slug: "ds-series-dual-usb3-area-scan",
+  },
+  {
+    name: "DSV Series USB3.0 Super-mini Coin Cameras",
+    brand: "ALARGE",
+    image: areaScanDsv,
+    resolution: "Various",
+    fps: "-",
+    interface: "USB3.0",
+    category: "area-scan",
+    slug: "dsv-series-usb3-coin",
+  },
+  {
+    name: "Lipstick Series 1GigE Area Scan Cameras",
+    brand: "ALARGE",
+    image: areaScanLipstick,
+    resolution: "Various",
+    fps: "-",
+    interface: "GigE",
+    category: "area-scan",
+    slug: "lipstick-series-1gige-area-scan",
+  },
 ];
+
+const PRODUCTS_PER_PAGE = 9;
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_PAGE);
 
   const filteredProducts = selectedCategory === "all" 
     ? products 
     : products.filter(product => product.category === selectedCategory);
+
+  const displayedProducts = filteredProducts.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredProducts.length;
+
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    setVisibleCount(PRODUCTS_PER_PAGE);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -73,7 +187,7 @@ const Products = () => {
             </h1>
             <p className="text-lg text-muted-foreground">
               Explore our complete range of industrial cameras, from high-speed line scan sensors 
-              to precision frame scan and specialty imaging solutions. Find the perfect camera for your application.
+              to precision area scan and specialty imaging solutions. Find the perfect camera for your application.
             </p>
           </div>
         </div>
@@ -103,7 +217,7 @@ const Products = () => {
                   {cameraCategories.map((category) => (
                     <button
                       key={category.id}
-                      onClick={() => setSelectedCategory(category.id)}
+                      onClick={() => handleCategoryChange(category.id)}
                       className={`flex items-center gap-3 p-3 rounded-lg transition-colors text-left w-full ${
                         selectedCategory === category.id 
                           ? 'bg-primary/10 border border-primary' 
@@ -134,10 +248,24 @@ const Products = () => {
             {/* Products Grid */}
             <div className="flex-1">
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {filteredProducts.map((product, index) => (
+                {displayedProducts.map((product, index) => (
                   <ProductCard key={index} {...product} />
                 ))}
               </div>
+
+              {/* Load More */}
+              {filteredProducts.length > PRODUCTS_PER_PAGE && (
+                <div className="text-center mt-12">
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    onClick={() => setVisibleCount(prev => prev + PRODUCTS_PER_PAGE)}
+                    disabled={!hasMore}
+                  >
+                    {hasMore ? 'Load More Products' : 'Showing All Products'}
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         </div>

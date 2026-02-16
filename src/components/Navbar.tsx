@@ -7,6 +7,10 @@ import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import lineScanCamera1GigE from "@/assets/line-scan-camera-1gige.png";
 import lineScanCamera25GigE from "@/assets/line-scan-camera-2-5gige.png";
 import lineScanCamera10GigE from "@/assets/line-scan-camera-10gige.png";
+import areaScanMgv from "@/assets/area-scan-mgv-1gige.png";
+import areaScanMgs from "@/assets/area-scan-mgs-1gige.png";
+import areaScanM3s from "@/assets/area-scan-m3s-usb3.png";
+import areaScanU3p from "@/assets/area-scan-u3p-usb3.png";
 import faLens117 from "@/assets/fa-lens-1-1-7.png";
 import faLens23Standard from "@/assets/fa-lens-2-3-standard.png";
 import faLens23Superior from "@/assets/fa-lens-2-3-superior.png";
@@ -32,6 +36,13 @@ const cameraCategories = [
     description: "Continuous imaging for web inspection",
     count: 3,
     href: "#line-scan-cameras",
+  },
+  {
+    icon: Camera,
+    title: "Area Scan Cameras",
+    description: "High-resolution sensors for quality inspection",
+    count: 9,
+    href: "#area-scan-cameras",
   },
 ];
 
@@ -64,6 +75,12 @@ const productsByCategory: Record<string, Array<{ name: string; brand: string; im
     { name: "1GigE Line Scan Camera", brand: "ALARGE", image: lineScanCamera1GigE, resolution: "1GigE", slug: "1gige-line-scan-camera" },
     { name: "2.5GigE Line Scan Camera", brand: "ALARGE", image: lineScanCamera25GigE, resolution: "2.5GigE", slug: "2-5gige-line-scan-camera" },
     { name: "10GigE Line Scan Camera", brand: "ALARGE", image: lineScanCamera10GigE, resolution: "10GigE", slug: "10gige-line-scan-camera" },
+  ],
+  "Area Scan Cameras": [
+    { name: "MGV Series 1GigE", brand: "ALARGE", image: areaScanMgv, resolution: "GigE", slug: "mgv-series-1gige-area-scan" },
+    { name: "MGS Series 1GigE", brand: "ALARGE", image: areaScanMgs, resolution: "GigE", slug: "mgs-series-1gige-area-scan" },
+    { name: "M3S Series USB3.0", brand: "ALARGE", image: areaScanM3s, resolution: "USB3.0", slug: "m3s-series-usb3-area-scan" },
+    { name: "U3P Series USB3.0", brand: "ALARGE", image: areaScanU3p, resolution: "USB3.0", slug: "u3p-series-usb3-area-scan" },
   ],
   "FA Lenses": [
     { name: "1/1.7 inch FA Lenses", brand: "DZOPTICS", image: faLens117, resolution: "1/1.7\"", slug: "1-1-7-inch-fa-lenses" },
