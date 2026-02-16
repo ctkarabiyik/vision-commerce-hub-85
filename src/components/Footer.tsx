@@ -55,7 +55,7 @@ const Footer = () => {
               </a>
             </div>
             <Button asChild className="mt-6 gap-2">
-              <a href="https://www.alarge.co.uk" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.alarge.com.tr" target="_blank" rel="noopener noreferrer">
                 Visit Alarge Website
                 <ExternalLink className="w-4 h-4" />
               </a>
