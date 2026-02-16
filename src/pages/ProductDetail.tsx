@@ -335,6 +335,11 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "IR3520A", imgCircle: "Φ30", efl: "35", fNumber: "F2-22", mag: "0.12x@278mm", magRange: "0-0.2x", mount: "M42*1" },
     { model: "IR3515A1", imgCircle: "Φ30", efl: "38.5", fNumber: "F1.5-16", mag: "0.125x@300mm", magRange: "0.08-0.17x", mount: "M42*1" },
   ],
+  "vr-lenses": [
+    { model: "VRCA_190", imgCircle: "Φ14", efl: "4.37", fNumber: "F2.8-11", fTheta: "0.30%", mount: "C、M4/3" },
+    { model: "VRCA_220", imgCircle: "Φ10", efl: "3.54", fNumber: "F2.8-11", fTheta: "-26%", mount: "C、M4/3" },
+    { model: "FXG-FFVR220", imgCircle: "Φ24.08", efl: "6.32", fNumber: "F3.5-16", fTheta: "0.60%", mount: "C、E" },
+  ],
 };
 
 interface ProductInfo {
@@ -1242,6 +1247,10 @@ const macroLensTableHeaders = ["Product Model", "Img. Circle(mm)", "F#", "EFL(mm
 const macroLensTableKeys = ["model", "imgCircle", "fNumber", "efl", "mag", "magRange", "mount"];
 const macroLensSlugs = ["macro-lenses"];
 
+const vrLensTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "F#", "F-θ distortion", "Mount"];
+const vrLensTableKeys = ["model", "imgCircle", "efl", "fNumber", "fTheta", "mount"];
+const vrLensSlugs = ["vr-lenses"];
+
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
 
@@ -1445,9 +1454,10 @@ const ProductDetail = () => {
                   const isAreaScan = areaScanCameraSlugs.includes(slug as string);
                   const isTelecentric = telecentricSlugs.includes(slug as string);
                   const isLineScanLens = lineScanLensSlugs.includes(slug as string);
-                  const isMacroLens = macroLensSlugs.includes(slug as string);
-                  const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : isTelecentric ? telecentricTableHeaders : isLineScanLens ? lineScanLensTableHeaders : isMacroLens ? macroLensTableHeaders : lensTableHeaders;
-                  const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : isTelecentric ? telecentricTableKeys : isLineScanLens ? lineScanLensTableKeys : isMacroLens ? macroLensTableKeys : lensTableKeys;
+                   const isMacroLens = macroLensSlugs.includes(slug as string);
+                   const isVrLens = vrLensSlugs.includes(slug as string);
+                   const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : isTelecentric ? telecentricTableHeaders : isLineScanLens ? lineScanLensTableHeaders : isMacroLens ? macroLensTableHeaders : isVrLens ? vrLensTableHeaders : lensTableHeaders;
+                   const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : isTelecentric ? telecentricTableKeys : isLineScanLens ? lineScanLensTableKeys : isMacroLens ? macroLensTableKeys : isVrLens ? vrLensTableKeys : lensTableKeys;
                   return (
                     <Table>
                       <TableHeader>
