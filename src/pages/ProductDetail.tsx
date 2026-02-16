@@ -1023,7 +1023,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "44 x 29 x 29 mm",
     weight: "80g",
     features: ["GigE Vision interface", "Sony CMOS sensors", "Power over Ethernet", "Hardware trigger", "GenICam compliant", "Compact housing"],
-    mainFeatures: ["Sony Pregius CMOS sensors for excellent image quality", "GigE Vision interface with Power over Ethernet", "Compact industrial design for space-constrained setups", "Wide range of resolutions from 0.3 MP to 5.0 MP"],
+    mainFeatures: ["2nd-generation GigE area scan camera", "Stable and reliable", "Easy to use", "High performance-price ratio", "Ultra-low power consumption, excellent image quality"],
     quickSpecs: ["Interface: GigE (1 Gbps)", "Resolution: 0.3 - 5.0 MP", "Frame rate: up to 120 fps", "GigE Vision / GenICam"],
     applications: ["Quality Inspection", "Assembly Verification", "Barcode Reading", "Defect Detection"],
   },
