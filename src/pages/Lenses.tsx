@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -292,8 +293,17 @@ const products = [
 ];
 
 const Lenses = () => {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchParams] = useSearchParams();
+  const categoryParam = searchParams.get("category");
+  const [selectedCategory, setSelectedCategory] = useState(categoryParam || "all");
   const [visibleCount, setVisibleCount] = useState(9);
+
+  useEffect(() => {
+    if (categoryParam && lensCategories.some(c => c.id === categoryParam)) {
+      setSelectedCategory(categoryParam);
+      setVisibleCount(9);
+    }
+  }, [categoryParam]);
 
   const filteredProducts = selectedCategory === "all" 
     ? products 
