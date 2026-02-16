@@ -1207,7 +1207,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "112 x 29 x 29 mm",
     weight: "65g",
     features: ["Slim lipstick form factor", "GigE Vision interface", "PoE support", "Hardware trigger", "GenICam compliant", "Remote head option"],
-    mainFeatures: ["Ultra-slim lipstick design for confined installation spaces", "GigE Vision with Power over Ethernet for single-cable setup", "Ideal for robotic arm and tight-space integration", "Remote head option for sensor/body separation"],
+    mainFeatures: ["Suitable for hole-shaped installation", "GigE data interface", "1.3MP, 120FPS", "Movement alignment and recognition", "Flying QR code scanning, motion detection"],
     quickSpecs: ["Interface: GigE (1 Gbps)", "Resolution: 0.3 - 2.0 MP", "Frame rate: up to 120 fps", "GigE Vision / GenICam"],
     applications: ["Robotic Vision", "Conveyor Inspection", "In-line Measurement", "Confined Space Imaging"],
   },
