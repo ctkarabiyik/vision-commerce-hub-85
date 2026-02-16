@@ -318,6 +318,17 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "MC3530F1_20C", imgCircle: "Φ20", fNumber: "F3.0-16", efl: "35", mag: "0.35x@123mm", magRange: "0.2-0.55x", mount: "C" },
     { model: "MC5028D", imgCircle: "Φ20", fNumber: "F2.8-16", efl: "50", mag: "0.2x@271.1mm", magRange: "0.1-0.3x", mount: "C" },
   ],
+  "large-format-lenses": [
+    { model: "LM2828B2", imgCircle: "Φ44", efl: "28.4", fNumber: "F2.8-22", mag: "0.033x@833mm", magRange: "0-0.06", mount: "M42/F" },
+    { model: "LM3528B_F Mount", imgCircle: "Φ44", efl: "35", fNumber: "F2.8-22", mag: "0.05x@684.5mm", magRange: "0-0.13x", mount: "F" },
+    { model: "LM3528B_M58", imgCircle: "Φ44", efl: "35", fNumber: "F2.8-22", mag: "0.05x@684.5mm", magRange: "0-0.13x", mount: "M58" },
+    { model: "LM5022A", imgCircle: "Φ44", efl: "50", fNumber: "F2.2-16", mag: "0.1x@534mm", magRange: "0-0.177x", mount: "F" },
+    { model: "LM5028A", imgCircle: "Φ30", efl: "50", fNumber: "F2.8-16", mag: "0.1x@567.4mm", magRange: "0.07-0.13x", mount: "M42" },
+    { model: "LM8540A_F", imgCircle: "Φ38", efl: "85", fNumber: "F4.0-16", mag: "0.453x@169.3mm", magRange: "0.364-0.687x", mount: "F/M42/M58/M72" },
+    { model: "LM9045A1", imgCircle: "Φ67", efl: "91.64", fNumber: "F4.5-22", mag: "0.25x@467.4mm", magRange: "0.05-0.5", mount: "M72/M90/M95" },
+    { model: "LM9056APO", imgCircle: "Φ67", efl: "93", fNumber: "F5.6-22", mag: "0.25x@423.8mm", magRange: "0.2-0.3x", mount: "M72/M90/M95" },
+    { model: "DZO_LM8220A1", imgCircle: "Φ68", efl: "82", fNumber: "F2-22", mag: "2x@51.6mm", magRange: "1-3.5", mount: "M72" },
+  ],
 };
 
 interface ProductInfo {
@@ -1219,7 +1230,7 @@ const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "1
 
 const lineScanLensTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "F#", "Mag.", "Mag. Range", "Mount"];
 const lineScanLensTableKeys = ["model", "imgCircle", "efl", "fNumber", "mag", "magRange", "mount"];
-const lineScanLensSlugs = ["4k-line-scan-lens", "8k-line-scan-lens", "16k-35u-line-scan-lens", "16k-5u-line-scan-lens"];
+const lineScanLensSlugs = ["4k-line-scan-lens", "8k-line-scan-lens", "16k-35u-line-scan-lens", "16k-5u-line-scan-lens", "large-format-lenses"];
 
 const macroLensTableHeaders = ["Product Model", "Img. Circle(mm)", "F#", "EFL(mm)", "Mag.", "Mag. Range", "Mount"];
 const macroLensTableKeys = ["model", "imgCircle", "fNumber", "efl", "mag", "magRange", "mount"];
