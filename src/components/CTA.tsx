@@ -11,8 +11,8 @@ const CTA = () => {
             Ready to Upgrade Your Vision System?
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Our engineers are ready to help you find the perfect camera for your application. 
-            Get a custom quote within 24 hours.
+            Our engineers are ready to help you find the perfect camera for your application. Get a custom quote within
+            24 hours.
           </p>
 
           <div className="flex justify-center mb-12">
@@ -26,19 +26,25 @@ const CTA = () => {
 
           {/* Contact Info */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8 border-t border-primary-foreground/20">
-            <a href="tel:+18001234567" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+            <a
+              href="tel:+902122786102"
+              className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+            >
               <Phone className="w-5 h-5" />
               <span>+90 212 278 61 02</span>
             </a>
-            <a href="mailto:sales@alargecamera.com" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+            <a
+              href="mailto:sales2@alarge.com.tr"
+              className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+            >
               <Mail className="w-5 h-5" />
               <span>sales2@alarge.com.tr</span>
             </a>
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default CTA;
