@@ -45,10 +45,10 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
   ],
   // === LINE SCAN CAMERAS ===
   "1gige-line-scan-camera": [
-    { model: "ALC-1001G", resolution: "1024 px", lineRate: "18 kHz", interface: "GigE", pixelSize: "14 µm", sensorType: "CMOS" },
-    { model: "ALC-2001G", resolution: "2048 px", lineRate: "18 kHz", interface: "GigE", pixelSize: "14 µm", sensorType: "CMOS" },
-    { model: "ALC-4001G", resolution: "4096 px", lineRate: "9 kHz", interface: "GigE", pixelSize: "10 µm", sensorType: "CMOS" },
-    { model: "ALC-8001G", resolution: "8192 px", lineRate: "4.5 kHz", interface: "GigE", pixelSize: "7 µm", sensorType: "CMOS" },
+    { model: "DSG2KC", resolution: "2048x3", lineRate: "cont: 19K / burst: 55K", interface: "C", pixelSize: "7 µm", sensorType: "Color" },
+    { model: "DSG4KM", resolution: "4096x4", lineRate: "cont: 30K / burst: 110K", interface: "M42", pixelSize: "7 µm", sensorType: "Mono" },
+    { model: "DSG4KC", resolution: "4096x3", lineRate: "cont: 30K Bayer / 10K RGB", interface: "M42", pixelSize: "7 µm", sensorType: "Color" },
+    { model: "DSG4KE", resolution: "4096x4", lineRate: "cont: 30K / burst: 120K", interface: "M42", pixelSize: "7 µm", sensorType: "NIR" },
   ],
   "2-5gige-line-scan-camera": [
     { model: "DSR4KC", resolution: "4096x3", lineRate: "23K (70K Bayer)", interface: "M42", pixelSize: "7 µm", sensorType: "Color" },
