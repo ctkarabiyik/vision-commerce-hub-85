@@ -286,6 +286,28 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "LS16042APO-B1", imgCircle: "Φ66", efl: "116", fNumber: "F4-22", mag: "0.42x@341mm", magRange: "0.38-0.45", mount: "M72" },
     { model: "LS160476APO", imgCircle: "Φ64", efl: "115.682", fNumber: "F3.8-22", mag: "0.476x@315mm", magRange: "0.46-0.5", mount: "M72" },
   ],
+  "16k-5u-line-scan-lens": [
+    { model: "LS9036A1", imgCircle: "Φ86", efl: "95", fNumber: "F3.6-22", mag: "0.23x", magRange: "0.20-0.26", mount: "M90/M95" },
+    { model: "PLS16033APO-C1", imgCircle: "Φ82", efl: "135", fNumber: "F4.7-22", mag: "0.33x@497.5mm", magRange: "0.3-0.37", mount: "M90/M95" },
+    { model: "PLS16033APO-B1", imgCircle: "Φ82", efl: "136", fNumber: "F4.2-22", mag: "0.36x@460mm", magRange: "0.33-0.39", mount: "M90/M95" },
+    { model: "PLS16040APO-A1", imgCircle: "Φ82", efl: "136", fNumber: "F4.2-22", mag: "0.4x@421mm", magRange: "0.34-0.45", mount: "M90/M95" },
+    { model: "PLS16042APO-C1", imgCircle: "Φ82", efl: "139", fNumber: "F4.7-22", mag: "0.42x@424.5mm", magRange: "0.38-0.46", mount: "M90/M95" },
+    { model: "PLS160435APO-B2", imgCircle: "Φ82", efl: "140.7", fNumber: "F4-22", mag: "0.435x@404mm", magRange: "/", mount: "M90/M95" },
+    { model: "PLS16045APO-B1", imgCircle: "Φ82", efl: "140.78", fNumber: "F5.6-22", mag: "0.45x@394mm", magRange: "0.45-0.5", mount: "M90/M95" },
+    { model: "PLS16050APO-C1", imgCircle: "Φ82", efl: "137", fNumber: "F4.7-22", mag: "0.5x@369.5mm", magRange: "0.46-0.54", mount: "M90/M95" },
+    { model: "PLS16050APO-B1", imgCircle: "Φ82", efl: "140.78", fNumber: "F4-22", mag: "0.5x@363mm", magRange: "0.472-0.54", mount: "M90/M95" },
+    { model: "PLS16060APO-C1", imgCircle: "Φ82", efl: "128", fNumber: "F4.7-22", mag: "0.6x@295.5mm", magRange: "0.56-0.64", mount: "M90/M95" },
+    { model: "PLS16060APO-B1", imgCircle: "Φ82", efl: "129.9", fNumber: "F4-22", mag: "0.61x@295mm", magRange: "0.578-0.647", mount: "M90/M95" },
+    { model: "PLS16070APO-B1", imgCircle: "Φ82", efl: "130.4", fNumber: "F4-22", mag: "0.71x@257mm", magRange: "0.647-0.735", mount: "M90/M95" },
+    { model: "PLS16083APO-B1", imgCircle: "Φ82", efl: "112.8", fNumber: "F3.8-16", mag: "0.83x@436mm", magRange: "0.79-0.88", mount: "M90/M95" },
+    { model: "PLS16100APO-B1", imgCircle: "Φ82", efl: "116.2", fNumber: "F3.8-22", mag: "1x@184mm", magRange: "0.95-1.05", mount: "M90/M95" },
+    { model: "PLS16100APO-C1", imgCircle: "Φ82", efl: "115", fNumber: "F4.7-22", mag: "1x@180.5mm", magRange: "0.95-1.05", mount: "M90/M95" },
+    { model: "PLS16167APO-D-2", imgCircle: "Φ82", efl: "126", fNumber: "F2.8-16", mag: "1.67x@80mm", magRange: "1.6-1.77", mount: "M90/M95" },
+    { model: "PLS16200APO-A1", imgCircle: "Φ86", efl: "123", fNumber: "F2.9-16", mag: "2x@100mm", magRange: "/", mount: "M90/M95" },
+    { model: "PLSC16250APO-A1", imgCircle: "Φ82", efl: "116", fNumber: "F2.83-10.38", mag: "2.5x@60mm", magRange: "/", mount: "M90/M95" },
+    { model: "PLSC16333APO-A1", imgCircle: "Φ82", efl: "116", fNumber: "F2.26-9", mag: "3.33x@51mm", magRange: "/", mount: "M90/M95" },
+    { model: "PLS16500APO-B1", imgCircle: "Φ84", efl: "112.3", fNumber: "F0.18-0.5", mag: "5x@40mm", magRange: "/", mount: "M90/M95" },
+  ],
 };
 
 interface ProductInfo {
@@ -1187,7 +1209,7 @@ const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "1
 
 const lineScanLensTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "F#", "Mag.", "Mag. Range", "Mount"];
 const lineScanLensTableKeys = ["model", "imgCircle", "efl", "fNumber", "mag", "magRange", "mount"];
-const lineScanLensSlugs = ["4k-line-scan-lens", "8k-line-scan-lens", "16k-35u-line-scan-lens"];
+const lineScanLensSlugs = ["4k-line-scan-lens", "8k-line-scan-lens", "16k-35u-line-scan-lens", "16k-5u-line-scan-lens"];
 
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
