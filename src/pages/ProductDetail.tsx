@@ -1229,7 +1229,7 @@ const ProductDetail = () => {
           {/* Product Models / Technical Specs */}
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-4">Product Models</h2>
-            {variants ? (
+            {variants && variants.length > 0 ? (
               <>
                 <div className="bg-card border border-border rounded-lg overflow-x-auto">
                   {(() => {
