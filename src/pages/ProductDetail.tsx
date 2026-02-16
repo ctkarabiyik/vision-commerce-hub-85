@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
-import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, Star, Settings, Target } from "lucide-react";
+import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, Star, Settings, Target, Monitor, Circle, DollarSign, Cable, Rocket, Cpu, Zap, Gauge, Eye, Box } from "lucide-react";
 
 // Model variant data keyed by slug
 const modelVariants: Record<string, Array<Record<string, string>>> = {
@@ -1311,6 +1311,9 @@ const ProductDetail = () => {
   }
 
   const hasLensLayout = !!product.mainFeatures;
+  const isCameraProduct = slug ? [...lineScanCameraSlugs, ...areaScanCameraSlugs].includes(slug) : false;
+
+  const cameraFeatureIcons = [Monitor, Circle, DollarSign, Cable, Rocket, Cpu, Zap, Gauge, Eye, Box];
 
   return (
     <div className="min-h-screen bg-background">
@@ -1377,8 +1380,24 @@ const ProductDetail = () => {
       {/* Specifications Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          {/* Three Column Overview for Lens Products */}
-          {hasLensLayout ? (
+          {/* Three Column Overview for Lens Products / Camera Feature List */}
+          {hasLensLayout && isCameraProduct ? (
+            <div className={`${variants && variants.length > 0 ? 'mb-16' : ''}`}>
+              <div className="bg-card border border-border rounded-lg p-6 max-w-md">
+                <ul className="space-y-5">
+                  {product.mainFeatures!.map((feature, index) => {
+                    const IconComponent = cameraFeatureIcons[index % cameraFeatureIcons.length];
+                    return (
+                      <li key={index} className="flex items-center gap-4 text-muted-foreground">
+                        <IconComponent className="w-5 h-5 text-muted-foreground/60 shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+          ) : hasLensLayout ? (
             <div className={`grid md:grid-cols-3 gap-8 ${variants && variants.length > 0 ? 'mb-16' : ''}`}>
               {/* Main Features */}
               <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors group">
