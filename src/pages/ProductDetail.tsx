@@ -647,9 +647,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø48 x 115 mm",
     weight: "290g",
     features: ["Object-side telecentric", "Alternative magnification range", "Low distortion", "2/3\" coverage", "C-Mount interface", "Industrial-grade build"],
-    mainFeatures: ["Alternative magnification for specialized measurement tasks", "Object-side telecentric design", "Low distortion for reliable gauging", "Designed for 2/3\" sensor compatibility"],
-    quickSpecs: ["Imaging circle: 2/3\"", "Telecentricity: <0.1°", "Distortion: <0.1%", "C Mount"],
-    applications: ["Precision Gauging", "Micro-part Inspection", "Thread Inspection", "Gear Measurement"],
+    mainFeatures: ["1/2\"- 2/3\" classic telecentric lens;", "Ultra-low distortion for precision;", "Uniform image quality across the field and aperture;", "Applicable for visible illumination."],
+    quickSpecs: ["Imaging circle: 1/2\" - 2/3\"", "Wavelengths: 400 - 700nm", "Magnification: 0.3x - 10x", "WD 65-110mm", "C mount", "Prism optional"],
+    applications: ["Positioning"],
   },
   "11-noncoaxial-telecentric": {
     name: "1.1 inch Non-Co-Axial Telecentric Lens",
