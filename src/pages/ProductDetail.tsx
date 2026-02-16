@@ -741,9 +741,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø42 x 65 mm",
     weight: "180g",
     features: ["Optimized for 4K line sensors", "High line-rate performance", "Low chromatic aberration", "M42 mount interface", "Industrial-grade housing", "Anti-reflection coated"],
-    mainFeatures: ["Optimized MTF for 4K line scan sensor resolution", "Minimal chromatic aberration for color line scan applications", "Uniform illumination across full line length", "Designed for continuous high-speed web inspection"],
-    quickSpecs: ["Resolution: 4K", "Wavelength: 400-700nm", "Sensor compatibility: 4K line scan", "M42 Mount"],
-    applications: ["Web Inspection", "Print Inspection", "Textile Inspection", "Surface Scanning"],
+    mainFeatures: ["4K classic line scan lens;", "Wide-angle lens for compact installation and larger FOV;", "The X group floating design keeps image performance stability within the recommended working distance, and no additional adapters required.", "Optimized for visible light application."],
+    quickSpecs: ["Imaging circle: 82mm / 88mm", "Applicable wavelength: 400 - 700nm", "Magnification: 0.33-6.2x", "Interface: V49 / V56 / V62"],
+    applications: ["Optical sorting etc..", "2nd Lithium battery inspection"],
   },
   "8k-line-scan-lens": {
     name: "8K Line Scan Lens",
