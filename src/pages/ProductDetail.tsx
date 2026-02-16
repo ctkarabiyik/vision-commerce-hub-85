@@ -905,9 +905,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Various",
     weight: "Various",
     features: ["Adjustable tilt mechanism", "Scheimpflug principle imaging", "Extended depth of field", "Lockable tilt angles", "Industrial-grade construction", "Multi-coated optics"],
-    mainFeatures: ["Adjustable tilt (±15°) for Scheimpflug plane alignment", "Extended depth of field on tilted object planes", "Precision lockable tilt mechanism for stable operation", "Compatible with line scan and area scan configurations"],
-    quickSpecs: ["Tilt range: ±15°", "Lockable tilt mechanism", "Extended depth of field", "Adjustable mount"],
-    applications: ["3D Laser Triangulation", "Tilted Surface Inspection", "Weld Seam Inspection", "Profile Measurement"],
+    mainFeatures: ["Super compact design for laser Tri-angulation"],
+    quickSpecs: ["High resolution ups to 3.45um;", "Super compact design for laser Tri-angulation;", "Effectively reducing product volume and lowering transportation costs;"],
+    applications: ["Laser Tri-angulation"],
   },
   "large-format-lenses": {
     name: "Large Format Lenses",
