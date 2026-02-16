@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe } from "lucide-react";
+import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe, Sun } from "lucide-react";
 import alargeLogo from "@/assets/alarge-logo.svg";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import lineScanCamera1GigE from "@/assets/line-scan-camera-1gige.png";
@@ -80,6 +80,41 @@ const lensCategories = [
   description: "Optimized for line scan cameras",
   count: 4,
   href: "#line-scan-lenses"
+},
+{
+  icon: Microscope,
+  title: "Large Format Lenses",
+  description: "Large sensor coverage optics",
+  count: 1,
+  href: "#large-format"
+},
+{
+  icon: ZoomIn,
+  title: "Macro Lenses",
+  description: "Close-up inspection optics",
+  count: 1,
+  href: "#macro"
+},
+{
+  icon: Sun,
+  title: "Infrared Lenses",
+  description: "Thermal and IR imaging optics",
+  count: 1,
+  href: "#infrared"
+},
+{
+  icon: Circle,
+  title: "VR Lenses",
+  description: "Virtual reality imaging optics",
+  count: 1,
+  href: "#vr"
+},
+{
+  icon: Settings,
+  title: "Scheimpflug Lenses",
+  description: "Tilt-focus plane correction",
+  count: 1,
+  href: "#scheimpflug"
 }];
 
 
