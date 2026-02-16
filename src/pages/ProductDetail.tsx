@@ -1046,7 +1046,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "44 x 29 x 29 mm",
     weight: "82g",
     features: ["Enhanced sensitivity", "Higher frame rates", "GigE Vision interface", "PoE support", "GenICam compliant", "Robust metal housing"],
-    mainFeatures: ["Enhanced sensitivity for low-light inspection environments", "Higher frame rates for faster production line speeds", "GigE Vision with Power over Ethernet for simple cabling", "Wide resolution range from 0.3 MP to 5.0 MP"],
+    mainFeatures: ["Best-selling for 10 years", "Size:29*29*31", "Stable & Reliable", "Ultra-low power consumption", "Easy to use", "Resolution range: 0.3MP - 20MP"],
     quickSpecs: ["Interface: GigE (1 Gbps)", "Resolution: 0.3 - 5.0 MP", "Frame rate: up to 150 fps", "GigE Vision / GenICam"],
     applications: ["High-speed Inspection", "Packaging Inspection", "Electronics Assembly", "Label Verification"],
   },
