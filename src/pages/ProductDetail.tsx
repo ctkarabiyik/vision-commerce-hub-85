@@ -1030,7 +1030,7 @@ const productData: Record<string, ProductInfo> = {
   },
 };
 
-const lensTableHeaders = ["Model", "Img Circle (mm)", "EFL (mm)", "F#", "Distortion(%)", "WD Range(mm)", "Mount"];
+const lensTableHeaders = ["Model", "Img Circle (in)", "EFL (mm)", "F#", "Distortion(%)", "WD Range(mm)", "Mount"];
 const lensTableKeys = ["model", "imgCircle", "efl", "fNumber", "distortion", "wdRange", "mount"];
 
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
