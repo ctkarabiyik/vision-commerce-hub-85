@@ -1232,7 +1232,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "168 x 69 mm (half-height PCIe)",
     weight: "120g",
     features: ["10/25/40GigE support", "PCIe 3.0 x8 interface", "4x SFP28 ports", "Low-latency DMA", "Active cooling", "Multi-camera support"],
-    mainFeatures: ["Supports 10GigE, 25GigE, and 40GigE fiber optic cameras", "PCIe 3.0 x8 for maximum host bandwidth", "Up to 4 independent camera connections via SFP28 ports", "Ultra-low latency DMA engine for real-time processing"],
+    mainFeatures: ["Meet the needs of high-speed or high-resolution image big data transmission applications", "Up to 10Gbps for a single SFP interface", "4 SFP interfaces for simultaneous access to 4 cameras", "Support DMA write memory, CPU load less than 5%", "5-50us ultra-short time delay, to meet the needs of high-speed applications", "Fiber optic transmission, long distance, high bandwidth, free from electromagnetic interference", "Support GigE Vision protocol, support fast retransmission", "Camera interface rate 10Gbps/20Gbps/30Gbps/40Gbps", "Dimensions: 146.5mm × 120mm × 21.7mm"],
     quickSpecs: ["Host interface: PCIe 3.0 x8", "Network: 10/25/40GigE", "Ports: 4x SFP28", "GigE Vision compliant"],
     applications: ["Multi-camera Systems", "High-bandwidth Imaging", "Fiber Optic Camera Integration", "Real-time Processing Pipelines"],
   },
