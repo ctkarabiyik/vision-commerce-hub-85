@@ -601,9 +601,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø42 x 95 mm",
     weight: "200g",
     features: ["Compact telecentric design", "Non-co-axial configuration", "Low distortion optics", "1/2\" sensor coverage", "C-Mount interface", "External illumination compatible"],
-    mainFeatures: ["Object-side telecentric design for 1/2\" sensors", "Compact form factor for tight integration spaces", "Low distortion for reliable dimensional measurement", "Compatible with external ring or diffuse illumination"],
-    quickSpecs: ["Imaging circle: 1/2\"", "Telecentricity: <0.1°", "Distortion: <0.1%", "C Mount"],
-    applications: ["Dimensional Measurement", "Part Inspection", "Gap Measurement", "Pin Inspection"],
+    mainFeatures: ["1/2\"- 2/3\" classic telecentric lens;", "Ultra-low distortion for precision;", "Uniform image quality across the field and aperture;", "Applicable for visible illumination."],
+    quickSpecs: ["Imaging circle: 1/2\" - 2/3\"", "Wavelengths: 400 - 700nm", "Magnification: 0.3x - 10x", "WD 65-110mm", "C mount", "Prism optional"],
+    applications: ["Positioning"],
   },
   "23-noncoaxial-telecentric": {
     name: "2/3 inch Non-Co-Axial Telecentric Lens (WD 65/110)",
