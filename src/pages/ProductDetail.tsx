@@ -34,13 +34,12 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "DZO_LA5024A_2310", efl: "50", imgCircle: "2/3\"", fNumber: "F2.4-16", wdRange: "300-inf", distortion: "0.01%", mount: "C" },
   ],
   "1-1-inch-fa-lenses": [
-    { model: "DZO_LA0828A_1116", efl: "8", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.45%", mount: "C" },
-    { model: "DZO_LA1228A_1116", efl: "12", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.22%", mount: "C" },
-    { model: "DZO_LA1628A_1116", efl: "16", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "-0.08%", mount: "C" },
-    { model: "DZO_LA2528A_1116", efl: "25", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "100-inf", distortion: "0.04%", mount: "C" },
-    { model: "DZO_LA3528A_1116", efl: "35", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "200-inf", distortion: "0.02%", mount: "C" },
-    { model: "DZO_LA5028A_1116", efl: "50", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "250-inf", distortion: "0.06%", mount: "C" },
-    { model: "DZO_LA7528A_1116", efl: "75", imgCircle: "1.1\"", fNumber: "F2.8-16", wdRange: "400-inf", distortion: "0.04%", mount: "C" },
+    { model: "DZO_LA1224A_1120", efl: "12", imgCircle: "1.1\"", fNumber: "F2.4-16", wdRange: "100-inf", distortion: "-1.22%", mount: "C" },
+    { model: "DZO_LA1624A_1120", efl: "16", imgCircle: "1.1\"", fNumber: "F2.4-16", wdRange: "100-inf", distortion: "-1.06%", mount: "C" },
+    { model: "DZO_LA2524A_1120", efl: "25", imgCircle: "1.1\"", fNumber: "F2.4-16", wdRange: "150-inf", distortion: "-0.44%", mount: "C" },
+    { model: "DZO_LA3524A_1120", efl: "35", imgCircle: "1.1\"", fNumber: "F2.4-16", wdRange: "150-inf", distortion: "-0.38%", mount: "C" },
+    { model: "DZO_LA5024A_1120", efl: "50", imgCircle: "1.1\"", fNumber: "F2.4-16", wdRange: "250-inf", distortion: "0.09%", mount: "C" },
+    { model: "DZO_LA7524A_1120", efl: "75", imgCircle: "1.1\"", fNumber: "F2.4-16", wdRange: "500-inf", distortion: "0.12%", mount: "C" },
   ],
   // === LINE SCAN CAMERAS ===
   "1gige-line-scan-camera": [
