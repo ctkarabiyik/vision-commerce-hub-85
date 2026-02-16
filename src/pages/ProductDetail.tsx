@@ -999,7 +999,7 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "72 x 72 x 52 mm",
     weight: "200g",
     features: ["10GigE Vision interface", "Ultra-high line rates", "Hardware trigger", "GenICam compliant", "Active cooling", "Industrial-grade"],
-    mainFeatures: ["10 Gbps bandwidth for maximum throughput applications", "Ultra-high line rates up to 90 kHz for fastest inspection", "Support for 16K resolution with 3.5µm pixel pitch sensors", "Active thermal management for continuous 24/7 operation"],
+    mainFeatures: ["10G Platform", "Fiber optic transmission", "High bandwidth", "Transmission distance > 300m"],
     quickSpecs: ["Interface: 10GigE (10 Gbps)", "Resolution: 4096 - 16384 px", "Line rate: up to 90 kHz", "GigE Vision / GenICam"],
     applications: ["Ultra-high-speed Inspection", "Semiconductor Wafer Scanning", "High-res Print QC", "Advanced Material Analysis"],
   },
