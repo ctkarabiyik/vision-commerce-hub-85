@@ -170,6 +170,13 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "TC069150A1", imgCircle: "1.1\"", mag: "0.69", wd: "150", fHash: "6-14", oi: "349.14", mount: "C" },
     { model: "TC100150B2_18C", imgCircle: "1.1\"", mag: "1", wd: "150", fHash: "6-14", oi: "349.8", mount: "C" },
   ],
+  "12-coaxial-telecentric": [
+    { model: "TC050110A1_20C", imgCircle: "1.2\"", mag: "0.5", wd: "110", fHash: "8-30", oi: "274", mount: "C" },
+    { model: "TC080110A1_20C", imgCircle: "1.2\"", mag: "0.8", wd: "110", fHash: "8-30", oi: "263.6", mount: "C" },
+    { model: "TC100110A1_20C", imgCircle: "1.2\"", mag: "1", wd: "110", fHash: "10.5-30", oi: "259.9", mount: "C" },
+    { model: "TC150110A1_20C", imgCircle: "1.2\"", mag: "1.5", wd: "110", fHash: "10-30", oi: "275.6", mount: "C" },
+    { model: "TC200110A1_20C", imgCircle: "1.2\"", mag: "2", wd: "110", fHash: "10-30", oi: "287.4", mount: "C" },
+  ],
 };
 
 interface ProductInfo {
@@ -1067,7 +1074,7 @@ const lensTableKeys = ["model", "imgCircle", "efl", "fNumber", "distortion", "wd
 
 const telecentricTableHeaders = ["Product Model", "Img Circle (in)", "Mag.", "WD(mm)", "F#", "O/I", "Mount"];
 const telecentricTableKeys = ["model", "imgCircle", "mag", "wd", "fHash", "oi", "mount"];
-const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric"];
+const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "12-coaxial-telecentric"];
 
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
