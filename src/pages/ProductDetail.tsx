@@ -670,9 +670,9 @@ const productData: Record<string, ProductInfo> = {
     dimensions: "Ø55 x 125 mm",
     weight: "350g",
     features: ["1.1\" sensor coverage", "Non-co-axial telecentric", "High-resolution optics", "Low distortion", "C-Mount interface", "External illumination compatible"],
-    mainFeatures: ["Object-side telecentric for 1.1\" large format sensors", "Non-co-axial design for versatile illumination setups", "High-resolution optics for detailed measurement", "Minimal distortion across full field of view"],
-    quickSpecs: ["Imaging circle: 1.1\"", "Telecentricity: <0.1°", "Distortion: <0.08%", "C Mount"],
-    applications: ["Large Field Measurement", "Multi-part Inspection", "Connector Inspection", "Precision Metrology"],
+    mainFeatures: ["Apochromatic design enhances image sharpness, depth of field, and authentic color reproduction;", "Ultra low distortion, ensure the precise;", "Uniform image quality across the field and aperture;", "Compatible with RGB, refocusing not required for different illumination."],
+    quickSpecs: ["Imaging circle 1.1\" - 1.2\"", "Wavelength 400 - 700 nm", "Magnification 0.23x - 2x", "WD 110-220mm", "C Mount", "Prism optional"],
+    applications: ["3C & semi-con high-precision inspection"],
   },
   "12-noncoaxial-telecentric": {
     name: "1.2 inch Non-Co-Axial Telecentric Lens",
