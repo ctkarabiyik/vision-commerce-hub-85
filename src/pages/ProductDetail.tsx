@@ -340,6 +340,11 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "VRCA_220", imgCircle: "Φ10", efl: "3.54", fNumber: "F2.8-11", fTheta: "-26%", mount: "C、M4/3" },
     { model: "FXG-FFVR220", imgCircle: "Φ24.08", efl: "6.32", fNumber: "F3.5-16", fTheta: "0.60%", mount: "C、E" },
   ],
+  "scheimpflug-lenses": [
+    { model: "MC2535W", imgCircle: "1.1inch", efl: "25", magRange: "0.1-0.4x", mount: "M22*0.75" },
+    { model: "MC3530W", imgCircle: "1.1inch", efl: "35", magRange: "0.25-0.7x", mount: "M24*0.75" },
+    { model: "MC5028E", imgCircle: "1.1inch", efl: "50", magRange: "0.43-0.82x", mount: "M30*0.75" },
+  ],
 };
 
 interface ProductInfo {
@@ -1251,6 +1256,10 @@ const vrLensTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "F#",
 const vrLensTableKeys = ["model", "imgCircle", "efl", "fNumber", "fTheta", "mount"];
 const vrLensSlugs = ["vr-lenses"];
 
+const scheimpflugTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "Mag. Range", "Mount"];
+const scheimpflugTableKeys = ["model", "imgCircle", "efl", "magRange", "mount"];
+const scheimpflugSlugs = ["scheimpflug-lenses"];
+
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
 
@@ -1456,8 +1465,9 @@ const ProductDetail = () => {
                   const isLineScanLens = lineScanLensSlugs.includes(slug as string);
                    const isMacroLens = macroLensSlugs.includes(slug as string);
                    const isVrLens = vrLensSlugs.includes(slug as string);
-                   const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : isTelecentric ? telecentricTableHeaders : isLineScanLens ? lineScanLensTableHeaders : isMacroLens ? macroLensTableHeaders : isVrLens ? vrLensTableHeaders : lensTableHeaders;
-                   const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : isTelecentric ? telecentricTableKeys : isLineScanLens ? lineScanLensTableKeys : isMacroLens ? macroLensTableKeys : isVrLens ? vrLensTableKeys : lensTableKeys;
+                   const isScheimpflug = scheimpflugSlugs.includes(slug as string);
+                   const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : isTelecentric ? telecentricTableHeaders : isLineScanLens ? lineScanLensTableHeaders : isMacroLens ? macroLensTableHeaders : isVrLens ? vrLensTableHeaders : isScheimpflug ? scheimpflugTableHeaders : lensTableHeaders;
+                   const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : isTelecentric ? telecentricTableKeys : isLineScanLens ? lineScanLensTableKeys : isMacroLens ? macroLensTableKeys : isVrLens ? vrLensTableKeys : isScheimpflug ? scheimpflugTableKeys : lensTableKeys;
                   return (
                     <Table>
                       <TableHeader>
