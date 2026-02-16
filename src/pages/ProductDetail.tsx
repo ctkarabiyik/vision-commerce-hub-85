@@ -136,6 +136,29 @@ const modelVariants: Record<string, Array<Record<string, string>>> = {
     { model: "DSG135M", resolution: "1000x1000", fps: "120", interface: "GigE", pixelSize: "2.7 µm", sensorType: "Mono" },
   ],
   "frame-grabber-10-40gige": [],
+  "23-coaxial-telecentric": [
+    { model: "TC030065A", imgCircle: "2/3\"", mag: "0.3", wd: "65", fHash: "10", oi: "172.1", mount: "C" },
+    { model: "TC050065A", imgCircle: "2/3\"", mag: "0.5", wd: "65", fHash: "10", oi: "174.426", mount: "C" },
+    { model: "TC080065A", imgCircle: "2/3\"", mag: "0.8", wd: "65", fHash: "10", oi: "175.5", mount: "C" },
+    { model: "TC100065A", imgCircle: "2/3\"", mag: "1", wd: "65", fHash: "11", oi: "166", mount: "C" },
+    { model: "DZO_TC150065A", imgCircle: "2/3\"", mag: "1.5", wd: "65", fHash: "12.5", oi: "160", mount: "C" },
+    { model: "TC200065A", imgCircle: "2/3\"", mag: "2", wd: "65", fHash: "13.2", oi: "166", mount: "C" },
+    { model: "TC300065A", imgCircle: "2/3\"", mag: "3", wd: "65", fHash: "20.2", oi: "170.6", mount: "C" },
+    { model: "TC400065A", imgCircle: "2/3\"", mag: "4", wd: "65", fHash: "17.9", oi: "191.4", mount: "C" },
+    { model: "DZO_TC500065A", imgCircle: "2/3\"", mag: "5", wd: "65", fHash: "22", oi: "203", mount: "C" },
+    { model: "TC600065A", imgCircle: "2/3\"", mag: "6", wd: "65", fHash: "24.6", oi: "200", mount: "C" },
+    { model: "DZO_TC030110A", imgCircle: "2/3\"", mag: "0.3", wd: "110", fHash: "5.6", oi: "248", mount: "C" },
+    { model: "TC050110B", imgCircle: "2/3\"", mag: "0.5", wd: "110", fHash: "9.6", oi: "257.8", mount: "C" },
+    { model: "TC050110C", imgCircle: "2/3\"", mag: "0.5", wd: "110", fHash: "9.6", oi: "257.8", mount: "C" },
+    { model: "TC080110B", imgCircle: "2/3\"", mag: "0.8", wd: "110", fHash: "11", oi: "248.726", mount: "C" },
+    { model: "TC100110B", imgCircle: "2/3\"", mag: "1", wd: "110", fHash: "11", oi: "261.526", mount: "C" },
+    { model: "TC150110A", imgCircle: "2/3\"", mag: "1.5", wd: "110", fHash: "10", oi: "261.6", mount: "C" },
+    { model: "TC200110A", imgCircle: "2/3\"", mag: "2", wd: "110", fHash: "12.2", oi: "265.3", mount: "C" },
+    { model: "TC300110A", imgCircle: "2/3\"", mag: "3", wd: "110", fHash: "18.3", oi: "298", mount: "C" },
+    { model: "TC400110A", imgCircle: "2/3\"", mag: "4", wd: "110", fHash: "22", oi: "262", mount: "C" },
+    { model: "DZO_TC500110A", imgCircle: "2/3\"", mag: "5", wd: "110", fHash: "31", oi: "293", mount: "C" },
+    { model: "TC600110A", imgCircle: "2/3\"", mag: "6", wd: "110", fHash: "38.7", oi: "288.1", mount: "C" },
+  ],
 };
 
 interface ProductInfo {
@@ -1031,6 +1054,10 @@ const productData: Record<string, ProductInfo> = {
 const lensTableHeaders = ["Model", "Img Circle (in)", "EFL (mm)", "F#", "Distortion(%)", "WD Range(mm)", "Mount"];
 const lensTableKeys = ["model", "imgCircle", "efl", "fNumber", "distortion", "wdRange", "mount"];
 
+const telecentricTableHeaders = ["Product Model", "Img. Circle(mm)", "Mag.", "WD(mm)", "F#", "O/I", "Mount"];
+const telecentricTableKeys = ["model", "imgCircle", "mag", "wd", "fHash", "oi", "mount"];
+const telecentricSlugs = ["23-coaxial-telecentric"];
+
 const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
 
@@ -1232,8 +1259,9 @@ const ProductDetail = () => {
                 {(() => {
                   const isLineScan = lineScanCameraSlugs.includes(slug as string);
                   const isAreaScan = areaScanCameraSlugs.includes(slug as string);
-                  const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : lensTableHeaders;
-                  const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : lensTableKeys;
+                  const isTelecentric = telecentricSlugs.includes(slug as string);
+                  const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : isTelecentric ? telecentricTableHeaders : lensTableHeaders;
+                  const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : isTelecentric ? telecentricTableKeys : lensTableKeys;
                   return (
                     <Table>
                       <TableHeader>
