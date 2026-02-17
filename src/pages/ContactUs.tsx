@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,8 @@ import { useTranslation } from "react-i18next";
 
 const ContactUs = () => {
   const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
+  const prefilledProduct = searchParams.get("product") || "";
 
   return (
     <div className="min-h-screen bg-background">
@@ -80,7 +82,7 @@ const ContactUs = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="product">{t("contactPage.product")}</Label>
-                    <Input id="product" placeholder="e.g., ACE-2040 Pro Series, Area Scan Cameras" />
+                    <Input id="product" defaultValue={prefilledProduct} placeholder="e.g., ACE-2040 Pro Series, Area Scan Cameras" />
                   </div>
 
                   <div className="space-y-2">
