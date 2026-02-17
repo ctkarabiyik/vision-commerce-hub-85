@@ -35,7 +35,7 @@ const products = [
   image: lineScanCamera1GigE,
   specs: [
     { label: "Resolution", value: "2K–8K" },
-    { label: "FPS", value: "18–80 kHz" },
+    { label: "Line Rate", value: "18–80 kHz" },
   ],
   category: "line-scan",
   slug: "1gige-line-scan-camera"
@@ -46,7 +46,7 @@ const products = [
   image: lineScanCamera25GigE,
   specs: [
     { label: "Resolution", value: "2K–8K" },
-    { label: "FPS", value: "45–200 kHz" },
+    { label: "Line Rate", value: "45–200 kHz" },
   ],
   category: "line-scan",
   slug: "2-5gige-line-scan-camera"
@@ -57,7 +57,7 @@ const products = [
   image: lineScanCamera10GigE,
   specs: [
     { label: "Resolution", value: "4K–16K" },
-    { label: "FPS", value: "75–300 kHz" },
+    { label: "Line Rate", value: "75–300 kHz" },
   ],
   category: "line-scan",
   slug: "10gige-line-scan-camera"
