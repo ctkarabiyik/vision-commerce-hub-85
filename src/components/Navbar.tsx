@@ -138,6 +138,7 @@ const Navbar = () => {
   const [mobileLenses, setMobileLenses] = useState(false);
 
   const [mobileSupport, setMobileSupport] = useState(false);
+  const [mobileLanguageOpen, setMobileLanguageOpen] = useState(false);
   const [mobileProducts, setMobileProducts] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
 
@@ -312,19 +313,34 @@ const Navbar = () => {
                 </div>
             }
               {/* Mobile Language Selector */}
-              <div className="flex flex-wrap gap-2 pt-4 border-t border-border">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => setSelectedLanguage(lang)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-md transition-colors ${
-                      selectedLanguage.code === lang.code ? 'bg-primary text-primary-foreground' : 'bg-muted text-foreground hover:bg-muted/80'
-                    }`}
-                  >
-                    <span>{lang.flag}</span>
-                    <span>{lang.code.toUpperCase()}</span>
-                  </button>
-                ))}
+              <div className="pt-4 border-t border-border">
+                <button
+                  onClick={() => setMobileLanguageOpen(!mobileLanguageOpen)}
+                  className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  <span className="text-lg">{selectedLanguage.flag}</span>
+                  <span>{selectedLanguage.name}</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileLanguageOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileLanguageOpen && (
+                  <div className="mt-2 bg-card border border-border rounded-lg shadow-lg py-2 z-50">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          setSelectedLanguage(lang);
+                          setMobileLanguageOpen(false);
+                        }}
+                        className={`w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-muted transition-colors text-left ${
+                          selectedLanguage.code === lang.code ? 'text-primary bg-muted/50' : 'text-foreground'
+                        }`}
+                      >
+                        <span className="text-lg">{lang.flag}</span>
+                        <span>{lang.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
               <Link to="/contact-us">
                 <Button variant="default" className="w-full mt-4">Contact Us</Button>
