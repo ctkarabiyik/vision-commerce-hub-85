@@ -23,8 +23,8 @@ const SoftwareDownloads = () => {
               Downloads
             </h1>
             <p className="text-lg text-muted-foreground">
-              Download the latest drivers, SDKs, and utilities for your industrial cameras. 
-              All software is compatible with Windows, Linux, and macOS platforms.
+               Download product catalogues, drivers, SDKs, and utilities for your industrial cameras. 
+               All software is compatible with Windows, Linux, and macOS platforms.
             </p>
           </div>
         </div>
