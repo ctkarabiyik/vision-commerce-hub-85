@@ -24,7 +24,7 @@ const products = [
     image: lineScan1gige,
     specs: [
       { label: "Resolution", value: "2K–8K" },
-      { label: "Line Rate", value: "18–80 kHz" },
+      { label: "Line Rate", value: "19–120K" },
     ],
     slug: "1gige-line-scan-camera",
   },
