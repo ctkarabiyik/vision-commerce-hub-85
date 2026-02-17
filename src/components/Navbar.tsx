@@ -128,7 +128,7 @@ const productsByCategory: Record<string, Array<{name: string;brand: string;image
 };
 
 const supportLinks = [
-{ title: "Downloads", description: "Drivers, SDKs, and utilities", href: "/software-downloads" },
+{ title: "Downloads", description: "Catalogues, drivers, SDKs, and utilities", href: "/software-downloads" },
 { title: "Knowledge Base", description: "Tutorials and documentation", href: "/knowledge-base" }];
 
 
