@@ -15,12 +15,12 @@ const SoftwareDownloads = () => {
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
             <Link to="/" className="hover:text-primary transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-foreground font-medium">Software Downloads</span>
+            <span className="text-foreground font-medium">Downloads</span>
           </nav>
           
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Software Downloads
+              Downloads
             </h1>
             <p className="text-lg text-muted-foreground">
               Download the latest drivers, SDKs, and utilities for your industrial cameras. 
@@ -39,7 +39,7 @@ const SoftwareDownloads = () => {
             </div>
             <h2 className="text-3xl font-bold text-foreground mb-4">Coming Soon</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Our software downloads section is currently being prepared. Drivers, SDKs, and utilities will be available here shortly.
+              Our downloads section is currently being prepared. Drivers, SDKs, and utilities will be available here shortly.
             </p>
           </div>
         </div>
