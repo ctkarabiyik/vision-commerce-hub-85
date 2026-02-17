@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import heroImage from "@/assets/hero-camera.jpg";
@@ -32,10 +33,12 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="hero" className="group">
-              <Download className="w-5 h-5" />
-              Download Our Catalogs
-            </Button>
+            <Link to="/knowledge-base">
+              <Button variant="hero" className="group">
+                <Download className="w-5 h-5" />
+                Download Our Catalogs
+              </Button>
+            </Link>
           </div>
 
         </div>
