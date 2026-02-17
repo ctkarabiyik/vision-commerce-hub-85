@@ -57,7 +57,6 @@ const products = [
     brand: "DZOPTICS",
     image: faLens117,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/1.4–f/2.8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -69,7 +68,6 @@ const products = [
     brand: "DZOPTICS",
     image: faLens23Standard,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/1.4–f/2.8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -81,7 +79,6 @@ const products = [
     brand: "DZOPTICS",
     image: faLens23Superior,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/1.4–f/2.8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -93,7 +90,6 @@ const products = [
     brand: "DZOPTICS",
     image: faLens11,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/1.6–f/2.8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -106,7 +102,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentric23Coaxial,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/4–f/8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -118,7 +113,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentric11Coaxial,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/4–f/8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -130,7 +124,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentric12Coaxial,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/4–f/8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -142,7 +135,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentricLargeCoaxial,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/6–f/12" },
       { label: "Mount", value: "F-Mount" },
     ],
@@ -155,7 +147,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentric12NonCoaxial,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/4–f/8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -167,7 +158,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentric23NonCoaxial,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/4–f/8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -179,7 +169,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentric11NonCoaxial,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/4–f/8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -191,7 +180,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentric12NonCoaxialAlt,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/4–f/8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -203,7 +191,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentric18,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/4–f/8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -215,7 +202,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentricLargeNonCoaxial,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/6–f/12" },
       { label: "Mount", value: "F-Mount" },
     ],
@@ -228,7 +214,6 @@ const products = [
     brand: "DZOPTICS",
     image: lineScan4k,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/2.8–f/4" },
       { label: "Mount", value: "M42" },
     ],
@@ -240,7 +225,6 @@ const products = [
     brand: "DZOPTICS",
     image: lineScan8k,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/2.8–f/4" },
       { label: "Mount", value: "M42" },
     ],
@@ -252,7 +236,6 @@ const products = [
     brand: "DZOPTICS",
     image: lineScan16k35u,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/4" },
       { label: "Mount", value: "M42" },
     ],
@@ -264,7 +247,6 @@ const products = [
     brand: "DZOPTICS",
     image: lineScan16k5u,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/4" },
       { label: "Mount", value: "M42" },
     ],
@@ -277,7 +259,6 @@ const products = [
     brand: "DZOPTICS",
     image: macroLenses,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/2.8–f/6.5" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -290,7 +271,6 @@ const products = [
     brand: "DZOPTICS",
     image: infraredLenses,
     specs: [
-      { label: "Wavelength", value: "SWIR" },
       { label: "F#", value: "f/1.4–f/2.0" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -303,7 +283,6 @@ const products = [
     brand: "DZOPTICS",
     image: vrLenses,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/2.0" },
       { label: "Mount", value: "Various" },
     ],
@@ -316,7 +295,6 @@ const products = [
     brand: "DZOPTICS",
     image: scheimpflugLenses,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/2.8–f/4" },
       { label: "Mount", value: "Various" },
     ],
@@ -329,7 +307,6 @@ const products = [
     brand: "DZOPTICS",
     image: largeFormatLenses,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/2.8–f/5.6" },
       { label: "Mount", value: "Various" },
     ],

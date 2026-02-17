@@ -15,7 +15,6 @@ const products = [
     specs: [
       { label: "Resolution", value: "0.3–20 MP" },
       { label: "FPS", value: "Up to 300" },
-      { label: "Interface", value: "GigE" },
     ],
     slug: "mgv-series-1gige-area-scan",
   },
@@ -26,7 +25,6 @@ const products = [
     specs: [
       { label: "Resolution", value: "2K–8K" },
       { label: "FPS", value: "18–80 kHz" },
-      { label: "Interface", value: "GigE" },
     ],
     slug: "1gige-line-scan-camera",
   },
@@ -35,7 +33,6 @@ const products = [
     brand: "DZOPTICS",
     image: faLens1,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/1.6–f/2.8" },
       { label: "Mount", value: "C-Mount" },
     ],
@@ -46,7 +43,6 @@ const products = [
     brand: "DZOPTICS",
     image: telecentricLens,
     specs: [
-      { label: "Wavelength", value: "Visible" },
       { label: "F#", value: "f/4–f/8" },
       { label: "Mount", value: "C-Mount" },
     ],

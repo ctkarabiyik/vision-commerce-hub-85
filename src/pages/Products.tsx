@@ -36,7 +36,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "2K–8K" },
     { label: "FPS", value: "18–80 kHz" },
-    { label: "Interface", value: "GigE" },
   ],
   category: "line-scan",
   slug: "1gige-line-scan-camera"
@@ -48,7 +47,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "2K–8K" },
     { label: "FPS", value: "45–200 kHz" },
-    { label: "Interface", value: "2.5GigE" },
   ],
   category: "line-scan",
   slug: "2-5gige-line-scan-camera"
@@ -60,7 +58,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "4K–16K" },
     { label: "FPS", value: "75–300 kHz" },
-    { label: "Interface", value: "10GigE" },
   ],
   category: "line-scan",
   slug: "10gige-line-scan-camera"
@@ -73,7 +70,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
     { label: "FPS", value: "Up to 300" },
-    { label: "Interface", value: "GigE" },
   ],
   category: "area-scan",
   slug: "mgv-series-1gige-area-scan"
@@ -85,7 +81,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
     { label: "FPS", value: "Up to 300" },
-    { label: "Interface", value: "GigE" },
   ],
   category: "area-scan",
   slug: "mgs-series-1gige-area-scan"
@@ -97,7 +92,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
     { label: "FPS", value: "Up to 500" },
-    { label: "Interface", value: "USB 3.0" },
   ],
   category: "area-scan",
   slug: "m3s-series-usb3-area-scan"
@@ -109,7 +103,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
     { label: "FPS", value: "Up to 500" },
-    { label: "Interface", value: "USB 3.0" },
   ],
   category: "area-scan",
   slug: "u3p-series-usb3-area-scan"
@@ -121,7 +114,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "0.3–5 MP" },
     { label: "FPS", value: "Up to 120" },
-    { label: "Interface", value: "USB 2.0" },
   ],
   category: "area-scan",
   slug: "m2s-series-usb2-area-scan"
@@ -133,7 +125,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "5–45 MP" },
     { label: "FPS", value: "Up to 200" },
-    { label: "Interface", value: "10GigE" },
   ],
   category: "area-scan",
   slug: "10gige-fiber-optic-area-scan"
@@ -145,7 +136,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "1–5 MP" },
     { label: "FPS", value: "Up to 300" },
-    { label: "Interface", value: "USB 3.0" },
   ],
   category: "area-scan",
   slug: "ds-series-dual-usb3-area-scan"
@@ -157,7 +147,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "0.3–5 MP" },
     { label: "FPS", value: "Up to 250" },
-    { label: "Interface", value: "USB 3.0" },
   ],
   category: "area-scan",
   slug: "dsv-series-usb3-coin"
@@ -169,7 +158,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "0.3–5 MP" },
     { label: "FPS", value: "Up to 200" },
-    { label: "Interface", value: "GigE" },
   ],
   category: "area-scan",
   slug: "lipstick-series-1gige-area-scan"
@@ -182,7 +170,6 @@ const products = [
   specs: [
     { label: "Resolution", value: "10–40G" },
     { label: "FPS", value: "1–4 Ch" },
-    { label: "Interface", value: "PCIe" },
   ],
   category: "other",
   slug: "frame-grabber-10-40gige"
