@@ -1,24 +1,25 @@
 
 
-# Fix: Dropdown Menus Flashing on Page Refresh
+# Fix: Desktop Nav Centering on Page Refresh
 
 ## Problem
-The Products and Support mega menus are always present in the DOM, hidden only via `opacity-0 invisible` with `transition-all duration-200`. On page refresh, the browser briefly renders them in their default position before applying the hidden styles, causing a visible flash of centered content.
+The desktop navigation div (Products / Support links) uses `ltr:ml-auto` and `rtl:mr-auto` Tailwind variants to push itself to the right (or left in RTL). These variants only activate when the `dir` attribute is set on the `<html>` element.
+
+On initial page load, `dir` is not set until a language change event fires. Without `dir="ltr"`, the `ltr:ml-auto` class has no effect, so the nav items sit centered in the flex container. Changing the language triggers the `languageChanged` handler which sets `dir`, fixing the layout.
 
 ## Solution
-Use **conditional rendering** instead of opacity/visibility toggling. Only mount the dropdown DOM elements when they are actually open. This eliminates any flash on page load because the elements simply don't exist until triggered.
+Set the initial `dir` and `lang` attributes on `<html>` at startup, not only on language change.
 
-## Changes
+### `src/i18n/config.ts`
 
-### `src/components/Navbar.tsx`
+After `i18n.init(...)`, add:
 
-**Products Mega Menu (line ~308-462):**
-- Replace `opacity-0 invisible` / `opacity-100 visible` toggle with conditional rendering (`{productsDropdownOpen && ...}`)
-- Remove the transition classes since mount/unmount handles show/hide
+```ts
+// Set initial direction
+const initialDir = RTL_LANGUAGES.includes(i18n.language) ? "rtl" : "ltr";
+document.documentElement.dir = initialDir;
+document.documentElement.lang = i18n.language;
+```
 
-**Support Mega Menu (line ~465-489):**
-- Same approach: wrap in `{supportDropdownOpen && ...}`
-- Remove the transition classes
-
-Both dropdowns already have `onMouseEnter` / `onMouseLeave` handlers, so hover behavior will continue working identically. The only difference is the elements won't exist in the DOM when closed, preventing any flash on refresh.
+This ensures `dir="ltr"` is present immediately on load, so `ltr:ml-auto` applies right away. No other files need changes.
 
