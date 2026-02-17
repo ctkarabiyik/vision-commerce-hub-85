@@ -1,33 +1,36 @@
 import { Facebook, Twitter, Linkedin, Youtube, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import alargeLogo from "@/assets/alarge-logo-footer.svg";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-accent text-accent-foreground">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 max-w-5xl mx-auto">
           {/* Products */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Products</h4>
+            <h4 className="font-semibold text-lg mb-6">{t("footer.products")}</h4>
             <ul className="space-y-3">
-              <li><Link to="/products?category=area-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Area Scan Cameras</Link></li>
-              <li><Link to="/products?category=line-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Line Scan Cameras</Link></li>
-              <li><Link to="/lenses?category=fa-lenses" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">FA Lenses</Link></li>
-              <li><Link to="/lenses?category=telecentric" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Telecentric Lenses</Link></li>
-              <li><Link to="/lenses?category=line-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Line Scan Lenses</Link></li>
-              <li><Link to="/products?category=other" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Frame Grabbers</Link></li>
+              <li><Link to="/products?category=area-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.areaScanCameras")}</Link></li>
+              <li><Link to="/products?category=line-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.lineScanCameras")}</Link></li>
+              <li><Link to="/lenses?category=fa-lenses" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.faLenses")}</Link></li>
+              <li><Link to="/lenses?category=telecentric" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.telecentricLenses")}</Link></li>
+              <li><Link to="/lenses?category=line-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.lineScanLenses")}</Link></li>
+              <li><Link to="/products?category=other" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.frameGrabbers")}</Link></li>
             </ul>
           </div>
 
           {/* Support */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Support</h4>
+            <h4 className="font-semibold text-lg mb-6">{t("footer.support")}</h4>
             <ul className="space-y-3">
-              <li><Link to="/software-downloads" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Downloads</Link></li>
-              <li><Link to="/knowledge-base" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Knowledge Base</Link></li>
-              <li><Link to="/contact-us" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">Contact Us</Link></li>
+              <li><Link to="/software-downloads" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.downloads")}</Link></li>
+              <li><Link to="/knowledge-base" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.knowledgeBase")}</Link></li>
+              <li><Link to="/contact-us" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.contactUs")}</Link></li>
             </ul>
           </div>
 
@@ -37,7 +40,7 @@ const Footer = () => {
               <img src={alargeLogo} alt="Alarge Logo" className="h-12" />
             </a>
             <p className="text-sm text-accent-foreground/70 mb-6">
-              Your trusted partner for industrial machine vision cameras and components since 2008.
+              {t("footer.brandDescription")}
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded bg-accent-foreground/10 flex items-center justify-center hover:bg-primary transition-colors">
@@ -55,7 +58,7 @@ const Footer = () => {
             </div>
             <Button asChild className="mt-6 gap-2">
               <a href="https://www.alarge.com.tr" target="_blank" rel="noopener noreferrer">
-                Visit Alarge Website
+                {t("footer.visitWebsite")}
                 <ExternalLink className="w-4 h-4" />
               </a>
             </Button>
@@ -68,12 +71,12 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-accent-foreground/60">
-              © {new Date().getFullYear()} Alarge Camera. All rights reserved.
+              © {new Date().getFullYear()} {t("footer.copyright")}
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-sm text-accent-foreground/60 hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="text-sm text-accent-foreground/60 hover:text-primary transition-colors">Terms of Service</a>
-              <a href="#" className="text-sm text-accent-foreground/60 hover:text-primary transition-colors">Cookie Policy</a>
+              <a href="#" className="text-sm text-accent-foreground/60 hover:text-primary transition-colors">{t("footer.privacyPolicy")}</a>
+              <a href="#" className="text-sm text-accent-foreground/60 hover:text-primary transition-colors">{t("footer.termsOfService")}</a>
+              <a href="#" className="text-sm text-accent-foreground/60 hover:text-primary transition-colors">{t("footer.cookiePolicy")}</a>
             </div>
           </div>
         </div>

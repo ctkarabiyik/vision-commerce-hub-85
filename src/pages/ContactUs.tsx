@@ -6,8 +6,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ChevronRight, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ContactUs = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -15,20 +18,18 @@ const ContactUs = () => {
       {/* Hero Section */}
       <section className="pt-24 lg:pt-32 pb-12 bg-secondary">
         <div className="container mx-auto px-4">
-          {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <Link to="/" className="hover:text-primary transition-colors">{t("common.home")}</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-foreground font-medium">Contact Us</span>
+            <span className="text-foreground font-medium">{t("contactPage.breadcrumb")}</span>
           </nav>
 
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Contact Us
+              {t("contactPage.title")}
             </h1>
             <p className="text-lg text-muted-foreground">
-              Get in touch with our team for pricing, technical specifications, or custom solutions. 
-              We typically respond within 24 business hours.
+              {t("contactPage.description")}
             </p>
           </div>
         </div>
@@ -41,70 +42,62 @@ const ContactUs = () => {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <div className="bg-card border border-border rounded-lg p-8">
-                <h2 className="text-2xl font-bold text-foreground mb-6">Contact Information</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-6">{t("contactPage.formTitle")}</h2>
                 
                 <form className="space-y-6">
-                  {/* Name Fields */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="firstName">First Name *</Label>
+                      <Label htmlFor="firstName">{t("contactPage.firstName")}</Label>
                       <Input id="firstName" placeholder="John" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="lastName">Last Name *</Label>
+                      <Label htmlFor="lastName">{t("contactPage.lastName")}</Label>
                       <Input id="lastName" placeholder="Doe" />
                     </div>
                   </div>
 
-                  {/* Email & Phone */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email">{t("contactPage.email")}</Label>
                       <Input id="email" type="email" placeholder="john@company.com" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
+                      <Label htmlFor="phone">{t("contactPage.phone")}</Label>
                       <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" />
                     </div>
                   </div>
 
-                  {/* Company & Role */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="company">Company Name *</Label>
+                      <Label htmlFor="company">{t("contactPage.company")}</Label>
                       <Input id="company" placeholder="Acme Corporation" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="role">Your Role</Label>
+                      <Label htmlFor="role">{t("contactPage.role")}</Label>
                       <Input id="role" placeholder="Engineering Manager" />
                     </div>
                   </div>
 
-                  {/* Product Interest */}
                   <div className="space-y-2">
-                    <Label htmlFor="product">Product of Interest</Label>
+                    <Label htmlFor="product">{t("contactPage.product")}</Label>
                     <Input id="product" placeholder="e.g., ACE-2040 Pro Series, Area Scan Cameras" />
                   </div>
 
-                  {/* Quantity */}
                   <div className="space-y-2">
-                    <Label htmlFor="quantity">Estimated Quantity</Label>
+                    <Label htmlFor="quantity">{t("contactPage.quantity")}</Label>
                     <Input id="quantity" placeholder="e.g., 10-50 units" />
                   </div>
 
-                  {/* Message */}
                   <div className="space-y-2">
-                    <Label htmlFor="message">Project Details *</Label>
+                    <Label htmlFor="message">{t("contactPage.projectDetails")}</Label>
                     <Textarea
                       id="message"
                       placeholder="Tell us about your project requirements, application, timeline, or any specific questions..."
                       rows={5} />
-
                   </div>
 
-                  {/* Submit */}
                   <Button type="submit" size="lg" className="w-full sm:w-auto">
-                    Submit Request
+                    {t("contactPage.submit")}
                   </Button>
                 </form>
               </div>
@@ -113,7 +106,7 @@ const ContactUs = () => {
             {/* Contact Info Sidebar */}
             <div className="lg:col-span-1 order-first lg:order-last">
               <div className="bg-card border border-border rounded-lg p-8 sticky top-24">
-                <h3 className="text-xl font-bold text-foreground mb-6">Get in Touch</h3>
+                <h3 className="text-xl font-bold text-foreground mb-6">{t("contactPage.getInTouch")}</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
@@ -121,7 +114,7 @@ const ContactUs = () => {
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground mb-1">Email</div>
+                      <div className="font-semibold text-foreground mb-1">{t("contactPage.emailLabel")}</div>
                       <a className="text-muted-foreground hover:text-primary transition-colors" href="mailto:sales2@alarge.com.tr">
                         sales2@alarge.com.tr
                       </a>
@@ -133,7 +126,7 @@ const ContactUs = () => {
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground mb-1">Phone</div>
+                      <div className="font-semibold text-foreground mb-1">{t("contactPage.phoneLabel")}</div>
                       <a className="text-muted-foreground hover:text-primary transition-colors" href="tel:+902122786102">
                         +90 (212) 278 61 02
                       </a>
@@ -145,7 +138,7 @@ const ContactUs = () => {
                       <MapPin className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground mb-1">Address</div>
+                      <div className="font-semibold text-foreground mb-1">{t("contactPage.addressLabel")}</div>
                       <p className="text-muted-foreground">Yıldız Teknik Üniversitesi Davutpaşa Teknopark
                         <br />
                         San Jose, CA 95134<br />
@@ -159,10 +152,9 @@ const ContactUs = () => {
                       <Clock className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground mb-1">Business Hours</div>
-                      <p className="text-muted-foreground">
-                        Mon - Fri: 8:00 AM - 6:00 PM PST<br />
-                        Sat - Sun: Closed
+                      <div className="font-semibold text-foreground mb-1">{t("contactPage.businessHours")}</div>
+                      <p className="text-muted-foreground whitespace-pre-line">
+                        {t("contactPage.businessHoursValue")}
                       </p>
                     </div>
                   </div>
@@ -170,7 +162,7 @@ const ContactUs = () => {
 
                 <div className="mt-8 pt-6 border-t border-border">
                   <p className="text-sm text-muted-foreground">
-                    Need immediate assistance? Call our sales team directly for urgent inquiries.
+                    {t("contactPage.urgentHelp")}
                   </p>
                 </div>
               </div>
@@ -181,7 +173,6 @@ const ContactUs = () => {
 
       <Footer />
     </div>);
-
 };
 
 export default ContactUs;

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface Spec {
   label: string;
@@ -20,6 +21,7 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ name, brand, image, specs, slug, resolution, fps, interface: interfaceType }: ProductCardProps) => {
+  const { t } = useTranslation();
   const productSlug = slug || name.toLowerCase().replace(/\s+/g, '-');
 
   // Use specs array if provided, otherwise fall back to legacy props
@@ -65,7 +67,7 @@ const ProductCard = ({ name, brand, image, specs, slug, resolution, fps, interfa
         {/* CTA */}
         <Link to={`/product/${productSlug}`}>
           <Button variant="default" size="sm" className="w-full">
-            View Details
+            {t("productCard.viewDetails")}
           </Button>
         </Link>
       </div>

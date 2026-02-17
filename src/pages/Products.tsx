@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Grid3X3, LayoutList, Scan, Camera, Settings } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import lineScanCamera1GigE from "@/assets/line-scan-camera-1gige.png";
 import lineScanCamera25GigE from "@/assets/line-scan-camera-2-5gige.png";
 import lineScanCamera10GigE from "@/assets/line-scan-camera-10gige.png";
@@ -19,13 +20,6 @@ import areaScanDs from "@/assets/area-scan-ds-dual-usb3.png";
 import areaScanDsv from "@/assets/area-scan-dsv-coin.png";
 import areaScanLipstick from "@/assets/area-scan-lipstick-1gige.png";
 import frameGrabber from "@/assets/frame-grabber-10-40gige.png";
-
-const cameraCategories = [
-{ id: "all", title: "All Camera Products", icon: Camera, count: 13 },
-{ id: "line-scan", title: "Line Scan Cameras", icon: Scan, count: 3 },
-{ id: "area-scan", title: "Area Scan Cameras", icon: Camera, count: 9 },
-{ id: "other", title: "Other", icon: Settings, count: 1 }];
-
 
 const products = [
 // Line Scan Cameras
@@ -179,10 +173,18 @@ const products = [
 const PRODUCTS_PER_PAGE = 9;
 
 const Products = () => {
+  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const categoryParam = searchParams.get("category");
   const [selectedCategory, setSelectedCategory] = useState(categoryParam || "all");
   const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_PAGE);
+
+  const cameraCategories = [
+    { id: "all", title: t("productsPage.allCameraProducts"), icon: Camera, count: 13 },
+    { id: "line-scan", title: t("cameraCategories.lineScan"), icon: Scan, count: 3 },
+    { id: "area-scan", title: t("cameraCategories.areaScan"), icon: Camera, count: 9 },
+    { id: "other", title: t("cameraCategories.other"), icon: Settings, count: 1 },
+  ];
 
   useEffect(() => {
     if (categoryParam && cameraCategories.some(c => c.id === categoryParam)) {
@@ -210,20 +212,16 @@ const Products = () => {
       {/* Hero Section */}
       <section className="pt-24 lg:pt-32 pb-12 bg-secondary">
         <div className="container mx-auto px-4">
-          {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <Link to="/" className="hover:text-primary transition-colors">{t("common.home")}</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-foreground font-medium">All Camera Products</span>
+            <span className="text-foreground font-medium">{t("productsPage.breadcrumb")}</span>
           </nav>
           
           <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">All Cameras and Accessories
-
-            </h1>
+            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">{t("productsPage.title")}</h1>
             <p className="text-lg text-muted-foreground">
-              Explore our complete range of industrial cameras, from high-speed line scan sensors 
-              to precision area scan and specialty imaging solutions. Find the perfect camera for your application.
+              {t("productsPage.description")}
             </p>
           </div>
         </div>
@@ -238,7 +236,7 @@ const Products = () => {
               <div className="bg-card border border-border rounded-lg p-5 sticky top-24">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                    Filters
+                    {t("productsPage.filters")}
                   </h3>
                   <div className="flex items-center border border-border rounded-md">
                     <button className="p-1.5 hover:bg-secondary transition-colors border-r border-border bg-secondary">
@@ -259,7 +257,6 @@ const Products = () => {
                     'bg-primary/10 border border-primary' :
                     'hover:bg-secondary border border-transparent'}`
                     }>
-
                       <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
                     selectedCategory === category.id ? 'bg-primary/20' : 'bg-secondary'}`
                     }>
@@ -273,7 +270,7 @@ const Products = () => {
                       }>
                           {category.title}
                         </div>
-                        <div className="text-xs text-muted-foreground">{category.count} Product {category.count === 1 ? 'Type' : 'Types'}</div>
+                        <div className="text-xs text-muted-foreground">{category.count} {category.count === 1 ? t("nav.productType") : t("nav.productTypes")}</div>
                       </div>
                     </button>
                   )}
@@ -289,7 +286,6 @@ const Products = () => {
                 )}
               </div>
 
-              {/* Load More */}
               {filteredProducts.length > PRODUCTS_PER_PAGE &&
               <div className="text-center mt-12">
                   <Button
@@ -297,8 +293,7 @@ const Products = () => {
                   size="lg"
                   onClick={() => setVisibleCount((prev) => prev + PRODUCTS_PER_PAGE)}
                   disabled={!hasMore}>
-
-                    {hasMore ? 'Load More Products' : 'Showing All Products'}
+                    {hasMore ? t("productsPage.loadMore") : t("productsPage.showingAll")}
                   </Button>
                 </div>
               }

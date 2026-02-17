@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import heroImage from "@/assets/hero-camera.jpg";
+import { useTranslation } from "react-i18next";
+
 const Hero = () => {
+  const { t } = useTranslation();
+
   return <section className="relative min-h-[95vh] flex items-center pt-20 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
@@ -16,19 +20,16 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-1.5 mb-6">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-xs font-medium uppercase tracking-wider text-primary-foreground">AUTHORIZED DISTRIBUTOR
-
-          </span>
+            <span className="text-xs font-medium uppercase tracking-wider text-primary-foreground">{t("hero.badge")}</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-            Industrial Vision
-            <span className="block text-gradient-red">Engineered for Excellence</span>
+            {t("hero.title1")}
+            <span className="block text-gradient-red">{t("hero.title2")}</span>
           </h1>
 
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl leading-relaxed">
-            Premium machine vision cameras for quality inspection, robotics, and automation. 
-            Trusted by industry leaders worldwide.
+            {t("hero.description")}
           </p>
 
           {/* CTA Buttons */}
@@ -36,7 +37,7 @@ const Hero = () => {
             <Link to="/software-downloads">
               <Button variant="hero" className="group">
                 <Download className="w-5 h-5" />
-                Download Our Catalogs
+                {t("hero.cta")}
               </Button>
             </Link>
           </div>

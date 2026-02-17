@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import areaScanMgv from "@/assets/area-scan-mgv-1gige.png";
 import lineScan1gige from "@/assets/line-scan-camera-1gige.png";
 import faLens1 from "@/assets/fa-lens-1-1.png";
@@ -51,6 +52,8 @@ const products = [
 ];
 
 const FeaturedProducts = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="products" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -59,22 +62,22 @@ const FeaturedProducts = () => {
           <div>
             <div className="inline-flex items-center gap-2 text-primary text-sm font-semibold uppercase tracking-wider mb-2">
               <div className="w-8 h-0.5 bg-primary" />
-              Featured Products
+              {t("featured.label")}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Cameras & Lenses
+              {t("featured.title")}
             </h2>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 mt-4 md:mt-0 w-full sm:w-auto">
             <Link to="/products">
               <Button variant="outline" className="group">
-                View All Cameras
+                {t("featured.viewAllCameras")}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link to="/lenses">
               <Button variant="outline" className="group">
-                View All Lenses
+                {t("featured.viewAllLenses")}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
