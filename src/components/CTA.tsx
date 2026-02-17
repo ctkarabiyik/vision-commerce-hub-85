@@ -1,24 +1,26 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const CTA = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 bg-primary">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to Upgrade Your Vision System?
+            {t("cta.title")}
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Our engineers are ready to help you find the perfect camera for your application. Get a custom quote within
-            24 hours.
+            {t("cta.description")}
           </p>
 
           <div className="flex justify-center mb-12">
             <Link to="/contact-us">
               <Button variant="heroOutline" className="group">
-                Contact Us
+                {t("cta.button")}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>

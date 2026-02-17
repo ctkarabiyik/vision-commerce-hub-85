@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe, Sun } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import alargeLogo from "@/assets/alarge-logo.svg";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import lineScanCamera1GigE from "@/assets/line-scan-camera-1gige.png";
@@ -16,7 +17,6 @@ import faLens117 from "@/assets/fa-lens-1-1-7.png";
 import faLens23Standard from "@/assets/fa-lens-2-3-standard.png";
 import faLens23Superior from "@/assets/fa-lens-2-3-superior.png";
 import faLens11 from "@/assets/fa-lens-1-1.png";
-// Telecentric lens images
 import telecentric23Coaxial from "@/assets/telecentric-23-coaxial.png";
 import telecentric11Coaxial from "@/assets/telecentric-11-coaxial.png";
 import telecentric12Coaxial from "@/assets/telecentric-12-coaxial.png";
@@ -34,63 +34,6 @@ const languages = [
   { code: "ar", name: "العربية", flag: "🇸🇦" },
   { code: "de", name: "Deutsch", flag: "🇩🇪" },
 ];
-
-const cameraCategories = [
-{
-  icon: Scan,
-  title: "Line Scan Cameras",
-  description: "Continuous imaging for web inspection",
-  count: 3,
-  href: "#line-scan-cameras"
-},
-{
-  icon: Camera,
-  title: "Area Scan Cameras",
-  description: "High-resolution sensors for quality inspection",
-  count: 9,
-  href: "#area-scan-cameras"
-},
-{
-  icon: Settings,
-  title: "Other",
-  description: "Accessories and peripherals",
-  count: 1,
-  href: "#other-cameras"
-}];
-
-
-const lensCategories = [
-{
-  icon: Aperture,
-  title: "FA Lenses",
-  description: "Factory automation imaging lenses",
-  count: 4,
-  href: "#fa-lenses"
-},
-{
-  icon: Focus,
-  title: "Telecentric Lenses",
-  description: "Distortion-free measurement optics",
-  count: 10,
-  href: "#telecentric-lenses"
-},
-{
-  icon: Scan,
-  title: "Line Scan Lenses",
-  description: "Optimized for line scan cameras",
-  count: 4,
-  href: "#line-scan-lenses"
-}];
-
-const allLensCategories = [
-  ...lensCategories,
-  { icon: Microscope, title: "Large Format Lenses", description: "Large sensor coverage optics", count: 1, href: "#large-format" },
-  { icon: ZoomIn, title: "Macro Lenses", description: "Close-up inspection optics", count: 1, href: "#macro" },
-  { icon: Sun, title: "Infrared Lenses", description: "Thermal and IR imaging optics", count: 1, href: "#infrared" },
-  { icon: Circle, title: "VR Lenses", description: "Virtual reality imaging optics", count: 1, href: "#vr" },
-  { icon: Settings, title: "Scheimpflug Lenses", description: "Tilt-focus plane correction", count: 1, href: "#scheimpflug" },
-];
-
 
 const productsByCategory: Record<string, Array<{name: string;brand: string;image: string;resolution: string;slug: string;}>> = {
   "Line Scan Cameras": [
@@ -124,24 +67,17 @@ const productsByCategory: Record<string, Array<{name: string;brand: string;image
   { name: "8K Line Scan Lens", brand: "DZOPTICS", image: lineScan8k, resolution: "8K", slug: "8k-line-scan-lens" },
   { name: "16K / 3.5u Line Scan Lens", brand: "DZOPTICS", image: lineScan16k35u, resolution: "16K", slug: "16k-35u-line-scan-lens" },
   { name: "16K / 5u Line Scan Lens", brand: "DZOPTICS", image: lineScan16k5u, resolution: "16K", slug: "16k-5u-line-scan-lens" }]
-
 };
 
-const supportLinks = [
-{ title: "Downloads", description: "Catalogs, drivers, SDKs, and utilities", href: "/software-downloads" },
-{ title: "Knowledge Base", description: "Tutorials and documentation", href: "/knowledge-base" }];
-
-
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [mobileCameras, setMobileCameras] = useState(false);
   const [mobileLenses, setMobileLenses] = useState(false);
-
   const [mobileSupport, setMobileSupport] = useState(false);
   const [mobileLanguageOpen, setMobileLanguageOpen] = useState(false);
   const [mobileProducts, setMobileProducts] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
-
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
@@ -151,6 +87,39 @@ const Navbar = () => {
 
   const currentCameraProducts = productsByCategory[hoveredCameraCategory] || productsByCategory["Line Scan Cameras"];
   const currentLensProducts = productsByCategory[hoveredLensCategory] || productsByCategory["FA Lenses"];
+
+  const cameraCategories = [
+    { icon: Scan, title: t("cameraCategories.lineScan"), description: t("cameraCategories.lineScanDesc"), count: 3, href: "#line-scan-cameras", key: "Line Scan Cameras" },
+    { icon: Camera, title: t("cameraCategories.areaScan"), description: t("cameraCategories.areaScanDesc"), count: 9, href: "#area-scan-cameras", key: "Area Scan Cameras" },
+    { icon: Settings, title: t("cameraCategories.other"), description: t("cameraCategories.otherDesc"), count: 1, href: "#other-cameras", key: "Other" },
+  ];
+
+  const lensCategories = [
+    { icon: Aperture, title: t("lensCategories.fa"), description: t("lensCategories.faDesc"), count: 4, href: "#fa-lenses", key: "FA Lenses" },
+    { icon: Focus, title: t("lensCategories.telecentric"), description: t("lensCategories.telecentricDesc"), count: 10, href: "#telecentric-lenses", key: "Telecentric Lenses" },
+    { icon: Scan, title: t("lensCategories.lineScan"), description: t("lensCategories.lineScanDesc"), count: 4, href: "#line-scan-lenses", key: "Line Scan Lenses" },
+  ];
+
+  const allLensCategories = [
+    ...lensCategories,
+    { icon: Microscope, title: t("lensCategories.largeFormat"), description: t("lensCategories.largeFormatDesc"), count: 1, href: "#large-format", key: "Large Format Lenses" },
+    { icon: ZoomIn, title: t("lensCategories.macro"), description: t("lensCategories.macroDesc"), count: 1, href: "#macro", key: "Macro Lenses" },
+    { icon: Sun, title: t("lensCategories.infrared"), description: t("lensCategories.infraredDesc"), count: 1, href: "#infrared", key: "Infrared Lenses" },
+    { icon: Circle, title: t("lensCategories.vr"), description: t("lensCategories.vrDesc"), count: 1, href: "#vr", key: "VR Lenses" },
+    { icon: Settings, title: t("lensCategories.scheimpflug"), description: t("lensCategories.scheimpflugDesc"), count: 1, href: "#scheimpflug", key: "Scheimpflug Lenses" },
+  ];
+
+  const supportLinks = [
+    { title: t("supportLinks.downloads"), description: t("supportLinks.downloadsDesc"), href: "/software-downloads" },
+    { title: t("supportLinks.knowledgeBase"), description: t("supportLinks.knowledgeBaseDesc"), href: "/knowledge-base" },
+  ];
+
+  const handleLanguageChange = (lang: typeof languages[0]) => {
+    setSelectedLanguage(lang);
+    i18n.changeLanguage(lang.code);
+    setLanguageDropdownOpen(false);
+    setMobileLanguageOpen(false);
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-colors duration-200 ${
@@ -169,9 +138,8 @@ const Navbar = () => {
               className="relative"
               onMouseEnter={() => setProductsDropdownOpen(true)}
               onMouseLeave={() => setProductsDropdownOpen(false)}>
-
-              <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">Products
-
+              <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">
+                {t("nav.products")}
                 <ChevronDown className={`w-4 h-4 transition-transform ${productsDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
             </div>
@@ -179,9 +147,8 @@ const Navbar = () => {
               className="relative"
               onMouseEnter={() => setSupportDropdownOpen(true)}
               onMouseLeave={() => setSupportDropdownOpen(false)}>
-
               <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 group outline-none">
-                Support
+                {t("nav.support")}
                 <ChevronDown className={`w-4 h-4 transition-transform ${supportDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
             </div>
@@ -194,28 +161,22 @@ const Navbar = () => {
               className="relative"
               onMouseEnter={() => setLanguageDropdownOpen(true)}
               onMouseLeave={() => setLanguageDropdownOpen(false)}>
-
               <button className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors outline-none px-2 py-1 rounded-md hover:bg-muted">
                 <span className="text-lg">{selectedLanguage.flag}</span>
                 <span className="hidden xl:inline">{selectedLanguage.code.toUpperCase()}</span>
                 <ChevronDown className={`w-3 h-3 transition-transform ${languageDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               
-              {/* Language Dropdown */}
               <div className={`absolute right-0 top-full mt-2 bg-card border border-border rounded-lg shadow-lg py-2 min-w-[160px] transition-all duration-200 z-50 ${
               languageDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`
               }>
                 {languages.map((lang) =>
                 <button
                   key={lang.code}
-                  onClick={() => {
-                    setSelectedLanguage(lang);
-                    setLanguageDropdownOpen(false);
-                  }}
+                  onClick={() => handleLanguageChange(lang)}
                   className={`w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-muted transition-colors text-left ${
                   selectedLanguage.code === lang.code ? 'text-primary bg-muted/50' : 'text-foreground'}`
                   }>
-
                     <span className="text-lg">{lang.flag}</span>
                     <span>{lang.name}</span>
                   </button>
@@ -224,7 +185,7 @@ const Navbar = () => {
             </div>
             
             <Link to="/contact-us">
-              <Button variant="default">Contact Us</Button>
+              <Button variant="default">{t("nav.contactUs")}</Button>
             </Link>
           </div>
 
@@ -232,7 +193,6 @@ const Navbar = () => {
           <button
             className="lg:hidden p-2"
             onClick={() => setIsOpen(!isOpen)}>
-
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -244,8 +204,7 @@ const Navbar = () => {
               <button
               onClick={() => setMobileProducts(!mobileProducts)}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
-
-                Products
+                {t("nav.products")}
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileProducts ? 'rotate-180' : ''}`} />
               </button>
               {mobileProducts &&
@@ -253,7 +212,7 @@ const Navbar = () => {
                   <button
                     onClick={() => setMobileCameras(!mobileCameras)}
                     className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
-                    Cameras
+                    {t("nav.cameras")}
                     <ChevronDown className={`w-4 h-4 transition-transform ${mobileCameras ? 'rotate-180' : ''}`} />
                   </button>
                   {mobileCameras &&
@@ -261,7 +220,7 @@ const Navbar = () => {
                       {cameraCategories.map((category, index) =>
                         <Link
                           key={`cam-${index}`}
-                          to={`/products?category=${encodeURIComponent(category.title)}`}
+                          to={`/products?category=${encodeURIComponent(category.key || category.title)}`}
                           onClick={() => setIsOpen(false)}
                           className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
                           <category.icon className="w-4 h-4" />
@@ -273,7 +232,7 @@ const Navbar = () => {
                   <button
                     onClick={() => setMobileLenses(!mobileLenses)}
                     className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
-                    Lenses
+                    {t("nav.lenses")}
                     <ChevronDown className={`w-4 h-4 transition-transform ${mobileLenses ? 'rotate-180' : ''}`} />
                   </button>
                   {mobileLenses &&
@@ -281,7 +240,7 @@ const Navbar = () => {
                       {allLensCategories.map((category, index) =>
                         <Link
                           key={`lens-${index}`}
-                          to={`/lenses?category=${encodeURIComponent(category.title)}`}
+                          to={`/lenses?category=${encodeURIComponent(category.key || category.title)}`}
                           onClick={() => setIsOpen(false)}
                           className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
                           <category.icon className="w-4 h-4" />
@@ -295,8 +254,7 @@ const Navbar = () => {
               <button
               onClick={() => setMobileSupport(!mobileSupport)}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
-
-                Support
+                {t("nav.support")}
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileSupport ? 'rotate-180' : ''}`} />
               </button>
               {mobileSupport &&
@@ -306,7 +264,6 @@ const Navbar = () => {
                 key={index}
                 to={link.href}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors py-1">
-
                       {link.title}
                     </Link>
               )}
@@ -327,10 +284,7 @@ const Navbar = () => {
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
-                        onClick={() => {
-                          setSelectedLanguage(lang);
-                          setMobileLanguageOpen(false);
-                        }}
+                        onClick={() => handleLanguageChange(lang)}
                         className={`w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-muted transition-colors text-left ${
                           selectedLanguage.code === lang.code ? 'text-primary bg-muted/50' : 'text-foreground'
                         }`}
@@ -343,7 +297,7 @@ const Navbar = () => {
                 )}
               </div>
               <Link to="/contact-us">
-                <Button variant="default" className="w-full mt-4">Contact Us</Button>
+                <Button variant="default" className="w-full mt-4">{t("nav.contactUs")}</Button>
               </Link>
             </div>
           </div>
@@ -368,8 +322,7 @@ const Navbar = () => {
               'text-muted-foreground hover:text-foreground'}`
               }
               onMouseEnter={() => setActiveProductTab("cameras")}>
-
-              Cameras
+              {t("nav.cameras")}
               {activeProductTab === "cameras" &&
               <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
               }
@@ -381,8 +334,7 @@ const Navbar = () => {
               'text-muted-foreground hover:text-foreground'}`
               }
               onMouseEnter={() => setActiveProductTab("lenses")}>
-
-              Lenses
+              {t("nav.lenses")}
               {activeProductTab === "lenses" &&
               <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
               }
@@ -393,27 +345,26 @@ const Navbar = () => {
           {activeProductTab === "cameras" &&
           <div className="grid grid-cols-12 gap-6 items-center">
               <div className="col-span-3">
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Camera Types</h3>
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">{t("nav.cameraTypes")}</h3>
                 <div className="flex flex-col gap-1">
                   {cameraCategories.map((category, index) =>
                 <a
                   key={index}
                   href={category.href}
                   className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
-                  hoveredCameraCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'}`
+                  hoveredCameraCategory === (category.key || category.title) ? 'bg-secondary' : 'hover:bg-secondary'}`
                   }
-                  onMouseEnter={() => setHoveredCameraCategory(category.title)}>
-
+                  onMouseEnter={() => setHoveredCameraCategory(category.key || category.title)}>
                       <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
-                  hoveredCameraCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'}`
+                  hoveredCameraCategory === (category.key || category.title) ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'}`
                   }>
                         <category.icon className="w-4 h-4 text-primary" />
                       </div>
                       <div className="flex-1">
                         <div className={`font-semibold text-sm transition-colors ${
-                    hoveredCameraCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'}`
+                    hoveredCameraCategory === (category.key || category.title) ? 'text-primary' : 'text-foreground group-hover:text-primary'}`
                     }>{category.title}</div>
-                        <div className="text-xs text-muted-foreground">{category.count} Product {category.count === 1 ? 'Type' : 'Types'}</div>
+                        <div className="text-xs text-muted-foreground">{category.count} {category.count === 1 ? t("nav.productType") : t("nav.productTypes")}</div>
                       </div>
                     </a>
                 )}
@@ -422,29 +373,26 @@ const Navbar = () => {
                   <Link
                   to="/products"
                   className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-background text-primary border-2 border-primary text-sm font-semibold rounded-xl hover:bg-primary hover:text-primary-foreground transition-colors">
-
-                    View All Cameras
+                    {t("nav.viewAllCameras")}
                   </Link>
                 </div>
               </div>
               <div className="col-span-9 border-l border-border pl-6 py-4 flex flex-col justify-center">
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Cameras</h3>
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">{t("nav.featuredCameras")}</h3>
                 <div className="grid grid-cols-4 gap-4">
                   {currentCameraProducts.map((product, index) =>
                 <Link
                   key={index}
                   to={`/product/${product.slug}`}
                   className="group">
-
                       <div className="aspect-square bg-white rounded-md overflow-hidden mb-2 flex items-center justify-center p-6">
                         <img
                       src={product.image}
                       alt={product.name}
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" />
-
                       </div>
                       <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{product.name}</div>
-                      <span className="text-[11px] text-muted-foreground group-hover:text-primary transition-colors">View →</span>
+                      <span className="text-[11px] text-muted-foreground group-hover:text-primary transition-colors">{t("nav.view")}</span>
                     </Link>
                 )}
                 </div>
@@ -456,27 +404,26 @@ const Navbar = () => {
           {activeProductTab === "lenses" &&
           <div className="grid grid-cols-12 gap-6 items-center">
               <div className="col-span-3">
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Lens Types</h3>
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">{t("nav.lensTypes")}</h3>
                 <div className="flex flex-col gap-1">
                   {lensCategories.map((category, index) =>
                 <a
                   key={index}
                   href={category.href}
                   className={`flex items-center gap-3 p-2 rounded-lg transition-colors group ${
-                  hoveredLensCategory === category.title ? 'bg-secondary' : 'hover:bg-secondary'}`
+                  hoveredLensCategory === (category.key || category.title) ? 'bg-secondary' : 'hover:bg-secondary'}`
                   }
-                  onMouseEnter={() => setHoveredLensCategory(category.title)}>
-
+                  onMouseEnter={() => setHoveredLensCategory(category.key || category.title)}>
                       <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
-                  hoveredLensCategory === category.title ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'}`
+                  hoveredLensCategory === (category.key || category.title) ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/20'}`
                   }>
                         <category.icon className="w-4 h-4 text-primary" />
                       </div>
                       <div className="flex-1">
                         <div className={`font-semibold text-sm transition-colors ${
-                    hoveredLensCategory === category.title ? 'text-primary' : 'text-foreground group-hover:text-primary'}`
+                    hoveredLensCategory === (category.key || category.title) ? 'text-primary' : 'text-foreground group-hover:text-primary'}`
                     }>{category.title}</div>
-                        <div className="text-xs text-muted-foreground">{category.count} Product {category.count === 1 ? 'Type' : 'Types'}</div>
+                        <div className="text-xs text-muted-foreground">{category.count} {category.count === 1 ? t("nav.productType") : t("nav.productTypes")}</div>
                       </div>
                     </a>
                 )}
@@ -485,29 +432,26 @@ const Navbar = () => {
                   <Link
                   to="/lenses"
                   className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-background text-primary border-2 border-primary text-sm font-semibold rounded-xl hover:bg-primary hover:text-primary-foreground transition-colors">
-
-                    View All Lenses
+                    {t("nav.viewAllLenses")}
                   </Link>
                 </div>
               </div>
               <div className="col-span-9 border-l border-border pl-6 py-4 flex flex-col justify-center">
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Featured Lenses</h3>
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">{t("nav.featuredLenses")}</h3>
                 <div className="grid grid-cols-4 gap-4">
                   {currentLensProducts.map((product, index) =>
                 <Link
                   key={index}
                   to={`/product/${product.slug}`}
                   className="group">
-
                       <div className="aspect-square bg-white rounded-md overflow-hidden mb-2 flex items-center justify-center p-6">
                         <img
                       src={product.image}
                       alt={product.name}
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" />
-
                       </div>
                       <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{product.name}</div>
-                      <span className="text-[11px] text-muted-foreground group-hover:text-primary transition-colors">View →</span>
+                      <span className="text-[11px] text-muted-foreground group-hover:text-primary transition-colors">{t("nav.view")}</span>
                     </Link>
                 )}
                 </div>
@@ -526,14 +470,13 @@ const Navbar = () => {
         onMouseLeave={() => setSupportDropdownOpen(false)}>
 
         <div className="container mx-auto px-4 py-6">
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Support Resources</h3>
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">{t("nav.supportResources")}</h3>
           <div className="flex flex-row gap-4">
             {supportLinks.map((link, index) =>
             <Link
               key={index}
               to={link.href}
               className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary transition-colors group flex-1">
-
                 <div className="flex-1">
                   <div className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{link.title}</div>
                   <div className="text-xs text-muted-foreground">{link.description}</div>
@@ -545,7 +488,6 @@ const Navbar = () => {
         </div>
       </div>
     </nav>);
-
 };
 
 export default Navbar;

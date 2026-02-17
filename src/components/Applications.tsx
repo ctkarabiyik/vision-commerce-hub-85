@@ -1,58 +1,61 @@
 import { Factory, Scan, Cpu, Package, Microscope, Gauge } from "lucide-react";
-
-const applications = [
-  {
-    icon: Factory,
-    title: "Manufacturing & Quality Control",
-    description: "Area scan cameras and telecentric lenses for automated defect detection, dimensional measurement, and assembly verification on production lines.",
-    industries: ["Area Scan Cameras", "Telecentric Lenses", "FA Lenses"],
-  },
-  {
-    icon: Scan,
-    title: "Web & Surface Inspection",
-    description: "Line scan cameras paired with line scan lenses for continuous inspection of textiles, films, paper, and printed materials at high speeds.",
-    industries: ["Line Scan Cameras", "Line Scan Lenses"],
-  },
-  {
-    icon: Cpu,
-    title: "Electronics & Semiconductor",
-    description: "High-resolution area scan cameras with telecentric lenses for PCB inspection, chip alignment, and solder joint verification.",
-    industries: ["Area Scan Cameras", "Telecentric Lenses", "Macro Lenses"],
-  },
-  {
-    icon: Package,
-    title: "Logistics & Packaging",
-    description: "Line scan and area scan cameras for barcode reading, label verification, package dimensioning, and sorting automation.",
-    industries: ["Line Scan Cameras", "Area Scan Cameras", "FA Lenses"],
-  },
-  {
-    icon: Gauge,
-    title: "Precision Measurement",
-    description: "Telecentric lenses with area scan cameras for non-contact dimensional gauging, profile measurement, and calibration tasks.",
-    industries: ["Telecentric Lenses", "Area Scan Cameras", "Frame Grabbers"],
-  },
-  {
-    icon: Microscope,
-    title: "Research & Laboratory",
-    description: "Specialized macro, infrared, and VR lenses combined with high-resolution cameras for scientific imaging and metrology.",
-    industries: ["Macro Lenses", "Infrared Lenses", "VR Lenses"],
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Applications = () => {
+  const { t } = useTranslation();
+
+  const applications = [
+    {
+      icon: Factory,
+      title: t("applications.manufacturing.title"),
+      description: t("applications.manufacturing.description"),
+      industries: [t("cameraCategories.areaScan"), t("lensCategories.telecentric"), t("lensCategories.fa")],
+    },
+    {
+      icon: Scan,
+      title: t("applications.webInspection.title"),
+      description: t("applications.webInspection.description"),
+      industries: [t("cameraCategories.lineScan"), t("lensCategories.lineScan")],
+    },
+    {
+      icon: Cpu,
+      title: t("applications.electronics.title"),
+      description: t("applications.electronics.description"),
+      industries: [t("cameraCategories.areaScan"), t("lensCategories.telecentric"), t("lensCategories.macro")],
+    },
+    {
+      icon: Package,
+      title: t("applications.logistics.title"),
+      description: t("applications.logistics.description"),
+      industries: [t("cameraCategories.lineScan"), t("cameraCategories.areaScan"), t("lensCategories.fa")],
+    },
+    {
+      icon: Gauge,
+      title: t("applications.measurement.title"),
+      description: t("applications.measurement.description"),
+      industries: [t("lensCategories.telecentric"), t("cameraCategories.areaScan"), "Frame Grabbers"],
+    },
+    {
+      icon: Microscope,
+      title: t("applications.research.title"),
+      description: t("applications.research.description"),
+      industries: [t("lensCategories.macro"), t("lensCategories.infrared"), t("lensCategories.vr")],
+    },
+  ];
+
   return (
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="text-sm font-semibold uppercase tracking-wider text-primary mb-2 block">
-            Industry Solutions
+            {t("applications.label")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Applications of Industrial Cameras
+            {t("applications.title")}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            See how our cameras and lenses power vision systems across diverse industries.
+            {t("applications.description")}
           </p>
         </div>
 

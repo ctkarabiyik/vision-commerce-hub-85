@@ -1,39 +1,42 @@
 import { Shield, Truck, Headphones, Award, RefreshCw, Users } from "lucide-react";
-
-const features = [
-  {
-    icon: Shield,
-    title: "Authorized Distributor",
-    description: "Official partner of 20+ leading camera manufacturers with full warranty support.",
-  },
-  {
-    icon: Truck,
-    title: "Fast Shipping",
-    description: "Same-day dispatch on in-stock items. Global delivery with tracking.",
-  },
-  {
-    icon: Headphones,
-    title: "Expert Support",
-    description: "Technical engineers available 24/7 to help with selection and integration.",
-  },
-  {
-    icon: Award,
-    title: "Quality Guaranteed",
-    description: "Every camera tested and certified before shipment. 30-day returns.",
-  },
-  {
-    icon: RefreshCw,
-    title: "Demo Program",
-    description: "Try before you buy. Free evaluation units for qualified projects.",
-  },
-  {
-    icon: Users,
-    title: "Trusted by Industry",
-    description: "Serving 2,000+ companies in automotive, electronics, and pharma.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const WhyChooseUs = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: Shield,
+      title: t("whyChooseUs.features.authorizedTitle"),
+      description: t("whyChooseUs.features.authorizedDesc"),
+    },
+    {
+      icon: Truck,
+      title: t("whyChooseUs.features.shippingTitle"),
+      description: t("whyChooseUs.features.shippingDesc"),
+    },
+    {
+      icon: Headphones,
+      title: t("whyChooseUs.features.supportTitle"),
+      description: t("whyChooseUs.features.supportDesc"),
+    },
+    {
+      icon: Award,
+      title: t("whyChooseUs.features.qualityTitle"),
+      description: t("whyChooseUs.features.qualityDesc"),
+    },
+    {
+      icon: RefreshCw,
+      title: t("whyChooseUs.features.demoTitle"),
+      description: t("whyChooseUs.features.demoDesc"),
+    },
+    {
+      icon: Users,
+      title: t("whyChooseUs.features.trustedTitle"),
+      description: t("whyChooseUs.features.trustedDesc"),
+    },
+  ];
+
   return (
     <section id="about" className="py-20 bg-accent text-accent-foreground">
       <div className="container mx-auto px-4">
@@ -41,15 +44,14 @@ const WhyChooseUs = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 text-primary text-sm font-semibold uppercase tracking-wider mb-2">
             <div className="w-8 h-0.5 bg-primary" />
-            Why Choose Us
+            {t("whyChooseUs.label")}
             <div className="w-8 h-0.5 bg-primary" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Your Trusted Vision Partner
+            {t("whyChooseUs.title")}
           </h2>
           <p className="text-accent-foreground/70 max-w-2xl mx-auto">
-            With 15+ years of experience, we provide the expertise and support you need 
-            to implement successful machine vision solutions.
+            {t("whyChooseUs.description")}
           </p>
         </div>
 

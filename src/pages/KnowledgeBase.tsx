@@ -2,8 +2,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const KnowledgeBase = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -11,19 +14,18 @@ const KnowledgeBase = () => {
       {/* Hero Section */}
       <section className="pt-24 lg:pt-32 pb-12 bg-secondary">
         <div className="container mx-auto px-4">
-          {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <Link to="/" className="hover:text-primary transition-colors">{t("common.home")}</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-foreground font-medium">Knowledge Base</span>
+            <span className="text-foreground font-medium">{t("knowledgeBasePage.breadcrumb")}</span>
           </nav>
           
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Knowledge Base
+              {t("knowledgeBasePage.title")}
             </h1>
             <p className="text-lg text-muted-foreground">
-              Find answers, tutorials, and technical documentation for all your machine vision needs.
+              {t("knowledgeBasePage.description")}
             </p>
           </div>
         </div>
@@ -36,9 +38,9 @@ const KnowledgeBase = () => {
             <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
               <BookOpen className="w-7 h-7 text-primary" />
             </div>
-            <h2 className="text-3xl font-bold text-foreground mb-4">Coming Soon</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">{t("knowledgeBasePage.comingSoon")}</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Our knowledge base is currently being prepared. Articles, tutorials, and technical documentation will be available here shortly.
+              {t("knowledgeBasePage.comingSoonDesc")}
             </p>
           </div>
         </div>
