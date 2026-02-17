@@ -1,46 +1,31 @@
 
+# Remove Unused Files and Dependencies
 
-# Add Line Scan Camera Subcategories to Products Page
+## Summary
+Clean up dead code by removing 3 unused component files and 3 unused npm packages that are not referenced anywhere in the project.
 
-## Overview
+## Files to Delete
 
-Replace the current placeholder camera products on the `/products` page with 3 real Line Scan Camera product types (1GigE, 2.5GigE, 10GigE), each with its own detail page following the same lens template. Update sidebar filters, navigation dropdown, and product detail data accordingly.
+1. **`src/components/SpinningCube.tsx`** — A 3D rotating cube demo component. Not imported by any page or component.
+2. **`src/components/NavLink.tsx`** — A NavLink wrapper component. Not imported anywhere.
+3. **`src/components/ui/navigation-menu.tsx`** — Radix navigation menu UI component. Not imported anywhere.
 
-## Changes
+## Dependencies to Remove
 
-### 1. Copy uploaded images to `src/assets/`
-- `user-uploads://1.png` -> `src/assets/line-scan-camera-1gige.png`
-- `user-uploads://2.png` -> `src/assets/line-scan-camera-2-5gige.png`
-- `user-uploads://3.png` -> `src/assets/line-scan-camera-10gige.png`
+These packages are only used by SpinningCube and can be uninstalled:
 
-### 2. Update `src/pages/Products.tsx`
-- Replace the current 12 placeholder camera products with 3 real line scan camera entries:
-  - **1GigE Line Scan Camera** (category: `line-scan`, slug: `1gige-line-scan-camera`)
-  - **2.5GigE Line Scan Camera** (category: `line-scan`, slug: `2-5gige-line-scan-camera`)
-  - **10GigE Line Scan Camera** (category: `line-scan`, slug: `10gige-line-scan-camera`)
-- Update `cameraCategories` counts: All Cameras = 3, Line Scan = 3, Frame Scan = 0, Other = 0 (or remove empty categories for now)
-- Add `slug` property to products (matching the Lenses page pattern)
-- Update sidebar labels to use "Product Type/Types" with conditional pluralization
-- Import the 3 new camera images
+- `@react-three/fiber`
+- `@react-three/drei`
+- `three`
 
-### 3. Update `src/pages/ProductDetail.tsx`
-- Add 3 new entries to `productData` for the line scan cameras, using the lens-style template with `mainFeatures`, `quickSpecs`, and `applications` fields
-- Add corresponding `modelVariants` entries with camera-specific specs (resolution, line rate, interface, pixel size, etc.)
-- Set `categorySlug: "products"` and `category: "Line Scan Cameras"` for proper breadcrumb navigation
-- Use the new camera thumbnail images
+## What stays
 
-### 4. Update `src/components/Navbar.tsx`
-- Update the "Line Scan Cameras" entries in `productsByCategory` to show the 3 new real products with correct slugs and images
-- Update the Line Scan Cameras category count from 84 to 3
-- Import the 3 new camera images
-- Update camera category labels to use "Product Type/Types" with conditional pluralization
+- All shadcn/ui components (even unused ones like `slider`, `toggle`, etc.) — these are standard scaffolding kept for future use
+- All asset images — they are referenced across pages and components
+- `src/components/ui/use-toast.ts` — re-exports from hooks, used by toaster
 
-### 5. Update `src/components/ProductCard.tsx` (if needed)
-- Ensure the ProductCard links to `/product/{slug}` when a slug is provided (same pattern as Lenses page)
+## Technical details
 
-## Technical Details
-
-- Each camera product detail page will use the `hasLensLayout` (three-column cards) template when `mainFeatures` is present
-- Model tables will use the multi-row comparison format with camera-specific headers (Model, Resolution, Line Rate, Interface, Pixel Size, etc.)
-- Images are imported as ES6 modules from `src/assets/` for proper bundling
-- Sidebar filter counts and pluralization logic will match the Lenses page pattern
+- Remove the 3 files listed above
+- Remove the 3 npm packages from `package.json` dependencies
+- No other files need updating since none of these are imported anywhere
