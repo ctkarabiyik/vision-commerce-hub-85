@@ -1,31 +1,24 @@
 
-# Remove Unused Files and Dependencies
 
-## Summary
-Clean up dead code by removing 3 unused component files and 3 unused npm packages that are not referenced anywhere in the project.
+# Fix: Dropdown Menus Flashing on Page Refresh
 
-## Files to Delete
+## Problem
+The Products and Support mega menus are always present in the DOM, hidden only via `opacity-0 invisible` with `transition-all duration-200`. On page refresh, the browser briefly renders them in their default position before applying the hidden styles, causing a visible flash of centered content.
 
-1. **`src/components/SpinningCube.tsx`** — A 3D rotating cube demo component. Not imported by any page or component.
-2. **`src/components/NavLink.tsx`** — A NavLink wrapper component. Not imported anywhere.
-3. **`src/components/ui/navigation-menu.tsx`** — Radix navigation menu UI component. Not imported anywhere.
+## Solution
+Use **conditional rendering** instead of opacity/visibility toggling. Only mount the dropdown DOM elements when they are actually open. This eliminates any flash on page load because the elements simply don't exist until triggered.
 
-## Dependencies to Remove
+## Changes
 
-These packages are only used by SpinningCube and can be uninstalled:
+### `src/components/Navbar.tsx`
 
-- `@react-three/fiber`
-- `@react-three/drei`
-- `three`
+**Products Mega Menu (line ~308-462):**
+- Replace `opacity-0 invisible` / `opacity-100 visible` toggle with conditional rendering (`{productsDropdownOpen && ...}`)
+- Remove the transition classes since mount/unmount handles show/hide
 
-## What stays
+**Support Mega Menu (line ~465-489):**
+- Same approach: wrap in `{supportDropdownOpen && ...}`
+- Remove the transition classes
 
-- All shadcn/ui components (even unused ones like `slider`, `toggle`, etc.) — these are standard scaffolding kept for future use
-- All asset images — they are referenced across pages and components
-- `src/components/ui/use-toast.ts` — re-exports from hooks, used by toaster
+Both dropdowns already have `onMouseEnter` / `onMouseLeave` handlers, so hover behavior will continue working identically. The only difference is the elements won't exist in the DOM when closed, preventing any flash on refresh.
 
-## Technical details
-
-- Remove the 3 files listed above
-- Remove the 3 npm packages from `package.json` dependencies
-- No other files need updating since none of these are imported anywhere
