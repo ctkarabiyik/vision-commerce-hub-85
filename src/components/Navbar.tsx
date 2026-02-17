@@ -133,7 +133,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8 ltr:ml-auto ltr:mr-8 rtl:mr-auto rtl:ml-8">
             <div
               className="relative"
               onMouseEnter={() => setProductsDropdownOpen(true)}
@@ -155,7 +155,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4 ltr:ml-auto rtl:mr-auto">
+          <div className="hidden lg:flex items-center gap-4">
             {/* Language Selector */}
             <div
               className="relative"
