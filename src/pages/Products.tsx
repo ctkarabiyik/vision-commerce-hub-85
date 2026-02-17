@@ -169,7 +169,7 @@ const products = [
   image: frameGrabber,
   specs: [
     { label: "Resolution", value: "10–40G" },
-    { label: "FPS", value: "1–4 Ch" },
+    { label: "Channels", value: "1–4 Ch" },
   ],
   category: "other",
   slug: "frame-grabber-10-40gige"
