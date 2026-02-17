@@ -1354,9 +1354,11 @@ const ProductDetail = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 min-w-0">
-                <Button size="lg" className="gap-2 w-full sm:w-auto">
-                  <ShoppingCart className="w-5 h-5 flex-shrink-0" />
-                  Request Quote
+                <Button size="lg" className="gap-2 w-full sm:w-auto" asChild>
+                  <Link to={`/contact-us?product=${encodeURIComponent(product.name)}`}>
+                    <ShoppingCart className="w-5 h-5 flex-shrink-0" />
+                    Request Quote
+                  </Link>
                 </Button>
               </div>
             </div>
