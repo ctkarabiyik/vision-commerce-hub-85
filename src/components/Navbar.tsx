@@ -133,7 +133,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8 ml-auto mr-8">
+          <div className="hidden lg:flex items-center gap-8 ltr:ml-auto ltr:mr-8 rtl:mr-auto rtl:ml-8">
             <div
               className="relative"
               onMouseEnter={() => setProductsDropdownOpen(true)}
