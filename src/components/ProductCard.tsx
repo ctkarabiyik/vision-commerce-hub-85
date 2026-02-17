@@ -39,11 +39,6 @@ const ProductCard = ({ name, brand, image, specs, slug, resolution, fps, interfa
           alt={name}
           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute top-3 left-3">
-          <span className="bg-accent text-accent-foreground text-[10px] font-semibold uppercase tracking-wider px-2 py-1 rounded-sm">
-            {brand}
-          </span>
-        </div>
         <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/60 transition-colors duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
           <Link to={`/product/${productSlug}`}>
             <Button variant="default" size="icon" className="rounded-full">

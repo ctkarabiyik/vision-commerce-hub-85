@@ -52,7 +52,7 @@ const Applications = () => {
             Applications of Industrial Cameras
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            See how Do3Think cameras and DZOPTICS lenses power vision systems across diverse industries.
+            See how our cameras and lenses power vision systems across diverse industries.
           </p>
         </div>
 

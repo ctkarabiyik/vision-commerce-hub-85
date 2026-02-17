@@ -443,7 +443,6 @@ const Navbar = () => {
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" />
 
                       </div>
-                      <div className="text-xs text-primary font-semibold">{product.brand}</div>
                       <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{product.name}</div>
                       <div className="text-xs text-muted-foreground">{product.resolution}</div>
                     </Link>
@@ -507,7 +506,6 @@ const Navbar = () => {
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" />
 
                       </div>
-                      <div className="text-xs text-primary font-semibold">{product.brand}</div>
                       <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{product.name}</div>
                       <div className="text-xs text-muted-foreground">{product.resolution}</div>
                     </Link>
