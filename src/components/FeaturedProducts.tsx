@@ -24,7 +24,7 @@ const products = [
     image: lineScan1gige,
     specs: [
       { label: "Resolution", value: "2K–8K" },
-      { label: "Interface", value: "1GigE" },
+      { label: "Mount", value: "C / M42" },
     ],
     slug: "1gige-line-scan-camera",
   },
