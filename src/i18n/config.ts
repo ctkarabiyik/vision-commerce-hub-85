@@ -32,4 +32,9 @@ i18n.on("languageChanged", (lng) => {
   document.documentElement.lang = lng;
 });
 
+// Set initial direction
+const initialDir = RTL_LANGUAGES.includes(i18n.language) ? "rtl" : "ltr";
+document.documentElement.dir = initialDir;
+document.documentElement.lang = i18n.language;
+
 export default i18n;
