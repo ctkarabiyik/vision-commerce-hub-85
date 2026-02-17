@@ -1338,7 +1338,7 @@ const ProductDetail = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Product Image */}
             <div className="aspect-square bg-white rounded-lg border border-border overflow-hidden flex items-center justify-center">
-              <img src={product.image} alt={product.name} className="w-full h-full object-contain p-16" />
+              <img src={product.image} alt={product.name} className="w-full h-full object-contain p-24" />
             </div>
 
             {/* Product Info */}
