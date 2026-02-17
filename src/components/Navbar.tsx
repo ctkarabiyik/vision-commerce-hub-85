@@ -305,8 +305,10 @@ const Navbar = () => {
       </div>
 
       {/* Products Mega Menu */}
-      {productsDropdownOpen && <div
-        className="absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg z-50"
+      <div
+        className={`absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg transition-all duration-200 z-50 ${
+        productsDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`
+        }
         onMouseEnter={() => setProductsDropdownOpen(true)}
         onMouseLeave={() => setProductsDropdownOpen(false)}>
 
@@ -457,11 +459,13 @@ const Navbar = () => {
             </div>
           }
         </div>
-      </div>}
+      </div>
 
       {/* Support Dropdown Menu */}
-      {supportDropdownOpen && <div
-        className="absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg z-50"
+      <div
+        className={`absolute left-0 right-0 top-full bg-card border-b border-border shadow-lg transition-all duration-200 z-50 ${
+        supportDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`
+        }
         onMouseEnter={() => setSupportDropdownOpen(true)}
         onMouseLeave={() => setSupportDropdownOpen(false)}>
 
@@ -482,7 +486,7 @@ const Navbar = () => {
             )}
           </div>
         </div>
-      </div>}
+      </div>
     </nav>);
 };
 
