@@ -174,9 +174,6 @@ const Navbar = () => {
                 <ChevronDown className={`w-4 h-4 transition-transform ${productsDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
             </div>
-            <Link to="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              About Us
-            </Link>
             <div
               className="relative"
               onMouseEnter={() => setSupportDropdownOpen(true)}
@@ -294,9 +291,6 @@ const Navbar = () => {
                   }
                 </div>
             }
-              <Link to="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                About Us
-              </Link>
               <button
               onClick={() => setMobileSupport(!mobileSupport)}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
