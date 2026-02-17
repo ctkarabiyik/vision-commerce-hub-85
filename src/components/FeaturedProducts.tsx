@@ -65,7 +65,7 @@ const FeaturedProducts = () => {
               Cameras & Lenses
             </h2>
           </div>
-          <div className="flex gap-3 mt-4 md:mt-0">
+          <div className="flex flex-col sm:flex-row gap-3 mt-4 md:mt-0 w-full sm:w-auto">
             <Link to="/products">
               <Button variant="outline" className="group">
                 View All Cameras
