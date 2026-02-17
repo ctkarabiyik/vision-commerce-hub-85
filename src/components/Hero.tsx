@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, Cpu, Eye, Zap } from "lucide-react";
+import { Download } from "lucide-react";
 import heroImage from "@/assets/hero-camera.jpg";
 const Hero = () => {
   return <section className="relative min-h-[95vh] flex items-center pt-20 overflow-hidden">
@@ -38,36 +38,6 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 pt-8 border-t border-primary-foreground/20">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded bg-primary/20 flex items-center justify-center">
-                <Eye className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary-foreground">500+</div>
-                <div className="text-xs text-primary-foreground/60 uppercase tracking-wide">Camera Models</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded bg-primary/20 flex items-center justify-center">
-                <Cpu className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary-foreground">20+</div>
-                <div className="text-xs text-primary-foreground/60 uppercase tracking-wide">Top Brands</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded bg-primary/20 flex items-center justify-center">
-                <Zap className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary-foreground">24/7</div>
-                <div className="text-xs text-primary-foreground/60 uppercase tracking-wide">Tech Support</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
