@@ -311,6 +311,21 @@ const Navbar = () => {
               )}
                 </div>
             }
+              {/* Mobile Language Selector */}
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-border">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => setSelectedLanguage(lang)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-md transition-colors ${
+                      selectedLanguage.code === lang.code ? 'bg-primary text-primary-foreground' : 'bg-muted text-foreground hover:bg-muted/80'
+                    }`}
+                  >
+                    <span>{lang.flag}</span>
+                    <span>{lang.code.toUpperCase()}</span>
+                  </button>
+                ))}
+              </div>
               <Link to="/contact-us">
                 <Button variant="default" className="w-full mt-4">Contact Us</Button>
               </Link>
