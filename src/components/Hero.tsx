@@ -34,7 +34,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="hero" className="group">
               <Download className="w-5 h-5" />
-              Download Our Catalog
+              Download Our Catalogs
             </Button>
           </div>
 
