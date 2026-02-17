@@ -444,6 +444,7 @@ const Navbar = () => {
 
                       </div>
                       <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{product.name}</div>
+                      <span className="text-[11px] text-muted-foreground group-hover:text-primary transition-colors">View →</span>
                     </Link>
                 )}
                 </div>
@@ -506,6 +507,7 @@ const Navbar = () => {
 
                       </div>
                       <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{product.name}</div>
+                      <span className="text-[11px] text-muted-foreground group-hover:text-primary transition-colors">View →</span>
                     </Link>
                 )}
                 </div>
