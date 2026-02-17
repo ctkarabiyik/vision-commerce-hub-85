@@ -28,7 +28,6 @@ const ProductCard = ({ name, brand, image, specs, slug, resolution, fps, interfa
     : [
         { label: "Resolution", value: resolution || "-" },
         { label: "FPS", value: fps || "-" },
-        { label: "Interface", value: interfaceType || "-" },
       ];
   
   return (
@@ -59,7 +58,7 @@ const ProductCard = ({ name, brand, image, specs, slug, resolution, fps, interfa
         <h3 className="font-semibold text-foreground mb-2 line-clamp-1">{name}</h3>
         
         {/* Specs */}
-        <div className="grid grid-cols-3 gap-2 mb-4">
+        <div className="grid grid-cols-2 gap-2 mb-4">
           {displaySpecs.map((spec, index) => (
             <div key={index} className="text-center bg-secondary rounded-sm py-2">
               <div className="text-xs text-muted-foreground">{spec.label}</div>
