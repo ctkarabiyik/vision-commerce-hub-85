@@ -1,41 +1,41 @@
-import { Factory, Car, Pill, Cpu, Package, Microscope } from "lucide-react";
+import { Factory, Scan, Cpu, Package, Microscope, Gauge } from "lucide-react";
 
 const applications = [
   {
     icon: Factory,
     title: "Manufacturing & Quality Control",
-    description: "Automated defect detection, dimensional measurement, and assembly verification for high-speed production lines.",
-    industries: ["Automotive", "Electronics", "Aerospace"],
+    description: "Area scan cameras and telecentric lenses for automated defect detection, dimensional measurement, and assembly verification on production lines.",
+    industries: ["Area Scan Cameras", "Telecentric Lenses", "FA Lenses"],
   },
   {
-    icon: Car,
-    title: "Automotive Industry",
-    description: "Vision-guided robotics, paint inspection, and component verification for automotive manufacturing and assembly.",
-    industries: ["Body Assembly", "Paint Shop", "Final Inspection"],
-  },
-  {
-    icon: Pill,
-    title: "Pharmaceutical & Medical",
-    description: "Label verification, fill-level inspection, and contamination detection for regulated medical environments.",
-    industries: ["Drug Packaging", "Medical Devices", "Lab Automation"],
-  },
-  {
-    icon: Package,
-    title: "Logistics & Packaging",
-    description: "Barcode reading, package dimensioning, and sorting automation for warehouses and fulfillment centers.",
-    industries: ["E-commerce", "Distribution", "Food & Beverage"],
+    icon: Scan,
+    title: "Web & Surface Inspection",
+    description: "Line scan cameras paired with line scan lenses for continuous inspection of textiles, films, paper, and printed materials at high speeds.",
+    industries: ["Line Scan Cameras", "Line Scan Lenses"],
   },
   {
     icon: Cpu,
     title: "Electronics & Semiconductor",
-    description: "PCB inspection, chip alignment, and solder joint verification for precision electronics manufacturing.",
-    industries: ["PCB Assembly", "Chip Fabrication", "Display Manufacturing"],
+    description: "High-resolution area scan cameras with telecentric lenses for PCB inspection, chip alignment, and solder joint verification.",
+    industries: ["Area Scan Cameras", "Telecentric Lenses", "Macro Lenses"],
+  },
+  {
+    icon: Package,
+    title: "Logistics & Packaging",
+    description: "Line scan and area scan cameras for barcode reading, label verification, package dimensioning, and sorting automation.",
+    industries: ["Line Scan Cameras", "Area Scan Cameras", "FA Lenses"],
+  },
+  {
+    icon: Gauge,
+    title: "Precision Measurement",
+    description: "Telecentric lenses with area scan cameras for non-contact dimensional gauging, profile measurement, and calibration tasks.",
+    industries: ["Telecentric Lenses", "Area Scan Cameras", "Frame Grabbers"],
   },
   {
     icon: Microscope,
     title: "Research & Laboratory",
-    description: "High-resolution imaging for scientific research, microscopy, and specialized measurement applications.",
-    industries: ["Life Sciences", "Materials Science", "Metrology"],
+    description: "Specialized macro, infrared, and VR lenses combined with high-resolution cameras for scientific imaging and metrology.",
+    industries: ["Macro Lenses", "Infrared Lenses", "VR Lenses"],
   },
 ];
 
@@ -52,7 +52,7 @@ const Applications = () => {
             Applications of Industrial Cameras
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From high-speed manufacturing to precision laboratory work, our cameras power vision systems across diverse industries.
+            See how Do3Think cameras and DZOPTICS lenses power vision systems across diverse industries.
           </p>
         </div>
 
