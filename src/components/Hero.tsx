@@ -33,7 +33,7 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/knowledge-base">
+            <Link to="/software-downloads">
               <Button variant="hero" className="group">
                 <Download className="w-5 h-5" />
                 Download Our Catalogs
