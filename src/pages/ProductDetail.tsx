@@ -1357,6 +1357,20 @@ const ProductDetail = () => {
     );
   }
 
+  const categoryFilterMap: Record<string, string> = {
+    "Line Scan Cameras": "line-scan",
+    "Area Scan Cameras": "area-scan",
+    "Other": "other",
+    "FA Lenses": "fa-lenses",
+    "Telecentric Lenses": "telecentric",
+    "Line Scan Lenses": "line-scan",
+    "Macro Lenses": "macro",
+    "Infrared Lenses": "infrared",
+    "VR Lenses": "vr",
+    "Scheimpflug Lenses": "scheimpflug",
+    "Large Format Lenses": "large-format",
+  };
+
   const hasLensLayout = !!product.mainFeatures;
   const isCameraProduct = slug ? [...lineScanCameraSlugs, ...areaScanCameraSlugs].includes(slug) : false;
 
@@ -1398,7 +1412,7 @@ const ProductDetail = () => {
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
             <LocaleLink to="/" className="hover:text-primary transition-colors">{t("common.home")}</LocaleLink>
             <ChevronRight className="w-4 h-4" />
-            <LocaleLink to={`/${product.categorySlug}`} className="hover:text-primary transition-colors">
+            <LocaleLink to={`/${product.categorySlug}?category=${categoryFilterMap[product.category] || ""}`} className="hover:text-primary transition-colors">
               {translatedCategory}
             </LocaleLink>
             <ChevronRight className="w-4 h-4" />
