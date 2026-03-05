@@ -191,7 +191,7 @@ const en = {
   downloadsPage: {
     breadcrumb: "Downloads",
     title: "Downloads",
-    description: "Download product catalogs, drivers, SDKs, and utilities for your industrial cameras. All software is compatible with Windows, Linux, and macOS platforms.",
+    description: "Download product catalogs, drivers, SDKs, and utilities for your industrial cameras.",
     comingSoon: "Coming Soon",
     comingSoonDesc: "Our downloads section is currently being prepared. Drivers, SDKs, and utilities will be available here shortly.",
   },
