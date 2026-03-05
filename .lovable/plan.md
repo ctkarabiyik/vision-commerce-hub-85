@@ -1,25 +1,24 @@
 
 
-# Fix: Desktop Nav Centering on Page Refresh
-
 ## Problem
-The desktop navigation div (Products / Support links) uses `ltr:ml-auto` and `rtl:mr-auto` Tailwind variants to push itself to the right (or left in RTL). These variants only activate when the `dir` attribute is set on the `<html>` element.
 
-On initial page load, `dir` is not set until a language change event fires. Without `dir="ltr"`, the `ltr:ml-auto` class has no effect, so the nav items sit centered in the flex container. Changing the language triggers the `languageChanged` handler which sets `dir`, fixing the layout.
+Both SVG logos (`alarge-logo.svg` and `alarge-logo-footer.svg`) use a `<text>` element with `font-family: Inter` to render the word "camera". In private/incognito browsing, the Inter font from Google Fonts may not be cached, causing the text to render in a fallback system font before (or instead of) Inter loading.
 
 ## Solution
-Set the initial `dir` and `lang` attributes on `<html>` at startup, not only on language change.
 
-### `src/i18n/config.ts`
+Embed a Google Fonts `@import` for Inter directly inside each SVG file within a `<style>` block in `<defs>`. This makes the SVGs self-contained -- they will fetch and use Inter regardless of browser cache state.
 
-After `i18n.init(...)`, add:
+## Changes
 
-```ts
-// Set initial direction
-const initialDir = RTL_LANGUAGES.includes(i18n.language) ? "rtl" : "ltr";
-document.documentElement.dir = initialDir;
-document.documentElement.lang = i18n.language;
+**`src/assets/alarge-logo.svg`** and **`src/assets/alarge-logo-footer.svg`**
+
+Add the following inside the existing `<defs>` block of each SVG:
+
+```xml
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Inter&amp;display=swap');
+</style>
 ```
 
-This ensures `dir="ltr"` is present immediately on load, so `ltr:ml-auto` applies right away. No other files need changes.
+This is a minimal, non-destructive change -- no paths or shapes are altered, and the text element continues to work as before, but now with a guaranteed font source embedded in the SVG itself.
 
