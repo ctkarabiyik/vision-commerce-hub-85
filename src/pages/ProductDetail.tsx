@@ -1,4 +1,5 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import LocaleLink from "@/components/LocaleLink";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -1347,9 +1348,9 @@ const ProductDetail = () => {
         <Navbar />
         <div className="pt-32 pb-16 text-center">
           <h1 className="text-2xl font-bold">{t("productDetail.productNotFound")}</h1>
-          <Link to="/lenses" className="text-primary hover:underline mt-4 inline-block">
-            {t("productDetail.backToProducts")}
-          </Link>
+           <LocaleLink to="/lenses" className="text-primary hover:underline mt-4 inline-block">
+             {t("productDetail.backToProducts")}
+           </LocaleLink>
         </div>
         <Footer />
       </div>
@@ -1388,11 +1389,11 @@ const ProductDetail = () => {
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <Link to="/" className="hover:text-primary transition-colors">{t("common.home")}</Link>
+            <LocaleLink to="/" className="hover:text-primary transition-colors">{t("common.home")}</LocaleLink>
             <ChevronRight className="w-4 h-4" />
-            <Link to={`/${product.categorySlug}`} className="hover:text-primary transition-colors">
+            <LocaleLink to={`/${product.categorySlug}`} className="hover:text-primary transition-colors">
               {translatedCategory}
-            </Link>
+            </LocaleLink>
             <ChevronRight className="w-4 h-4" />
             <span className="text-foreground font-medium">{product.name}</span>
           </nav>
@@ -1417,10 +1418,10 @@ const ProductDetail = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 min-w-0">
                 <Button size="lg" className="gap-2 w-full sm:w-auto" asChild>
-                  <Link to={`/contact-us?product=${encodeURIComponent(product.name)}`}>
+                  <LocaleLink to={`/contact-us?product=${encodeURIComponent(product.name)}`}>
                     <ShoppingCart className="w-5 h-5 flex-shrink-0" />
                     {t("productDetail.requestQuote")}
-                  </Link>
+                  </LocaleLink>
                 </Button>
               </div>
             </div>

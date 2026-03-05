@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import LocaleLink from "@/components/LocaleLink";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
@@ -86,7 +86,7 @@ const AreaScanCameras = () => {
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <LocaleLink to="/" className="hover:text-primary transition-colors">Home</LocaleLink>
             <ChevronRight className="w-4 h-4" />
             <span className="text-foreground font-medium">Area Scan Cameras</span>
           </nav>

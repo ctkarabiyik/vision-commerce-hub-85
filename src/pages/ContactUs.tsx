@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import LocaleLink from "@/components/LocaleLink";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -104,7 +105,7 @@ const ContactUs = () => {
       <section className="pt-24 lg:pt-32 pb-12 bg-secondary">
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-            <Link to="/" className="hover:text-primary transition-colors">{t("common.home")}</Link>
+            <LocaleLink to="/" className="hover:text-primary transition-colors">{t("common.home")}</LocaleLink>
             <ChevronRight className="w-4 h-4" />
             <span className="text-foreground font-medium">{t("contactPage.breadcrumb")}</span>
           </nav>

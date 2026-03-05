@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import LocaleLink from "@/components/LocaleLink";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import heroImage from "@/assets/hero-camera.jpg";
@@ -34,12 +34,12 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/software-downloads">
+            <LocaleLink to="/software-downloads">
               <Button variant="hero" className="group">
                 <Download className="w-5 h-5" />
                 {t("hero.cta")}
               </Button>
-            </Link>
+            </LocaleLink>
           </div>
 
         </div>

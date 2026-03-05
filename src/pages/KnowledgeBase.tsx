@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import LocaleLink from "@/components/LocaleLink";
 import { useTranslation } from "react-i18next";
 
 const KnowledgeBase = () => {
@@ -15,7 +15,7 @@ const KnowledgeBase = () => {
       <section className="pt-24 lg:pt-32 pb-12 bg-secondary">
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-            <Link to="/" className="hover:text-primary transition-colors">{t("common.home")}</Link>
+            <LocaleLink to="/" className="hover:text-primary transition-colors">{t("common.home")}</LocaleLink>
             <ChevronRight className="w-4 h-4" />
             <span className="text-foreground font-medium">{t("knowledgeBasePage.breadcrumb")}</span>
           </nav>

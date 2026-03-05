@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import LocaleLink from "@/components/LocaleLink";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -18,12 +18,12 @@ const CTA = () => {
           </p>
 
           <div className="flex justify-center mb-12">
-            <Link to="/contact-us">
+            <LocaleLink to="/contact-us">
               <Button variant="heroOutline" className="group">
                 {t("cta.button")}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </Link>
+            </LocaleLink>
           </div>
 
           {/* Contact Info */}
