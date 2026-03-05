@@ -24,6 +24,14 @@ const ProductCard = ({ name, brand, image, specs, slug, viewMode = "grid", resol
   const { t } = useTranslation();
   const productSlug = slug || name.toLowerCase().replace(/\s+/g, '-');
 
+  const specLabelMap: Record<string, string> = {
+    "Resolution": "tableHeaders.resolution",
+    "FPS": "tableHeaders.fps",
+    "Mount": "tableHeaders.mount",
+    "F#": "tableHeaders.fNumber",
+    "Channels": "specLabels.channels",
+  };
+
   const displaySpecs: Spec[] = specs && specs.length > 0
     ? specs
     : [
@@ -43,7 +51,7 @@ const ProductCard = ({ name, brand, image, specs, slug, viewMode = "grid", resol
             <div className="flex gap-3">
               {displaySpecs.map((spec, index) => (
                 <div key={index} className="text-center bg-secondary rounded-sm py-1.5 px-3">
-                  <div className="text-xs text-muted-foreground">{spec.label}</div>
+                  <div className="text-xs text-muted-foreground">{specLabelMap[spec.label] ? t(specLabelMap[spec.label]) : spec.label}</div>
                   <div className="text-sm font-semibold text-foreground">{spec.value}</div>
                 </div>
               ))}
@@ -76,7 +84,7 @@ const ProductCard = ({ name, brand, image, specs, slug, viewMode = "grid", resol
         <div className="grid grid-cols-2 gap-2 mb-4">
           {displaySpecs.map((spec, index) => (
             <div key={index} className="text-center bg-secondary rounded-sm py-2">
-              <div className="text-xs text-muted-foreground">{spec.label}</div>
+              <div className="text-xs text-muted-foreground">{specLabelMap[spec.label] ? t(specLabelMap[spec.label]) : spec.label}</div>
               <div className="text-sm font-semibold text-foreground">{spec.value}</div>
             </div>
           ))}

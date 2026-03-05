@@ -278,6 +278,10 @@ const tr = {
     fps: "FPS",
   },
 
+  specLabels: {
+    channels: "Kanal",
+  },
+
   // Common
   common: {
     home: "Ana Sayfa",
