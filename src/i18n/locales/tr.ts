@@ -191,7 +191,7 @@ const tr = {
   downloadsPage: {
     breadcrumb: "İndirmeler",
     title: "İndirmeler",
-    description: "Endüstriyel kameralarınız için ürün katalogları, sürücüler, SDK'lar ve yardımcı programları indirin. Tüm yazılımlar Windows, Linux ve macOS platformlarıyla uyumludur.",
+    description: "Endüstriyel kameralarınız için ürün katalogları, sürücüler, SDK'lar ve yardımcı programları indirin.",
     comingSoon: "Yakında",
     comingSoonDesc: "İndirmeler bölümümüz şu anda hazırlanıyor. Sürücüler, SDK'lar ve yardımcı programlar kısa süre içinde burada mevcut olacak.",
   },
