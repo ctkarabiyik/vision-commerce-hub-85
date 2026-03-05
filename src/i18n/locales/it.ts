@@ -264,6 +264,21 @@ const it = {
     channels: "Canali",
   },
 
+  modelNotes: {
+    "1gige-line-scan-camera": "Nota: DSG significa telecamera lineare 1GigE. Continuous indica trasmissione dati continua, Burst indica trasmissione dati a intervalli.",
+    "2-5gige-line-scan-camera": "Nota: DSR significa telecamera lineare 2.5GigE. 4K/8K indica la risoluzione, C indica Colore.",
+    "10gige-line-scan-camera": "Nota: DSX significa telecamera lineare 10GigE. 8K indica la risoluzione, C indica Colore.",
+    "mgv-series-1gige-area-scan": "Nota: MGV significa telecamera matriciale 1GigE. 1209 indica risoluzione 12MP, M significa Mono, H2 versione hardware.",
+    "mgs-series-1gige-area-scan": "Nota: MGS significa telecamera matriciale 1GigE. 1207 indica risoluzione 12MP, M significa Mono, H2 versione hardware.",
+    "m3s-series-usb3-area-scan": "Nota: M3ST significa telecamera matriciale USB3.0. 1207 indica risoluzione 12MP, M significa Mono, H versione hardware, O2C due uscite isolate con optoaccoppiatore.",
+    "u3p-series-usb3-area-scan": "Nota: U3P significa telecamera matriciale USB3.0. 520 indica risoluzione 5MP, M significa Mono, H versione hardware.",
+    "m2s-series-usb2-area-scan": "Nota: M2S significa telecamera matriciale USB2.0. 132 e 138 indicano entrambi risoluzione 1.3MP, M significa Mono, H2 versione hardware.",
+    "10gige-fiber-optic-area-scan": "Nota: DSX significa telecamera matriciale 10GigE in fibra ottica. 6500 indica risoluzione 65MP, M significa Mono.",
+    "ds-series-dual-usb3-area-scan": "Nota 1: DS2502M supporta applicazioni stroboscopiche a divisione di tempo con 2/3/4 luci. Nota 2: 2502 indica risoluzione 25MP, M significa Mono.",
+    "dsv-series-usb3-coin": "Nota: 501 indica risoluzione 5MP, M significa Mono.",
+    "lipstick-series-1gige-area-scan": "Nota: 135 indica risoluzione 1.3MP, M significa Mono.",
+  },
+
   common: {
     home: "Home",
   },

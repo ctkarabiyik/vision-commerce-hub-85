@@ -282,6 +282,21 @@ const en = {
     channels: "Channels",
   },
 
+  modelNotes: {
+    "1gige-line-scan-camera": "Note: DSG means 1GigE line scan. Continuous means continuous data transmission, Burst means interval data transmission.",
+    "2-5gige-line-scan-camera": "Note: DSR means 2.5GigE line scan. 4K/8K means resolution, C means Color.",
+    "10gige-line-scan-camera": "Note: DSX means 10GigE line scan. 8K means resolution, C means Color.",
+    "mgv-series-1gige-area-scan": "Note: MGV means 1GigE area scan. 1209 means the resolution is 12MP, M means Mono, H2 means hardware version.",
+    "mgs-series-1gige-area-scan": "Note: MGS means 1GigE area scan. 1207 means the resolution is 12MP, M means Mono, H2 means hardware version.",
+    "m3s-series-usb3-area-scan": "Note: M3ST means USB3.0 area scan. 1207 means the resolution is 12MP, M means Mono, H means hardware version, O2C means two optocoupler isolated output.",
+    "u3p-series-usb3-area-scan": "Note: U3P means USB3.0 area scan. 520 means the resolution is 5MP, M means Mono, H means hardware version.",
+    "m2s-series-usb2-area-scan": "Note: M2S means USB2.0 area scan. 132 and 138 both means the resolution is 1.3MP, M means Mono, H2 means hardware version.",
+    "10gige-fiber-optic-area-scan": "Note: DSX means 10GigE fiber optic area scan. 6500 means the resolution is 65MP, M means Mono.",
+    "ds-series-dual-usb3-area-scan": "Note 1: DS2502M supports time-division strobing application with 2/3/4 lights. Note 2: 2502 means the resolution is 25MP, M means Mono.",
+    "dsv-series-usb3-coin": "Note: 501 means the resolution is 5MP, M means Mono.",
+    "lipstick-series-1gige-area-scan": "Note: 135 means the resolution is 1.3MP, M means Mono.",
+  },
+
   // Common
   common: {
     home: "Home",

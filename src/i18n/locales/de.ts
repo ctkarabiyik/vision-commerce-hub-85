@@ -264,6 +264,21 @@ const de = {
     channels: "Kanäle",
   },
 
+  modelNotes: {
+    "1gige-line-scan-camera": "Hinweis: DSG steht für 1GigE-Zeilenkamera. Continuous bedeutet kontinuierliche Datenübertragung, Burst bedeutet intervallweise Datenübertragung.",
+    "2-5gige-line-scan-camera": "Hinweis: DSR steht für 2.5GigE-Zeilenkamera. 4K/8K steht für die Auflösung, C für Farbe.",
+    "10gige-line-scan-camera": "Hinweis: DSX steht für 10GigE-Zeilenkamera. 8K steht für die Auflösung, C für Farbe.",
+    "mgv-series-1gige-area-scan": "Hinweis: MGV steht für 1GigE-Flächenkamera. 1209 bedeutet 12MP Auflösung, M steht für Mono, H2 für Hardwareversion.",
+    "mgs-series-1gige-area-scan": "Hinweis: MGS steht für 1GigE-Flächenkamera. 1207 bedeutet 12MP Auflösung, M steht für Mono, H2 für Hardwareversion.",
+    "m3s-series-usb3-area-scan": "Hinweis: M3ST steht für USB3.0-Flächenkamera. 1207 bedeutet 12MP Auflösung, M steht für Mono, H für Hardwareversion, O2C für zwei optokoppler-isolierte Ausgänge.",
+    "u3p-series-usb3-area-scan": "Hinweis: U3P steht für USB3.0-Flächenkamera. 520 bedeutet 5MP Auflösung, M steht für Mono, H für Hardwareversion.",
+    "m2s-series-usb2-area-scan": "Hinweis: M2S steht für USB2.0-Flächenkamera. 132 und 138 bedeuten jeweils 1.3MP Auflösung, M steht für Mono, H2 für Hardwareversion.",
+    "10gige-fiber-optic-area-scan": "Hinweis: DSX steht für 10GigE-Glasfaser-Flächenkamera. 6500 bedeutet 65MP Auflösung, M steht für Mono.",
+    "ds-series-dual-usb3-area-scan": "Hinweis 1: DS2502M unterstützt Zeitmultiplex-Stroboskopanwendung mit 2/3/4 Leuchten. Hinweis 2: 2502 bedeutet 25MP Auflösung, M steht für Mono.",
+    "dsv-series-usb3-coin": "Hinweis: 501 bedeutet 5MP Auflösung, M steht für Mono.",
+    "lipstick-series-1gige-area-scan": "Hinweis: 135 bedeutet 1.3MP Auflösung, M steht für Mono.",
+  },
+
   common: {
     home: "Startseite",
   },
