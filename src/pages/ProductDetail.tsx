@@ -1284,33 +1284,33 @@ const productData: Record<string, ProductInfo> = {
   },
 };
 
-const lensTableHeaders = ["Model", "Img Circle (in)", "EFL (mm)", "F#", "Distortion(%)", "WD Range(mm)", "Mount"];
+const lensHeaderKeys = ["model", "imgCircle", "efl", "fNumber", "distortion", "wdRange", "mount"];
 const lensTableKeys = ["model", "imgCircle", "efl", "fNumber", "distortion", "wdRange", "mount"];
 
-const telecentricTableHeaders = ["Product Model", "Img Circle (in)", "Mag.", "WD(mm)", "F#", "O/I", "Mount"];
+const telecentricHeaderKeys = ["productModel", "imgCircle", "mag", "wd", "fNumber", "oi", "mount"];
 const telecentricTableKeys = ["model", "imgCircle", "mag", "wd", "fHash", "oi", "mount"];
 const telecentricSlugs = ["23-coaxial-telecentric", "11-coaxial-telecentric", "12-coaxial-telecentric", "large-coaxial-telecentric", "half-inch-noncoaxial-telecentric", "23-noncoaxial-telecentric", "23-noncoaxial-telecentric-b", "11-noncoaxial-telecentric", "12-noncoaxial-telecentric", "large-noncoaxial-telecentric"];
 
-const lineScanLensTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "F#", "Mag.", "Mag. Range", "Mount"];
+const lineScanLensHeaderKeys = ["productModel", "imgCircleMm", "efl", "fNumber", "mag", "magRange", "mount"];
 const lineScanLensTableKeys = ["model", "imgCircle", "efl", "fNumber", "mag", "magRange", "mount"];
 const lineScanLensSlugs = ["4k-line-scan-lens", "8k-line-scan-lens", "16k-35u-line-scan-lens", "16k-5u-line-scan-lens", "large-format-lenses", "infrared-lenses"];
 
-const macroLensTableHeaders = ["Product Model", "Img. Circle(mm)", "F#", "EFL(mm)", "Mag.", "Mag. Range", "Mount"];
+const macroLensHeaderKeys = ["productModel", "imgCircleMm", "fNumber", "efl", "mag", "magRange", "mount"];
 const macroLensTableKeys = ["model", "imgCircle", "fNumber", "efl", "mag", "magRange", "mount"];
 const macroLensSlugs = ["macro-lenses"];
 
-const vrLensTableHeaders = ["Product Model", "Img. Circle(mm)", "EFL(mm)", "F#", "F-θ distortion", "Mount"];
+const vrLensHeaderKeys = ["productModel", "imgCircleMm", "efl", "fNumber", "fTheta", "mount"];
 const vrLensTableKeys = ["model", "imgCircle", "efl", "fNumber", "fTheta", "mount"];
 const vrLensSlugs = ["vr-lenses"];
 
-const scheimpflugTableHeaders = ["Model", "Img Circle", "Mag.", "F#", "Distortion (%)", "WD (mm)", "Conjugate Distance", "Mount"];
+const scheimpflugHeaderKeys = ["model", "imgCircle", "mag", "fNumber", "distortion", "wd", "conjugateDistance", "mount"];
 const scheimpflugTableKeys = ["model", "imgCircle", "mag", "fNumber", "distortion", "wd", "conjugateDistance", "mount"];
 const scheimpflugSlugs = ["scheimpflug-lenses"];
 
-const lineScanCameraTableHeaders = ["Model", "Resolution", "Line Rate", "Interface", "Pixel Size", "Sensor Type"];
+const lineScanCameraHeaderKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
 const lineScanCameraTableKeys = ["model", "resolution", "lineRate", "interface", "pixelSize", "sensorType"];
 
-const areaScanCameraTableHeaders = ["Model", "Resolution", "FPS", "Interface", "Pixel Size", "Sensor Type"];
+const areaScanCameraHeaderKeys = ["model", "resolution", "fps", "interface", "pixelSize", "sensorType"];
 const areaScanCameraTableKeys = ["model", "resolution", "fps", "interface", "pixelSize", "sensorType"];
 
 const lineScanCameraSlugs = ["1gige-line-scan-camera", "2-5gige-line-scan-camera", "10gige-line-scan-camera"];
@@ -1549,14 +1549,14 @@ const ProductDetail = () => {
                    const isMacroLens = macroLensSlugs.includes(slug as string);
                    const isVrLens = vrLensSlugs.includes(slug as string);
                    const isScheimpflug = scheimpflugSlugs.includes(slug as string);
-                   const headers = isLineScan ? lineScanCameraTableHeaders : isAreaScan ? areaScanCameraTableHeaders : isTelecentric ? telecentricTableHeaders : isLineScanLens ? lineScanLensTableHeaders : isMacroLens ? macroLensTableHeaders : isVrLens ? vrLensTableHeaders : isScheimpflug ? scheimpflugTableHeaders : lensTableHeaders;
+                   const headerKeys = isLineScan ? lineScanCameraHeaderKeys : isAreaScan ? areaScanCameraHeaderKeys : isTelecentric ? telecentricHeaderKeys : isLineScanLens ? lineScanLensHeaderKeys : isMacroLens ? macroLensHeaderKeys : isVrLens ? vrLensHeaderKeys : isScheimpflug ? scheimpflugHeaderKeys : lensHeaderKeys;
                    const keys = isLineScan ? lineScanCameraTableKeys : isAreaScan ? areaScanCameraTableKeys : isTelecentric ? telecentricTableKeys : isLineScanLens ? lineScanLensTableKeys : isMacroLens ? macroLensTableKeys : isVrLens ? vrLensTableKeys : isScheimpflug ? scheimpflugTableKeys : lensTableKeys;
                   return (
                     <Table>
                       <TableHeader>
                         <TableRow className="bg-secondary/50">
-                          {headers.map((header) => (
-                            <TableHead key={header} className="font-semibold text-foreground">{header}</TableHead>
+                          {headerKeys.map((hKey) => (
+                            <TableHead key={hKey} className="font-semibold text-foreground">{t(`tableHeaders.${hKey}`)}</TableHead>
                           ))}
                         </TableRow>
                       </TableHeader>

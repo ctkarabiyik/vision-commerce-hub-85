@@ -254,6 +254,30 @@ const tr = {
     productModels: "Ürün Modelleri",
   },
 
+  tableHeaders: {
+    model: "Model",
+    productModel: "Ürün Modeli",
+    imgCircle: "Görüntü Çemberi (inç)",
+    imgCircleMm: "Görüntü Çemberi (mm)",
+    efl: "EFL (mm)",
+    fNumber: "F#",
+    distortion: "Distorsiyon(%)",
+    wdRange: "ÇM Aralığı (mm)",
+    mount: "Yuva",
+    mag: "Büyütme",
+    wd: "ÇM (mm)",
+    oi: "O/I",
+    magRange: "Büyütme Aralığı",
+    fTheta: "F-θ distorsiyon",
+    conjugateDistance: "Konjuge Mesafe",
+    resolution: "Çözünürlük",
+    lineRate: "Satır Hızı",
+    interface: "Arayüz",
+    pixelSize: "Piksel Boyutu",
+    sensorType: "Sensör Tipi",
+    fps: "FPS",
+  },
+
   // Common
   common: {
     home: "Ana Sayfa",
