@@ -131,12 +131,12 @@ const ContactUs = () => {
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center py-12 text-center">
                     <CheckCircle className="w-16 h-16 text-primary mb-4" />
-                    <h2 className="text-2xl font-bold text-foreground mb-2">{t("contactPage.thankYouTitle", "Thank You!")}</h2>
+                    <h2 className="text-2xl font-bold text-foreground mb-2">{t("contactPage.thankYouTitle")}</h2>
                     <p className="text-muted-foreground mb-6 max-w-md">
-                      {t("contactPage.thankYouMessage", "Your email client should have opened with your message. If it didn't, please email us directly at sales2@alarge.com.tr")}
+                      {t("contactPage.thankYouMessage")}
                     </p>
                     <Button variant="outline" onClick={() => setSubmitted(false)}>
-                      {t("contactPage.sendAnother", "Send Another Message")}
+                      {t("contactPage.sendAnother")}
                     </Button>
                   </div>
                 ) : (
@@ -146,12 +146,12 @@ const ContactUs = () => {
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="firstName">{t("contactPage.firstName")} *</Label>
-                          <Input id="firstName" value={formData.firstName} onChange={handleChange} placeholder="John" className={errors.firstName ? "border-destructive" : ""} />
+                          <Input id="firstName" value={formData.firstName} onChange={handleChange} placeholder={t("contactPage.placeholderFirstName")} className={errors.firstName ? "border-destructive" : ""} />
                           {errors.firstName && <p className="text-sm text-destructive">{errors.firstName}</p>}
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="lastName">{t("contactPage.lastName")} *</Label>
-                          <Input id="lastName" value={formData.lastName} onChange={handleChange} placeholder="Doe" className={errors.lastName ? "border-destructive" : ""} />
+                          <Input id="lastName" value={formData.lastName} onChange={handleChange} placeholder={t("contactPage.placeholderLastName")} className={errors.lastName ? "border-destructive" : ""} />
                           {errors.lastName && <p className="text-sm text-destructive">{errors.lastName}</p>}
                         </div>
                       </div>
@@ -159,34 +159,34 @@ const ContactUs = () => {
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="email">{t("contactPage.email")} *</Label>
-                          <Input id="email" type="email" value={formData.email} onChange={handleChange} placeholder="john@company.com" className={errors.email ? "border-destructive" : ""} />
+                          <Input id="email" type="email" value={formData.email} onChange={handleChange} placeholder={t("contactPage.placeholderEmail")} className={errors.email ? "border-destructive" : ""} />
                           {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="phone">{t("contactPage.phone")}</Label>
-                          <Input id="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="+1 (555) 000-0000" />
+                          <Input id="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder={t("contactPage.placeholderPhone")} />
                         </div>
                       </div>
 
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="company">{t("contactPage.company")}</Label>
-                          <Input id="company" value={formData.company} onChange={handleChange} placeholder="Acme Corporation" />
+                          <Input id="company" value={formData.company} onChange={handleChange} placeholder={t("contactPage.placeholderCompany")} />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="role">{t("contactPage.role")}</Label>
-                          <Input id="role" value={formData.role} onChange={handleChange} placeholder="Engineering Manager" />
+                          <Input id="role" value={formData.role} onChange={handleChange} placeholder={t("contactPage.placeholderRole")} />
                         </div>
                       </div>
 
                       <div className="space-y-2">
                         <Label htmlFor="product">{t("contactPage.product")}</Label>
-                        <Input id="product" value={formData.product} onChange={handleChange} placeholder="e.g., ACE-2040 Pro Series, Area Scan Cameras" />
+                        <Input id="product" value={formData.product} onChange={handleChange} placeholder={t("contactPage.placeholderProduct")} />
                       </div>
 
                       <div className="space-y-2">
                         <Label htmlFor="quantity">{t("contactPage.quantity")}</Label>
-                        <Input id="quantity" value={formData.quantity} onChange={handleChange} placeholder="e.g., 10-50 units" />
+                        <Input id="quantity" value={formData.quantity} onChange={handleChange} placeholder={t("contactPage.placeholderQuantity")} />
                       </div>
 
                       <div className="space-y-2">
@@ -195,7 +195,7 @@ const ContactUs = () => {
                           id="message"
                           value={formData.message}
                           onChange={handleChange}
-                          placeholder="Tell us about your project requirements, application, timeline, or any specific questions..."
+                          placeholder={t("contactPage.placeholderMessage")}
                           rows={5}
                           className={errors.message ? "border-destructive" : ""}
                         />

@@ -212,6 +212,18 @@ const ar = {
     businessHours: "ساعات العمل",
     businessHoursValue: "الإثنين - الجمعة: 08:00 - 18:00\nالسبت - الأحد: مغلق",
     urgentHelp: "تحتاج مساعدة فورية؟ اتصل بفريق المبيعات مباشرة.",
+    placeholderFirstName: "أحمد",
+    placeholderLastName: "محمد",
+    placeholderEmail: "ahmed@sharika.com",
+    placeholderPhone: "+966 (11) 000 0000",
+    placeholderCompany: "شركة التقنية",
+    placeholderRole: "مدير هندسي",
+    placeholderProduct: "مثال: سلسلة MGV 1GigE، كاميرات المسح المساحي",
+    placeholderQuantity: "مثال: 10-50 وحدة",
+    placeholderMessage: "أخبرنا عن متطلبات مشروعك، التطبيق، الجدول الزمني، أو أي أسئلة...",
+    thankYouTitle: "شكراً لك!",
+    thankYouMessage: "يجب أن يكون عميل البريد الإلكتروني قد فتح رسالتك. إذا لم يحدث ذلك، يرجى مراسلتنا مباشرة على sales2@alarge.com.tr",
+    sendAnother: "إرسال رسالة أخرى",
   },
 
   productCard: {
