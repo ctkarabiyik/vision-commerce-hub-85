@@ -260,6 +260,10 @@ const ar = {
     fps: "FPS",
   },
 
+  specLabels: {
+    channels: "القنوات",
+  },
+
   common: {
     home: "الرئيسية",
   },

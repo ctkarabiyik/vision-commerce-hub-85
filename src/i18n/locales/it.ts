@@ -260,6 +260,10 @@ const it = {
     fps: "FPS",
   },
 
+  specLabels: {
+    channels: "Canali",
+  },
+
   common: {
     home: "Home",
   },

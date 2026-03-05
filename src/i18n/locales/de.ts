@@ -260,6 +260,10 @@ const de = {
     fps: "FPS",
   },
 
+  specLabels: {
+    channels: "Kanäle",
+  },
+
   common: {
     home: "Startseite",
   },

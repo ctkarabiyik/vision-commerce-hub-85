@@ -278,6 +278,10 @@ const en = {
     fps: "FPS",
   },
 
+  specLabels: {
+    channels: "Channels",
+  },
+
   // Common
   common: {
     home: "Home",

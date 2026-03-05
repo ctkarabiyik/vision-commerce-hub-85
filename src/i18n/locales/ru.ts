@@ -260,6 +260,10 @@ const ru = {
     fps: "FPS",
   },
 
+  specLabels: {
+    channels: "Каналы",
+  },
+
   common: {
     home: "Главная",
   },
