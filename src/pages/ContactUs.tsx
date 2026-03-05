@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -5,13 +6,95 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { ChevronRight, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { ChevronRight, Mail, Phone, MapPin, Clock, CheckCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  firstName: z.string().trim().min(1, "First name is required").max(100),
+  lastName: z.string().trim().min(1, "Last name is required").max(100),
+  email: z.string().trim().email("Please enter a valid email address").max(255),
+  phone: z.string().trim().max(30).optional().default(""),
+  company: z.string().trim().max(200).optional().default(""),
+  role: z.string().trim().max(100).optional().default(""),
+  product: z.string().trim().max(200).optional().default(""),
+  quantity: z.string().trim().max(100).optional().default(""),
+  message: z.string().trim().min(1, "Please describe your project or inquiry").max(5000),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactUs = () => {
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const prefilledProduct = searchParams.get("product") || "";
+
+  const [formData, setFormData] = useState<ContactFormData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    role: "",
+    product: prefilledProduct,
+    quantity: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+    // Clear error on change
+    if (errors[id as keyof ContactFormData]) {
+      setErrors((prev) => ({ ...prev, [id]: undefined }));
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = contactSchema.safeParse(formData);
+
+    if (!result.success) {
+      const fieldErrors: Partial<Record<keyof ContactFormData, string>> = {};
+      result.error.errors.forEach((err) => {
+        const field = err.path[0] as keyof ContactFormData;
+        if (!fieldErrors[field]) {
+          fieldErrors[field] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
+    setErrors({});
+    const data = result.data;
+
+    const subject = encodeURIComponent(
+      `Quote Request${data.product ? ` – ${data.product}` : ""} from ${data.firstName} ${data.lastName}`
+    );
+
+    const bodyLines = [
+      `Name: ${data.firstName} ${data.lastName}`,
+      `Email: ${data.email}`,
+      data.phone ? `Phone: ${data.phone}` : "",
+      data.company ? `Company: ${data.company}` : "",
+      data.role ? `Role: ${data.role}` : "",
+      data.product ? `Product: ${data.product}` : "",
+      data.quantity ? `Quantity: ${data.quantity}` : "",
+      "",
+      "Message:",
+      data.message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const body = encodeURIComponent(bodyLines);
+    window.location.href = `mailto:sales2@alarge.com.tr?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -44,64 +127,86 @@ const ContactUs = () => {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <div className="bg-card border border-border rounded-lg p-8">
-                <h2 className="text-2xl font-bold text-foreground mb-6">{t("contactPage.formTitle")}</h2>
-                
-                <form className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="firstName">{t("contactPage.firstName")}</Label>
-                      <Input id="firstName" placeholder="John" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="lastName">{t("contactPage.lastName")}</Label>
-                      <Input id="lastName" placeholder="Doe" />
-                    </div>
+                {submitted ? (
+                  <div className="flex flex-col items-center justify-center py-12 text-center">
+                    <CheckCircle className="w-16 h-16 text-primary mb-4" />
+                    <h2 className="text-2xl font-bold text-foreground mb-2">{t("contactPage.thankYouTitle", "Thank You!")}</h2>
+                    <p className="text-muted-foreground mb-6 max-w-md">
+                      {t("contactPage.thankYouMessage", "Your email client should have opened with your message. If it didn't, please email us directly at sales2@alarge.com.tr")}
+                    </p>
+                    <Button variant="outline" onClick={() => setSubmitted(false)}>
+                      {t("contactPage.sendAnother", "Send Another Message")}
+                    </Button>
                   </div>
+                ) : (
+                  <>
+                    <h2 className="text-2xl font-bold text-foreground mb-6">{t("contactPage.formTitle")}</h2>
+                    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="firstName">{t("contactPage.firstName")} *</Label>
+                          <Input id="firstName" value={formData.firstName} onChange={handleChange} placeholder="John" className={errors.firstName ? "border-destructive" : ""} />
+                          {errors.firstName && <p className="text-sm text-destructive">{errors.firstName}</p>}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="lastName">{t("contactPage.lastName")} *</Label>
+                          <Input id="lastName" value={formData.lastName} onChange={handleChange} placeholder="Doe" className={errors.lastName ? "border-destructive" : ""} />
+                          {errors.lastName && <p className="text-sm text-destructive">{errors.lastName}</p>}
+                        </div>
+                      </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="email">{t("contactPage.email")}</Label>
-                      <Input id="email" type="email" placeholder="john@company.com" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">{t("contactPage.phone")}</Label>
-                      <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" />
-                    </div>
-                  </div>
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="email">{t("contactPage.email")} *</Label>
+                          <Input id="email" type="email" value={formData.email} onChange={handleChange} placeholder="john@company.com" className={errors.email ? "border-destructive" : ""} />
+                          {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="phone">{t("contactPage.phone")}</Label>
+                          <Input id="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="+1 (555) 000-0000" />
+                        </div>
+                      </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="company">{t("contactPage.company")}</Label>
-                      <Input id="company" placeholder="Acme Corporation" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="role">{t("contactPage.role")}</Label>
-                      <Input id="role" placeholder="Engineering Manager" />
-                    </div>
-                  </div>
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="company">{t("contactPage.company")}</Label>
+                          <Input id="company" value={formData.company} onChange={handleChange} placeholder="Acme Corporation" />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="role">{t("contactPage.role")}</Label>
+                          <Input id="role" value={formData.role} onChange={handleChange} placeholder="Engineering Manager" />
+                        </div>
+                      </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="product">{t("contactPage.product")}</Label>
-                    <Input id="product" defaultValue={prefilledProduct} placeholder="e.g., ACE-2040 Pro Series, Area Scan Cameras" />
-                  </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="product">{t("contactPage.product")}</Label>
+                        <Input id="product" value={formData.product} onChange={handleChange} placeholder="e.g., ACE-2040 Pro Series, Area Scan Cameras" />
+                      </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="quantity">{t("contactPage.quantity")}</Label>
-                    <Input id="quantity" placeholder="e.g., 10-50 units" />
-                  </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="quantity">{t("contactPage.quantity")}</Label>
+                        <Input id="quantity" value={formData.quantity} onChange={handleChange} placeholder="e.g., 10-50 units" />
+                      </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message">{t("contactPage.projectDetails")}</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Tell us about your project requirements, application, timeline, or any specific questions..."
-                      rows={5} />
-                  </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="message">{t("contactPage.projectDetails")} *</Label>
+                        <Textarea
+                          id="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          placeholder="Tell us about your project requirements, application, timeline, or any specific questions..."
+                          rows={5}
+                          className={errors.message ? "border-destructive" : ""}
+                        />
+                        {errors.message && <p className="text-sm text-destructive">{errors.message}</p>}
+                      </div>
 
-                  <Button type="submit" size="lg" className="w-full sm:w-auto">
-                    {t("contactPage.submit")}
-                  </Button>
-                </form>
+                      <Button type="submit" size="lg" className="w-full sm:w-auto">
+                        {t("contactPage.submit")}
+                      </Button>
+                    </form>
+                  </>
+                )}
               </div>
             </div>
 
@@ -170,7 +275,8 @@ const ContactUs = () => {
       </section>
 
       <Footer />
-    </div>);
+    </div>
+  );
 };
 
 export default ContactUs;
