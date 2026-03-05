@@ -222,6 +222,18 @@ const ar = {
     returnHome: "العودة للرئيسية",
   },
 
+  productDetail: {
+    productNotFound: "المنتج غير موجود",
+    backToProducts: "العودة إلى المنتجات",
+    requestQuote: "طلب عرض سعر",
+    mainFeatures: "الميزات الرئيسية",
+    technicalSpecifications: "المواصفات الفنية",
+    applications: "التطبيقات",
+    overview: "نظرة عامة",
+    keyFeatures: "الميزات الرئيسية",
+    productModels: "نماذج المنتج",
+  },
+
   common: {
     home: "الرئيسية",
   },

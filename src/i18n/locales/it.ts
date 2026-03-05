@@ -222,6 +222,18 @@ const it = {
     returnHome: "Torna alla home",
   },
 
+  productDetail: {
+    productNotFound: "Prodotto non trovato",
+    backToProducts: "Torna ai prodotti",
+    requestQuote: "Richiedi Preventivo",
+    mainFeatures: "Caratteristiche principali",
+    technicalSpecifications: "Specifiche Tecniche",
+    applications: "Applicazioni",
+    overview: "Panoramica",
+    keyFeatures: "Caratteristiche Chiave",
+    productModels: "Modelli Prodotto",
+  },
+
   common: {
     home: "Home",
   },

@@ -240,6 +240,18 @@ const tr = {
     returnHome: "Ana Sayfaya Dön",
   },
 
+  productDetail: {
+    productNotFound: "Ürün bulunamadı",
+    backToProducts: "Ürünlere dön",
+    requestQuote: "Teklif İste",
+    mainFeatures: "Ana özellikler",
+    technicalSpecifications: "Teknik Özellikler",
+    applications: "Uygulamalar",
+    overview: "Genel Bakış",
+    keyFeatures: "Temel Özellikler",
+    productModels: "Ürün Modelleri",
+  },
+
   // Common
   common: {
     home: "Ana Sayfa",

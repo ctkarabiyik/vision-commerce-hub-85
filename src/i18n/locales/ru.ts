@@ -222,6 +222,18 @@ const ru = {
     returnHome: "На главную",
   },
 
+  productDetail: {
+    productNotFound: "Продукт не найден",
+    backToProducts: "Назад к продуктам",
+    requestQuote: "Запросить цену",
+    mainFeatures: "Основные характеристики",
+    technicalSpecifications: "Технические характеристики",
+    applications: "Применение",
+    overview: "Обзор",
+    keyFeatures: "Ключевые особенности",
+    productModels: "Модели продукта",
+  },
+
   common: {
     home: "Главная",
   },
