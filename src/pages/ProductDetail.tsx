@@ -5,6 +5,48 @@ import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
 import { ChevronRight, Check, Download, ShoppingCart, FileText, Code, Star, Settings, Target, Monitor, Circle, DollarSign, Cable, Rocket, Cpu, Zap, Gauge, Eye, Box } from "lucide-react";
 
+// Image imports
+import cameraProduct1 from "@/assets/camera-product-1.jpg";
+import cameraProduct2 from "@/assets/camera-product-2.jpg";
+import cameraProduct3 from "@/assets/camera-product-3.jpg";
+import cameraProduct4 from "@/assets/camera-product-4.jpg";
+import faLens117 from "@/assets/fa-lens-1-1-7.png";
+import faLens11 from "@/assets/fa-lens-1-1.png";
+import faLens23Standard from "@/assets/fa-lens-2-3-standard.png";
+import faLens23Superior from "@/assets/fa-lens-2-3-superior.png";
+import telecentric23Coaxial from "@/assets/telecentric-23-coaxial.png";
+import telecentric11Coaxial from "@/assets/telecentric-11-coaxial.png";
+import telecentric12Coaxial from "@/assets/telecentric-12-coaxial.png";
+import telecentricLargeCoaxial from "@/assets/telecentric-large-coaxial.png";
+import telecentric12Noncoaxial from "@/assets/telecentric-12-noncoaxial.png";
+import telecentric23Noncoaxial from "@/assets/telecentric-23-noncoaxial.png";
+import telecentric11Noncoaxial from "@/assets/telecentric-11-noncoaxial.png";
+import telecentric12NoncoaxialAlt from "@/assets/telecentric-12-noncoaxial-alt.png";
+import telecentric18 from "@/assets/telecentric-18.png";
+import telecentricLargeNoncoaxial from "@/assets/telecentric-large-noncoaxial.png";
+import lineScan4k from "@/assets/line-scan-4k.png";
+import lineScan8k from "@/assets/line-scan-8k.png";
+import lineScan16k35u from "@/assets/line-scan-16k-35u.png";
+import lineScan16k5u from "@/assets/line-scan-16k-5u.png";
+import macroLenses from "@/assets/macro-lenses.png";
+import infraredLenses from "@/assets/infrared-lenses.png";
+import vrLenses from "@/assets/vr-lenses.png";
+import scheimpflugLenses from "@/assets/scheimpflug-lenses.png";
+import largeFormatLenses from "@/assets/large-format-lenses.png";
+import lineScanCamera1gige from "@/assets/line-scan-camera-1gige.png";
+import lineScanCamera25gige from "@/assets/line-scan-camera-2-5gige.png";
+import lineScanCamera10gige from "@/assets/line-scan-camera-10gige.png";
+import areaScanMgv1gige from "@/assets/area-scan-mgv-1gige.png";
+import areaScanMgs1gige from "@/assets/area-scan-mgs-1gige.png";
+import areaScanM3sUsb3 from "@/assets/area-scan-m3s-usb3.png";
+import areaScanU3pUsb3 from "@/assets/area-scan-u3p-usb3.png";
+import areaScanM2sUsb2 from "@/assets/area-scan-m2s-usb2.png";
+import areaScan10gigeFiber from "@/assets/area-scan-10gige-fiber.png";
+import areaScanDsDualUsb3 from "@/assets/area-scan-ds-dual-usb3.png";
+import areaScanDsvCoin from "@/assets/area-scan-dsv-coin.png";
+import areaScanLipstick1gige from "@/assets/area-scan-lipstick-1gige.png";
+import frameGrabber1040gige from "@/assets/frame-grabber-10-40gige.png";
+
 // Model variant data keyed by slug
 const modelVariants: Record<string, Array<Record<string, string>>> = {
   "1-1-7-inch-fa-lenses": [
@@ -379,7 +421,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "BASLER",
     category: "Area Scan Cameras",
     categorySlug: "area-scan-cameras",
-    image: "/src/assets/camera-product-1.jpg",
+    image: cameraProduct1,
     shortDescription: "High-performance area scan camera with exceptional image quality for demanding industrial applications.",
     description: "The ACE-2040 Pro Series represents the pinnacle of industrial imaging technology. Featuring a state-of-the-art Sony IMX sensor, this camera delivers exceptional image quality with minimal noise, even in challenging lighting conditions.",
     resolution: "4.2 MP",
@@ -401,7 +443,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "FA Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/fa-lens-1-1-7.png",
+    image: faLens117,
     shortDescription: "Compact high-resolution FA lenses designed for 1/1.7\" sensors in factory automation applications.",
     description: "The 1/1.7 inch FA Lens series delivers exceptional optical performance for machine vision applications.",
     resolution: "1/1.7\"",
@@ -424,7 +466,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "FA Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/fa-lens-2-3-standard.png",
+    image: faLens23Standard,
     shortDescription: "Standard-grade FA lenses optimized for 2/3\" sensors, delivering reliable performance for factory automation.",
     description: "The 2/3 inch Standard FA Lens series provides cost-effective, high-quality imaging for mainstream machine vision applications.",
     resolution: "2/3\"",
@@ -447,7 +489,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "FA Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/fa-lens-2-3-superior.png",
+    image: faLens23Superior,
     shortDescription: "Premium-grade FA lenses for 2/3\" sensors with superior optical performance and ultra-low distortion.",
     description: "The 2/3 inch Superior FA Lens series represents the highest optical quality for 2/3\" sensor applications, with enhanced resolution and minimized aberrations.",
     resolution: "2/3\"",
@@ -470,7 +512,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "FA Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/fa-lens-1-1.png",
+    image: faLens11,
     shortDescription: "Large-format FA lenses designed for 1.1\" sensors, providing wide coverage for high-resolution imaging.",
     description: "The 1.1 inch FA Lens series covers larger sensor formats for demanding machine vision applications requiring higher pixel counts.",
     resolution: "1.1\"",
@@ -495,7 +537,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/telecentric-23-coaxial.png",
+    image: telecentric23Coaxial,
     shortDescription: "Co-axial telecentric lens for 2/3\" sensors with integrated illumination for precise dimensional measurement.",
     description: "The 2/3\" Co-Axial Telecentric Lens provides distortion-free imaging with built-in co-axial illumination, ideal for precision measurement applications.",
     resolution: "2/3\"",
@@ -518,7 +560,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/telecentric-11-coaxial.png",
+    image: telecentric11Coaxial,
     shortDescription: "Co-axial telecentric lens for 1.1\" sensors with integrated illumination for high-resolution measurement.",
     description: "The 1.1\" Co-Axial Telecentric Lens delivers distortion-free imaging for larger sensors with co-axial illumination capability.",
     resolution: "1.1\"",
@@ -541,7 +583,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/telecentric-12-coaxial.png",
+    image: telecentric12Coaxial,
     shortDescription: "Co-axial telecentric lens for 1.2\" sensors providing distortion-free measurement with integrated illumination.",
     description: "The 1.2\" Co-Axial Telecentric Lens supports larger format sensors for high-precision measurement applications.",
     resolution: "1.2\"",
@@ -564,7 +606,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/telecentric-large-coaxial.png",
+    image: telecentricLargeCoaxial,
     shortDescription: "Large format co-axial telecentric lens for oversized sensor coverage in demanding measurement applications.",
     description: "The Large Format Co-Axial Telecentric Lens provides telecentric imaging for the largest sensor formats available.",
     resolution: "Large",
@@ -589,7 +631,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/telecentric-12-noncoaxial.png",
+    image: telecentric12Noncoaxial,
     shortDescription: "Compact non-co-axial telecentric lens for 1/2\" sensors, ideal for space-constrained measurement setups.",
     description: "The 1/2\" Non-Co-Axial Telecentric Lens provides distortion-free imaging in a compact form factor for smaller sensor applications.",
     resolution: "1/2\"",
@@ -612,7 +654,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/telecentric-23-noncoaxial.png",
+    image: telecentric23Noncoaxial,
     shortDescription: "Non-co-axial telecentric lens for 2/3\" sensors with external illumination compatibility.",
     description: "The 2/3\" Non-Co-Axial Telecentric Lens provides precise measurement capabilities with flexibility in illumination setup.",
     resolution: "2/3\"",
@@ -635,7 +677,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/telecentric-11-noncoaxial.png",
+    image: telecentric11Noncoaxial,
     shortDescription: "Alternative non-co-axial telecentric lens for 2/3\" sensors with different magnification options.",
     description: "The 2/3\" Non-Co-Axial Telecentric Lens Type B offers an alternative magnification range for specialized measurement needs.",
     resolution: "2/3\"",
@@ -658,7 +700,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/telecentric-12-noncoaxial-alt.png",
+    image: telecentric12NoncoaxialAlt,
     shortDescription: "Non-co-axial telecentric lens for 1.1\" sensors with high-resolution measurement capability.",
     description: "The 1.1\" Non-Co-Axial Telecentric Lens provides large-field telecentric imaging for demanding measurement applications.",
     resolution: "1.1\"",
@@ -681,7 +723,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/telecentric-18.png",
+    image: telecentric18,
     shortDescription: "Non-co-axial telecentric lens for 1.2\" sensors, designed for high-precision large-field measurement.",
     description: "The 1.2\" Non-Co-Axial Telecentric Lens supports large format sensors for precise dimensional measurement.",
     resolution: "1.2\"",
@@ -704,7 +746,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Telecentric Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/telecentric-large-noncoaxial.png",
+    image: telecentricLargeNoncoaxial,
     shortDescription: "Large format non-co-axial telecentric lens for oversized sensor coverage in industrial metrology.",
     description: "The Large Format Non-Co-Axial Telecentric Lens provides the widest field telecentric imaging for large-area inspection.",
     resolution: "Large",
@@ -729,7 +771,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Line Scan Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/line-scan-4k.png",
+    image: lineScan4k,
     shortDescription: "High-performance line scan lens optimized for 4K line scan cameras in web inspection applications.",
     description: "The 4K Line Scan Lens is engineered for optimal line-rate imaging with 4K resolution line scan cameras.",
     resolution: "4K",
@@ -752,7 +794,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Line Scan Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/line-scan-8k.png",
+    image: lineScan8k,
     shortDescription: "High-resolution line scan lens for 8K cameras, delivering superior image quality for demanding inspection tasks.",
     description: "The 8K Line Scan Lens provides enhanced resolution for high-pixel-count line scan imaging applications.",
     resolution: "8K",
@@ -775,7 +817,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Line Scan Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/line-scan-16k-35u.png",
+    image: lineScan16k35u,
     shortDescription: "Ultra-high resolution 16K line scan lens optimized for 3.5µm pixel pitch sensors.",
     description: "The 16K/3.5µ Line Scan Lens delivers maximum resolution for the finest pixel pitch 16K line scan cameras.",
     resolution: "16K",
@@ -798,7 +840,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Line Scan Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/line-scan-16k-5u.png",
+    image: lineScan16k5u,
     shortDescription: "16K line scan lens optimized for 5µm pixel pitch sensors, balancing resolution and light throughput.",
     description: "The 16K/5µ Line Scan Lens provides excellent imaging for 5µm pixel pitch 16K line scan cameras.",
     resolution: "16K",
@@ -823,7 +865,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Macro Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/macro-lenses.png",
+    image: macroLenses,
     shortDescription: "High-magnification macro lenses for close-up inspection of small components and fine details.",
     description: "The Macro Lens series provides high-magnification imaging for detailed inspection of miniature components.",
     resolution: "Various",
@@ -846,7 +888,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Infrared Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/infrared-lenses.png",
+    image: infraredLenses,
     shortDescription: "Specialized lenses for infrared imaging applications including SWIR and thermal wavelength ranges.",
     description: "The Infrared Lens series is designed for imaging beyond the visible spectrum, supporting SWIR and thermal applications.",
     resolution: "Various",
@@ -869,7 +911,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "VR Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/vr-lenses.png",
+    image: vrLenses,
     shortDescription: "Wide field-of-view lenses designed for virtual reality and panoramic imaging applications.",
     description: "The VR Lens series provides ultra-wide field of view imaging for VR content capture and panoramic systems.",
     resolution: "Wide FOV",
@@ -892,7 +934,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Scheimpflug Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/scheimpflug-lenses.png",
+    image: scheimpflugLenses,
     shortDescription: "Tilt-capable lenses utilizing the Scheimpflug principle for extended depth of field on tilted planes.",
     description: "The Scheimpflug Lens series features adjustable tilt mechanisms for imaging tilted planes with full sharpness.",
     resolution: "Various",
@@ -915,7 +957,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "DZOPTICS",
     category: "Large Format Lenses",
     categorySlug: "lenses",
-    image: "/src/assets/large-format-lenses.png",
+    image: largeFormatLenses,
     shortDescription: "High-coverage lenses designed for large format sensors in high-resolution industrial imaging.",
     description: "The Large Format Lens series provides full coverage for oversized sensors used in high-resolution applications.",
     resolution: "Large",
@@ -940,7 +982,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Line Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/line-scan-camera-1gige.png",
+    image: lineScanCamera1gige,
     shortDescription: "Cost-effective 1GigE line scan camera for standard-speed continuous inspection applications.",
     description: "The 1GigE Line Scan Camera provides reliable line scan imaging over standard Gigabit Ethernet for mainstream inspection tasks.",
     resolution: "1GigE",
@@ -963,7 +1005,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Line Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/line-scan-camera-2-5gige.png",
+    image: lineScanCamera25gige,
     shortDescription: "High-throughput 2.5GigE line scan camera for demanding continuous inspection with increased bandwidth.",
     description: "The 2.5GigE Line Scan Camera delivers 2.5x the bandwidth of standard GigE for higher line rates and resolutions.",
     resolution: "2.5GigE",
@@ -986,7 +1028,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Line Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/line-scan-camera-10gige.png",
+    image: lineScanCamera10gige,
     shortDescription: "Ultra-high bandwidth 10GigE line scan camera for the most demanding high-speed, high-resolution inspection tasks.",
     description: "The 10GigE Line Scan Camera delivers maximum bandwidth for ultra-high-speed line scan applications requiring top resolution and line rates.",
     resolution: "10GigE",
@@ -1010,7 +1052,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/area-scan-mgv-1gige.png",
+    image: areaScanMgv1gige,
     shortDescription: "Versatile 1GigE area scan cameras with Sony sensors for general-purpose machine vision applications.",
     description: "The MGV Series delivers reliable GigE Vision imaging for a wide range of industrial inspection tasks.",
     resolution: "Various",
@@ -1033,7 +1075,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/area-scan-mgs-1gige.png",
+    image: areaScanMgs1gige,
     shortDescription: "High-performance 1GigE area scan cameras with enhanced sensitivity for demanding inspection environments.",
     description: "The MGS Series offers higher frame rates and improved sensitivity compared to standard GigE cameras.",
     resolution: "Various",
@@ -1056,7 +1098,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/area-scan-m3s-usb3.png",
+    image: areaScanM3sUsb3,
     shortDescription: "High-bandwidth USB3.0 area scan cameras for applications requiring maximum data throughput.",
     description: "The M3S Series leverages USB3.0 bandwidth for higher frame rates and lower latency imaging.",
     resolution: "Various",
@@ -1079,7 +1121,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/area-scan-u3p-usb3.png",
+    image: areaScanU3pUsb3,
     shortDescription: "Premium USB3.0 area scan cameras with large sensors for high-resolution imaging applications.",
     description: "The U3P Series provides high-resolution USB3.0 imaging for demanding measurement and inspection tasks.",
     resolution: "Various",
@@ -1102,7 +1144,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/area-scan-m2s-usb2.png",
+    image: areaScanM2sUsb2,
     shortDescription: "Cost-effective USB2.0 area scan cameras for standard-speed imaging and legacy system integration.",
     description: "The M2S Series offers reliable USB2.0 imaging for cost-sensitive applications and legacy system upgrades.",
     resolution: "Various",
@@ -1125,7 +1167,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/area-scan-10gige-fiber.png",
+    image: areaScan10gigeFiber,
     shortDescription: "Ultra-high resolution 10GigE fiber optic area scan cameras for the most demanding large-sensor applications.",
     description: "The 10GigE Fiber Optic Series delivers maximum bandwidth over fiber for ultra-high resolution imaging at distance.",
     resolution: "Various",
@@ -1148,7 +1190,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/area-scan-ds-dual-usb3.png",
+    image: areaScanDsDualUsb3,
     shortDescription: "Dual USB3.0 interface area scan cameras delivering double the bandwidth for ultra-high-speed imaging.",
     description: "The DS Series uses dual USB3.0 ports for doubled bandwidth, enabling exceptional frame rates at high resolutions.",
     resolution: "Various",
@@ -1171,7 +1213,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/area-scan-dsv-coin.png",
+    image: areaScanDsvCoin,
     shortDescription: "Ultra-compact coin-sized USB3.0 cameras for the most space-constrained embedded vision applications.",
     description: "The DSV Series packs high-performance imaging into an ultra-miniature coin-sized form factor.",
     resolution: "Various",
@@ -1194,7 +1236,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Area Scan Cameras",
     categorySlug: "products",
-    image: "/src/assets/area-scan-lipstick-1gige.png",
+    image: areaScanLipstick1gige,
     shortDescription: "Slim lipstick-form-factor 1GigE cameras designed for tight integration in confined spaces.",
     description: "The Lipstick Series features an elongated slim design for installations where standard cameras cannot fit.",
     resolution: "Various",
@@ -1219,7 +1261,7 @@ const productData: Record<string, ProductInfo> = {
     brand: "Do3Think",
     category: "Other",
     categorySlug: "products",
-    image: "/src/assets/frame-grabber-10-40gige.png",
+    image: frameGrabber1040gige,
     shortDescription: "High-performance PCIe frame grabber supporting 10GigE to 40GigE optical fiber camera interfaces.",
     description: "The Frame Grabber enables seamless integration of 10-40GigE fiber optic cameras with host PCs via PCIe.",
     resolution: "Various",
