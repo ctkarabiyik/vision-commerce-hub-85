@@ -69,16 +69,11 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-accent-foreground/10">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-accent-foreground/60">
-              © {new Date().getFullYear()} {t("footer.copyright")}
-            </p>
-            <div className="flex gap-6">
-              <a href="#" className="text-sm text-accent-foreground/60 hover:text-primary transition-colors">{t("footer.privacyPolicy")}</a>
-              <a href="#" className="text-sm text-accent-foreground/60 hover:text-primary transition-colors">{t("footer.termsOfService")}</a>
-              <a href="#" className="text-sm text-accent-foreground/60 hover:text-primary transition-colors">{t("footer.cookiePolicy")}</a>
-            </div>
-          </div>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+             <p className="text-sm text-accent-foreground/60">
+               © {new Date().getFullYear()} {t("footer.copyright")}
+             </p>
+           </div>
         </div>
       </div>
     </footer>
