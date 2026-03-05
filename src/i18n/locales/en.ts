@@ -254,6 +254,30 @@ const en = {
     productModels: "Product Models",
   },
 
+  tableHeaders: {
+    model: "Model",
+    productModel: "Product Model",
+    imgCircle: "Img Circle (in)",
+    imgCircleMm: "Img. Circle(mm)",
+    efl: "EFL (mm)",
+    fNumber: "F#",
+    distortion: "Distortion(%)",
+    wdRange: "WD Range(mm)",
+    mount: "Mount",
+    mag: "Mag.",
+    wd: "WD(mm)",
+    oi: "O/I",
+    magRange: "Mag. Range",
+    fTheta: "F-θ distortion",
+    conjugateDistance: "Conjugate Distance",
+    resolution: "Resolution",
+    lineRate: "Line Rate",
+    interface: "Interface",
+    pixelSize: "Pixel Size",
+    sensorType: "Sensor Type",
+    fps: "FPS",
+  },
+
   // Common
   common: {
     home: "Home",
