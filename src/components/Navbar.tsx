@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe, Sun } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import alargeLogo from "@/assets/alarge-logo.svg";
+import AlargeLogo from "@/components/AlargeLogo";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import lineScanCamera1GigE from "@/assets/line-scan-camera-1gige.png";
 import lineScanCamera25GigE from "@/assets/line-scan-camera-2-5gige.png";
@@ -129,7 +129,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={alargeLogo} alt="Alarge Logo" className="h-8 w-auto max-w-[180px]" />
+            <AlargeLogo className="h-8 w-auto max-w-[180px]" variant="dark" />
           </Link>
 
           {/* Desktop Navigation */}

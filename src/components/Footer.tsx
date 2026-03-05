@@ -2,7 +2,7 @@ import { Facebook, Twitter, Linkedin, Youtube, ExternalLink } from "lucide-react
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-import alargeLogo from "@/assets/alarge-logo-footer.svg";
+import AlargeLogo from "@/components/AlargeLogo";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -37,7 +37,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <a href="/" className="flex items-center mb-6">
-              <img src={alargeLogo} alt="Alarge Logo" className="h-12" />
+              <AlargeLogo className="h-12 w-auto" variant="light" />
             </a>
             <p className="text-sm text-accent-foreground/70 mb-6">
               {t("footer.brandDescription")}
