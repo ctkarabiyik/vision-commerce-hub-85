@@ -271,7 +271,7 @@ const tr = {
     fTheta: "F-θ distorsiyon",
     conjugateDistance: "Konjuge Mesafe",
     resolution: "Çözünürlük",
-    lineRate: "Satır Hızı",
+    lineRate: "Hat Hızı",
     interface: "Arayüz",
     pixelSize: "Piksel Boyutu",
     sensorType: "Sensör Tipi",
