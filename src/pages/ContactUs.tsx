@@ -140,13 +140,9 @@ const ContactUs = () => {
                       <MapPin className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground mb-1">{t("contactPage.addressLabel")}</div>
-                      <p className="text-muted-foreground">Yıldız Teknik Üniversitesi Davutpaşa Teknopark
-                        <br />
-                        San Jose, CA 95134<br />
-                        United States
-                      </p>
-                    </div>
+                       <div className="font-semibold text-foreground mb-1">{t("contactPage.addressLabel")}</div>
+                       <p className="text-muted-foreground">Yıldız Teknik Üniversitesi Davutpaşa Teknopark</p>
+                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
