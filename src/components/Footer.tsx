@@ -36,9 +36,9 @@ const Footer = () => {
 
           {/* Brand */}
           <div>
-            <a href="/" className="flex items-center mb-6">
+            <div className="flex items-center mb-6">
               <AlargeLogo className="h-12 w-auto" variant="light" />
-            </a>
+            </div>
             <p className="text-sm text-accent-foreground/70 mb-6">
               {t("footer.brandDescription")}
             </p>
