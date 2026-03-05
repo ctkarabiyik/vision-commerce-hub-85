@@ -1380,6 +1380,13 @@ const ProductDetail = () => {
 
   const cameraFeatureIcons = [Monitor, Circle, DollarSign, Cable, Rocket, Cpu, Zap, Gauge, Eye, Box];
 
+  const translatedMainFeatures = (t(`products.${slug}.mainFeatures`, { returnObjects: true, defaultValue: product.mainFeatures }) as string[] | string);
+  const mainFeatures = Array.isArray(translatedMainFeatures) ? translatedMainFeatures : product.mainFeatures;
+  const translatedQuickSpecs = (t(`products.${slug}.quickSpecs`, { returnObjects: true, defaultValue: product.quickSpecs }) as string[] | string);
+  const quickSpecs = Array.isArray(translatedQuickSpecs) ? translatedQuickSpecs : product.quickSpecs;
+  const translatedApplications = (t(`products.${slug}.applications`, { returnObjects: true, defaultValue: product.applications }) as string[] | string);
+  const appsList = Array.isArray(translatedApplications) ? translatedApplications : product.applications;
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
