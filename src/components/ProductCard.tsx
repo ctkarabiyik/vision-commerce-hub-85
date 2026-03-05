@@ -14,13 +14,14 @@ interface ProductCardProps {
   image: string;
   specs?: Spec[];
   slug?: string;
+  viewMode?: "grid" | "list";
   // Legacy props for backward compatibility
   resolution?: string;
   fps?: string;
   interface?: string;
 }
 
-const ProductCard = ({ name, brand, image, specs, slug, resolution, fps, interface: interfaceType }: ProductCardProps) => {
+const ProductCard = ({ name, brand, image, specs, slug, viewMode = "grid", resolution, fps, interface: interfaceType }: ProductCardProps) => {
   const { t } = useTranslation();
   const productSlug = slug || name.toLowerCase().replace(/\s+/g, '-');
 
@@ -32,6 +33,41 @@ const ProductCard = ({ name, brand, image, specs, slug, resolution, fps, interfa
         { label: "FPS", value: fps || "-" },
       ];
   
+  if (viewMode === "list") {
+    return (
+      <div className="group bg-card rounded-sm border border-border hover:border-primary/50 transition-all duration-300 overflow-hidden flex flex-row">
+        {/* Image */}
+        <div className="relative w-40 h-40 flex-shrink-0 bg-white overflow-hidden flex items-center justify-center p-6">
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="p-4 flex flex-1 items-center gap-6">
+          <div className="flex-1">
+            <h3 className="font-semibold text-foreground mb-2">{name}</h3>
+            <div className="flex gap-3">
+              {displaySpecs.map((spec, index) => (
+                <div key={index} className="text-center bg-secondary rounded-sm py-1.5 px-3">
+                  <div className="text-xs text-muted-foreground">{spec.label}</div>
+                  <div className="text-sm font-semibold text-foreground">{spec.value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <Link to={`/product/${productSlug}`}>
+            <Button variant="default" size="sm">
+              {t("productCard.viewDetails")}
+            </Button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="group bg-card rounded-sm border border-border hover:border-primary/50 transition-all duration-300 hover-lift overflow-hidden">
       {/* Image */}
