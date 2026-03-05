@@ -146,7 +146,7 @@ const ru = {
     contactUs: "Связаться с нами",
     brandDescription: "Ваш надёжный партнёр в области промышленных камер машинного зрения.",
     visitWebsite: "Посетить сайт Alarge",
-    copyright: "Alarge Camera. Все права защищены.",
+    copyright: "Alarge. Все права защищены.",
     privacyPolicy: "Политика конфиденциальности",
     termsOfService: "Условия использования",
     cookiePolicy: "Политика cookie",
