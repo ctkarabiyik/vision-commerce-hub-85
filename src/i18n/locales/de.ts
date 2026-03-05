@@ -1,3 +1,5 @@
+import productsDe from "./products/de";
+
 const de = {
   nav: {
     products: "Produkte",
@@ -237,6 +239,8 @@ const de = {
   common: {
     home: "Startseite",
   },
+
+  products: productsDe,
 };
 
 export default de;

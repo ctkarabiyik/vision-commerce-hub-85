@@ -1,3 +1,5 @@
+import productsTr from "./products/tr";
+
 const tr = {
   // Navbar
   nav: {
@@ -256,6 +258,8 @@ const tr = {
   common: {
     home: "Ana Sayfa",
   },
+
+  products: productsTr,
 };
 
 export default tr;

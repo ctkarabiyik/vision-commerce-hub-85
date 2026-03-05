@@ -1391,7 +1391,7 @@ const ProductDetail = () => {
                 {product.name}
               </h1>
               <p className="text-lg text-muted-foreground mb-6">
-                {product.shortDescription}
+                {t(`products.${slug}.shortDescription`, product.shortDescription)}
               </p>
 
 
@@ -1417,7 +1417,7 @@ const ProductDetail = () => {
           {hasLensLayout && isCameraProduct ? (
             <div className={`flex flex-col items-center ${variants && variants.length > 0 ? 'mb-16' : ''}`}>
               {product.descriptionBox && (
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-xl w-full mb-6">{product.descriptionBox}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-xl w-full mb-6">{t(`products.${slug}.descriptionBox`, product.descriptionBox)}</p>
               )}
               <div className="bg-card border border-border rounded-lg p-8 w-full max-w-xl">
                 <h3 className="text-xl font-bold text-foreground mb-6">{t("productDetail.mainFeatures")}</h3>
@@ -1494,7 +1494,7 @@ const ProductDetail = () => {
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-foreground mb-4">{t("productDetail.overview")}</h2>
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-3xl">
-                {product.description}
+                {t(`products.${slug}.description`, product.description)}
               </p>
               <h3 className="text-xl font-bold text-foreground mb-4">{t("productDetail.keyFeatures")}</h3>
               <ul className="grid md:grid-cols-2 gap-3">

@@ -1,3 +1,5 @@
+import productsEn from "./products/en";
+
 const en = {
   // Navbar
   nav: {
@@ -256,6 +258,8 @@ const en = {
   common: {
     home: "Home",
   },
+
+  products: productsEn,
 };
 
 export default en;
