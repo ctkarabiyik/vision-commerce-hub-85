@@ -13,8 +13,8 @@ const AlargeLogo = ({ className = "", variant = "dark" }: AlargeLogoProps) => {
     <img
       src={src}
       alt="Alarge Camera Logo"
-      className={className}
-      style={{ height: "auto" }}
+      className={`${className}`}
+      style={{ height: "auto", width: "auto" }}
     />
   );
 };
