@@ -1448,7 +1448,7 @@ const ProductDetail = () => {
               <div className="bg-card border border-border rounded-lg p-8 w-full max-w-xl">
                 <h3 className="text-xl font-bold text-foreground mb-6">{t("productDetail.mainFeatures")}</h3>
                 <ul className="space-y-5">
-                  {product.mainFeatures!.map((feature, index) => {
+                  {mainFeatures!.map((feature, index) => {
                     const IconComponent = cameraFeatureIcons[index % cameraFeatureIcons.length];
                     return (
                       <li key={index} className="flex items-center gap-4 text-muted-foreground">
@@ -1471,7 +1471,7 @@ const ProductDetail = () => {
                   <h3 className="text-xl font-bold text-foreground">{t("productDetail.mainFeatures")}</h3>
                 </div>
                 <ul className="space-y-3">
-                  {product.mainFeatures!.map((feature, index) => (
+                  {mainFeatures!.map((feature, index) => (
                     <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span>{feature}</span>
@@ -1489,7 +1489,7 @@ const ProductDetail = () => {
                   <h3 className="text-xl font-bold text-foreground">{t("productDetail.technicalSpecifications")}</h3>
                 </div>
                 <ul className="space-y-3">
-                  {product.quickSpecs!.map((spec, index) => (
+                  {quickSpecs!.map((spec, index) => (
                     <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span>{spec}</span>
@@ -1507,7 +1507,7 @@ const ProductDetail = () => {
                   <h3 className="text-xl font-bold text-foreground">{t("productDetail.applications")}</h3>
                 </div>
                 <ul className="space-y-3">
-                  {product.applications!.map((app, index) => (
+                  {appsList!.map((app, index) => (
                     <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
                       <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                       <span>{app}</span>
