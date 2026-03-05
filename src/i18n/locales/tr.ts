@@ -282,6 +282,21 @@ const tr = {
     channels: "Kanal",
   },
 
+  modelNotes: {
+    "1gige-line-scan-camera": "Not: DSG, 1GigE hat tarama anlamına gelir. Continuous sürekli veri iletimi, Burst aralıklı veri iletimi anlamına gelir.",
+    "2-5gige-line-scan-camera": "Not: DSR, 2.5GigE hat tarama anlamına gelir. 4K/8K çözünürlüğü, C ise Renkli anlamına gelir.",
+    "10gige-line-scan-camera": "Not: DSX, 10GigE hat tarama anlamına gelir. 8K çözünürlüğü, C ise Renkli anlamına gelir.",
+    "mgv-series-1gige-area-scan": "Not: MGV, 1GigE alan tarama anlamına gelir. 1209 çözünürlüğün 12MP olduğunu, M Mono, H2 donanım sürümü anlamına gelir.",
+    "mgs-series-1gige-area-scan": "Not: MGS, 1GigE alan tarama anlamına gelir. 1207 çözünürlüğün 12MP olduğunu, M Mono, H2 donanım sürümü anlamına gelir.",
+    "m3s-series-usb3-area-scan": "Not: M3ST, USB3.0 alan tarama anlamına gelir. 1207 çözünürlüğün 12MP olduğunu, M Mono, H donanım sürümü, O2C iki optokuplör izoleli çıkış anlamına gelir.",
+    "u3p-series-usb3-area-scan": "Not: U3P, USB3.0 alan tarama anlamına gelir. 520 çözünürlüğün 5MP olduğunu, M Mono, H donanım sürümü anlamına gelir.",
+    "m2s-series-usb2-area-scan": "Not: M2S, USB2.0 alan tarama anlamına gelir. 132 ve 138 her ikisi de çözünürlüğün 1.3MP olduğunu, M Mono, H2 donanım sürümü anlamına gelir.",
+    "10gige-fiber-optic-area-scan": "Not: DSX, 10GigE fiber optik alan tarama anlamına gelir. 6500 çözünürlüğün 65MP olduğunu, M Mono anlamına gelir.",
+    "ds-series-dual-usb3-area-scan": "Not 1: DS2502M, 2/3/4 ışıklı zaman bölmeli stroboskop uygulamasını destekler. Not 2: 2502 çözünürlüğün 25MP olduğunu, M Mono anlamına gelir.",
+    "dsv-series-usb3-coin": "Not: 501 çözünürlüğün 5MP olduğunu, M Mono anlamına gelir.",
+    "lipstick-series-1gige-area-scan": "Not: 135 çözünürlüğün 1.3MP olduğunu, M Mono anlamına gelir.",
+  },
+
   // Common
   common: {
     home: "Ana Sayfa",
