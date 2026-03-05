@@ -146,7 +146,7 @@ const ar = {
     contactUs: "اتصل بنا",
     brandDescription: "شريككم الموثوق لكاميرات ومكونات الرؤية الصناعية.",
     visitWebsite: "زيارة موقع Alarge",
-    copyright: "Alarge Camera. جميع الحقوق محفوظة.",
+    copyright: "Alarge. جميع الحقوق محفوظة.",
     privacyPolicy: "سياسة الخصوصية",
     termsOfService: "شروط الخدمة",
     cookiePolicy: "سياسة ملفات تعريف الارتباط",

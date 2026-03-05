@@ -157,7 +157,7 @@ const en = {
     contactUs: "Contact Us",
     brandDescription: "Your trusted partner for industrial machine vision cameras and components.",
     visitWebsite: "Visit Alarge Website",
-    copyright: "Alarge Camera. All rights reserved.",
+    copyright: "Alarge. All rights reserved.",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     cookiePolicy: "Cookie Policy",

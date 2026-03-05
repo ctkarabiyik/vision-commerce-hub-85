@@ -146,7 +146,7 @@ const it = {
     contactUs: "Contattaci",
     brandDescription: "Il vostro partner di fiducia per telecamere e componenti di visione industriale.",
     visitWebsite: "Visita il sito Alarge",
-    copyright: "Alarge Camera. Tutti i diritti riservati.",
+    copyright: "Alarge. Tutti i diritti riservati.",
     privacyPolicy: "Informativa sulla privacy",
     termsOfService: "Termini di servizio",
     cookiePolicy: "Politica sui cookie",

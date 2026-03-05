@@ -157,7 +157,7 @@ const tr = {
     contactUs: "Bize Ulaşın",
     brandDescription: "Endüstriyel makine görüntüleme kameraları ve bileşenleri için güvenilir ortağınız.",
     visitWebsite: "Alarge Web Sitesini Ziyaret Et",
-    copyright: "Alarge Camera. Tüm hakları saklıdır.",
+    copyright: "Alarge. Tüm hakları saklıdır.",
     privacyPolicy: "Gizlilik Politikası",
     termsOfService: "Kullanım Şartları",
     cookiePolicy: "Çerez Politikası",
