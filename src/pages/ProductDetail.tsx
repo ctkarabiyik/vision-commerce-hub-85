@@ -1359,6 +1359,24 @@ const ProductDetail = () => {
   const hasLensLayout = !!product.mainFeatures;
   const isCameraProduct = slug ? [...lineScanCameraSlugs, ...areaScanCameraSlugs].includes(slug) : false;
 
+  const categoryTranslationKeys: Record<string, string> = {
+    "Area Scan Cameras": "cameraCategories.areaScan",
+    "Line Scan Cameras": "cameraCategories.lineScan",
+    "FA Lenses": "lensCategories.fa",
+    "Telecentric Lenses": "lensCategories.telecentric",
+    "Line Scan Lenses": "lensCategories.lineScan",
+    "Macro Lenses": "lensCategories.macro",
+    "Infrared Lenses": "lensCategories.infrared",
+    "VR Lenses": "lensCategories.vr",
+    "Scheimpflug Lenses": "lensCategories.scheimpflug",
+    "Large Format Lenses": "lensCategories.largeFormat",
+    "Other": "cameraCategories.other",
+  };
+
+  const translatedCategory = categoryTranslationKeys[product.category]
+    ? t(categoryTranslationKeys[product.category])
+    : product.category;
+
   const cameraFeatureIcons = [Monitor, Circle, DollarSign, Cable, Rocket, Cpu, Zap, Gauge, Eye, Box];
 
   return (
@@ -1373,7 +1391,7 @@ const ProductDetail = () => {
             <Link to="/" className="hover:text-primary transition-colors">{t("common.home")}</Link>
             <ChevronRight className="w-4 h-4" />
             <Link to={`/${product.categorySlug}`} className="hover:text-primary transition-colors">
-              {product.category}
+              {translatedCategory}
             </Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-foreground font-medium">{product.name}</span>
