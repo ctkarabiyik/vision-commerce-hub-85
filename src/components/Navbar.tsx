@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import LocaleLink from "@/components/LocaleLink";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe, Sun } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useLocalePath, SUPPORTED_LANGUAGES } from "@/hooks/useLocalePath";
 import AlargeLogo from "@/components/AlargeLogo";
 import cameraProduct1 from "@/assets/camera-product-1.jpg";
 import lineScanCamera1GigE from "@/assets/line-scan-camera-1gige.png";
@@ -71,6 +73,9 @@ const productsByCategory: Record<string, Array<{name: string;brand: string;image
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { currentLang } = useLocalePath();
   const [isOpen, setIsOpen] = useState(false);
   const [mobileCameras, setMobileCameras] = useState(false);
   const [mobileLenses, setMobileLenses] = useState(false);
@@ -80,7 +85,9 @@ const Navbar = () => {
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    languages.find(l => l.code === currentLang) || languages[0]
+  );
   const [activeProductTab, setActiveProductTab] = useState<"cameras" | "lenses">("cameras");
   const [hoveredCameraCategory, setHoveredCameraCategory] = useState<string>("Line Scan Cameras");
   const [hoveredLensCategory, setHoveredLensCategory] = useState<string>("FA Lenses");
@@ -116,7 +123,11 @@ const Navbar = () => {
 
   const handleLanguageChange = (lang: typeof languages[0]) => {
     setSelectedLanguage(lang);
-    i18n.changeLanguage(lang.code);
+    // Navigate to the same page but with the new language prefix
+    const currentPath = location.pathname;
+    // Remove current lang prefix and add new one
+    const pathWithoutLang = currentPath.replace(/^\/[a-z]{2}/, "") || "";
+    navigate(`/${lang.code}${pathWithoutLang}${location.search}`);
     setLanguageDropdownOpen(false);
     setMobileLanguageOpen(false);
   };
@@ -128,9 +139,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <LocaleLink to="/" className="flex items-center">
             <AlargeLogo className="h-8 w-auto max-w-[180px]" variant="dark" />
-          </Link>
+          </LocaleLink>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8 ltr:ml-auto ltr:mr-8 rtl:mr-auto rtl:ml-8">
@@ -184,9 +195,9 @@ const Navbar = () => {
               </div>
             </div>
             
-            <Link to="/contact-us">
+            <LocaleLink to="/contact-us">
               <Button variant="default">{t("nav.contactUs")}</Button>
-            </Link>
+            </LocaleLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -218,14 +229,14 @@ const Navbar = () => {
                   {mobileCameras &&
                     <div className="pl-4 flex flex-col gap-2">
                       {cameraCategories.map((category, index) =>
-                        <Link
+                        <LocaleLink
                           key={`cam-${index}`}
                           to={`/products?category=${encodeURIComponent(category.key || category.title)}`}
                           onClick={() => setIsOpen(false)}
                           className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
                           <category.icon className="w-4 h-4" />
                           {category.title}
-                        </Link>
+                        </LocaleLink>
                       )}
                     </div>
                   }
@@ -238,14 +249,14 @@ const Navbar = () => {
                   {mobileLenses &&
                     <div className="pl-4 flex flex-col gap-2">
                       {allLensCategories.map((category, index) =>
-                        <Link
+                        <LocaleLink
                           key={`lens-${index}`}
                           to={`/lenses?category=${encodeURIComponent(category.key || category.title)}`}
                           onClick={() => setIsOpen(false)}
                           className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
                           <category.icon className="w-4 h-4" />
                           {category.title}
-                        </Link>
+                        </LocaleLink>
                       )}
                     </div>
                   }
@@ -260,12 +271,12 @@ const Navbar = () => {
               {mobileSupport &&
             <div className="pl-4 flex flex-col gap-2">
                   {supportLinks.map((link, index) =>
-              <Link
+              <LocaleLink
                 key={index}
                 to={link.href}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors py-1">
                       {link.title}
-                    </Link>
+                    </LocaleLink>
               )}
                 </div>
             }
@@ -296,9 +307,9 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-              <Link to="/contact-us">
+              <LocaleLink to="/contact-us">
                 <Button variant="default" className="w-full mt-4">{t("nav.contactUs")}</Button>
-              </Link>
+              </LocaleLink>
             </div>
           </div>
         }
@@ -370,18 +381,18 @@ const Navbar = () => {
                 )}
                 </div>
                 <div className="mt-6">
-                  <Link
+                  <LocaleLink
                   to="/products"
                   className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-background text-primary border-2 border-primary text-sm font-semibold rounded-xl hover:bg-primary hover:text-primary-foreground transition-colors">
                     {t("nav.viewAllCameras")}
-                  </Link>
+                  </LocaleLink>
                 </div>
               </div>
               <div className="col-span-9 border-l border-border pl-6 py-4 flex flex-col justify-center">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">{t("nav.featuredCameras")}</h3>
                 <div className="grid grid-cols-4 gap-4">
                   {currentCameraProducts.map((product, index) =>
-                <Link
+                <LocaleLink
                   key={index}
                   to={`/product/${product.slug}`}
                   className="group">
@@ -393,7 +404,7 @@ const Navbar = () => {
                       </div>
                       <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{product.name}</div>
                       <span className="text-[11px] text-muted-foreground group-hover:text-primary transition-colors">{t("nav.view")}</span>
-                    </Link>
+                    </LocaleLink>
                 )}
                 </div>
               </div>
@@ -429,18 +440,18 @@ const Navbar = () => {
                 )}
                 </div>
                 <div className="mt-6">
-                  <Link
+                  <LocaleLink
                   to="/lenses"
                   className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-background text-primary border-2 border-primary text-sm font-semibold rounded-xl hover:bg-primary hover:text-primary-foreground transition-colors">
                     {t("nav.viewAllLenses")}
-                  </Link>
+                  </LocaleLink>
                 </div>
               </div>
               <div className="col-span-9 border-l border-border pl-6 py-4 flex flex-col justify-center">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">{t("nav.featuredLenses")}</h3>
                 <div className="grid grid-cols-4 gap-4">
                   {currentLensProducts.map((product, index) =>
-                <Link
+                <LocaleLink
                   key={index}
                   to={`/product/${product.slug}`}
                   className="group">
@@ -452,7 +463,7 @@ const Navbar = () => {
                       </div>
                       <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{product.name}</div>
                       <span className="text-[11px] text-muted-foreground group-hover:text-primary transition-colors">{t("nav.view")}</span>
-                    </Link>
+                    </LocaleLink>
                 )}
                 </div>
               </div>
@@ -473,7 +484,7 @@ const Navbar = () => {
           <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">{t("nav.supportResources")}</h3>
           <div className="flex flex-row gap-4">
             {supportLinks.map((link, index) =>
-            <Link
+            <LocaleLink
               key={index}
               to={link.href}
               className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary transition-colors group flex-1">
@@ -482,7 +493,7 @@ const Navbar = () => {
                   <div className="text-xs text-muted-foreground">{link.description}</div>
                 </div>
                 <ChevronDown className="w-4 h-4 rotate-[-90deg] text-muted-foreground group-hover:text-primary transition-colors" />
-              </Link>
+              </LocaleLink>
             )}
           </div>
         </div>

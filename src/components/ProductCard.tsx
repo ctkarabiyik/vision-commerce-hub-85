@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import LocaleLink from "@/components/LocaleLink";
 import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -15,7 +15,6 @@ interface ProductCardProps {
   specs?: Spec[];
   slug?: string;
   viewMode?: "grid" | "list";
-  // Legacy props for backward compatibility
   resolution?: string;
   fps?: string;
   interface?: string;
@@ -25,7 +24,6 @@ const ProductCard = ({ name, brand, image, specs, slug, viewMode = "grid", resol
   const { t } = useTranslation();
   const productSlug = slug || name.toLowerCase().replace(/\s+/g, '-');
 
-  // Use specs array if provided, otherwise fall back to legacy props
   const displaySpecs: Spec[] = specs && specs.length > 0
     ? specs
     : [
@@ -36,16 +34,9 @@ const ProductCard = ({ name, brand, image, specs, slug, viewMode = "grid", resol
   if (viewMode === "list") {
     return (
       <div className="group bg-card rounded-sm border border-border hover:border-primary/50 transition-all duration-300 overflow-hidden flex flex-row">
-        {/* Image */}
         <div className="relative w-40 h-40 flex-shrink-0 bg-white overflow-hidden flex items-center justify-center p-6">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-          />
+          <img src={image} alt={name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
         </div>
-
-        {/* Content */}
         <div className="p-4 flex flex-1 items-center gap-6">
           <div className="flex-1">
             <h3 className="font-semibold text-foreground mb-2">{name}</h3>
@@ -58,11 +49,11 @@ const ProductCard = ({ name, brand, image, specs, slug, viewMode = "grid", resol
               ))}
             </div>
           </div>
-          <Link to={`/product/${productSlug}`}>
+          <LocaleLink to={`/product/${productSlug}`}>
             <Button variant="default" size="sm">
               {t("productCard.viewDetails")}
             </Button>
-          </Link>
+          </LocaleLink>
         </div>
       </div>
     );
@@ -70,27 +61,18 @@ const ProductCard = ({ name, brand, image, specs, slug, viewMode = "grid", resol
 
   return (
     <div className="group bg-card rounded-sm border border-border hover:border-primary/50 transition-all duration-300 hover-lift overflow-hidden">
-      {/* Image */}
       <div className="relative aspect-square bg-white overflow-hidden flex items-center justify-center p-14">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-        />
+        <img src={image} alt={name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
         <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/60 transition-colors duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
-          <Link to={`/product/${productSlug}`}>
+          <LocaleLink to={`/product/${productSlug}`}>
             <Button variant="default" size="icon" className="rounded-full">
               <Eye className="w-4 h-4" />
             </Button>
-          </Link>
+          </LocaleLink>
         </div>
       </div>
-
-      {/* Content */}
       <div className="p-4">
         <h3 className="font-semibold text-foreground mb-2 line-clamp-1">{name}</h3>
-        
-        {/* Specs */}
         <div className="grid grid-cols-2 gap-2 mb-4">
           {displaySpecs.map((spec, index) => (
             <div key={index} className="text-center bg-secondary rounded-sm py-2">
@@ -99,13 +81,11 @@ const ProductCard = ({ name, brand, image, specs, slug, viewMode = "grid", resol
             </div>
           ))}
         </div>
-
-        {/* CTA */}
-        <Link to={`/product/${productSlug}`}>
+        <LocaleLink to={`/product/${productSlug}`}>
           <Button variant="default" size="sm" className="w-full">
             {t("productCard.viewDetails")}
           </Button>
-        </Link>
+        </LocaleLink>
       </div>
     </div>
   );

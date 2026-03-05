@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import LocaleLink from "@/components/LocaleLink";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -69,18 +69,18 @@ const FeaturedProducts = () => {
             </h2>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 mt-4 md:mt-0 w-full sm:w-auto">
-            <Link to="/products">
+            <LocaleLink to="/products">
               <Button variant="outline" className="group">
                 {t("featured.viewAllCameras")}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </Link>
-            <Link to="/lenses">
+            </LocaleLink>
+            <LocaleLink to="/lenses">
               <Button variant="outline" className="group">
                 {t("featured.viewAllLenses")}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </Link>
+            </LocaleLink>
           </div>
         </div>
 

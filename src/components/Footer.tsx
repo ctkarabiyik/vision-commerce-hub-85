@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Linkedin, Youtube, Instagram, ExternalLink } from "lucide-react";
-import { Link } from "react-router-dom";
+import LocaleLink from "@/components/LocaleLink";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import AlargeLogo from "@/components/AlargeLogo";
@@ -15,12 +15,12 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-6">{t("footer.products")}</h4>
             <ul className="space-y-3">
-              <li><Link to="/products?category=area-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.areaScanCameras")}</Link></li>
-              <li><Link to="/products?category=line-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.lineScanCameras")}</Link></li>
-              <li><Link to="/lenses?category=fa-lenses" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.faLenses")}</Link></li>
-              <li><Link to="/lenses?category=telecentric" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.telecentricLenses")}</Link></li>
-              <li><Link to="/lenses?category=line-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.lineScanLenses")}</Link></li>
-              <li><Link to="/products?category=other" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.frameGrabbers")}</Link></li>
+              <li><LocaleLink to="/products?category=area-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.areaScanCameras")}</LocaleLink></li>
+              <li><LocaleLink to="/products?category=line-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.lineScanCameras")}</LocaleLink></li>
+              <li><LocaleLink to="/lenses?category=fa-lenses" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.faLenses")}</LocaleLink></li>
+              <li><LocaleLink to="/lenses?category=telecentric" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.telecentricLenses")}</LocaleLink></li>
+              <li><LocaleLink to="/lenses?category=line-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.lineScanLenses")}</LocaleLink></li>
+              <li><LocaleLink to="/products?category=other" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.frameGrabbers")}</LocaleLink></li>
             </ul>
           </div>
 
@@ -28,9 +28,9 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-6">{t("footer.support")}</h4>
             <ul className="space-y-3">
-              <li><Link to="/software-downloads" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.downloads")}</Link></li>
-              <li><Link to="/knowledge-base" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.knowledgeBase")}</Link></li>
-              <li><Link to="/contact-us" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.contactUs")}</Link></li>
+              <li><LocaleLink to="/software-downloads" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.downloads")}</LocaleLink></li>
+              <li><LocaleLink to="/knowledge-base" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.knowledgeBase")}</LocaleLink></li>
+              <li><LocaleLink to="/contact-us" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.contactUs")}</LocaleLink></li>
             </ul>
           </div>
 
