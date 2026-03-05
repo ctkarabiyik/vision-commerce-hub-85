@@ -264,6 +264,12 @@ const ru = {
     channels: "Каналы",
   },
 
+  specValues: {
+    upTo: "До {{value}}",
+    channels: "{{value}} кан.",
+    various: "Различные",
+  },
+
   modelNotes: {
     "1gige-line-scan-camera": "Примечание: DSG означает 1GigE линейная камера. Continuous — непрерывная передача данных, Burst — интервальная передача данных.",
     "2-5gige-line-scan-camera": "Примечание: DSR означает 2.5GigE линейная камера. 4K/8K — разрешение, C — цветная.",

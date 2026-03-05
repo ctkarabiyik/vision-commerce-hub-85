@@ -264,6 +264,12 @@ const de = {
     channels: "Kanäle",
   },
 
+  specValues: {
+    upTo: "Bis zu {{value}}",
+    channels: "{{value}} Kanäle",
+    various: "Verschiedene",
+  },
+
   modelNotes: {
     "1gige-line-scan-camera": "Hinweis: DSG steht für 1GigE-Zeilenkamera. Continuous bedeutet kontinuierliche Datenübertragung, Burst bedeutet intervallweise Datenübertragung.",
     "2-5gige-line-scan-camera": "Hinweis: DSR steht für 2.5GigE-Zeilenkamera. 4K/8K steht für die Auflösung, C für Farbe.",

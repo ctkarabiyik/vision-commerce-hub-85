@@ -264,6 +264,12 @@ const ar = {
     channels: "القنوات",
   },
 
+  specValues: {
+    upTo: "حتى {{value}}",
+    channels: "{{value}} قناة",
+    various: "متنوعة",
+  },
+
   modelNotes: {
     "1gige-line-scan-camera": "ملاحظة: DSG تعني كاميرا مسح خطي 1GigE. Continuous تعني نقل بيانات مستمر، Burst تعني نقل بيانات متقطع.",
     "2-5gige-line-scan-camera": "ملاحظة: DSR تعني كاميرا مسح خطي 2.5GigE. 4K/8K تعني الدقة، C تعني ملون.",
