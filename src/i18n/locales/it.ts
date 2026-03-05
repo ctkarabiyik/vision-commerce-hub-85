@@ -144,7 +144,7 @@ const it = {
     downloads: "Download",
     knowledgeBase: "Base di conoscenza",
     contactUs: "Contattaci",
-    brandDescription: "Il vostro partner di fiducia per telecamere e componenti di visione industriale dal 2008.",
+    brandDescription: "Il vostro partner di fiducia per telecamere e componenti di visione industriale.",
     visitWebsite: "Visita il sito Alarge",
     copyright: "Alarge Camera. Tutti i diritti riservati.",
     privacyPolicy: "Informativa sulla privacy",

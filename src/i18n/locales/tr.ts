@@ -155,7 +155,7 @@ const tr = {
     downloads: "İndirmeler",
     knowledgeBase: "Bilgi Bankası",
     contactUs: "Bize Ulaşın",
-    brandDescription: "2008'den beri endüstriyel makine görüntüleme kameraları ve bileşenleri için güvenilir ortağınız.",
+    brandDescription: "Endüstriyel makine görüntüleme kameraları ve bileşenleri için güvenilir ortağınız.",
     visitWebsite: "Alarge Web Sitesini Ziyaret Et",
     copyright: "Alarge Camera. Tüm hakları saklıdır.",
     privacyPolicy: "Gizlilik Politikası",
