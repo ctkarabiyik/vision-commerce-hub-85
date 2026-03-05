@@ -1,3 +1,5 @@
+import productsRu from "./products/ru";
+
 const ru = {
   nav: {
     products: "Продукция",
@@ -237,6 +239,8 @@ const ru = {
   common: {
     home: "Главная",
   },
+
+  products: productsRu,
 };
 
 export default ru;

@@ -1,3 +1,5 @@
+import productsAr from "./products/ar";
+
 const ar = {
   nav: {
     products: "المنتجات",
@@ -237,6 +239,8 @@ const ar = {
   common: {
     home: "الرئيسية",
   },
+
+  products: productsAr,
 };
 
 export default ar;

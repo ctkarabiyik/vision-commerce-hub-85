@@ -1,3 +1,5 @@
+import productsIt from "./products/it";
+
 const it = {
   nav: {
     products: "Prodotti",
@@ -237,6 +239,8 @@ const it = {
   common: {
     home: "Home",
   },
+
+  products: productsIt,
 };
 
 export default it;
