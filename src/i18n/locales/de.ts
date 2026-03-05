@@ -222,6 +222,18 @@ const de = {
     returnHome: "Zur Startseite",
   },
 
+  productDetail: {
+    productNotFound: "Produkt nicht gefunden",
+    backToProducts: "Zurück zu Produkten",
+    requestQuote: "Angebot anfordern",
+    mainFeatures: "Hauptmerkmale",
+    technicalSpecifications: "Technische Daten",
+    applications: "Anwendungen",
+    overview: "Übersicht",
+    keyFeatures: "Hauptfunktionen",
+    productModels: "Produktmodelle",
+  },
+
   common: {
     home: "Startseite",
   },

@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -1336,6 +1337,7 @@ const modelNotes: Record<string, string> = {
 
 const ProductDetail = () => {
   const { slug } = useParams();
+  const { t } = useTranslation();
   const product = productData[slug as keyof typeof productData];
   const variants = slug ? modelVariants[slug] : undefined;
 
@@ -1344,9 +1346,9 @@ const ProductDetail = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <div className="pt-32 pb-16 text-center">
-          <h1 className="text-2xl font-bold">Product not found</h1>
+          <h1 className="text-2xl font-bold">{t("productDetail.productNotFound")}</h1>
           <Link to="/lenses" className="text-primary hover:underline mt-4 inline-block">
-            Back to products
+            {t("productDetail.backToProducts")}
           </Link>
         </div>
         <Footer />
@@ -1368,7 +1370,7 @@ const ProductDetail = () => {
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <Link to="/" className="hover:text-primary transition-colors">{t("common.home")}</Link>
             <ChevronRight className="w-4 h-4" />
             <Link to={`/${product.categorySlug}`} className="hover:text-primary transition-colors">
               {product.category}
@@ -1399,7 +1401,7 @@ const ProductDetail = () => {
                 <Button size="lg" className="gap-2 w-full sm:w-auto" asChild>
                   <Link to={`/contact-us?product=${encodeURIComponent(product.name)}`}>
                     <ShoppingCart className="w-5 h-5 flex-shrink-0" />
-                    Request Quote
+                    {t("productDetail.requestQuote")}
                   </Link>
                 </Button>
               </div>
@@ -1418,7 +1420,7 @@ const ProductDetail = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-xl w-full mb-6">{product.descriptionBox}</p>
               )}
               <div className="bg-card border border-border rounded-lg p-8 w-full max-w-xl">
-                <h3 className="text-xl font-bold text-foreground mb-6">Main features</h3>
+                <h3 className="text-xl font-bold text-foreground mb-6">{t("productDetail.mainFeatures")}</h3>
                 <ul className="space-y-5">
                   {product.mainFeatures!.map((feature, index) => {
                     const IconComponent = cameraFeatureIcons[index % cameraFeatureIcons.length];
@@ -1440,7 +1442,7 @@ const ProductDetail = () => {
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                     <Star className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">Main features</h3>
+                  <h3 className="text-xl font-bold text-foreground">{t("productDetail.mainFeatures")}</h3>
                 </div>
                 <ul className="space-y-3">
                   {product.mainFeatures!.map((feature, index) => (
@@ -1458,7 +1460,7 @@ const ProductDetail = () => {
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                     <Settings className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">Technical Specifications</h3>
+                  <h3 className="text-xl font-bold text-foreground">{t("productDetail.technicalSpecifications")}</h3>
                 </div>
                 <ul className="space-y-3">
                   {product.quickSpecs!.map((spec, index) => (
@@ -1476,7 +1478,7 @@ const ProductDetail = () => {
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                     <Target className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">Applications</h3>
+                  <h3 className="text-xl font-bold text-foreground">{t("productDetail.applications")}</h3>
                 </div>
                 <ul className="space-y-3">
                   {product.applications!.map((app, index) => (
@@ -1490,11 +1492,11 @@ const ProductDetail = () => {
             </div>
           ) : (
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Overview</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">{t("productDetail.overview")}</h2>
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-3xl">
                 {product.description}
               </p>
-              <h3 className="text-xl font-bold text-foreground mb-4">Key Features</h3>
+              <h3 className="text-xl font-bold text-foreground mb-4">{t("productDetail.keyFeatures")}</h3>
               <ul className="grid md:grid-cols-2 gap-3">
                 {product.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
@@ -1511,7 +1513,7 @@ const ProductDetail = () => {
           {/* Product Models / Technical Specs */}
           {variants && variants.length > 0 && (
             <div>
-              <h2 className="text-2xl font-bold text-foreground mb-4">Product Models</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">{t("productDetail.productModels")}</h2>
               <div className="bg-card border border-border rounded-lg overflow-x-auto">
                 {(() => {
                   const isLineScan = lineScanCameraSlugs.includes(slug as string);

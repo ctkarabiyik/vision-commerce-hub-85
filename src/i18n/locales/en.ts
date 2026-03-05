@@ -240,6 +240,18 @@ const en = {
     returnHome: "Return to Home",
   },
 
+  productDetail: {
+    productNotFound: "Product not found",
+    backToProducts: "Back to products",
+    requestQuote: "Request Quote",
+    mainFeatures: "Main features",
+    technicalSpecifications: "Technical Specifications",
+    applications: "Applications",
+    overview: "Overview",
+    keyFeatures: "Key Features",
+    productModels: "Product Models",
+  },
+
   // Common
   common: {
     home: "Home",
