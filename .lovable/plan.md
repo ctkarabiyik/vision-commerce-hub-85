@@ -1,15 +1,37 @@
 
 
-## Bug: Double Asterisk on Form Labels
+## Fix: Breadcrumb category link should pre-select the category filter
 
-The required field marker `*` is duplicated because it exists in **two places**:
+**Problem**: The breadcrumb link on the ProductDetail page (line 1401) navigates to `/${product.categorySlug}` (e.g., `/products` or `/lenses`) without a `?category=` query param, so the category filter is not pre-selected.
 
-1. **Translation strings** (e.g., `tr.ts`): `firstName: "Ad *"` — already includes `*`
-2. **Component template** (`ContactUs.tsx`): `{t("contactPage.firstName")} *` — appends another `*`
+**Solution**: Add a mapping from `product.category` to the corresponding URL category filter ID, and append it as a query parameter.
 
-### Fix
+### Changes in `src/pages/ProductDetail.tsx`
 
-**Remove the ` *` from all translation strings** across all 6 locale files (`en.ts`, `tr.ts`, `de.ts`, `ru.ts`, `it.ts`, `ar.ts`). The asterisk should only live in the component template since it's a visual indicator, not translatable content.
+1. Add a `categoryFilterMap` that maps product category names to their filter IDs:
 
-Affected keys in each locale: `firstName`, `lastName`, `email`, and any other label that has `*` baked into the translation value.
+```
+"Line Scan Cameras" → "line-scan"
+"Area Scan Cameras" → "area-scan"
+"Other" → "other"
+"FA Lenses" → "fa-lenses"
+"Telecentric Lenses" → "telecentric"
+"Line Scan Lenses" → "line-scan"
+"Macro Lenses" → "macro"
+"Infrared Lenses" → "infrared"
+"VR Lenses" → "vr"
+"Scheimpflug Lenses" → "scheimpflug"
+"Large Format Lenses" → "large-format"
+```
+
+2. Update the breadcrumb `LocaleLink` (line 1401) from:
+   ```
+   to={`/${product.categorySlug}`}
+   ```
+   to:
+   ```
+   to={`/${product.categorySlug}?category=${categoryFilterMap[product.category] || ""}`}
+   ```
+
+This ensures clicking "Line Scan Cameras" in the breadcrumb navigates to `/products?category=line-scan`, pre-selecting the filter on the catalog page.
 
