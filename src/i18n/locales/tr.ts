@@ -282,6 +282,12 @@ const tr = {
     channels: "Kanal",
   },
 
+  specValues: {
+    upTo: "{{value}}'e kadar",
+    channels: "{{value}} Kanal",
+    various: "Çeşitli",
+  },
+
   modelNotes: {
     "1gige-line-scan-camera": "Not: DSG, 1GigE hat tarama anlamına gelir. Continuous sürekli veri iletimi, Burst aralıklı veri iletimi anlamına gelir.",
     "2-5gige-line-scan-camera": "Not: DSR, 2.5GigE hat tarama anlamına gelir. 4K/8K çözünürlüğü, C ise Renkli anlamına gelir.",

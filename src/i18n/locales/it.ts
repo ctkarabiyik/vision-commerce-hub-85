@@ -264,6 +264,12 @@ const it = {
     channels: "Canali",
   },
 
+  specValues: {
+    upTo: "Fino a {{value}}",
+    channels: "{{value}} canali",
+    various: "Vari",
+  },
+
   modelNotes: {
     "1gige-line-scan-camera": "Nota: DSG significa telecamera lineare 1GigE. Continuous indica trasmissione dati continua, Burst indica trasmissione dati a intervalli.",
     "2-5gige-line-scan-camera": "Nota: DSR significa telecamera lineare 2.5GigE. 4K/8K indica la risoluzione, C indica Colore.",

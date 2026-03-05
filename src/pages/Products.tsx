@@ -21,7 +21,7 @@ import areaScanDsv from "@/assets/area-scan-dsv-coin.png";
 import areaScanLipstick from "@/assets/area-scan-lipstick-1gige.png";
 import frameGrabber from "@/assets/frame-grabber-10-40gige.png";
 
-const products = [
+const getProducts = (t: (key: string, options?: Record<string, string>) => string) => [
 // Line Scan Cameras
 {
   name: "1GigE Line Scan Camera",
@@ -63,7 +63,7 @@ const products = [
   image: areaScanMgv,
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
-    { label: "FPS", value: "Up to 300" },
+    { label: "FPS", value: t("specValues.upTo", { value: "300" }) },
   ],
   category: "area-scan",
   slug: "mgv-series-1gige-area-scan"
@@ -74,7 +74,7 @@ const products = [
   image: areaScanMgs,
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
-    { label: "FPS", value: "Up to 300" },
+    { label: "FPS", value: t("specValues.upTo", { value: "300" }) },
   ],
   category: "area-scan",
   slug: "mgs-series-1gige-area-scan"
@@ -85,7 +85,7 @@ const products = [
   image: areaScanM3s,
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
-    { label: "FPS", value: "Up to 500" },
+    { label: "FPS", value: t("specValues.upTo", { value: "500" }) },
   ],
   category: "area-scan",
   slug: "m3s-series-usb3-area-scan"
@@ -96,7 +96,7 @@ const products = [
   image: areaScanU3p,
   specs: [
     { label: "Resolution", value: "0.3–20 MP" },
-    { label: "FPS", value: "Up to 500" },
+    { label: "FPS", value: t("specValues.upTo", { value: "500" }) },
   ],
   category: "area-scan",
   slug: "u3p-series-usb3-area-scan"
@@ -107,7 +107,7 @@ const products = [
   image: areaScanM2s,
   specs: [
     { label: "Resolution", value: "0.3–5 MP" },
-    { label: "FPS", value: "Up to 120" },
+    { label: "FPS", value: t("specValues.upTo", { value: "120" }) },
   ],
   category: "area-scan",
   slug: "m2s-series-usb2-area-scan"
@@ -118,7 +118,7 @@ const products = [
   image: areaScan10gige,
   specs: [
     { label: "Resolution", value: "5–45 MP" },
-    { label: "FPS", value: "Up to 200" },
+    { label: "FPS", value: t("specValues.upTo", { value: "200" }) },
   ],
   category: "area-scan",
   slug: "10gige-fiber-optic-area-scan"
@@ -129,7 +129,7 @@ const products = [
   image: areaScanDs,
   specs: [
     { label: "Resolution", value: "1–5 MP" },
-    { label: "FPS", value: "Up to 300" },
+    { label: "FPS", value: t("specValues.upTo", { value: "300" }) },
   ],
   category: "area-scan",
   slug: "ds-series-dual-usb3-area-scan"
@@ -140,7 +140,7 @@ const products = [
   image: areaScanDsv,
   specs: [
     { label: "Resolution", value: "0.3–5 MP" },
-    { label: "FPS", value: "Up to 250" },
+    { label: "FPS", value: t("specValues.upTo", { value: "250" }) },
   ],
   category: "area-scan",
   slug: "dsv-series-usb3-coin"
@@ -151,7 +151,7 @@ const products = [
   image: areaScanLipstick,
   specs: [
     { label: "Resolution", value: "0.3–5 MP" },
-    { label: "FPS", value: "Up to 200" },
+    { label: "FPS", value: t("specValues.upTo", { value: "200" }) },
   ],
   category: "area-scan",
   slug: "lipstick-series-1gige-area-scan"
@@ -163,7 +163,7 @@ const products = [
   image: frameGrabber,
   specs: [
     { label: "Resolution", value: "10–40G" },
-    { label: "Channels", value: "1–4 Ch" },
+    { label: "Channels", value: t("specValues.channels", { value: "1–4" }) },
   ],
   category: "other",
   slug: "frame-grabber-10-40gige"
@@ -174,6 +174,7 @@ const PRODUCTS_PER_PAGE = 9;
 
 const Products = () => {
   const { t } = useTranslation();
+  const products = getProducts(t);
   const [searchParams] = useSearchParams();
   const categoryParam = searchParams.get("category");
   const [selectedCategory, setSelectedCategory] = useState(categoryParam || "all");

@@ -31,7 +31,7 @@ import infraredLenses from "@/assets/infrared-lenses.png";
 import vrLenses from "@/assets/vr-lenses.png";
 import scheimpflugLenses from "@/assets/scheimpflug-lenses.png";
 
-const products = [
+const getProducts = (t: (key: string, options?: Record<string, string>) => string) => [
   // FA Lenses
   { name: "1/1.7 inch FA Lenses", brand: "DZOPTICS", image: faLens117, specs: [{ label: "F#", value: "f/1.4–f/2.8" }, { label: "Mount", value: "C-Mount" }], category: "fa-lenses", slug: "1-1-7-inch-fa-lenses" },
   { name: "2/3 inch Budget FA Lenses", brand: "DZOPTICS", image: faLens23Standard, specs: [{ label: "F#", value: "f/1.4–f/2.8" }, { label: "Mount", value: "C-Mount" }], category: "fa-lenses", slug: "2-3-inch-standard-fa-lenses" },
@@ -57,13 +57,14 @@ const products = [
   // Other
   { name: "Macro Lenses", brand: "DZOPTICS", image: macroLenses, specs: [{ label: "F#", value: "f/2.8–f/6.5" }, { label: "Mount", value: "C-Mount" }], category: "macro", slug: "macro-lenses" },
   { name: "Infrared Lenses", brand: "DZOPTICS", image: infraredLenses, specs: [{ label: "F#", value: "f/1.4–f/2.0" }, { label: "Mount", value: "C-Mount" }], category: "infrared", slug: "infrared-lenses" },
-  { name: "VR Lenses", brand: "DZOPTICS", image: vrLenses, specs: [{ label: "F#", value: "f/2.0" }, { label: "Mount", value: "Various" }], category: "vr", slug: "vr-lenses" },
-  { name: "Scheimpflug Lenses", brand: "DZOPTICS", image: scheimpflugLenses, specs: [{ label: "F#", value: "f/2.8–f/4" }, { label: "Mount", value: "Various" }], category: "scheimpflug", slug: "scheimpflug-lenses" },
-  { name: "Large Format Lenses", brand: "DZOPTICS", image: largeFormatLenses, specs: [{ label: "F#", value: "f/2.8–f/5.6" }, { label: "Mount", value: "Various" }], category: "large-format", slug: "large-format-lenses" },
+  { name: "VR Lenses", brand: "DZOPTICS", image: vrLenses, specs: [{ label: "F#", value: "f/2.0" }, { label: "Mount", value: t("specValues.various") }], category: "vr", slug: "vr-lenses" },
+  { name: "Scheimpflug Lenses", brand: "DZOPTICS", image: scheimpflugLenses, specs: [{ label: "F#", value: "f/2.8–f/4" }, { label: "Mount", value: t("specValues.various") }], category: "scheimpflug", slug: "scheimpflug-lenses" },
+  { name: "Large Format Lenses", brand: "DZOPTICS", image: largeFormatLenses, specs: [{ label: "F#", value: "f/2.8–f/5.6" }, { label: "Mount", value: t("specValues.various") }], category: "large-format", slug: "large-format-lenses" },
 ];
 
 const Lenses = () => {
   const { t } = useTranslation();
+  const products = getProducts(t);
   const [searchParams] = useSearchParams();
   const categoryParam = searchParams.get("category");
   const [selectedCategory, setSelectedCategory] = useState(categoryParam || "all");
