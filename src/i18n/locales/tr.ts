@@ -228,6 +228,18 @@ const tr = {
     businessHours: "Çalışma Saatleri",
     businessHoursValue: "Pzt - Cum: 08:00 - 18:00\nCmt - Paz: Kapalı",
     urgentHelp: "Acil yardıma mı ihtiyacınız var? Acil sorularınız için satış ekibimizi doğrudan arayın.",
+    placeholderFirstName: "Ahmet",
+    placeholderLastName: "Yılmaz",
+    placeholderEmail: "ahmet@sirket.com",
+    placeholderPhone: "+90 (212) 000 00 00",
+    placeholderCompany: "ABC Mühendislik",
+    placeholderRole: "Mühendislik Müdürü",
+    placeholderProduct: "ör. MGV Serisi 1GigE, Area Scan Kameralar",
+    placeholderQuantity: "ör. 10-50 adet",
+    placeholderMessage: "Proje gereksinimlerinizi, uygulamanızı, zaman çizelgenizi veya sorularınızı anlatın...",
+    thankYouTitle: "Teşekkürler!",
+    thankYouMessage: "E-posta istemciniz mesajınızla birlikte açılmış olmalıdır. Açılmadıysa, lütfen doğrudan sales2@alarge.com.tr adresine e-posta gönderin.",
+    sendAnother: "Başka Bir Mesaj Gönder",
   },
 
   // Product Card

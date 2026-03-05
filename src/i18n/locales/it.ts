@@ -212,6 +212,18 @@ const it = {
     businessHours: "Orari di lavoro",
     businessHoursValue: "Lun - Ven: 08:00 - 18:00\nSab - Dom: Chiuso",
     urgentHelp: "Hai bisogno di assistenza immediata? Chiama direttamente il nostro team vendite.",
+    placeholderFirstName: "Mario",
+    placeholderLastName: "Rossi",
+    placeholderEmail: "mario@azienda.it",
+    placeholderPhone: "+39 (02) 000 0000",
+    placeholderCompany: "ABC Tecnologia S.r.l.",
+    placeholderRole: "Responsabile Tecnico",
+    placeholderProduct: "es. Serie MGV 1GigE, Telecamere Area Scan",
+    placeholderQuantity: "es. 10-50 unità",
+    placeholderMessage: "Descrivici i requisiti del progetto, l'applicazione, le tempistiche o eventuali domande...",
+    thankYouTitle: "Grazie!",
+    thankYouMessage: "Il tuo client di posta dovrebbe essersi aperto con il messaggio. In caso contrario, inviaci un'email a sales2@alarge.com.tr",
+    sendAnother: "Invia un altro messaggio",
   },
 
   productCard: {

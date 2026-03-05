@@ -228,6 +228,18 @@ const en = {
     businessHours: "Business Hours",
     businessHoursValue: "Mon - Fri: 8:00 AM - 6:00 PM PST\nSat - Sun: Closed",
     urgentHelp: "Need immediate assistance? Call our sales team directly for urgent inquiries.",
+    placeholderFirstName: "John",
+    placeholderLastName: "Doe",
+    placeholderEmail: "john@company.com",
+    placeholderPhone: "+1 (555) 000-0000",
+    placeholderCompany: "Acme Corporation",
+    placeholderRole: "Engineering Manager",
+    placeholderProduct: "e.g., ACE-2040 Pro Series, Area Scan Cameras",
+    placeholderQuantity: "e.g., 10-50 units",
+    placeholderMessage: "Tell us about your project requirements, application, timeline, or any specific questions...",
+    thankYouTitle: "Thank You!",
+    thankYouMessage: "Your email client should have opened with your message. If it didn't, please email us directly at sales2@alarge.com.tr",
+    sendAnother: "Send Another Message",
   },
 
   // Product Card

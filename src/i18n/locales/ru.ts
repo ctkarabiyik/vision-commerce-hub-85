@@ -212,6 +212,18 @@ const ru = {
     businessHours: "Рабочие часы",
     businessHoursValue: "Пн - Пт: 08:00 - 18:00\nСб - Вс: Выходной",
     urgentHelp: "Нужна срочная помощь? Позвоните нашей команде продаж напрямую.",
+    placeholderFirstName: "Иван",
+    placeholderLastName: "Иванов",
+    placeholderEmail: "ivan@kompaniya.ru",
+    placeholderPhone: "+7 (495) 000-00-00",
+    placeholderCompany: "ООО Техника",
+    placeholderRole: "Технический директор",
+    placeholderProduct: "напр., MGV серия 1GigE, Area Scan камеры",
+    placeholderQuantity: "напр., 10-50 шт.",
+    placeholderMessage: "Расскажите о требованиях проекта, области применения, сроках или задайте вопросы...",
+    thankYouTitle: "Спасибо!",
+    thankYouMessage: "Ваш почтовый клиент должен был открыться с вашим сообщением. Если нет, отправьте письмо напрямую на sales2@alarge.com.tr",
+    sendAnother: "Отправить ещё сообщение",
   },
 
   productCard: {
