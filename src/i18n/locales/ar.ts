@@ -144,7 +144,7 @@ const ar = {
     downloads: "التنزيلات",
     knowledgeBase: "قاعدة المعرفة",
     contactUs: "اتصل بنا",
-    brandDescription: "شريككم الموثوق لكاميرات ومكونات الرؤية الصناعية منذ عام 2008.",
+    brandDescription: "شريككم الموثوق لكاميرات ومكونات الرؤية الصناعية.",
     visitWebsite: "زيارة موقع Alarge",
     copyright: "Alarge Camera. جميع الحقوق محفوظة.",
     privacyPolicy: "سياسة الخصوصية",

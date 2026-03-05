@@ -144,7 +144,7 @@ const ru = {
     downloads: "Загрузки",
     knowledgeBase: "База знаний",
     contactUs: "Связаться с нами",
-    brandDescription: "Ваш надёжный партнёр в области промышленных камер машинного зрения с 2008 года.",
+    brandDescription: "Ваш надёжный партнёр в области промышленных камер машинного зрения.",
     visitWebsite: "Посетить сайт Alarge",
     copyright: "Alarge Camera. Все права защищены.",
     privacyPolicy: "Политика конфиденциальности",

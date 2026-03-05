@@ -144,7 +144,7 @@ const de = {
     downloads: "Downloads",
     knowledgeBase: "Wissensdatenbank",
     contactUs: "Kontakt",
-    brandDescription: "Ihr vertrauenswürdiger Partner für industrielle Bildverarbeitungskameras und Komponenten seit 2008.",
+    brandDescription: "Ihr vertrauenswürdiger Partner für industrielle Bildverarbeitungskameras und Komponenten.",
     visitWebsite: "Alarge-Website besuchen",
     copyright: "Alarge Camera. Alle Rechte vorbehalten.",
     privacyPolicy: "Datenschutzrichtlinie",
