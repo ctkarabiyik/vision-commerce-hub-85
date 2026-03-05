@@ -155,7 +155,7 @@ const en = {
     downloads: "Downloads",
     knowledgeBase: "Knowledge Base",
     contactUs: "Contact Us",
-    brandDescription: "Your trusted partner for industrial machine vision cameras and components since 2008.",
+    brandDescription: "Your trusted partner for industrial machine vision cameras and components.",
     visitWebsite: "Visit Alarge Website",
     copyright: "Alarge Camera. All rights reserved.",
     privacyPolicy: "Privacy Policy",
