@@ -178,6 +178,7 @@ const Products = () => {
   const categoryParam = searchParams.get("category");
   const [selectedCategory, setSelectedCategory] = useState(categoryParam || "all");
   const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_PAGE);
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   const cameraCategories = [
     { id: "all", title: t("productsPage.allCameraProducts"), icon: Camera, count: 13 },
@@ -239,10 +240,16 @@ const Products = () => {
                     {t("productsPage.filters")}
                   </h3>
                   <div className="flex items-center border border-border rounded-md">
-                    <button className="p-1.5 hover:bg-secondary transition-colors border-r border-border bg-secondary">
+                    <button
+                      onClick={() => setViewMode("grid")}
+                      className={`p-1.5 hover:bg-secondary transition-colors border-r border-border ${viewMode === "grid" ? "bg-secondary" : ""}`}
+                    >
                       <Grid3X3 className="w-3.5 h-3.5" />
                     </button>
-                    <button className="p-1.5 hover:bg-secondary transition-colors">
+                    <button
+                      onClick={() => setViewMode("list")}
+                      className={`p-1.5 hover:bg-secondary transition-colors ${viewMode === "list" ? "bg-secondary" : ""}`}
+                    >
                       <LayoutList className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -280,9 +287,9 @@ const Products = () => {
 
             {/* Products Grid */}
             <div className="flex-1">
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+              <div className={viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6" : "flex flex-col gap-4"}>
                 {displayedProducts.map((product, index) =>
-                <ProductCard key={index} {...product} />
+                <ProductCard key={index} {...product} viewMode={viewMode} />
                 )}
               </div>
 
