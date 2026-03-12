@@ -343,7 +343,7 @@ const Navbar = () => {
                   key={`lens-${index}`}
                   to={`/lenses?category=${encodeURIComponent(category.key || category.title)}`}
                   onClick={() => { setIsOpen(false); setMobileMenuLevel('main'); }}
-                  className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors py-1">
+                  className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors">
                   <category.icon className="w-4 h-4" />
                   {category.title}
                 </LocaleLink>
