@@ -329,7 +329,7 @@ const Navbar = () => {
             </div>
 
             {/* Lenses Panel */}
-            <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-3 ${
+            <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-4 ${
               mobileMenuLevel === 'lenses' ? 'translate-x-0 relative' : 'translate-x-full pointer-events-none invisible absolute top-0 left-0 w-full'
             }`}>
               <button
