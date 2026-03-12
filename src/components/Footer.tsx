@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
 
           {/* Support */}
-          <div className="pt-6 md:pt-0">
+          <div className="pt-3 md:pt-0">
             <button
               onClick={() => setSupportOpen(!supportOpen)}
               className="md:pointer-events-none w-full flex items-center justify-between font-semibold text-lg mb-0 md:mb-6"
