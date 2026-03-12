@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import LocaleLink from "@/components/LocaleLink";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe, Sun } from "lucide-react";
+import { Menu, X, Camera, ChevronDown, ChevronRight, ArrowLeft, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe, Sun } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useLocalePath, SUPPORTED_LANGUAGES } from "@/hooks/useLocalePath";
 import AlargeLogo from "@/components/AlargeLogo";
