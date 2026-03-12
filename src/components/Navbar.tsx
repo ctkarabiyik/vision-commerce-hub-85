@@ -329,7 +329,7 @@ const Navbar = () => {
 
             {/* Lenses Panel */}
             <div className={`absolute top-0 left-0 w-full transition-transform duration-300 ease-in-out py-4 flex flex-col gap-3 ${
-              mobileMenuLevel === 'lenses' ? 'translate-x-0' : 'translate-x-full'
+              mobileMenuLevel === 'lenses' ? 'translate-x-0' : 'translate-x-full pointer-events-none invisible'
             }`}>
               <button
                 onClick={() => setMobileMenuLevel('products')}
