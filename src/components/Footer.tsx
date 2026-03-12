@@ -1,4 +1,5 @@
-import { Facebook, Twitter, Linkedin, Youtube, Instagram, ExternalLink } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Youtube, Instagram, ExternalLink, ChevronDown } from "lucide-react";
+import { useState } from "react";
 import LocaleLink from "@/components/LocaleLink";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
@@ -6,6 +7,8 @@ import AlargeLogo from "@/components/AlargeLogo";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [supportOpen, setSupportOpen] = useState(false);
 
   return (
     <footer className="bg-accent text-accent-foreground">
@@ -13,8 +16,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 max-w-5xl mx-auto">
           {/* Products */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">{t("footer.products")}</h4>
-            <ul className="space-y-3">
+            <button
+              onClick={() => setProductsOpen(!productsOpen)}
+              className="md:pointer-events-none w-full flex items-center justify-between font-semibold text-lg mb-0 md:mb-6"
+            >
+              {t("footer.products")}
+              <ChevronDown className={`w-5 h-5 md:hidden transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <ul className={`space-y-3 overflow-hidden transition-all duration-300 md:max-h-none md:mt-0 ${
+              productsOpen ? 'max-h-96 mt-4' : 'max-h-0 md:max-h-none'
+            }`}>
               <li><LocaleLink to="/products?category=area-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.areaScanCameras")}</LocaleLink></li>
               <li><LocaleLink to="/products?category=line-scan" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.lineScanCameras")}</LocaleLink></li>
               <li><LocaleLink to="/lenses?category=fa-lenses" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.faLenses")}</LocaleLink></li>
@@ -26,8 +37,16 @@ const Footer = () => {
 
           {/* Support */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">{t("footer.support")}</h4>
-            <ul className="space-y-3">
+            <button
+              onClick={() => setSupportOpen(!supportOpen)}
+              className="md:pointer-events-none w-full flex items-center justify-between font-semibold text-lg mb-0 md:mb-6"
+            >
+              {t("footer.support")}
+              <ChevronDown className={`w-5 h-5 md:hidden transition-transform ${supportOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <ul className={`space-y-3 overflow-hidden transition-all duration-300 md:max-h-none md:mt-0 ${
+              supportOpen ? 'max-h-96 mt-4' : 'max-h-0 md:max-h-none'
+            }`}>
               <li><LocaleLink to="/software-downloads" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.downloads")}</LocaleLink></li>
               <li><LocaleLink to="/knowledge-base" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.knowledgeBase")}</LocaleLink></li>
               <li><LocaleLink to="/contact-us" className="text-sm text-accent-foreground/70 hover:text-primary transition-colors">{t("footer.contactUs")}</LocaleLink></li>
