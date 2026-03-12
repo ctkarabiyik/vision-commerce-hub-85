@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
 
           {/* Brand */}
-          <div className="pt-16 md:pt-0">
+          <div className="pt-20 md:pt-0">
             <div className="flex items-center mb-6">
               <AlargeLogo className="h-12 w-auto" variant="light" />
             </div>
