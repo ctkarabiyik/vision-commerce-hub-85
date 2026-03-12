@@ -213,7 +213,7 @@ const Navbar = () => {
         {isOpen &&
         <div className="lg:hidden border-t border-border overflow-hidden relative" style={{ minHeight: '220px' }}>
             {/* Main Panel */}
-            <div className={`transition-transform duration-300 ease-in-out p-4 flex flex-col gap-4 ${
+            <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-4 ${
               mobileMenuLevel === 'main' ? 'translate-x-0' : '-translate-x-full'
             }`}>
               <button
