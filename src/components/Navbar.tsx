@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import LocaleLink from "@/components/LocaleLink";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Camera, ChevronDown, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe, Sun } from "lucide-react";
+import { Menu, X, Camera, ChevronDown, ChevronRight, ArrowLeft, Scan, CircuitBoard, Settings, Microscope, Aperture, Focus, ZoomIn, Circle, Globe, Sun } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useLocalePath, SUPPORTED_LANGUAGES } from "@/hooks/useLocalePath";
 import AlargeLogo from "@/components/AlargeLogo";
@@ -77,11 +77,8 @@ const Navbar = () => {
   const location = useLocation();
   const { currentLang } = useLocalePath();
   const [isOpen, setIsOpen] = useState(false);
-  const [mobileCameras, setMobileCameras] = useState(false);
-  const [mobileLenses, setMobileLenses] = useState(false);
-  const [mobileSupport, setMobileSupport] = useState(false);
+  const [mobileMenuLevel, setMobileMenuLevel] = useState<'main' | 'products' | 'support' | 'cameras' | 'lenses'>('main');
   const [mobileLanguageOpen, setMobileLanguageOpen] = useState(false);
-  const [mobileProducts, setMobileProducts] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
@@ -203,83 +200,34 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}>
+            onClick={() => {
+              const next = !isOpen;
+              setIsOpen(next);
+              if (!next) setMobileMenuLevel('main');
+            }}>
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen &&
-        <div className="lg:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
+        <div className="lg:hidden border-t border-border overflow-hidden relative" style={{ minHeight: '220px' }}>
+            {/* Main Panel */}
+            <div className={`transition-transform duration-300 ease-in-out p-4 flex flex-col gap-4 ${
+              mobileMenuLevel === 'main' ? 'translate-x-0' : '-translate-x-full'
+            }`}>
               <button
-              onClick={() => setMobileProducts(!mobileProducts)}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
+                onClick={() => setMobileMenuLevel('products')}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center justify-between text-left">
                 {t("nav.products")}
-                <ChevronDown className={`w-4 h-4 transition-transform ${mobileProducts ? 'rotate-180' : ''}`} />
+                <ChevronRight className="w-4 h-4" />
               </button>
-              {mobileProducts &&
-            <div className="pl-4 flex flex-col gap-3">
-                  <button
-                    onClick={() => setMobileCameras(!mobileCameras)}
-                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
-                    {t("nav.cameras")}
-                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileCameras ? 'rotate-180' : ''}`} />
-                  </button>
-                  {mobileCameras &&
-                    <div className="pl-4 flex flex-col gap-2">
-                      {cameraCategories.map((category, index) =>
-                        <LocaleLink
-                          key={`cam-${index}`}
-                          to={`/products?category=${encodeURIComponent(category.key || category.title)}`}
-                          onClick={() => setIsOpen(false)}
-                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
-                          <category.icon className="w-4 h-4" />
-                          {category.title}
-                        </LocaleLink>
-                      )}
-                    </div>
-                  }
-                  <button
-                    onClick={() => setMobileLenses(!mobileLenses)}
-                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
-                    {t("nav.lenses")}
-                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileLenses ? 'rotate-180' : ''}`} />
-                  </button>
-                  {mobileLenses &&
-                    <div className="pl-4 flex flex-col gap-2">
-                      {allLensCategories.map((category, index) =>
-                        <LocaleLink
-                          key={`lens-${index}`}
-                          to={`/lenses?category=${encodeURIComponent(category.key || category.title)}`}
-                          onClick={() => setIsOpen(false)}
-                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1">
-                          <category.icon className="w-4 h-4" />
-                          {category.title}
-                        </LocaleLink>
-                      )}
-                    </div>
-                  }
-                </div>
-            }
               <button
-              onClick={() => setMobileSupport(!mobileSupport)}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 text-left">
+                onClick={() => setMobileMenuLevel('support')}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center justify-between text-left">
                 {t("nav.support")}
-                <ChevronDown className={`w-4 h-4 transition-transform ${mobileSupport ? 'rotate-180' : ''}`} />
+                <ChevronRight className="w-4 h-4" />
               </button>
-              {mobileSupport &&
-            <div className="pl-4 flex flex-col gap-2">
-                  {supportLinks.map((link, index) =>
-              <LocaleLink
-                key={index}
-                to={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors py-1">
-                      {link.title}
-                    </LocaleLink>
-              )}
-                </div>
-            }
               {/* Mobile Language Selector */}
               <div className="pt-4 border-t border-border">
                 <button
@@ -307,9 +255,98 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-              <LocaleLink to="/contact-us">
-                <Button variant="default" className="w-full mt-4">{t("nav.contactUs")}</Button>
+              <LocaleLink to="/contact-us" onClick={() => setIsOpen(false)}>
+                <Button variant="default" className="w-full mt-2">{t("nav.contactUs")}</Button>
               </LocaleLink>
+            </div>
+
+            {/* Products Panel */}
+            <div className={`absolute top-0 left-0 w-full transition-transform duration-300 ease-in-out p-4 flex flex-col gap-4 ${
+              mobileMenuLevel === 'products' ? 'translate-x-0' : 'translate-x-full'
+            }`}>
+              <button
+                onClick={() => setMobileMenuLevel('main')}
+                className="text-sm font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-2 text-left">
+                <ArrowLeft className="w-4 h-4" />
+                {t("nav.products")}
+              </button>
+              <button
+                onClick={() => setMobileMenuLevel('cameras')}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center justify-between text-left">
+                {t("nav.cameras")}
+                <ChevronRight className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => setMobileMenuLevel('lenses')}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center justify-between text-left">
+                {t("nav.lenses")}
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Support Panel */}
+            <div className={`absolute top-0 left-0 w-full transition-transform duration-300 ease-in-out p-4 flex flex-col gap-4 ${
+              mobileMenuLevel === 'support' ? 'translate-x-0' : 'translate-x-full'
+            }`}>
+              <button
+                onClick={() => setMobileMenuLevel('main')}
+                className="text-sm font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-2 text-left">
+                <ArrowLeft className="w-4 h-4" />
+                {t("nav.support")}
+              </button>
+              {supportLinks.map((link, index) =>
+                <LocaleLink
+                  key={index}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-sm text-foreground hover:text-primary transition-colors py-1">
+                  {link.title}
+                </LocaleLink>
+              )}
+            </div>
+
+            {/* Cameras Panel */}
+            <div className={`absolute top-0 left-0 w-full transition-transform duration-300 ease-in-out p-4 flex flex-col gap-3 ${
+              mobileMenuLevel === 'cameras' ? 'translate-x-0' : 'translate-x-full'
+            }`}>
+              <button
+                onClick={() => setMobileMenuLevel('products')}
+                className="text-sm font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-2 text-left">
+                <ArrowLeft className="w-4 h-4" />
+                {t("nav.cameras")}
+              </button>
+              {cameraCategories.map((category, index) =>
+                <LocaleLink
+                  key={`cam-${index}`}
+                  to={`/products?category=${encodeURIComponent(category.key || category.title)}`}
+                  onClick={() => { setIsOpen(false); setMobileMenuLevel('main'); }}
+                  className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors py-1">
+                  <category.icon className="w-4 h-4" />
+                  {category.title}
+                </LocaleLink>
+              )}
+            </div>
+
+            {/* Lenses Panel */}
+            <div className={`absolute top-0 left-0 w-full transition-transform duration-300 ease-in-out p-4 flex flex-col gap-3 ${
+              mobileMenuLevel === 'lenses' ? 'translate-x-0' : 'translate-x-full'
+            }`}>
+              <button
+                onClick={() => setMobileMenuLevel('products')}
+                className="text-sm font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-2 text-left">
+                <ArrowLeft className="w-4 h-4" />
+                {t("nav.lenses")}
+              </button>
+              {allLensCategories.map((category, index) =>
+                <LocaleLink
+                  key={`lens-${index}`}
+                  to={`/lenses?category=${encodeURIComponent(category.key || category.title)}`}
+                  onClick={() => { setIsOpen(false); setMobileMenuLevel('main'); }}
+                  className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors py-1">
+                  <category.icon className="w-4 h-4" />
+                  {category.title}
+                </LocaleLink>
+              )}
             </div>
           </div>
         }
