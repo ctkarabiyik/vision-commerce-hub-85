@@ -77,11 +77,8 @@ const Navbar = () => {
   const location = useLocation();
   const { currentLang } = useLocalePath();
   const [isOpen, setIsOpen] = useState(false);
-  const [mobileCameras, setMobileCameras] = useState(false);
-  const [mobileLenses, setMobileLenses] = useState(false);
-  const [mobileSupport, setMobileSupport] = useState(false);
+  const [mobileMenuLevel, setMobileMenuLevel] = useState<'main' | 'products' | 'support' | 'cameras' | 'lenses'>('main');
   const [mobileLanguageOpen, setMobileLanguageOpen] = useState(false);
-  const [mobileProducts, setMobileProducts] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
