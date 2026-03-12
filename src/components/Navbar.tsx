@@ -262,7 +262,7 @@ const Navbar = () => {
             </div>
 
             {/* Products Panel */}
-            <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-4 ${
+            <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-6 ${
               mobileMenuLevel === 'products' ? 'translate-x-0 relative' : 'translate-x-full pointer-events-none invisible absolute top-0 left-0 w-full'
             }`}>
               <button
@@ -286,7 +286,7 @@ const Navbar = () => {
             </div>
 
             {/* Support Panel */}
-            <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-4 ${
+            <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-6 ${
               mobileMenuLevel === 'support' ? 'translate-x-0 relative' : 'translate-x-full pointer-events-none invisible absolute top-0 left-0 w-full'
             }`}>
               <button
@@ -307,7 +307,7 @@ const Navbar = () => {
             </div>
 
             {/* Cameras Panel */}
-            <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-4 ${
+            <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-6 ${
               mobileMenuLevel === 'cameras' ? 'translate-x-0 relative' : 'translate-x-full pointer-events-none invisible absolute top-0 left-0 w-full'
             }`}>
               <button
@@ -329,7 +329,7 @@ const Navbar = () => {
             </div>
 
             {/* Lenses Panel */}
-            <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-4 ${
+            <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-6 ${
               mobileMenuLevel === 'lenses' ? 'translate-x-0 relative' : 'translate-x-full pointer-events-none invisible absolute top-0 left-0 w-full'
             }`}>
               <button
