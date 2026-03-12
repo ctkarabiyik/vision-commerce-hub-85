@@ -222,6 +222,7 @@ const Navbar = () => {
                 {t("nav.products")}
                 <ChevronRight className="w-4 h-4" />
               </button>
+              <div className="border-t border-border" />
               <button
                 onClick={() => setMobileMenuLevel('support')}
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center justify-between text-left">
