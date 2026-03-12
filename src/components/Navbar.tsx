@@ -306,7 +306,7 @@ const Navbar = () => {
             </div>
 
             {/* Cameras Panel */}
-            <div className={`absolute top-0 left-0 w-full transition-transform duration-300 ease-in-out p-4 flex flex-col gap-3 ${
+            <div className={`absolute top-0 left-0 w-full transition-transform duration-300 ease-in-out py-4 flex flex-col gap-3 ${
               mobileMenuLevel === 'cameras' ? 'translate-x-0' : 'translate-x-full'
             }`}>
               <button
