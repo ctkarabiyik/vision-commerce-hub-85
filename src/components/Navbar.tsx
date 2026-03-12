@@ -214,7 +214,7 @@ const Navbar = () => {
         <div className="lg:hidden border-t border-border overflow-hidden relative">
             {/* Main Panel */}
             <div className={`transition-transform duration-300 ease-in-out py-4 flex flex-col gap-4 ${
-              mobileMenuLevel === 'main' ? 'translate-x-0' : '-translate-x-full pointer-events-none invisible'
+              mobileMenuLevel === 'main' ? 'translate-x-0 relative' : '-translate-x-full pointer-events-none invisible absolute top-0 left-0 w-full'
             }`}>
               <button
                 onClick={() => setMobileMenuLevel('products')}
