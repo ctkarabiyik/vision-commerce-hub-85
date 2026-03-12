@@ -300,7 +300,7 @@ const Navbar = () => {
                   key={index}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-sm text-foreground hover:text-primary transition-colors py-1">
+                  className="text-sm text-foreground hover:text-primary transition-colors">
                   {link.title}
                 </LocaleLink>
               )}
